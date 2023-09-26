@@ -14,17 +14,19 @@ export default function HeaderBanner() {
       >
         <Text as="h1" fontWeight={"bold"} fontSize={"2xl"}>
           G&S HOME SOLUTIONS{" "}
-          <Text as="span" color={"#06EC46"}>
-            {" "}
-            <Typewriter
-              words={[
-                "é a primeira empresa do Brasil com uma linha completa de higienização e impermeabilização de estofados",
-              ]}
-              cursor
-              cursorStyle="_"
-              typeSpeed={10}
-            />
-          </Text>
+          
+            <Text as="span" color={"#06EC46"}>
+              {" "}
+              <Typewriter
+                words={[
+                  "é a primeira empresa do Brasil com uma linha completa de higienização e impermeabilização de estofados",
+                ]}
+                cursor
+                cursorStyle="_"
+                typeSpeed={10}
+              />
+            </Text>
+          
         </Text>
       </Box>
     </Container>

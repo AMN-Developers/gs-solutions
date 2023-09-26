@@ -16,6 +16,7 @@ import { NAV_ITEMS } from "../../Navbar/NAV_ITEMS"
 import DrawerRoot from "../../Drawer/DrawerRoot"
 import React from "react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
+import { Footer } from "../../Footer"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -100,7 +101,7 @@ export default function Layout({ children, title, description }: LayoutProps) {
             icon={<ExternalLinkIcon />}
             onClick={onOpenDrawer}
             padding={0}
-            display={{ base: 'none', lg: 'flex' }}
+            display={{ base: "none", lg: "flex" }}
           />
           <Navbar.Mobile isOpen={isOpen}>
             {NAV_ITEMS.map((navItem) => (
@@ -123,6 +124,10 @@ export default function Layout({ children, title, description }: LayoutProps) {
         onClose={onCloseDrawer}
       />
       <main>{children}</main>
+      <Footer.Root>
+        <Footer.FooterNav />
+        <Footer.LowBar />
+      </Footer.Root>
     </>
   )
 }
