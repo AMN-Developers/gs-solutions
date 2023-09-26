@@ -11,7 +11,6 @@ export default function NavbarDesktop({ children }: NavbarDesktopProps) {
         direction={"row"}
         spacing={4}
         alignItems={"center"}
-        justifyContent={"space-between"}
       >
         {children}
       </Stack>

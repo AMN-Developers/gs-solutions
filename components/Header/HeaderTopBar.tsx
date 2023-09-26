@@ -1,5 +1,5 @@
 import { Image, Link, Container, Text } from "@chakra-ui/react"
-import { ArrowRightIcon } from "lucide-react"
+import { ArrowForwardIcon } from "@chakra-ui/icons"
 
 export default function HeaderTopBar() {
   return (
@@ -9,27 +9,29 @@ export default function HeaderTopBar() {
       display="flex"
       justifyContent="space-between"
       alignItems="center"
+      px={0}
     >
       <Image src="/logo.png" alt="G&S Home Solutions" maxW={100} />
       <Link
         href="#"
         px={6}
         py={1}
-        borderRadius={12}
+        borderRadius={'md'}
         color="white"
-        border={`1px solid white`}
-        bgColor="transparent"
-        display="flex"
+        bgColor="whiteAlpha.100"
+        display={{ base: "none", md: "flex" }}
         alignItems="center"
         animation={""}
         _hover={{
-          textDecoration: "none",
+          textDecoration: "underline",
           bgColor: "white",
           color: "#20274D",
+          transition: "all 0.3s ease-in-out",
         }}
+        boxShadow={"md"}
       >
         <Text marginRight={2}>FAÇA UMA COTAÇÃO AGORA</Text>
-        <ArrowRightIcon size={24} />
+        <ArrowForwardIcon />
       </Link>
     </Container>
   )

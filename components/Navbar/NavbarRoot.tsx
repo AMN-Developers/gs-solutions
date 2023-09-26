@@ -15,8 +15,8 @@ export default function NavbarRoot({ children }: NavbarRootProps) {
       px={{ base: 4 }}
       maxW={{ base: "100%", lg: "container.xl" }}
       display={"flex"}
-      flexDirection={"row"}
-      justifyContent={"space-between"}
+      flexDirection={{ base: "column", lg: "row" }}
+      justifyContent={{ lg: "space-between" }}
     >
       {children}
     </Container>

@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout';
+import Layout from '@/components/pages/Home/Layout';
 
 export default function Home() {
   return (
@@ -6,7 +6,7 @@ export default function Home() {
       title='Home'
       description='G&S Home Solutions'
     >
-      <h1>Home</h1>
+      <h1>This is my home, content</h1>
     </Layout>
   )
 }

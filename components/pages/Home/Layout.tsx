@@ -10,10 +10,10 @@ import {
   useDisclosure,
 } from "@chakra-ui/react"
 import { NextSeo } from "next-seo"
-import { Header } from "./Header"
-import { Navbar } from "./Navbar"
-import { NAV_ITEMS } from "./Navbar/NAV_ITEMS"
-import DrawerRoot from "./Drewer/DrawerRoot"
+import { Header } from "../../Header"
+import { Navbar } from "../../Navbar"
+import { NAV_ITEMS } from "../../Navbar/NAV_ITEMS"
+import DrawerRoot from "../../Drawer/DrawerRoot"
 import React from "react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 
@@ -94,18 +94,26 @@ export default function Layout({ children, title, description }: LayoutProps) {
               </Box>
             ))}
           </Navbar.Desktop>
-          <Navbar.Mobile isOpen={isOpen}>
-            {NAV_ITEMS.map((navItem) => (
-              <Navbar.MobileItems key={navItem.label} {...navItem} />
-            ))}
-          </Navbar.Mobile>
           <IconButton
             ref={btnRef}
             aria-label="Open menu"
             icon={<ExternalLinkIcon />}
             onClick={onOpenDrawer}
             padding={0}
+            display={{ base: 'none', lg: 'flex' }}
           />
+          <Navbar.Mobile isOpen={isOpen}>
+            {NAV_ITEMS.map((navItem) => (
+              <Navbar.MobileItems key={navItem.label} {...navItem} />
+            ))}
+            <IconButton
+              ref={btnRef}
+              aria-label="Open menu"
+              icon={<ExternalLinkIcon />}
+              onClick={onOpenDrawer}
+              padding={0}
+            />
+          </Navbar.Mobile>
         </Navbar.Root>
         <Header.Banner />
       </Header.Root>
