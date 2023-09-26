@@ -1,31 +1,44 @@
-import { Box, Container } from '@chakra-ui/react'
-import { Image, Link } from '@chakra-ui/react'
+import {
+  Image,
+  Link,
+  Container,
+  Text
+} from '@chakra-ui/react'
+import { ArrowRightIcon } from 'lucide-react'
 
 export default function HeaderTopBar() {
+
   return (
-    <Container maxW='container.xl' py={4} display='flex' justifyContent='space-between' alignItems='center'>
+    <Container
+      maxW='container.xl'
+      py={4}
+      display='flex'
+      justifyContent='space-between'
+      alignItems='center'
+    >
       <Image src='/logo.png' alt='G&S Home Solutions' maxW={100} />
-      {/* Glowing moving border around that button */}
       <Link
         href='#'
         px={6}
         py={1}
         borderRadius={12}
-        bgImage={`linear-gradient(90deg, #06ec46 0%, #8CDB95 40%, #093A0F 100%)`}
-        animation={`anime 1s linear infinite`}
-        __css={{
-          '@keyframes anime': {
-            '0%': {
-              backgroundPosition: '100%'
-            },
-            '100%': {
-              backgroundPosition: '300%'
-            }
-          },
-          '--webkit-animation': 'anime 1s linear infinite',
+        color='white'
+        border={`1px solid white`}
+        bgColor='transparent'
+        display='flex'
+        alignItems='center'
+        _hover={{
+          textDecoration: 'none',
+          bgColor: 'white',
+          color: '#20274D'
         }}
       >
-        <Box as='span' textColor='white'>FAÇA UMA COTAÇÃO</Box>
+        <Text
+          marginRight={2}
+        >
+          FAÇA UMA COTAÇÃO AGORA
+        </Text>
+        <ArrowRightIcon size={24} />
       </Link>
     </Container >
   )

@@ -7,7 +7,10 @@ interface HeaderRootProps {
 
 export default function HeaderRoot({ children }: HeaderRootProps) {
   return (
-    <Box as='header' bgColor='#20274D'>
+    <Box
+      as='header'
+      bgColor='#20274D'
+    >
       {children}
     </Box>
   )
