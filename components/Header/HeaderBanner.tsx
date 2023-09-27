@@ -6,7 +6,6 @@ export default function HeaderBanner() {
     <Container maxW={"container.sm"} color={"white"} py={8} px={0}>
       <Box
         as="div"
-        background={"whiteAlpha.100"}
         padding={4}
         rounded={"xl"}
         margin={{ base: 2, md: 0 }}

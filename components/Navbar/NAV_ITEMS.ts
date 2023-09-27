@@ -40,7 +40,11 @@ export const NAV_ITEMS: Array<NavItem> = [
       {
         label: 'Linha Tecnica',
         href: '/tecnica'
-      }
+      },
+      {
+        label: 'Lotus',
+        href: '/lotus'
+      },
     ]
   },
   {

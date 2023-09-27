@@ -12,7 +12,7 @@ interface MobileNavItemProps {
 export default function NavbarMobile({ children, isOpen }: MobileNavItemProps) {
   return (
     <Collapse in={isOpen} animateOpacity>
-      <Stack bg={'white'} p={4} display={{ md: 'none' }}>
+      <Stack bg={'white'} p={4} display={{ lg: 'none' }}>
         {children}
       </Stack>
     </Collapse>

@@ -7,6 +7,7 @@ import {
   Stack,
   useDisclosure,
 } from "@chakra-ui/react"
+import Link from 'next/link'
 import { NextSeo } from "next-seo"
 import { Header } from "../../Header"
 import { Navbar } from "../../Navbar"
@@ -16,17 +17,18 @@ import React from "react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 import { Footer } from "../../Footer"
 import CookieBanner from '@/components/CookieBanner'
+import { AnimatePresence, motion } from 'framer-motion'
 
 
 interface LayoutProps {
   children: React.ReactNode
-  title: string
-  description?: string
+  route: string
 }
 
-export default function Layout({ children, title, description }: LayoutProps) {
+export default function Layout({ children, route }: LayoutProps) {
   const { isOpen, onToggle } = useDisclosure()
   const btnRef = React.useRef<HTMLButtonElement>(null)
+  const bgUrl = route === "/" ? "/home-banner.svg" : "/lotus-banner.svg"
   const {
     isOpen: isOpenDrawer,
     onOpen: onOpenDrawer,
@@ -36,11 +38,11 @@ export default function Layout({ children, title, description }: LayoutProps) {
   return (
     <>
       <NextSeo
-        title={title + " | G&S Home Solutions"}
-        description={description}
+        title={"G&S Home Solutions"}
+        description={'G&S Home Solutions'}
         openGraph={{
-          title: title + " | G&S Home Solutions",
-          description,
+          title: "G&S Home Solutions",
+          description: "G&S Home Solutions",
           locale: "pt_BR",
           site_name: "G&S Home Solutions",
           type: "website",
@@ -48,6 +50,26 @@ export default function Layout({ children, title, description }: LayoutProps) {
         }}
       />
       <Header.Root>
+        <AnimatePresence>
+          <Box
+            as={motion.div}
+            key={route}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: "0.5", ease: "easeInOut" }}
+            exit={{ opacity: 0 }}
+            bgImage={bgUrl}
+            bgPosition={"center"}
+            bgRepeat={"no-repeat"}
+            bgSize={"cover"}
+            position={"absolute"}
+            top={0}
+            left={0}
+            right={0}
+            bottom={0}
+            zIndex={-1}
+          />
+        </AnimatePresence>
         <Header.TopBar />
         <Navbar.Root>
           <Navbar.Hamburger isOpen={isOpen} onToggle={onToggle} />
@@ -57,11 +79,11 @@ export default function Layout({ children, title, description }: LayoutProps) {
                 <Popover trigger={"hover"} placement={"bottom-start"}>
                   <PopoverTrigger>
                     <Box
-                      as="a"
+                      as={Link}
                       p={2}
                       href={navItem.href ?? "#"}
                       fontSize={"sm"}
-                      fontWeight={500}
+                      fontWeight={navItem.href === route ? "bold" : "normal"}
                       color="black"
                       __css={{
                         textTransform: "uppercase",

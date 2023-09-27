@@ -4,8 +4,8 @@ import {
   Text,
   Flex,
   Icon,
-  useColorModeValue
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { ChevronRightIcon } from '@chakra-ui/icons';
 
 interface NavbarSubProps {
@@ -17,7 +17,7 @@ interface NavbarSubProps {
 export default function NavbarSub({ label, href = '#', subLabel }: NavbarSubProps) {
   return (
     <Box
-      as="a"
+      as={Link}
       href={href}
       role={'group'}
       display={'block'}

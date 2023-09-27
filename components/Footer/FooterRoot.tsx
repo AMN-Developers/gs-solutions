@@ -7,7 +7,12 @@ interface FooterRootProps {
 
 export default function FooterRoot({ children }: FooterRootProps) {
   return (
-    <Box as="footer" bgColor="#20274D">
+    <Box
+      as="footer"
+      bgImage={'/home-banner.svg'}
+      bgRepeat={'no-repeat'}
+      bgSize={'cover'}
+    >
       {children}
     </Box>
   )
