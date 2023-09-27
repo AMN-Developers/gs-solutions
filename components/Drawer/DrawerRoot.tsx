@@ -1,3 +1,4 @@
+import { EmailIcon, PhoneIcon, TriangleDownIcon } from "@chakra-ui/icons"
 import {
   Button,
   Drawer,
@@ -42,18 +43,21 @@ export default function DrawerRoot({
 
         <DrawerBody>
           <Text as="h1" fontWeight={"bold"} fontSize={"md"} marginTop={5}>
+            <TriangleDownIcon marginRight={2} fontSize={10} />
             Endereço
           </Text>
           <Text as="p" fontWeight={"light"} fontSize={"sm"}>
             Rua Teste da Silva, N 506
           </Text>
           <Text as="h1" fontWeight={"bold"} fontSize={"md"} marginTop={5}>
+            <EmailIcon marginRight={2} fontSize={10} />
             Email
           </Text>
           <Text as="p" fontWeight={"light"} fontSize={"sm"}>
             gshomesolutions@hotmail.com
           </Text>
           <Text as="h1" fontWeight={"bold"} fontSize={"md"} marginTop={5}>
+            <PhoneIcon marginRight={2} fontSize={10} />
             Whatsapp
           </Text>
           <Text as="p" fontWeight={"light"} fontSize={"sm"}>

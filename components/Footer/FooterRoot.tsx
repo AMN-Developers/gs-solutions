@@ -1,13 +1,13 @@
 import { Box } from "@chakra-ui/react"
 import { ReactNode } from "react"
 
-interface HeaderRootProps {
+interface FooterRootProps {
   children: ReactNode
 }
 
-export default function HeaderRoot({ children }: HeaderRootProps) {
+export default function FooterRoot({ children }: FooterRootProps) {
   return (
-    <Box as="header" bgColor="#20274D">
+    <Box as="footer" bgColor="#20274D">
       {children}
     </Box>
   )
