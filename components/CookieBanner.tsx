@@ -19,7 +19,7 @@ export default function CookieBanner() {
   useEffect(() => {
     const isAccepted = getLocalStorage('cookie_consent', null)
 
-    if (!isAccepted) {
+    if (isAccepted === null) {
       onOpen()
     }
   }, [onOpen])
@@ -62,7 +62,6 @@ export default function CookieBanner() {
         colorScheme='orange'
       >
         <DrawerContent>
-          <DrawerCloseButton />
           <DrawerHeader>Aviso</DrawerHeader>
 
           <DrawerBody>
