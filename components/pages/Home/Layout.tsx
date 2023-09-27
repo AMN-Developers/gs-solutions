@@ -14,6 +14,7 @@ import { NAV_ITEMS } from "../../Navbar/NAV_ITEMS"
 import DrawerRoot from "../../Drawer/DrawerRoot"
 import React from "react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
+import CookieBanner from '@/components/CookieBanner'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -121,6 +122,7 @@ export default function Layout({ children, title, description }: LayoutProps) {
         onClose={onCloseDrawer}
       />
       <main>{children}</main>
+      <CookieBanner />
     </>
   )
 }
