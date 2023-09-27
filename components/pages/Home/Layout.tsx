@@ -1,7 +1,5 @@
 import {
   Box,
-  Button,
-  Icon,
   IconButton,
   Popover,
   PopoverContent,
