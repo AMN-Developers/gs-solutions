@@ -4,13 +4,14 @@ import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs"
 export default function FooterLowBar() {
   return (
     <Container
-      maxW={"full"}
-      flexDirection={"row"}
+      maxW={"container.xl"}
+      flexDirection={{ md: "row", base: "column" }}
       display={"flex"}
       alignItems="center"
       justifyContent="space-between"
       borderTop={"1px"}
       borderColor={"whiteAlpha.300"}
+      py={2}
     >
       <Box as="div" display={"flex"}>
         <Box
@@ -45,8 +46,8 @@ export default function FooterLowBar() {
         </Box>
       </Box>
 
-      <Box as="p" color={"white"} fontSize={"xs"} fontWeight={"light"}>
-        AMN Desenvolvimento e Aplicações® 2023
+      <Box as="p" color={"whiteAlpha.400"} fontSize={"xs"} fontWeight={"light"}>
+        AMN Desenvolvimento e Aplicações&copy; 2023
       </Box>
     </Container>
   )
