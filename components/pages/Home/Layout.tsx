@@ -1,7 +1,5 @@
 import {
   Box,
-  Button,
-  Icon,
   IconButton,
   Popover,
   PopoverContent,
@@ -17,6 +15,8 @@ import DrawerRoot from "../../Drawer/DrawerRoot"
 import React from "react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
 import { Footer } from "../../Footer"
+import CookieBanner from '@/components/CookieBanner'
+
 
 interface LayoutProps {
   children: React.ReactNode
@@ -128,6 +128,7 @@ export default function Layout({ children, title, description }: LayoutProps) {
         <Footer.FooterNav />
         <Footer.LowBar />
       </Footer.Root>
+      <CookieBanner />
     </>
   )
 }
