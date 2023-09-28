@@ -67,7 +67,7 @@ export default function Layout({ children, route }: LayoutProps) {
             animate={{ opacity: 1 }}
             transition={{ duration: "0.5", ease: "easeInOut" }}
             exit={{ opacity: 0 }}
-            bgImage={bg[route]}
+            bgImage={route in bg ? bg[route] : bg['/']}
             bgPosition={{ base: "right", md: "center" }}
             bgRepeat={"no-repeat"}
             bgSize={"cover"}
