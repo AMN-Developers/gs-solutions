@@ -7,28 +7,36 @@ import {
   Stack,
   useDisclosure,
 } from "@chakra-ui/react"
-import Link from 'next/link'
+import Link from "next/link"
 import { NextSeo } from "next-seo"
-import { Header } from "../../Header"
-import { Navbar } from "../../Navbar"
-import { NAV_ITEMS } from "../../Navbar/NAV_ITEMS"
-import DrawerRoot from "../../Drawer/DrawerRoot"
+import { Header } from "./Header"
+import { Navbar } from "./Navbar"
+import { NAV_ITEMS } from "./Navbar/NAV_ITEMS"
+import DrawerRoot from "./Drawer/DrawerRoot"
 import React from "react"
 import { ExternalLinkIcon } from "@chakra-ui/icons"
-import { Footer } from "../../Footer"
-import CookieBanner from '@/components/CookieBanner'
-import { AnimatePresence, motion } from 'framer-motion'
-
+import { Footer } from "./Footer"
+import CookieBanner from "@/components/CookieBanner"
+import { AnimatePresence, motion } from "framer-motion"
 
 interface LayoutProps {
   children: React.ReactNode
   route: string
 }
 
+type background = {
+  [key: string]: string
+}
+
 export default function Layout({ children, route }: LayoutProps) {
   const { isOpen, onToggle } = useDisclosure()
   const btnRef = React.useRef<HTMLButtonElement>(null)
   const bgUrl = route === "/" ? "/home-banner.svg" : "/lotus-banner.svg"
+  const bg: background = {
+    "/": "/home-banner.svg",
+    "/lotus": "/lotus-banner.svg",
+    "/limpoo": "/limpoo-banner.svg",
+  }
   const {
     isOpen: isOpenDrawer,
     onOpen: onOpenDrawer,
@@ -39,7 +47,7 @@ export default function Layout({ children, route }: LayoutProps) {
     <>
       <NextSeo
         title={"G&S Home Solutions"}
-        description={'G&S Home Solutions'}
+        description={"G&S Home Solutions"}
         openGraph={{
           title: "G&S Home Solutions",
           description: "G&S Home Solutions",
@@ -58,7 +66,7 @@ export default function Layout({ children, route }: LayoutProps) {
             animate={{ opacity: 1 }}
             transition={{ duration: "0.5", ease: "easeInOut" }}
             exit={{ opacity: 0 }}
-            bgImage={bgUrl}
+            bgImage={bg[route]}
             bgPosition={"center"}
             bgRepeat={"no-repeat"}
             bgSize={"cover"}
@@ -70,6 +78,7 @@ export default function Layout({ children, route }: LayoutProps) {
             zIndex={-1}
           />
         </AnimatePresence>
+
         <Header.TopBar />
         <Navbar.Root>
           <Navbar.Hamburger isOpen={isOpen} onToggle={onToggle} />

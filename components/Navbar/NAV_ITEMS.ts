@@ -1,79 +1,86 @@
 export interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
+  label: string
+  subLabel?: string
+  children?: Array<NavItem>
+  href?: string
 }
 
 export const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Home',
-    href: '/'
+    label: "Home",
+    href: "/",
   },
   {
-    label: 'Produtos',
+    label: "Lotus",
+    href: "/lotus",
     children: [
       {
-        label: 'Power Trio',
-        href: '/power-trio'
+        label: "Power Trio",
+        href: "/power-trio",
       },
       {
-        label: 'Fix Flot',
-        href: '/fix-flot'
+        label: "Fix Flot",
+        href: "/fix-flot",
       },
       {
-        label: 'Linha de Hieginização',
-        href: '/hieginizacao'
+        label: "Linha de Hieginização",
+        href: "/hieginizacao",
       },
       {
-        label: 'Linha de Hipermiabilizantes',
-        href: '/hipermiabilizantes'
+        label: "Linha de Hipermiabilizantes",
+        href: "/hipermiabilizantes",
       },
       {
-        label: 'Linha Max',
-        href: '/max'
+        label: "Linha Max",
+        href: "/max",
       },
       {
-        label: 'Linha Auto',
-        href: '/auto'
+        label: "Linha Auto",
+        href: "/auto",
       },
       {
-        label: 'Linha Tecnica',
-        href: '/tecnica'
+        label: "Linha Tecnica",
+        href: "/tecnica",
       },
-      {
-        label: 'Lotus',
-        href: '/lotus'
-      },
-    ]
+    ],
   },
   {
-    label: 'Calculadora de Diluição',
-    href: '/calculadora'
-  },
-  {
-    label: 'Empresa',
+    label: "Limpoo",
+    href: "/limpoo",
     children: [
       {
-        label: 'Contatos e Homologações',
-        href: '/contatos'
+        label: "Teste",
+        href: "#",
       },
-      {
-        label: 'Programa de Fidelidade',
-        href: '/fidelidade'
-      },
-      {
-        label: 'Sustentabilidade',
-        href: '/sustentabilidade'
-      },
-    ]
+    ],
   },
   {
-    label: 'Rastreio',
-    href: '/rastreio'
+    label: "Calculadora de Diluição",
+    href: "/calculadora",
   },
   {
-    label: 'Distribuidores G&S',
-    href: '/distribuidores'
-  }
-];
+    label: "Empresa",
+    children: [
+      {
+        label: "Contatos e Homologações",
+        href: "/contatos",
+      },
+      {
+        label: "Programa de Fidelidade",
+        href: "/fidelidade",
+      },
+      {
+        label: "Sustentabilidade",
+        href: "/sustentabilidade",
+      },
+    ],
+  },
+  {
+    label: "Rastreio",
+    href: "/rastreio",
+  },
+  {
+    label: "Distribuidores G&S",
+    href: "/distribuidores",
+  },
+]
