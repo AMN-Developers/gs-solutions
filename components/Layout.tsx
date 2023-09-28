@@ -68,7 +68,7 @@ export default function Layout({ children, route }: LayoutProps) {
             transition={{ duration: "0.5", ease: "easeInOut" }}
             exit={{ opacity: 0 }}
             bgImage={bg[route]}
-            bgPosition={"center"}
+            bgPosition={{ base: "right", md: "center" }}
             bgRepeat={"no-repeat"}
             bgSize={"cover"}
             position={"absolute"}
