@@ -1,4 +1,5 @@
-import { Box, Container, Link, Image } from "@chakra-ui/react"
+import { Box, Container, Link } from "@chakra-ui/react"
+import Image from 'next/image'
 
 export default function FooterNav() {
   return (
@@ -10,7 +11,12 @@ export default function FooterNav() {
       py={2}
       fontWeight={"thin"}
     >
-      <Image src="/logo.png" alt="G&S Home Solutions" maxW={70} />
+      <Box
+        maxW={70}
+        maxH={'auto'}
+      >
+        <Image src="/logo.png" alt="G&S Home Solutions" width={245} height={319} />
+      </Box>
       <Box
         as="div"
         display={"flex"}

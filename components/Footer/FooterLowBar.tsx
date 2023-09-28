@@ -1,5 +1,6 @@
 import { Box, Container } from "@chakra-ui/react"
 import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs"
+import Link from 'next/link'
 
 export default function FooterLowBar() {
   return (
@@ -15,32 +16,35 @@ export default function FooterLowBar() {
     >
       <Box as="div" display={"flex"}>
         <Box
-          as="a"
+          as={Link}
           padding={2}
           margin={2}
           color={"white"}
           fontSize={"lg"}
-          href="/"
+          href="#"
+          aria-label='Facebook Link'
         >
           <BsFacebook />
         </Box>
         <Box
-          as="a"
+          as={Link}
           padding={2}
           margin={2}
           color={"white"}
           fontSize={"lg"}
-          href="/"
+          href="#"
+          aria-label='Whatsapp Link'
         >
           <BsWhatsapp />
         </Box>
         <Box
-          as="a"
+          as={Link}
           padding={2}
           margin={2}
           color={"white"}
           fontSize={"lg"}
-          href="/"
+          href="#"
+          aria-label='Instagram Link'
         >
           <BsInstagram />
         </Box>

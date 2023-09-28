@@ -1,4 +1,4 @@
-import { Link, Container, Text } from "@chakra-ui/react"
+import { Link, Container, Text, Box } from "@chakra-ui/react"
 import Image from "next/image"
 import { ArrowForwardIcon } from "@chakra-ui/icons"
 
@@ -12,7 +12,12 @@ export default function HeaderTopBar() {
       alignItems="center"
       px={0}
     >
-      <Image src="/logo.png" alt="G&S Home Solutions" width={100} height={128} />
+      <Box
+        maxW={100}
+        maxH={'auto'}
+      >
+        <Image src="/logo.png" alt="G&S Home Solutions" width={245} height={319} />
+      </Box>
       <Link
         href="#"
         px={6}
