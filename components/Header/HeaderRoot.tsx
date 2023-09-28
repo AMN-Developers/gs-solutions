@@ -10,6 +10,7 @@ export default function HeaderRoot({ children }: HeaderRootProps) {
     <Box
       as="header"
       position={'relative'}
+      minH={{ base: 'md' }}
     >
       {children}
     </Box>

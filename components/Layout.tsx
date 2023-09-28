@@ -31,12 +31,13 @@ type background = {
 export default function Layout({ children, route }: LayoutProps) {
   const { isOpen, onToggle } = useDisclosure()
   const btnRef = React.useRef<HTMLButtonElement>(null)
-  const bgUrl = route === "/" ? "/home-banner.svg" : "/lotus-banner.svg"
+
   const bg: background = {
     "/": "/home-banner.svg",
     "/lotus": "/lotus-banner.svg",
     "/limpoo": "/limpoo-banner.svg",
   }
+
   const {
     isOpen: isOpenDrawer,
     onOpen: onOpenDrawer,
@@ -147,7 +148,7 @@ export default function Layout({ children, route }: LayoutProps) {
             />
           </Navbar.Mobile>
         </Navbar.Root>
-        <Header.Banner />
+        <Header.Banner route={route} />
       </Header.Root>
       <DrawerRoot
         btnRef={btnRef}
