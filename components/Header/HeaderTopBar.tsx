@@ -10,7 +10,6 @@ export default function HeaderTopBar() {
       display="flex"
       justifyContent="space-between"
       alignItems="center"
-      px={0}
     >
       <Box
         maxW={100}
@@ -24,12 +23,13 @@ export default function HeaderTopBar() {
         py={1}
         borderRadius={'md'}
         color="white"
-        bgColor="whiteAlpha.100"
+        bgColor="whiteAlpha.200"
         display={{ base: "none", md: "flex" }}
+        fontWeight={'semibold'}
+        border={'1px solid white'}
         alignItems="center"
         animation={""}
         _hover={{
-          textDecoration: "underline",
           bgColor: "white",
           color: "#20274D",
           transition: "all 0.3s ease-in-out",

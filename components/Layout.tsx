@@ -18,6 +18,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons"
 import { Footer } from "./Footer"
 import CookieBanner from "@/components/CookieBanner"
 import { AnimatePresence, motion } from "framer-motion"
+import { ChevronDownIcon } from '@chakra-ui/icons';
 
 interface LayoutProps {
   children: React.ReactNode
@@ -100,10 +101,13 @@ export default function Layout({ children, route }: LayoutProps) {
                       }}
                       _hover={{
                         textDecoration: "none",
-                        color: "#20274D",
+                        color: "#232c54",
+                        fontWeight: "semibold",
+                        transition: "all 0.3s ease-in-out",
                       }}
                     >
                       {navItem.label}
+                      {navItem.children && <ChevronDownIcon marginLeft={2} />}
                     </Box>
                   </PopoverTrigger>
 
