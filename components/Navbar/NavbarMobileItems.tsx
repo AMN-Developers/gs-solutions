@@ -4,9 +4,9 @@ import {
   Text,
   Icon,
   Collapse,
-  useColorModeValue,
   useDisclosure
 } from '@chakra-ui/react';
+import Link from 'next/link';
 import { ChevronDownIcon } from '@chakra-ui/icons';
 
 interface MobileNavItemProps {
@@ -21,8 +21,9 @@ export default function NavbarMobileItems({ label, href, children }: MobileNavIt
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Box
+        onClick={children && ((e) => e.preventDefault())}
         py={2}
-        as="a"
+        as={Link}
         href={href ?? '#'}
         justifyContent="space-between"
         alignItems="center"
@@ -30,7 +31,7 @@ export default function NavbarMobileItems({ label, href, children }: MobileNavIt
         _hover={{
           textDecoration: 'none',
         }}>
-        <Text fontWeight={600} color={useColorModeValue('gray.600', 'gray.200')}>
+        <Text fontWeight={600} color={'gray.600'}>
           {label}
         </Text>
         {children && (
@@ -50,11 +51,11 @@ export default function NavbarMobileItems({ label, href, children }: MobileNavIt
           pl={4}
           borderLeft={1}
           borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
+          borderColor={'gray.200'}
           align={'start'}>
           {children &&
             children.map((child) => (
-              <Box as="a" key={child.label} py={2} href={child.href}>
+              <Box as={Link} key={child.label} py={2} href={child.href}>
                 {child.label}
               </Box>
             ))}

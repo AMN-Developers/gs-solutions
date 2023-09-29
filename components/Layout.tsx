@@ -94,7 +94,7 @@ export default function Layout({ children, route }: LayoutProps) {
                       p={2}
                       href={navItem.href ?? "#"}
                       fontSize={"sm"}
-                      fontWeight={navItem.href === route ? "bold" : "normal"}
+                      fontWeight={navItem.href === route ? "semibold" : "normal"}
                       color="black"
                       __css={{
                         textTransform: "uppercase",
