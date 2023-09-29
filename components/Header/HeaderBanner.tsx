@@ -1,6 +1,6 @@
 import { Box, Container, Flex, Text } from "@chakra-ui/react"
-import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
+import Image from "next/image"
+import { AnimatePresence, motion } from "framer-motion"
 import { Typewriter } from "react-simple-typewriter"
 
 interface HeaderBannerProps {
@@ -25,15 +25,18 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           exit={{ opacity: 0 }}
           transition={{ duration: "0.5", ease: "easeInOut" }}
           px={{ base: 4, lg: 0 }}
+          minH={40}
+          alignItems={"center"}
+          textAlign={"center"}
+          display={"flex"}
+          justifyContent={"center"}
         >
           <Text as="h1" fontWeight={"bold"} fontSize={"2xl"}>
-            G&S HOME SOLUTIONS é a primeira empresa do Brasil com{""}
+            G&S HOME SOLUTIONS:{""}
             <Text as="span" color={"#06EC46"}>
               {" "}
               <Typewriter
-                words={[
-                  "uma linha completa de higienização e impermeabilização de estofados",
-                ]}
+                words={["Os melhores produtos para os melhores profissionais."]}
                 cursor
                 cursorStyle="_"
                 typeSpeed={10}
@@ -57,23 +60,27 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: "0.5", ease: "easeInOut" }}
+          minH={40}
         >
-          <Box
-            minH={130}
-          >
+          <Box minH={100}>
             <Image
-              width={455}
-              height={130}
-              src='/logo-lotus.svg'
-              alt='Lotus logo'
+              width={445}
+              height={100}
+              src="/logo-lotus.svg"
+              alt="Lotus logo"
             />
           </Box>
-          <Box color='black' fontSize={'xl'} textAlign={{ base: 'left', md: 'right' }}>
-            <Text as="h1" fontWeight={'bold'}>
+          <Box
+            color="black"
+            fontSize={"xl"}
+            textAlign={{ base: "left", md: "right" }}
+          >
+            <Text as="h1" fontWeight={"bold"}>
               G&S HOME SOLUTIONS
             </Text>
-            <Text as="h2" fontWeight={'semibold'}>
-              Os melhores produtos para os melhores profissionais
+            <Text as="h2" fontWeight={"semibold"}>
+              Uma linha completa de higienização e impermeabilização de
+              estofados
             </Text>
           </Box>
         </Flex>
@@ -92,37 +99,45 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: "0.5", ease: "easeInOut" }}
+          minH={40}
         >
-          <Box minH={130}
-            display={'flex'}
-            flexDir={'column'}
-            justifyContent={'center'}
+          <Box
+            minH={130}
+            display={"flex"}
+            flexDir={"column"}
+            justifyContent={"center"}
           >
             <Image
               width={455}
               height={130}
-              src='/logo-limpoo.svg'
-              alt='Limpoo logo'
+              src="/logo-limpoo.svg"
+              alt="Limpoo logo"
             />
           </Box>
-          <Box color='white' fontSize={'xl'} textAlign={{ base: 'left', md: 'right' }} display={'flex'} flexDir={'column'} justifyContent={'center'}>
-            <Text as="h1" fontWeight={'bold'}>
+          <Box
+            color="white"
+            fontSize={"xl"}
+            textAlign={{ base: "left", md: "right" }}
+            display={"flex"}
+            flexDir={"column"}
+            justifyContent={"center"}
+          >
+            <Text as="h1" fontWeight={"bold"}>
               G&S HOME SOLUTIONS
             </Text>
-            <Text as="h2" fontWeight={'semibold'}>
+            <Text as="h2" fontWeight={"semibold"}>
               SUJOU? LIMPOO!
             </Text>
           </Box>
         </Flex>
       )
-    }
+    },
   }
-
 
   return (
     <Container maxW={"container.xl"} color={"white"} py={8} px={0}>
-      <AnimatePresence mode='wait'>
-        {route in banner ? banner[route]() : banner['/']()}
+      <AnimatePresence mode="wait">
+        {route in banner ? banner[route]() : banner["/"]()}
       </AnimatePresence>
     </Container>
   )
