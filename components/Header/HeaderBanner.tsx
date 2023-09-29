@@ -96,7 +96,7 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           <Box minH={130}
             display={'flex'}
             flexDir={'column'}
-            justifyContent={'flex-end'}
+            justifyContent={'center'}
           >
             <Image
               width={455}

@@ -18,7 +18,7 @@ import { ExternalLinkIcon } from "@chakra-ui/icons"
 import { Footer } from "./Footer"
 import CookieBanner from "@/components/CookieBanner"
 import { AnimatePresence, motion } from "framer-motion"
-import { ChevronDownIcon } from '@chakra-ui/icons';
+import { ChevronDownIcon } from "@chakra-ui/icons"
 
 interface LayoutProps {
   children: React.ReactNode
@@ -61,8 +61,6 @@ export default function Layout({ children, route }: LayoutProps) {
       />
       <Header.Root>
         <AnimatePresence>
-
-
           <Box
             as={motion.div}
             key={route}
@@ -70,7 +68,7 @@ export default function Layout({ children, route }: LayoutProps) {
             animate={{ opacity: 1 }}
             transition={{ duration: "0.5", ease: "easeInOut" }}
             exit={{ opacity: 0 }}
-            bgImage={route in bg ? bg[route] : bg['/']}
+            bgImage={route in bg ? bg[route] : bg["/"]}
             bgPosition={{ base: "right", md: "center" }}
             bgRepeat={"no-repeat"}
             bgSize={"cover"}
@@ -96,7 +94,9 @@ export default function Layout({ children, route }: LayoutProps) {
                       p={2}
                       href={navItem.href ?? "#"}
                       fontSize={"sm"}
-                      fontWeight={navItem.href === route ? "semibold" : "normal"}
+                      fontWeight={
+                        navItem.href === route ? "semibold" : "normal"
+                      }
                       color="black"
                       __css={{
                         textTransform: "uppercase",

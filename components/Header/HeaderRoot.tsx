@@ -2,16 +2,12 @@ import { Box } from "@chakra-ui/react"
 import { ReactNode } from "react"
 
 interface HeaderRootProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export default function HeaderRoot({ children }: HeaderRootProps) {
   return (
-    <Box
-      as="header"
-      position={'relative'}
-      minH={{ base: 'md' }}
-    >
+    <Box as="header" position={"relative"} minH={{ base: "lg" }}>
       {children}
     </Box>
   )
