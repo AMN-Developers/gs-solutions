@@ -61,6 +61,8 @@ export default function Layout({ children, route }: LayoutProps) {
       />
       <Header.Root>
         <AnimatePresence>
+
+
           <Box
             as={motion.div}
             key={route}
