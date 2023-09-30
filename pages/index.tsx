@@ -1,5 +1,7 @@
+import { Card } from "@/components/Card"
 import { Box, Container, Text, AspectRatio, Flex, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
 import { useState } from 'react';
+
 
 export default function Home() {
   const [tabIndex, setTabIndex] = useState(0)
@@ -9,6 +11,11 @@ export default function Home() {
   }
 
   return (
+    <>
+      <Card.Root>
+      <Card.Tittle/>
+      <Card.Item />
+    </Card.Root>
     <Box bgColor={'#263869'} >
       <Container maxW="container.xl" my={2} py={4} gap={2} as='section'>
         <Text as='h2' fontWeight={'bold'} fontSize={'xl'} color={'white'}>Conheça a G&S Home Solutions</Text>
@@ -133,5 +140,6 @@ export default function Home() {
         </Flex>
       </Container>
     </Box >
+    </>
   )
 }

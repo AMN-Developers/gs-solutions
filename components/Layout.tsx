@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   IconButton,
   Popover,
   PopoverContent,
@@ -132,26 +133,44 @@ export default function Layout({ children, route }: LayoutProps) {
                 </Popover>
               </Box>
             ))}
+            <Box
+              as="button"
+              ref={btnRef}
+              aria-label="Open menu"
+              onClick={onOpenDrawer}
+              padding={0}
+              bgColor={"none"}
+              textTransform={"uppercase"}
+              fontSize={"sm"}
+              _hover={{
+                textDecoration: "none",
+                color: "#232c54",
+                fontWeight: "semibold",
+                transition: "all 0.3s ease-in-out",
+              }}
+            >
+              Contato
+            </Box>
           </Navbar.Desktop>
-          <IconButton
-            ref={btnRef}
-            aria-label="Open menu"
-            icon={<ExternalLinkIcon />}
-            onClick={onOpenDrawer}
-            padding={0}
-            display={{ base: "none", lg: "flex" }}
-          />
+
           <Navbar.Mobile isOpen={isOpen}>
             {NAV_ITEMS.map((navItem) => (
               <Navbar.MobileItems key={navItem.label} {...navItem} />
             ))}
-            <IconButton
+            <Box
+              as="button"
               ref={btnRef}
               aria-label="Open menu"
-              icon={<ExternalLinkIcon />}
               onClick={onOpenDrawer}
               padding={0}
-            />
+              bgColor={"none"}
+              fontSize={"md"}
+              fontWeight={600}
+              color={"gray.600"}
+              py={2}
+            >
+              Contato
+            </Box>
           </Navbar.Mobile>
         </Navbar.Root>
         <Header.Banner route={route} />

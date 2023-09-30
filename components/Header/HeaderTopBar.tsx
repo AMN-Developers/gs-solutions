@@ -11,27 +11,29 @@ export default function HeaderTopBar() {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Box
-        maxW={100}
-        maxH={'auto'}
-      >
-        <Image src="/logo.png" alt="G&S Home Solutions" width={245} height={319} />
+      <Box maxW={100} maxH={"auto"}>
+        <Image
+          src="/logo.png"
+          alt="G&S Home Solutions"
+          width={245}
+          height={319}
+        />
       </Box>
       <Link
         href="#"
         px={6}
         py={1}
-        borderRadius={'md'}
-        color="white"
-        bgColor="whiteAlpha.200"
+        borderRadius={"md"}
+        color="#20274D"
+        bgColor="white"
         display={{ base: "none", md: "flex" }}
-        fontWeight={'semibold'}
-        border={'1px solid white'}
+        fontWeight={"semibold"}
+        border={"1px solid white"}
         alignItems="center"
         animation={""}
         _hover={{
           bgColor: "white",
-          color: "#20274D",
+          color: "#06EC46",
           transition: "all 0.3s ease-in-out",
         }}
         boxShadow={"md"}
