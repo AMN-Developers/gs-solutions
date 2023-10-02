@@ -46,6 +46,10 @@ export default function Layout({ children, route }: LayoutProps) {
     onClose: onCloseDrawer,
   } = useDisclosure()
 
+  React.useEffect(() => {
+    onToggle()
+  }, [route])
+
   return (
     <>
       <NextSeo
