@@ -30,18 +30,18 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           textAlign={"center"}
           display={"flex"}
           justifyContent={"center"}
+          flexDirection={"column"}
         >
           <Text as="h1" fontWeight={"bold"} fontSize={"2xl"}>
-            G&S HOME SOLUTIONS:{""}
-            <Text as="span" color={"#06EC46"}>
-              {" "}
-              <Typewriter
-                words={["Os melhores produtos para os melhores profissionais."]}
-                cursor
-                cursorStyle="_"
-                typeSpeed={10}
-              />
-            </Text>
+            G&S HOME SOLUTIONS
+          </Text>
+          <Text color={"#06EC46"} fontWeight={"bold"} fontSize={"2xl"}>
+            <Typewriter
+              words={["Os melhores produtos para os melhores profissionais"]}
+              cursor
+              cursorStyle="_"
+              typeSpeed={50}
+            />
           </Text>
         </Box>
       )

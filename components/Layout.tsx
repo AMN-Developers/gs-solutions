@@ -15,11 +15,11 @@ import { Navbar } from "./Navbar"
 import { NAV_ITEMS } from "./Navbar/NAV_ITEMS"
 import DrawerRoot from "./Drawer/DrawerRoot"
 import React from "react"
-import { ExternalLinkIcon } from "@chakra-ui/icons"
 import { Footer } from "./Footer"
 import CookieBanner from "@/components/CookieBanner"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronDownIcon } from "@chakra-ui/icons"
+
 
 interface LayoutProps {
   children: React.ReactNode
