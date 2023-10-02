@@ -156,7 +156,7 @@ export default function Layout({ children, route }: LayoutProps) {
 
           <Navbar.Mobile isOpen={isOpen}>
             {NAV_ITEMS.map((navItem) => (
-              <Navbar.MobileItems key={navItem.label} {...navItem} />
+              <Navbar.MobileItems key={navItem.label} {...navItem} onChangeRoute={onToggle} />
             ))}
             <Box
               as="button"
