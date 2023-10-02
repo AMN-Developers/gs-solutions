@@ -31,7 +31,8 @@ type background = {
 }
 
 export default function Layout({ children, route }: LayoutProps) {
-  const { isOpen, onToggle } = useDisclosure()
+
+  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false })
   const btnRef = React.useRef<HTMLButtonElement>(null)
 
   const bg: background = {
@@ -45,10 +46,6 @@ export default function Layout({ children, route }: LayoutProps) {
     onOpen: onOpenDrawer,
     onClose: onCloseDrawer,
   } = useDisclosure()
-
-  React.useEffect(() => {
-    onToggle()
-  }, [route])
 
   return (
     <>
