@@ -7,7 +7,7 @@ interface HeaderRootProps {
 
 export default function HeaderRoot({ children }: HeaderRootProps) {
   return (
-    <Box as="header" position={"relative"} minH={{ base: "lg", md: "sm" }}>
+    <Box as="header" position={"relative"}>
       {children}
     </Box>
   )

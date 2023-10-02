@@ -1,14 +1,15 @@
 import { Card } from "@/components/Card"
-import { Box, Container, Text, AspectRatio, Flex, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
+import { Box, Container, Text, AspectRatio, Flex, Tabs, TabList, Tab, TabPanels, TabPanel, css } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
 
 export default function Home() {
-  const [tabIndex, setTabIndex] = useState(0)
+  const [tabIndex, setTabIndex] = useState<number | null>(null)
   const [isImageClicked, setIsImageClicked] = useState(false)
   const embedID = "nQQ8AF8-otE";
 
-  const handleTabsChange = (index: number) => {
+  const handleTabsChange = (index: number | null) => {
     setTabIndex(index)
   }
 
@@ -78,17 +79,107 @@ export default function Home() {
               <Box
                 minH={"65%"}
               >
-                <Tabs index={tabIndex} onChange={handleTabsChange} isLazy color={'white'} colorScheme='whatsapp' fontSize={'xs'} textAlign={'justify'} >
-                  <TabList>
-                    <Tab>2015</Tab>
-                    <Tab>2016</Tab>
-                    <Tab>2017</Tab>
-                    <Tab>2018</Tab>
-                    <Tab>2019</Tab>
-                    <Tab>2020</Tab>
-                    <Tab>2021</Tab>
-                    <Tab>2022</Tab>
-                    <Tab>2023</Tab>
+                <Tabs index={tabIndex as number} onChange={handleTabsChange} isLazy lazyBehavior='unmount' fontSize={'xs'} textAlign={'justify'} color={'white'}>
+                  <TabList overflowX="auto"
+                    overflowY="hidden"
+                    css={css({
+                      scrollbarWidth: 'none',
+                      '::-webkit-scrollbar': { display: 'none' },
+                      '-webkit-overflow-scrolling': 'touch',
+                      boxShadow: 'inset 0 -2px 0 rgba(0, 0, 0, 0.1)',
+                      borderBottom: '2px solid #06EC46',
+                    })}
+                  >
+                    <Tab
+                      _hover={{
+                        color: 'green.500'
+                      }}
+                      _selected={{
+                        color: '#06EC46',
+                      }}
+                    >
+                      2015
+                    </Tab>
+                    <Tab
+                      _hover={{
+                        color: 'green.500'
+                      }}
+                      _selected={{
+                        color: '#06EC46'
+                      }}
+                    >
+                      2016
+                    </Tab>
+                    <Tab
+                      _hover={{
+                        color: 'green.500'
+                      }}
+                      _selected={{
+                        color: '#06EC46'
+                      }}
+                    >
+                      2017
+                    </Tab>
+                    <Tab
+                      _hover={{
+                        color: 'green.500'
+                      }}
+                      _selected={{
+                        color: '#06EC46'
+                      }}
+                    >
+                      2018
+                    </Tab>
+                    <Tab
+                      _hover={{
+                        color: 'green.500'
+                      }}
+                      _selected={{
+                        color: '#06EC46'
+                      }}
+                    >
+                      2019
+                    </Tab>
+                    <Tab
+                      _hover={{
+                        color: 'green.500'
+                      }}
+                      _selected={{
+                        color: '#06EC46'
+                      }}
+                    >
+                      2020
+                    </Tab>
+                    <Tab
+                      _hover={{
+                        color: 'green.500'
+                      }}
+                      _selected={{
+                        color: '#06EC46'
+                      }}
+                    >
+                      2021
+                    </Tab>
+                    <Tab
+                      _hover={{
+                        color: 'green.500'
+                      }}
+                      _selected={{
+                        color: '#06EC46'
+                      }}
+                    >
+                      2022
+                    </Tab>
+                    <Tab
+                      _hover={{
+                        color: 'green.500'
+                      }}
+                      _selected={{
+                        color: '#06EC46'
+                      }}
+                    >
+                      2023
+                    </Tab>
                   </TabList>
                   <TabPanels>
                     <TabPanel>
