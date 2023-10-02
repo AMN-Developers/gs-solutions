@@ -12,7 +12,8 @@ export default function CardItem() {
         as={Link}
         href="/lotus"
         align="center"
-        marginY={2}
+        marginY={{ base: 2, md: 8 }}
+        py={{ base: 2, md: 20 }}
         w={{ base: "100%", md: "50%" }}
         bgImage={"/card-lotus.png"}
         bgRepeat={"no-repeat"}
@@ -41,7 +42,8 @@ export default function CardItem() {
         as={Link}
         href="/limpoo"
         align="center"
-        marginY={2}
+        marginY={{ base: 2, md: 8 }}
+        py={{ base: 2, md: 20 }}
         w={{ base: "100%", md: "50%" }}
         bgImage={"/card-lotus.png"}
         bgRepeat={"no-repeat"}
