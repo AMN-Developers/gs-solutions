@@ -1,4 +1,4 @@
-import { Container, Flex, Image, Text } from "@chakra-ui/react"
+import { Box, Container, Flex, Image, Text } from "@chakra-ui/react"
 import Link from "next/link"
 
 export default function CertificatedBar() {
@@ -21,10 +21,24 @@ export default function CertificatedBar() {
         flexDirection={{ base: "column", md: "row" }}
         gap={4}
       >
-        <Image src="anvisa-logo.png" alt="logo anvisa" width={250} />
+        <Box maxW={200}>
+          <Image
+            src="anvisa-logo.png"
+            alt="logo anvisa"
+            width={200}
+            height={46}
+          />
+        </Box>
         <Image src="SVB.svg" alt="logo svb" width={76} height={76} />
-        <Image src="aatcc-logo.svg" alt="logo aatcc" height={76} />
-        <Image src="iso-logo.svg" alt="logo aatcc" height={76} />
+        <Box maxW={76}>
+          <Image
+            src="aatcc-logo.svg"
+            alt="logo aatcc"
+            width={126}
+            height={79}
+          />
+        </Box>
+        <Image src="iso-logo.svg" alt="logo aatcc" width={76} height={76} />
       </Flex>
     </Container>
   )
