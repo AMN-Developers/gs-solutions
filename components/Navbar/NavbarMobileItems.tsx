@@ -13,15 +13,16 @@ interface MobileNavItemProps {
   label: string;
   href?: string;
   children?: Array<MobileNavItemProps>;
+  onChangeRoute?: () => void;
 }
 
-export default function NavbarMobileItems({ label, href, children }: MobileNavItemProps) {
+export default function NavbarMobileItems({ label, href, children, onChangeRoute }: MobileNavItemProps) {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
     <Stack spacing={4} onClick={children && onToggle}>
       <Box
-        onClick={children && ((e) => e.preventDefault())}
+        onClick={children ? ((e) => e.preventDefault()) : onChangeRoute}
         py={2}
         as={Link}
         href={href ?? '#'}
@@ -55,7 +56,7 @@ export default function NavbarMobileItems({ label, href, children }: MobileNavIt
           align={'start'}>
           {children &&
             children.map((child) => (
-              <Box as={Link} key={child.label} py={2} href={child.href}>
+              <Box as={Link} key={child.label} py={2} href={child.href} onClick={onChangeRoute}>
                 {child.label}
               </Box>
             ))}

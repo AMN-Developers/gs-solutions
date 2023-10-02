@@ -17,6 +17,7 @@ export default function NavbarRoot({ children }: NavbarRootProps) {
       display={"flex"}
       flexDirection={{ base: "column", lg: "row" }}
       justifyContent={{ lg: "space-between" }}
+      shadow={{ base: "sm", md: "none" }}
     >
       {children}
     </Container>

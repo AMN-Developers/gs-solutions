@@ -31,7 +31,8 @@ type background = {
 }
 
 export default function Layout({ children, route }: LayoutProps) {
-  const { isOpen, onToggle } = useDisclosure()
+
+  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false })
   const btnRef = React.useRef<HTMLButtonElement>(null)
 
   const bg: background = {
@@ -155,7 +156,7 @@ export default function Layout({ children, route }: LayoutProps) {
 
           <Navbar.Mobile isOpen={isOpen}>
             {NAV_ITEMS.map((navItem) => (
-              <Navbar.MobileItems key={navItem.label} {...navItem} />
+              <Navbar.MobileItems key={navItem.label} {...navItem} onChangeRoute={onToggle} />
             ))}
             <Box
               as="button"

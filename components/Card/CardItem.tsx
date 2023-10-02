@@ -15,7 +15,7 @@ export default function CardItem() {
         marginY={{ base: 2, md: 8 }}
         py={{ base: 2, md: 20 }}
         w={{ base: "100%", md: "50%" }}
-        bgImage={"/card-lotus.png"}
+        bgImage={"/card-lotus.webp"}
         bgRepeat={"no-repeat"}
         bgSize={"cover"}
         bgPosition={"center"}
@@ -45,7 +45,7 @@ export default function CardItem() {
         marginY={{ base: 2, md: 8 }}
         py={{ base: 2, md: 20 }}
         w={{ base: "100%", md: "50%" }}
-        bgImage={"/card-lotus.png"}
+        bgImage={"/card-lotus.webp"}
         bgRepeat={"no-repeat"}
         bgSize={"cover"}
         filter={"grayscale(100%)"}
