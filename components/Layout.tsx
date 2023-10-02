@@ -49,18 +49,6 @@ export default function Layout({ children, route }: LayoutProps) {
 
   return (
     <>
-      <NextSeo
-        title={"G&S Home Solutions"}
-        description={"G&S Home Solutions"}
-        openGraph={{
-          title: "G&S Home Solutions",
-          description: "G&S Home Solutions",
-          locale: "pt_BR",
-          site_name: "G&S Home Solutions",
-          type: "website",
-          url: "https://gshomesolutions.com.br",
-        }}
-      />
       <Header.Root>
         <AnimatePresence>
           <Box

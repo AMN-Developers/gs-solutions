@@ -1,6 +1,10 @@
-import { Box, Flex } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 
-export default function CardTittle() {
+interface CardSectionTitleProps {
+  title: string
+}
+
+export default function CardSectionTitle({ title }: CardSectionTitleProps) {
   return (
     <Box
       as="h1"
@@ -11,7 +15,7 @@ export default function CardTittle() {
       p={2}
       fontWeight={"bold"}
     >
-      Conheça nossas linhas
+      {title}
     </Box>
   )
 }
