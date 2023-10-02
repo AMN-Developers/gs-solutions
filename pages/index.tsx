@@ -1,5 +1,5 @@
 import { Card } from "@/components/Card"
-import { Box, Container, Text, AspectRatio, Flex, Tabs, TabList, Tab, TabPanels, TabPanel } from '@chakra-ui/react';
+import { Box, Container, Text, AspectRatio, Flex, Tabs, TabList, Tab, TabPanels, TabPanel, css } from '@chakra-ui/react';
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -79,7 +79,14 @@ export default function Home() {
                 minH={"65%"}
               >
                 <Tabs index={tabIndex} onChange={handleTabsChange} isLazy color={'white'} colorScheme='whatsapp' fontSize={'xs'} textAlign={'justify'} >
-                  <TabList>
+                  <TabList overflowX="auto"
+                    css={css({
+                      scrollbarWidth: 'none',
+                      '::-webkit-scrollbar': { display: 'none' },
+                      '-webkit-overflow-scrolling': 'touch',
+                      boxShadow: 'inset 0 -2px 0 rgba(0, 0, 0, 0.1)',
+                      border: '0 none',
+                    })} >
                     <Tab>2015</Tab>
                     <Tab>2016</Tab>
                     <Tab>2017</Tab>
