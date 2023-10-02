@@ -80,6 +80,7 @@ export default function Home() {
               >
                 <Tabs index={tabIndex} onChange={handleTabsChange} isLazy color={'white'} colorScheme='whatsapp' fontSize={'xs'} textAlign={'justify'} >
                   <TabList overflowX="auto"
+                    overflowY="hidden"
                     css={css({
                       scrollbarWidth: 'none',
                       '::-webkit-scrollbar': { display: 'none' },
