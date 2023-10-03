@@ -1,7 +1,5 @@
 import {
   Box,
-  Button,
-  IconButton,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -9,7 +7,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react"
 import Link from "next/link"
-import { NextSeo } from "next-seo"
 import { Header } from "./Header"
 import { Navbar } from "./Navbar"
 import { NAV_ITEMS } from "./Navbar/NAV_ITEMS"
@@ -37,8 +34,8 @@ export default function Layout({ children, route }: LayoutProps) {
 
   const bg: background = {
     "/": "/home-banner.svg",
-    "/lotus": "/lotus-banner.svg",
-    "/limpoo": "/limpoo-banner.svg",
+    "/lotus": "/card-lotus.webp",
+    "/limpoo": "/card-limpoo.webp",
   }
 
   const {

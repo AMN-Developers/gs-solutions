@@ -16,11 +16,11 @@ export default function Home() {
           gap={4}
         >
           <Card.Item alt='Lotus logo' href='/lotus' bgImage='/card-lotus.webp' title='Higienização e Impermiabilização de estofados' logo='logo-lotus.svg' />
-          <Card.Item alt='Limpoo logo' href='/limpoo' bgImage='/card-lotus.webp' title='Limpeza pós-obra' logo='logo-limpoo.svg' />
+          <Card.Item alt='Limpoo logo' href='/limpoo' bgImage='/card-limpoo.webp' title='Limpeza pós-obra' logo='logo-limpoo.svg' />
         </Flex>
       </Card.Root>
-      <Box bgColor={"#263869"}>
-        <Container maxW="container.xl" my={2} py={16} gap={2} as="section">
+      <Container maxW={'container.xl'} as='section'>
+        <Container maxW="container.xl" py={8} px={8} bgImage={'/home-banner.svg'} bgRepeat={'no-repeat'} bgSize={'cover'} rounded={'md'}>
           <Text
             as="h2"
             fontWeight={"bold"}
@@ -31,11 +31,11 @@ export default function Home() {
             Conheça a G&S Home Solutions
           </Text>
           <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
-            <Box width={{ base: "100%", md: "50%" }}>
+            <Box width={{ base: "100%", md: "60%" }}>
               <VideoFrame />
             </Box>
             <Flex
-              width={{ base: "100%", md: "50%" }}
+              width={{ base: "100%", md: "40%" }}
               flexDirection={"column"}
               justify={"space-between"}
             >
@@ -63,7 +63,7 @@ export default function Home() {
             </Flex>
           </Flex>
         </Container>
-      </Box>
+      </Container>
       <Certificated.Bar />
     </MotionLayout>
   )
