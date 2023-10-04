@@ -7,17 +7,19 @@ import {
   DrawerFooter,
   DrawerHeader,
   Text,
-  useDisclosure
-} from '@chakra-ui/react'
-import { useEffect, useState } from 'react'
-import { getLocalStorage, setLocalStorage } from '@/libs/storageHelper'
+  useDisclosure,
+  Link as ChakraLink,
+} from "@chakra-ui/react"
+import { useEffect, useState } from "react"
+import { getLocalStorage, setLocalStorage } from "@/libs/storageHelper"
+import Link from "next/link"
 
 export default function CookieBanner() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [isAccepted, setIsAccepted] = useState(false)
 
   useEffect(() => {
-    const isAccepted = getLocalStorage('cookie_consent', null)
+    const isAccepted = getLocalStorage("cookie_consent", null)
 
     if (isAccepted === null) {
       onOpen()
@@ -25,24 +27,23 @@ export default function CookieBanner() {
   }, [onOpen])
 
   useEffect(() => {
-    const newValue = isAccepted ? 'granted' : 'denied'
+    const newValue = isAccepted ? "granted" : "denied"
 
-    if (typeof window.gtag !== 'undefined') {
-      window.gtag("consent", 'update', {
-        'analytics_storage': newValue
-      });
+    if (typeof window.gtag !== "undefined") {
+      window.gtag("consent", "update", {
+        analytics_storage: newValue,
+      })
     }
   }, [isAccepted])
 
-
   const handleAccept = () => {
-    setLocalStorage('cookie_consent', true)
+    setLocalStorage("cookie_consent", true)
     setIsAccepted(true)
     onClose()
   }
 
   const handleReject = () => {
-    setLocalStorage('cookie_consent', false)
+    setLocalStorage("cookie_consent", false)
     setIsAccepted(false)
     onClose()
   }
@@ -55,30 +56,46 @@ export default function CookieBanner() {
     <>
       <Drawer
         isOpen={isOpen}
-        placement='bottom'
+        placement="bottom"
         onClose={onClose}
         closeOnEsc={false}
         closeOnOverlayClick={false}
-        colorScheme='orange'
+        colorScheme="orange"
       >
         <DrawerContent>
           <DrawerHeader>Aviso</DrawerHeader>
 
           <DrawerBody>
             <Text>
-              Nós e os terceiros selecionados coletamos informações pessoais e usamos cookies ou tecnologias similares para finalidades técnicas e, com seu consentimento, para as finalidades de medição. Negar consentimento pode tornar as funcionalidades relacionadas indisponíveis.
+              Nós e os terceiros selecionados coletamos informações pessoais e
+              usamos cookies ou tecnologias similares para finalidades técnicas
+              e, com seu consentimento, para as finalidades de medição. Negar
+              consentimento pode tornar as funcionalidades relacionadas
+              indisponíveis.
             </Text>
             <Text>
-              Você pode livremente dar, negar ou retirar seu consentimento a qualquer momento.
+              Você pode livremente dar, negar ou retirar seu consentimento a
+              qualquer momento.
             </Text>
             <Text>
-              Use o botão “Aceitar” para consentir. Use o botão “Recusar” para continuar sem aceitar.
+              Use o botão “Aceitar” para consentir. Use o botão “Recusar” para
+              continuar sem aceitar.
+            </Text>
+            <Text>
+              Saiba mais em:{" "}
+              <ChakraLink as={Link} href={"/privacy"} color={"#44DA4A"}>
+                política de privacidade
+              </ChakraLink>
             </Text>
           </DrawerBody>
 
           <DrawerFooter>
-            <Button variant='outline' mr={3} onClick={handleReject}>Recusar</Button>
-            <Button colorScheme='green' onClick={handleAccept}>Aceitar</Button>
+            <Button variant="outline" mr={3} onClick={handleReject}>
+              Recusar
+            </Button>
+            <Button colorScheme="green" onClick={handleAccept}>
+              Aceitar
+            </Button>
           </DrawerFooter>
         </DrawerContent>
       </Drawer>
