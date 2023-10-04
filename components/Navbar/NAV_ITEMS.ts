@@ -11,49 +11,55 @@ export const NAV_ITEMS: Array<NavItem> = [
     href: "/",
   },
   {
-    label: "Lotus",
-    href: "/lotus",
+    label: "Linha de Produtos",
     children: [
       {
-        label: "Power Trio",
-        href: "/power-trio",
+        label: "Lotus",
+        href: "/lotus",
+        children: [
+          {
+            label: "Power Trio",
+            href: "/power-trio",
+          },
+          {
+            label: "Fix Flot",
+            href: "/fix-flot",
+          },
+          {
+            label: "Linha de Hieginização",
+            href: "/hieginizacao",
+          },
+          {
+            label: "Linha de Hipermiabilizantes",
+            href: "/hipermiabilizantes",
+          },
+          {
+            label: "Linha Max",
+            href: "/max",
+          },
+          {
+            label: "Linha Auto",
+            href: "/auto",
+          },
+          {
+            label: "Linha Tecnica",
+            href: "/tecnica",
+          },
+        ],
       },
       {
-        label: "Fix Flot",
-        href: "/fix-flot",
-      },
-      {
-        label: "Linha de Hieginização",
-        href: "/hieginizacao",
-      },
-      {
-        label: "Linha de Hipermiabilizantes",
-        href: "/hipermiabilizantes",
-      },
-      {
-        label: "Linha Max",
-        href: "/max",
-      },
-      {
-        label: "Linha Auto",
-        href: "/auto",
-      },
-      {
-        label: "Linha Tecnica",
-        href: "/tecnica",
+        label: "Limpoo",
+        href: "/limpoo",
+        children: [
+          {
+            label: "Teste",
+            href: "#",
+          },
+        ],
       },
     ],
   },
-  {
-    label: "Limpoo",
-    href: "/limpoo",
-    children: [
-      {
-        label: "Teste",
-        href: "#",
-      },
-    ],
-  },
+
   {
     label: "Calculadora de Diluição",
     href: "/calculadora",
