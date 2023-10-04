@@ -1,6 +1,6 @@
-import { AspectRatio, Box } from '@chakra-ui/react'
-import { useState } from 'react'
-import Image from 'next/image'
+import { AspectRatio, Box } from "@chakra-ui/react"
+import { useState } from "react"
+import Image from "next/image"
 
 export default function VideoFrame() {
   const [isImageClicked, setIsImageClicked] = useState(false)

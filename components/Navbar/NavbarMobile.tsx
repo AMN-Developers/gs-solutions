@@ -1,18 +1,15 @@
-import {
-  Stack,
-  Collapse
-} from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import { Stack, Collapse } from "@chakra-ui/react"
+import { ReactNode } from "react"
 
 interface MobileNavItemProps {
-  children: ReactNode;
-  isOpen: boolean;
+  children: ReactNode
+  isOpen: boolean
 }
 
 export default function NavbarMobile({ children, isOpen }: MobileNavItemProps) {
   return (
     <Collapse in={isOpen} animateOpacity>
-      <Stack bg={'white'} p={4} display={{ lg: 'none' }}>
+      <Stack bg={"white"} p={4} display={{ lg: "none" }}>
         {children}
       </Stack>
     </Collapse>

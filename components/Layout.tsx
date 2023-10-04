@@ -17,7 +17,6 @@ import CookieBanner from "@/components/CookieBanner"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronDownIcon } from "@chakra-ui/icons"
 
-
 interface LayoutProps {
   children: React.ReactNode
   route: string
@@ -28,7 +27,6 @@ type background = {
 }
 
 export default function Layout({ children, route }: LayoutProps) {
-
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false })
   const btnRef = React.useRef<HTMLButtonElement>(null)
 
@@ -141,7 +139,11 @@ export default function Layout({ children, route }: LayoutProps) {
 
           <Navbar.Mobile isOpen={isOpen}>
             {NAV_ITEMS.map((navItem) => (
-              <Navbar.MobileItems key={navItem.label} {...navItem} onChangeRoute={onToggle} />
+              <Navbar.MobileItems
+                key={navItem.label}
+                {...navItem}
+                onChangeRoute={onToggle}
+              />
             ))}
             <Box
               as="button"

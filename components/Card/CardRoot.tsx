@@ -7,7 +7,13 @@ interface CardRootProps {
 
 export default function CardRoot({ children }: CardRootProps) {
   return (
-    <Container as="section" maxW={"container.xl"} py={4} display={'flex'} flexDirection={'column'}>
+    <Container
+      as="section"
+      maxW={"container.xl"}
+      py={4}
+      display={"flex"}
+      flexDirection={"column"}
+    >
       {children}
     </Container>
   )

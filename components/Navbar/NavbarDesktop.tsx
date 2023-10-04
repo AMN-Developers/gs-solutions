@@ -7,11 +7,7 @@ interface NavbarDesktopProps {
 export default function NavbarDesktop({ children }: NavbarDesktopProps) {
   return (
     <Flex display={{ base: "none", lg: "flex" }}>
-      <Stack
-        direction={"row"}
-        spacing={4}
-        alignItems={"center"}
-      >
+      <Stack direction={"row"} spacing={4} alignItems={"center"}>
         {children}
       </Stack>
     </Flex>

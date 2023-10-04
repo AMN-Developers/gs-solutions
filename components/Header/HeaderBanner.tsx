@@ -135,7 +135,13 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
   }
 
   return (
-    <Container maxW={"container.xl"} color={"white"} py={8} px={0} display={{ base: 'none', md: 'block' }}>
+    <Container
+      maxW={"container.xl"}
+      color={"white"}
+      py={8}
+      px={0}
+      display={{ base: "none", md: "block" }}
+    >
       <AnimatePresence mode="wait">
         {route in banner ? banner[route]() : banner["/"]()}
       </AnimatePresence>
