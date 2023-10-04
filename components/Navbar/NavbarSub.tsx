@@ -1,4 +1,13 @@
-import { Box, Stack, Text, Flex, Icon, Popover, PopoverTrigger, PopoverContent } from "@chakra-ui/react"
+import {
+  Box,
+  Stack,
+  Text,
+  Flex,
+  Icon,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from "@chakra-ui/react"
 import Link from "next/link"
 import { ChevronRightIcon } from "@chakra-ui/icons"
 import { Navbar } from "."

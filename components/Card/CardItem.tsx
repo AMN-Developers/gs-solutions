@@ -19,7 +19,7 @@ export default function CardItem({
   return (
     <Flex
       h={"sm"}
-      my={4}
+      my={6}
       gap={4}
       w={{ base: "100%", md: "50%" }}
       align="center"
@@ -47,7 +47,9 @@ export default function CardItem({
           <Image width={445} height={100} src={logo} alt={alt} />
         </CardHeader>
       </Card>
-      <Text fontWeight={"bold"} fontSize={"lg"}>{title}</Text>
+      <Text fontWeight={"bold"} fontSize={"lg"}>
+        {title}
+      </Text>
     </Flex>
   )
 }

@@ -1,7 +1,7 @@
-import Script from 'next/script'
-import { useEffect } from 'react'
-import * as gtag from '@/libs/gtagHelper'
-import { useRouter } from 'next/router'
+import Script from "next/script"
+import { useEffect } from "react"
+import * as gtag from "@/libs/gtagHelper"
+import { useRouter } from "next/router"
 
 export default function GoogleAnalytics() {
   const router = useRouter()
@@ -11,18 +11,22 @@ export default function GoogleAnalytics() {
       gtag.pageview(url)
     }
 
-    router.events.on('routeChangeComplete', handleRouteChange)
+    router.events.on("routeChangeComplete", handleRouteChange)
 
     return () => {
-      router.events.off('routeChangeComplete', handleRouteChange)
+      router.events.off("routeChangeComplete", handleRouteChange)
     }
   }, [router.events])
 
   return (
     <>
-      <Script strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`} />
-      <Script id='google-analytics' strategy="afterInteractive"
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
                 window.dataLayer = window.dataLayer || [];

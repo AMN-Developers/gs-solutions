@@ -1,5 +1,3 @@
 export default function Lotus() {
-  return (
-    <h1>This is my Lotus, content</h1>
-  )
+  return <h1>This is my Lotus, content</h1>
 }

@@ -9,9 +9,9 @@ export default function FooterRoot({ children }: FooterRootProps) {
   return (
     <Box
       as="footer"
-      bgImage={'/home-banner.svg'}
-      bgRepeat={'no-repeat'}
-      bgSize={'cover'}
+      bgImage={"/home-banner.svg"}
+      bgRepeat={"no-repeat"}
+      bgSize={"cover"}
     >
       {children}
     </Box>
