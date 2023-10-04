@@ -26,7 +26,7 @@ export default function NavbarMobileItems({
   onChangeRoute,
 }: MobileNavItemProps) {
   const { isOpen, onToggle } = useDisclosure()
-  const handleToggle = (e) => {
+  const handleToggle = (e: { preventDefault: () => any }) => {
     return e.preventDefault(), onToggle()
   }
   return (
