@@ -5,14 +5,17 @@ import { AnimatePresence } from "framer-motion"
 import theme from "@/libs/theme"
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 import Layout from "@/components/Layout"
-import Head from 'next/head'
+import Head from "next/head"
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
   return (
     <>
       <Head>
-        <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' />
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+        />
 
         <meta name="pwa-gs" content="pwa-gs" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

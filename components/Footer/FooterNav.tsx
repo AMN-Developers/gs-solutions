@@ -1,5 +1,6 @@
-import { Box, Container, Link } from "@chakra-ui/react"
-import Image from 'next/image'
+import { Box, Container, Link as ChakraLink } from "@chakra-ui/react"
+import Image from "next/image"
+import Link from "next/link"
 
 export default function FooterNav() {
   return (
@@ -11,11 +12,13 @@ export default function FooterNav() {
       py={2}
       fontWeight={"thin"}
     >
-      <Box
-        maxW={70}
-        maxH={'auto'}
-      >
-        <Image src="/logo.png" alt="G&S Home Solutions" width={245} height={319} />
+      <Box maxW={70} maxH={"auto"}>
+        <Image
+          src="/logo.png"
+          alt="G&S Home Solutions"
+          width={245}
+          height={319}
+        />
       </Box>
       <Box
         as="div"
@@ -24,22 +27,23 @@ export default function FooterNav() {
         padding={4}
         fontSize={"sm"}
         flexDirection={{ base: "column", md: "row" }}
+        gap={4}
       >
-        <Link href="#" mx={2}>
+        <ChakraLink as={Link} href="#">
           Home
-        </Link>
-        <Link href="#" mx={2}>
+        </ChakraLink>
+        <ChakraLink as={Link} href="#">
           Entre em Contato
-        </Link>
-        <Link href="#" mx={2}>
+        </ChakraLink>
+        <ChakraLink as={Link} href="/privacy">
           Politica de Privacidade
-        </Link>
-        <Link href="#" mx={2}>
+        </ChakraLink>
+        <ChakraLink as={Link} href="#">
           Distribuidores
-        </Link>
-        <Link href="#" mx={2}>
+        </ChakraLink>
+        <ChakraLink as={Link} href="#">
           FAQ
-        </Link>
+        </ChakraLink>
       </Box>
     </Container>
   )

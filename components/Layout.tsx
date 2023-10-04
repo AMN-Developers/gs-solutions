@@ -1,7 +1,5 @@
 import {
   Box,
-  Button,
-  IconButton,
   Popover,
   PopoverContent,
   PopoverTrigger,
@@ -9,7 +7,6 @@ import {
   useDisclosure,
 } from "@chakra-ui/react"
 import Link from "next/link"
-import { NextSeo } from "next-seo"
 import { Header } from "./Header"
 import { Navbar } from "./Navbar"
 import { NAV_ITEMS } from "./Navbar/NAV_ITEMS"
@@ -19,7 +16,6 @@ import { Footer } from "./Footer"
 import CookieBanner from "@/components/CookieBanner"
 import { AnimatePresence, motion } from "framer-motion"
 import { ChevronDownIcon } from "@chakra-ui/icons"
-
 
 interface LayoutProps {
   children: React.ReactNode
@@ -31,14 +27,13 @@ type background = {
 }
 
 export default function Layout({ children, route }: LayoutProps) {
-
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false })
   const btnRef = React.useRef<HTMLButtonElement>(null)
 
   const bg: background = {
-    "/": "/home-banner.svg",
-    "/lotus": "/lotus-banner.svg",
-    "/limpoo": "/limpoo-banner.svg",
+    "/": "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);",
+    "/lotus": "/card-lotus.webp",
+    "/limpoo": "/card-limpoo.webp",
   }
 
   const {
@@ -144,7 +139,11 @@ export default function Layout({ children, route }: LayoutProps) {
 
           <Navbar.Mobile isOpen={isOpen}>
             {NAV_ITEMS.map((navItem) => (
-              <Navbar.MobileItems key={navItem.label} {...navItem} onChangeRoute={onToggle} />
+              <Navbar.MobileItems
+                key={navItem.label}
+                {...navItem}
+                onChangeRoute={onToggle}
+              />
             ))}
             <Box
               as="button"
