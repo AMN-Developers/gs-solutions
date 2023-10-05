@@ -48,7 +48,7 @@ export default function Home() {
           </Text>
           <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
             <Box width={{ base: "100%", md: "60%" }}>
-              <VideoFrame />
+              <VideoFrame embedID="nQQ8AF8-otE" />
             </Box>
             <Flex
               width={{ base: "100%", md: "40%" }}
