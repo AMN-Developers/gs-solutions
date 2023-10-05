@@ -1,6 +1,10 @@
-import { Box, Button, Container, Flex, Text } from "@chakra-ui/react"
+import { Box, Button, Container, Flex, Text, Icon } from "@chakra-ui/react"
 import VideoFrame from "@/components/iFrame"
 import MotionLayout from "@/components/MotionLayout"
+import { Carousel } from "@/components/Carousel/"
+import { CAR_ITEMS } from "@/components/Carousel/CAR_ITEMS"
+import { Carousel as CarouselReact } from "@trendyol-js/react-carousel"
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
 
 export default function Rastreio() {
   return (
@@ -83,6 +87,44 @@ export default function Rastreio() {
         </Text>
       </Container>
 
+      <Carousel.Root>
+        <Box
+          as={CarouselReact}
+          show={4.5}
+          slide={3}
+          swiping={true}
+          leftArrow={<Icon as={ChevronLeftIcon} w={10} h={30} />}
+          rightArrow={<Icon as={ChevronRightIcon} w={10} h={30} />}
+          display={"flex"}
+          justifyItems={"center"}
+          alignItems={"center"}
+        >
+          {CAR_ITEMS.map((carouselItem) => (
+            <Carousel.Item
+              key={carouselItem.alt}
+              image={carouselItem.image}
+              label={carouselItem.label}
+              alt={carouselItem.alt}
+            />
+          ))}
+        </Box>
+      </Carousel.Root>
+      <Container
+        maxW={"container.xl"}
+        display={"flex"}
+        flexDirection={"column"}
+        alignItems={"center"}
+        py={4}
+        textAlign={"center"}
+        gap={2}
+      >
+        <Text as="p" fontWeight={"bold"}>Siga as Recomendações:</Text>
+        <Text>
+          Caso você siga todos os passos anteriores e não tenha obtido sucesso
+          entre em contato conosco, teremos o prazer em auxilia-lo:
+          (11)96622-6224
+        </Text>
+      </Container>
     </MotionLayout>
   )
 }
