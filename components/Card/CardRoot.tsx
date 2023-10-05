@@ -1,4 +1,4 @@
-import { Flex, Container } from "@chakra-ui/react"
+import { Container } from "@chakra-ui/react"
 import { ReactNode } from "react"
 
 interface CardRootProps {
