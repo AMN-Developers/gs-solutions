@@ -26,12 +26,12 @@ export const NAV_ITEMS: Array<NavItem> = [
             href: "/fix-flot",
           },
           {
-            label: "Linha de Hieginização",
-            href: "/hieginizacao",
+            label: "Linha de higienização",
+            href: "/higienizacao",
           },
           {
-            label: "Linha de Hipermiabilizantes",
-            href: "/hipermiabilizantes",
+            label: "Linha de impermeabilizantes",
+            href: "/impermeabilizantes",
           },
           {
             label: "Linha Max",

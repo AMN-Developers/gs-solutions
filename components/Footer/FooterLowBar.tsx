@@ -23,6 +23,9 @@ export default function FooterLowBar() {
           fontSize={"lg"}
           href="#"
           aria-label="Facebook Link"
+          _hover={{
+            color: "#06EC46",
+          }}
         >
           <BsFacebook />
         </Box>
@@ -34,6 +37,9 @@ export default function FooterLowBar() {
           fontSize={"lg"}
           href="#"
           aria-label="Whatsapp Link"
+          _hover={{
+            color: "#06EC46",
+          }}
         >
           <BsWhatsapp />
         </Box>
@@ -45,6 +51,9 @@ export default function FooterLowBar() {
           fontSize={"lg"}
           href="#"
           aria-label="Instagram Link"
+          _hover={{
+            color: "#06EC46",
+          }}
         >
           <BsInstagram />
         </Box>
