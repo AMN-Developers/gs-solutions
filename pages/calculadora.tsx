@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Box,
   Container,
@@ -10,30 +11,43 @@ import {
   FormErrorMessage,
   Flex,
 } from '@chakra-ui/react'
+import { CheckCircleIcon, DownloadIcon } from '@chakra-ui/icons'
+import usePwa from 'use-pwa'
 import MotionLayout from '@/components/MotionLayout'
-import { useState } from 'react'
 
 export default function Calculadora() {
-  const [proportion, setProportion] = useState<number>(0)
+  const [proportion, setProportion] = useState<number>(0);
   const isProportionInvalid = proportion <= 0
   const [water, setWater] = useState<string>('');
-  const isWaterInvalid = water.length <= 0
+  const isWaterInvalid = water.length <= 0;
   const [measuaramentUnit, setMeasuaramentUnit] = useState<string>('');
-  const isMeasuaramentUnitInvalid = measuaramentUnit.length <= 0
-  const [result, setResult] = useState<number>(0)
-  const isButtonDisabled = isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid
+  const isMeasuaramentUnitInvalid = measuaramentUnit.length <= 0;
+  const [result, setResult] = useState<number>(0);
+  const isButtonDisabled = isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid;
+
+  const {
+    appinstalled,
+    canInstallprompt,
+    enabledA2hs,
+    enabledPwa,
+    enabledUpdate,
+    isLoading,
+    isPwa,
+    showInstallPrompt,
+    unregister,
+    userChoice
+  } = usePwa()
 
 
 
   const proportionCalc = (proportion: number, water: string, measuramentUnit: string) => {
     if (!proportion || !water || measuaramentUnit.length < 0) return 0
+    const waterFloat = parseFloat(water.replace(',', '.'))
 
     if (measuramentUnit === 'l') {
-      const waterFloat = parseFloat(water.replace(',', '.'))
       const productQuantity = 1000 / proportion
       return waterFloat * productQuantity
     } else {
-      const waterFloat = parseFloat(water.replace(',', '.'))
       const productQuantity = 1 / proportion
       return waterFloat * productQuantity
     }
@@ -191,10 +205,31 @@ export default function Calculadora() {
             )
             }
           </Box>
-          <Box w={{ base: '100%', md: '50%' }}>
+          <Box w={{ base: '100%', md: '50%' }} display={'flex'} flexDir={'column'} justifyContent={'space-between'}>
             <Text as="p">
               Para saber a quantidade correta de produto à ser utilizado na limpeza, insira nos campos da Calculadora a recomendação de diluição do produto (que, geralmente, está descrita na embalagem de cada produto) e a quantidade de água que você vai utilizar (a capacidade do seu balde). Após inserir estes dados, o resultado irá aparecer logo abaixo.
             </Text>
+            {enabledPwa && !isPwa ? (
+              <Button
+                colorScheme='messenger'
+                onClick={showInstallPrompt}
+                isDisabled={!canInstallprompt || appinstalled}
+              >
+                {!canInstallprompt || appinstalled ? (
+                  <>
+                    <CheckCircleIcon mr={2} />
+                    Calculadora instalada
+                  </>
+                ) : (
+                  <>
+                    <DownloadIcon mr={2} />
+                    Instalar Calculadora
+                  </>
+                )}
+              </Button>
+            ) : (
+              "Not compatible with pwa."
+            )}
           </Box>
         </Flex>
       </Container>
