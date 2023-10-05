@@ -155,7 +155,7 @@ export default function Calculadora() {
                   placeholder='Selecione...'
                   onChange={(event) => setMeasuaramentUnit(event.target.value)}
                 >
-                  <option value='ml'>mL</option>
+                  <option value='ml'>ml</option>
                   <option value='l'>L</option>
                 </Select>
                 {isMeasuaramentUnitInvalid && (
@@ -183,7 +183,7 @@ export default function Calculadora() {
                 <Input
                   id='result'
                   mb={4}
-                  value={`${result.toFixed(2)} mL de produto.`}
+                  value={`${result.toFixed(2)} ml de produto.`}
                   readOnly
                   fontWeight={'bold'}
                 />

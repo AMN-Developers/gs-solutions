@@ -4,12 +4,13 @@ import Image from "next/image"
 
 interface VideoFrameProps {
   embedID: string;
+  title: string;
+  ariaDescription: string;
 
 }
 
-export default function VideoFrame({ embedID }: VideoFrameProps) {
+export default function VideoFrame({ embedID, title, ariaDescription }: VideoFrameProps) {
   const [isImageClicked, setIsImageClicked] = useState(false)
-
 
   return (
     <AspectRatio ratio={16 / 9}>
@@ -42,8 +43,8 @@ export default function VideoFrame({ embedID }: VideoFrameProps) {
       ) : (
         <Box
           as="iframe"
-          title="G&S Home Solutions"
-          aria-description="G&S Home Solutions video presentation"
+          title={title}
+          aria-description={ariaDescription}
           src={`https://www.youtube.com/embed/${embedID}?controls=2&modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3&fs=0&disablekb=1&autoplay=1`}
           allowFullScreen
           loading="lazy"
