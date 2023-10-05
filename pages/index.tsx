@@ -15,7 +15,7 @@ export default function Home() {
             alt="Lotus logo"
             href="/lotus"
             bgImage="/card-lotus.webp"
-            title="Higienização e Impermiabilização de estofados"
+            title="Higienização e Impermeabilização de estofados"
             logo="logo-lotus.svg"
           />
           <Card.Item
