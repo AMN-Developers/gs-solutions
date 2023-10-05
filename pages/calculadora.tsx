@@ -28,14 +28,9 @@ export default function Calculadora() {
   const {
     appinstalled,
     canInstallprompt,
-    enabledA2hs,
     enabledPwa,
-    enabledUpdate,
-    isLoading,
     isPwa,
     showInstallPrompt,
-    unregister,
-    userChoice
   } = usePwa()
 
 
@@ -61,35 +56,39 @@ export default function Calculadora() {
 
   const proportions = [
     {
-      title: '1 x 400',
+      title: '1 : 400',
       value: 400
     },
     {
-      title: '1 x 200',
+      title: '1 : 200',
       value: 200
     },
     {
-      title: '1 x 100',
+      title: '1 : 100',
       value: 100
     },
     {
-      title: '1 x 50',
+      title: '1 : 50',
       value: 50
     },
     {
-      title: '1 x 40',
+      title: '1 : 40',
       value: 40
     },
     {
-      title: '1 x 20',
+      title: '1 : 30',
+      value: 30
+    },
+    {
+      title: '1 : 20',
       value: 20
     },
     {
-      title: '1 x 10',
+      title: '1 : 10',
       value: 10
     },
     {
-      title: '1 x 5',
+      title: '1 : 5',
       value: 5
     },
   ]
@@ -206,14 +205,12 @@ export default function Calculadora() {
             }
           </Box>
           <Box w={{ base: '100%', md: '50%' }} display={'flex'} flexDir={'column'} justifyContent={'space-between'}>
-            <Text as="p">
-              Para saber a quantidade correta de produto à ser utilizado na limpeza, insira nos campos da Calculadora a recomendação de diluição do produto (que, geralmente, está descrita na embalagem de cada produto) e a quantidade de água que você vai utilizar (a capacidade do seu balde). Após inserir estes dados, o resultado irá aparecer logo abaixo.
-            </Text>
             {enabledPwa && !isPwa ? (
               <Button
                 colorScheme='messenger'
                 onClick={showInstallPrompt}
                 isDisabled={!canInstallprompt || appinstalled}
+                flexFlow={'row'}
               >
                 {!canInstallprompt || appinstalled ? (
                   <>
@@ -227,9 +224,7 @@ export default function Calculadora() {
                   </>
                 )}
               </Button>
-            ) : (
-              "Not compatible with pwa."
-            )}
+            ) : null}
           </Box>
         </Flex>
       </Container>
