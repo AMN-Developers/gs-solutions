@@ -10,10 +10,12 @@ import {
   FormLabel,
   FormErrorMessage,
   Flex,
+  Icon
 } from '@chakra-ui/react'
 import { DownloadIcon } from '@chakra-ui/icons'
 import { IoShareOutline } from 'react-icons/io5'
 import { AiOutlinePlus } from 'react-icons/ai'
+import { AiOutlineArrowDown } from 'react-icons/ai'
 import MotionLayout from '@/components/MotionLayout'
 
 interface BeforeInstallPromptEvent extends Event {
@@ -46,7 +48,6 @@ export default function Calculadora() {
   const [supportsPWA, setSupportsPWA] = useState<boolean>(false);
   const [isInstalled, setIsInstalled] = useState<boolean>();
   const [showIphoneInstallMessage, setShowIphoneInstallMessage] = useState<boolean>(false);
-  const [navigatorShare, setNavigatorShare] = useState();
 
   const proportionCalc = (proportion: number, water: string, measuramentUnit: string) => {
     if (!proportion || !water || measuaramentUnit.length < 0) return 0
@@ -152,8 +153,6 @@ export default function Calculadora() {
       setBeforeInstallPrompt(undefined)
     }
   }
-
-  console.log(showIphoneInstallMessage)
 
   return (
     <MotionLayout title='Calculadora de Diluição'>
@@ -268,44 +267,48 @@ export default function Calculadora() {
             }
           </Box>
           <Box w={{ base: '100%', md: '50%' }} display={'flex'} flexDir={'column'} justifyContent={'flex-end'}>
-            <Button
-              colorScheme='messenger'
-              onClick={installApp}
-              isDisabled={!supportsPWA}
-              flexFlow={'row'}
-              display={isInstalled ? 'none' : 'flex'}
-            >
-              <DownloadIcon mr={2} />
-              Instalar App
-            </Button>
+            {!showIphoneInstallMessage ? (
+              <Button
+                colorScheme='messenger'
+                onClick={installApp}
+                isDisabled={!supportsPWA}
+                flexFlow={'row'}
+                display={isInstalled ? 'none' : 'flex'}
+              >
+                <DownloadIcon mr={2} />
+                Instalar App
+              </Button>
+            ) : null}
           </Box>
         </Flex>
-        {/* add to home screen iphone pop-up */}
-
-        <Box
-          position={'fixed'}
-          bottom={0}
-          left={0}
-          right={0}
-          bg={'gray.800'}
-          p={4}
-          display={showIphoneInstallMessage ? 'flex' : 'none'}
-          alignItems={'center'}
-          justifyContent={'space-between'}
-          zIndex={100}
-        >
-          <Text color={'white'} fontWeight={'bold'} fontSize={'md'}>Adicione a calculadora ao seu iPhone</Text>
-          <Button
-            colorScheme={'whatsapp'}
-            onClick={() => navigator.share({
-              title: 'Calculadora de Diluição',
-              text: 'Calculadora de diluição da G&S Home Solutions',
-              url: 'https://gs-home-solutions.vercel.app/calculadora'
-            })}
+        {showIphoneInstallMessage ? (
+          <Box
+            position={'fixed'}
+            bottom={0}
+            left={0}
+            right={0}
+            bg={'#f9f9f9'}
+            p={4}
+            display={showIphoneInstallMessage ? 'flex' : 'none'}
+            flexDirection={'column'}
+            zIndex={100}
+            mx={4}
+            my={4}
+            shadow={'sm'}
+            borderRadius={'md'}
           >
-            <AiOutlinePlus />
-          </Button>
-        </Box>
+            <Box display={'flex'} flexDirection={'column'}>
+              <Text as={'p'} fontSize={'md'} fontWeight={'bold'}>Instale nossa calculadora:</Text>
+              <Box>
+                <Text display={'inline'}>clicando abaixo em <Icon as={IoShareOutline} size={24} color={'#51A0D5'} /> e depois<Text as="span" fontWeight={'bold'}>{' '}&quot;Adicionar a tela de Inicio&quot;</Text></Text>
+              </Box>
+            </Box>
+            <Box w={'full'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+              <AiOutlineArrowDown size={24} />
+            </Box>
+          </Box>
+        ) : null
+        }
       </Container>
     </MotionLayout >
   )
