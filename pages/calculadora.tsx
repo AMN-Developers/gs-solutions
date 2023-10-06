@@ -173,7 +173,7 @@ export default function Calculadora() {
         <Text as="p" mb={4}>Ao utilizar produtos de limpeza, ou qualquer outro produto químico, é importante saber as instruções de uso e principalmente de diluição de cada produto. Ao fazer a diluição de forma correta, você obterá o resultado esperado, conforme a qualidade do produto, e economizará, pois, se você diluir o produto em bastante água, ele não terá o efeito esperado.</Text>
         <Flex gap={4} flexDirection={{ base: 'column', md: 'row' }}>
           <Box as='form' onSubmit={handleCalc} w={{ base: '100%', md: '50%' }}>
- 158ea55760f57e2ad3eb6df5133a4422ed89832f
+ 
             <FormControl isInvalid={isProportionInvalid}>
               <FormLabel
                 htmlFor="proportion"
@@ -293,7 +293,7 @@ export default function Calculadora() {
               <DownloadIcon mr={2} />
               Instalar App
             </Button>
- 158ea55760f57e2ad3eb6df5133a4422ed89832f
+ 
           </Box>
         </Flex>
         {/* add to home screen iphone pop-up */}
