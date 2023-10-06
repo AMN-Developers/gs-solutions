@@ -98,12 +98,12 @@ export default function Sustentabilidade() {
               rounded={"md"}
             >
               <Icon as={HiOutlineArchiveBoxArrowDown} mx={2} />
-              <Text as="h2" fontWeight={"bold"} fontSize={"md"}>
+              <Text as="h2" fontWeight={"bold"} fontSize={"sm"}>
                 <Tooltip
                   label="Lata, Talheres de aço, panelas, fios, parafusos, pregos..."
                   aria-label="metal"
                 >
-                  amarela (metal)
+                  Amarela (Metal)
                 </Tooltip>
               </Text>
             </Box>
@@ -116,9 +116,9 @@ export default function Sustentabilidade() {
               rounded={"md"}
             >
               <Icon as={HiOutlineArchiveBoxArrowDown} mx={2} />
-              <Text as="h2" fontWeight={"bold"} fontSize={"md"}>
+              <Text as="h2" fontWeight={"bold"} fontSize={"sm"}>
                 <Tooltip
-                  label="Lata, Talheres de aço, panelas, fios, parafusos, pregos..."
+                  label="Envelopes, cartões ou cartolinas, jornais, revistas..."
                   aria-label="papel"
                 >
                   Azul (Papel)
@@ -134,9 +134,9 @@ export default function Sustentabilidade() {
               rounded={"md"}
             >
               <Icon as={HiOutlineArchiveBoxArrowDown} mx={2} />
-              <Text as="h2" fontWeight={"bold"} fontSize={"md"}>
+              <Text as="h2" fontWeight={"bold"} fontSize={"sm"}>
                 <Tooltip
-                  label="Envelopes, cartões ou cartolinas, jornais, revistas..."
+                  label="Garrafa pet, tampas, CD, DVD..."
                   aria-label="plastico"
                 >
                   Vermelho (Plastico)
@@ -152,7 +152,7 @@ export default function Sustentabilidade() {
               rounded={"md"}
             >
               <Icon as={HiOutlineArchiveBoxArrowDown} mx={2} />
-              <Text as="h2" fontWeight={"bold"} fontSize={"md"}>
+              <Text as="h2" fontWeight={"bold"} fontSize={"sm"}>
                 <Tooltip label="Garrafa, espelho, potes..." aria-label="vidro">
                   Verde (Vidro)
                 </Tooltip>
@@ -167,7 +167,7 @@ export default function Sustentabilidade() {
               rounded={"md"}
             >
               <Icon as={HiOutlineArchiveBoxArrowDown} mx={2} />
-              <Text as="h2" fontWeight={"bold"} fontSize={"md"}>
+              <Text as="h2" fontWeight={"bold"} fontSize={"sm"}>
                 <Tooltip
                   label="Papel-Carbono, Fotografia, Ceramica, Pilha, Lâmpadas..."
                   aria-label="nao reciclavel"
