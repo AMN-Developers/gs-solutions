@@ -68,8 +68,8 @@ export const NAV_ITEMS: Array<NavItem> = [
     label: "Empresa",
     children: [
       {
-        label: "Contatos e Homologações",
-        href: "/contatos",
+        label: "Certificados e Homologações",
+        href: "/certificado",
       },
       {
         label: "Programa de Fidelidade",
