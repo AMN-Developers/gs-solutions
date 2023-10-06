@@ -87,7 +87,7 @@ export default function HeaderTopBar() {
           height={319}
         />
       </Box>
-      <StyledLink
+      {/* <StyledLink
         px={8}
         py={2}
         _hover={{
@@ -96,7 +96,7 @@ export default function HeaderTopBar() {
       >
         <StyledSpan>FAÇA UMA COTAÇÃO</StyledSpan>
         <StyledBox />
-      </StyledLink>
+      </StyledLink> */}
     </Container>
   )
 }

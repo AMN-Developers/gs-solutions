@@ -38,8 +38,6 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           <Text color={"#06EC46"} fontWeight={"bold"} fontSize={"2xl"}>
             <Typewriter
               words={["Os melhores produtos para os melhores profissionais"]}
-              cursor
-              cursorStyle="_"
               typeSpeed={50}
             />
           </Text>
