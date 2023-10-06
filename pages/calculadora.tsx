@@ -12,6 +12,8 @@ import {
   Flex,
 } from '@chakra-ui/react'
 import { DownloadIcon } from '@chakra-ui/icons'
+import { IoShareOutline } from 'react-icons/io5'
+import { AiOutlinePlus } from 'react-icons/ai'
 import MotionLayout from '@/components/MotionLayout'
 
 interface BeforeInstallPromptEvent extends Event {
@@ -43,6 +45,8 @@ export default function Calculadora() {
   const [beforeInstallPrompt, setBeforeInstallPrompt] = useState<BeforeInstallPromptEvent>();
   const [supportsPWA, setSupportsPWA] = useState<boolean>(false);
   const [isInstalled, setIsInstalled] = useState<boolean>();
+  const [showIphoneInstallMessage, setShowIphoneInstallMessage] = useState<boolean>(false);
+  const [navigatorShare, setNavigatorShare] = useState();
 
   const proportionCalc = (proportion: number, water: string, measuramentUnit: string) => {
     if (!proportion || !water || measuaramentUnit.length < 0) return 0
@@ -125,6 +129,17 @@ export default function Calculadora() {
       const isAppInstalled = window.matchMedia('(display-mode: standalone)').matches
       setIsInstalled(isAppInstalled)
     }
+
+    const isIos = () => {
+      const userAgent = window.navigator.userAgent.toLowerCase();
+      return /iphone|ipad|ipod/.test(userAgent);
+    }
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+    // Verifica se deve exibir notificação popup de instalação:
+    if (isIos() && !isInStandaloneMode()) {
+      setShowIphoneInstallMessage(true);
+    }
   }, [])
 
   const installApp = async () => {
@@ -138,12 +153,15 @@ export default function Calculadora() {
     }
   }
 
+  console.log(showIphoneInstallMessage)
+
   return (
     <MotionLayout title='Calculadora de Diluição'>
       <Container
         as='section'
         maxW={"container.xl"}
         py={4}
+        position={'relative'}
       >
         <Text as="h1" fontSize={'2xl'} fontWeight={'bold'} textAlign={'center'} mb={4}>Calculadora de diluição da G&S Home Solutions</Text>
         <Text as="p" mb={4}>Ao utilizar produtos de limpeza, ou qualquer outro produto químico, é importante saber as instruções de uso e principalmente de diluição de cada produto. Ao fazer a diluição de forma correta, você obterá o resultado esperado, conforme a qualidade do produto, e economizará, pois, se você diluir o produto em bastante água, ele não terá o efeito esperado.</Text>
@@ -253,6 +271,7 @@ export default function Calculadora() {
             <Button
               colorScheme='messenger'
               onClick={installApp}
+              isDisabled={!supportsPWA}
               flexFlow={'row'}
               display={isInstalled ? 'none' : 'flex'}
             >
@@ -261,6 +280,32 @@ export default function Calculadora() {
             </Button>
           </Box>
         </Flex>
+        {/* add to home screen iphone pop-up */}
+
+        <Box
+          position={'fixed'}
+          bottom={0}
+          left={0}
+          right={0}
+          bg={'gray.800'}
+          p={4}
+          display={showIphoneInstallMessage ? 'flex' : 'none'}
+          alignItems={'center'}
+          justifyContent={'space-between'}
+          zIndex={100}
+        >
+          <Text color={'white'} fontWeight={'bold'} fontSize={'md'}>Adicione a calculadora ao seu iPhone</Text>
+          <Button
+            colorScheme={'whatsapp'}
+            onClick={() => navigator.share({
+              title: 'Calculadora de Diluição',
+              text: 'Calculadora de diluição da G&S Home Solutions',
+              url: 'https://gs-home-solutions.vercel.app/calculadora'
+            })}
+          >
+            <AiOutlinePlus />
+          </Button>
+        </Box>
       </Container>
     </MotionLayout >
   )
