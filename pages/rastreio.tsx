@@ -90,7 +90,7 @@ export default function Rastreio() {
       <Carousel.Root>
         <Box
           as={CarouselReact}
-          show={2}
+          show={3}
           slide={1}
           swiping={true}
           leftArrow={<Icon as={ChevronLeftIcon} w={10} h={30} />}

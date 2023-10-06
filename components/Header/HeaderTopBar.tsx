@@ -1,6 +1,7 @@
-import { Link, Container, Text, Box } from "@chakra-ui/react"
+import { Container, Text, Box } from "@chakra-ui/react"
 import styled from "@emotion/styled"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function HeaderTopBar() {
   const StyledLink = styled(Link)`
@@ -79,7 +80,7 @@ export default function HeaderTopBar() {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Box maxW={100} maxH={"auto"}>
+      <Box as={Link} maxW={100} maxH={"auto"} href="/">
         <Image
           src="/logo.png"
           alt="G&S Home Solutions"

@@ -11,11 +11,11 @@ export default function CertificatedBar() {
         color={"black"}
         marginBottom={4}
       >
-        Empresa certicada por:
+        Empresa certificada por:
       </Text>
       <Flex
         as={Link}
-        href="#"
+        href="/certificado"
         justifyContent="space-between"
         alignItems={"center"}
         flexDirection={{ base: "column", md: "row" }}

@@ -1,11 +1,5 @@
 import MotionLayout from "@/components/MotionLayout"
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
   Container,
   Divider,
   Flex,
