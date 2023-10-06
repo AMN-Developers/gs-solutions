@@ -1,4 +1,6 @@
+
 import { useState, useEffect } from 'react'
+
 import {
   Box,
   Container,
@@ -14,9 +16,9 @@ import {
 } from '@chakra-ui/react'
 import { DownloadIcon } from '@chakra-ui/icons'
 import { IoShareOutline } from 'react-icons/io5'
-import { AiOutlinePlus } from 'react-icons/ai'
 import { AiOutlineArrowDown } from 'react-icons/ai'
 import MotionLayout from '@/components/MotionLayout'
+
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
@@ -36,8 +38,9 @@ declare global {
 
 
 export default function Calculadora() {
-  const [proportion, setProportion] = useState<number>(0);
+  const [proportion, setProportion] = useState<number>(0)
   const isProportionInvalid = proportion <= 0
+
   const [water, setWater] = useState<string>('');
   const isWaterInvalid = water.length <= 0;
   const [measuaramentUnit, setMeasuaramentUnit] = useState<string>('');
@@ -50,10 +53,11 @@ export default function Calculadora() {
   const [showIphoneInstallMessage, setShowIphoneInstallMessage] = useState<boolean>(false);
 
   const proportionCalc = (proportion: number, water: string, measuramentUnit: string) => {
-    if (!proportion || !water || measuaramentUnit.length < 0) return 0
-    const waterFloat = parseFloat(water.replace(',', '.'))
 
-    if (measuramentUnit === 'l') {
+    if (!proportion || !water || measuaramentUnit.length < 0) return 0
+    const waterFloat = parseFloat(water.replace(",", "."))
+
+    if (measuramentUnit === "l") {
       const productQuantity = 1000 / proportion
       return waterFloat * productQuantity
     } else {
@@ -67,43 +71,42 @@ export default function Calculadora() {
     setResult(proportionCalc(proportion, water, measuaramentUnit))
   }
 
-
   const proportions = [
     {
-      title: '1 : 400',
-      value: 400
+      title: "1 : 400",
+      value: 400,
     },
     {
-      title: '1 : 200',
-      value: 200
+      title: "1 : 200",
+      value: 200,
     },
     {
-      title: '1 : 100',
-      value: 100
+      title: "1 : 100",
+      value: 100,
     },
     {
-      title: '1 : 50',
-      value: 50
+      title: "1 : 50",
+      value: 50,
     },
     {
-      title: '1 : 40',
-      value: 40
+      title: "1 : 40",
+      value: 40,
     },
     {
-      title: '1 : 30',
-      value: 30
+      title: "1 : 30",
+      value: 30,
     },
     {
-      title: '1 : 20',
-      value: 20
+      title: "1 : 20",
+      value: 20,
     },
     {
-      title: '1 : 10',
-      value: 10
+      title: "1 : 10",
+      value: 10,
     },
     {
-      title: '1 : 5',
-      value: 5
+      title: "1 : 5",
+      value: 5,
     },
   ]
 
@@ -155,6 +158,7 @@ export default function Calculadora() {
   }
 
   return (
+
     <MotionLayout title='Calculadora de Diluição'>
       <Container
         as='section'
@@ -166,24 +170,27 @@ export default function Calculadora() {
         <Text as="p" mb={4}>Ao utilizar produtos de limpeza, ou qualquer outro produto químico, é importante saber as instruções de uso e principalmente de diluição de cada produto. Ao fazer a diluição de forma correta, você obterá o resultado esperado, conforme a qualidade do produto, e economizará, pois, se você diluir o produto em bastante água, ele não terá o efeito esperado.</Text>
         <Flex gap={4} flexDirection={{ base: 'column', md: 'row' }}>
           <Box as='form' onSubmit={handleCalc} w={{ base: '100%', md: '50%' }}>
+
             <FormControl isInvalid={isProportionInvalid}>
               <FormLabel
-                htmlFor='proportion'
-                fontSize={'lg'}
-                fontWeight={'bold'}
+                htmlFor="proportion"
+                fontSize={"lg"}
+                fontWeight={"bold"}
                 mb={2}
               >
                 Selecione a proporção:
               </FormLabel>
               <Select
-                id='proportion'
-                placeholder='Selecionar...'
+                id="proportion"
+                placeholder="Selecionar..."
                 mb={isProportionInvalid ? 0 : 4}
                 required
                 onChange={(event) => setProportion(Number(event.target.value))}
               >
                 {proportions.map((item, index) => (
-                  <option key={index} value={item.value}>{item.title}</option>
+                  <option key={index} value={item.value}>
+                    {item.title}
+                  </option>
                 ))}
               </Select>
               {isProportionInvalid && (
@@ -192,20 +199,20 @@ export default function Calculadora() {
                 </FormErrorMessage>
               )}
             </FormControl>
-            <Box display={'flex'} gap={4}>
+            <Box display={"flex"} gap={4}>
               <FormControl isInvalid={isWaterInvalid}>
                 <Text
-                  as='label'
-                  htmlFor='water'
-                  fontSize={'lg'}
-                  fontWeight={'bold'}
+                  as="label"
+                  htmlFor="water"
+                  fontSize={"lg"}
+                  fontWeight={"bold"}
                   mb={2}
                 >
                   Quantidade de água:
                 </Text>
                 <Input
-                  id='water'
-                  placeholder='Digite a quantidade de água'
+                  id="water"
+                  placeholder="Digite a quantidade de água"
                   mb={isWaterInvalid ? 0 : 4}
                   onChange={(event) => setWater(event.target.value)}
                   value={water}
@@ -216,22 +223,22 @@ export default function Calculadora() {
                   </FormErrorMessage>
                 )}
               </FormControl>
-              <FormControl isInvalid={isMeasuaramentUnitInvalid} w={'25%'}>
+              <FormControl isInvalid={isMeasuaramentUnitInvalid} w={"25%"}>
                 <Text
-                  as='label'
-                  htmlFor='water'
-                  fontSize={'lg'}
-                  fontWeight={'bold'}
+                  as="label"
+                  htmlFor="water"
+                  fontSize={"lg"}
+                  fontWeight={"bold"}
                   mb={2}
                 >
                   UNID:
                 </Text>
                 <Select
-                  placeholder='Selecione...'
+                  placeholder="Selecione..."
                   onChange={(event) => setMeasuaramentUnit(event.target.value)}
                 >
-                  <option value='ml'>ml</option>
-                  <option value='l'>L</option>
+                  <option value="ml">ml</option>
+                  <option value="l">L</option>
                 </Select>
                 {isMeasuaramentUnitInvalid && (
                   <FormErrorMessage mb={4}>
@@ -240,32 +247,38 @@ export default function Calculadora() {
                 )}
               </FormControl>
             </Box>
-            <Button w={'full'} colorScheme='whatsapp' isDisabled={isButtonDisabled} type='submit' mb={result > 0 ? 4 : 0}>
+            <Button
+              w={"full"}
+              colorScheme="whatsapp"
+              isDisabled={isButtonDisabled}
+              type="submit"
+              mb={result > 0 ? 4 : 0}
+            >
               Calcular diluição
             </Button>
             {result > 0 && (
               <>
                 <Text
-                  as='label'
-                  fontSize={'lg'}
-                  fontWeight={'bold'}
+                  as="label"
+                  fontSize={"lg"}
+                  fontWeight={"bold"}
                   mb={2}
                   id="result"
-                  display={'block'}
+                  display={"block"}
                 >
                   Resultado:
                 </Text>
                 <Input
-                  id='result'
+                  id="result"
                   mb={4}
                   value={`${result.toFixed(2)} ml de produto.`}
                   readOnly
-                  fontWeight={'bold'}
+                  fontWeight={"bold"}
                 />
               </>
-            )
-            }
+            )}
           </Box>
+
           <Box w={{ base: '100%', md: '50%' }} display={'flex'} flexDir={'column'} justifyContent={'flex-end'}>
             {!showIphoneInstallMessage ? (
               <Button
@@ -310,6 +323,6 @@ export default function Calculadora() {
         ) : null
         }
       </Container>
-    </MotionLayout >
+    </MotionLayout>
   )
 }

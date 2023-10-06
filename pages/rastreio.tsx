@@ -90,8 +90,8 @@ export default function Rastreio() {
       <Carousel.Root>
         <Box
           as={CarouselReact}
-          show={4.5}
-          slide={3}
+          show={2}
+          slide={1}
           swiping={true}
           leftArrow={<Icon as={ChevronLeftIcon} w={10} h={30} />}
           rightArrow={<Icon as={ChevronRightIcon} w={10} h={30} />}
@@ -118,7 +118,9 @@ export default function Rastreio() {
         textAlign={"center"}
         gap={2}
       >
-        <Text as="p" fontWeight={"bold"}>Siga as Recomendações:</Text>
+        <Text as="p" fontWeight={"bold"}>
+          Siga as Recomendações:
+        </Text>
         <Text>
           Caso você siga todos os passos anteriores e não tenha obtido sucesso
           entre em contato conosco, teremos o prazer em auxilia-lo:
