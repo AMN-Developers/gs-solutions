@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react'
-=======
-import { useState } from 'react'
->>>>>>> 77f75839d6c75846da4bcdcf0c1396a97d724576
 import {
   Box,
   Container,
@@ -15,7 +11,6 @@ import {
   FormErrorMessage,
   Flex,
 } from '@chakra-ui/react'
-<<<<<<< HEAD
 import { DownloadIcon } from '@chakra-ui/icons'
 import MotionLayout from '@/components/MotionLayout'
 
@@ -35,11 +30,6 @@ declare global {
   }
 }
 
-=======
-import { CheckCircleIcon, DownloadIcon } from '@chakra-ui/icons'
-import usePwa from 'use-pwa'
-import MotionLayout from '@/components/MotionLayout'
->>>>>>> 77f75839d6c75846da4bcdcf0c1396a97d724576
 
 export default function Calculadora() {
   const [proportion, setProportion] = useState<number>(0);
@@ -50,22 +40,9 @@ export default function Calculadora() {
   const isMeasuaramentUnitInvalid = measuaramentUnit.length <= 0;
   const [result, setResult] = useState<number>(0);
   const isButtonDisabled = isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid;
-<<<<<<< HEAD
   const [beforeInstallPrompt, setBeforeInstallPrompt] = useState<BeforeInstallPromptEvent>();
   const [supportsPWA, setSupportsPWA] = useState<boolean>(false);
   const [isInstalled, setIsInstalled] = useState<boolean>();
-=======
-
-  const {
-    appinstalled,
-    canInstallprompt,
-    enabledPwa,
-    isPwa,
-    showInstallPrompt,
-  } = usePwa()
-
-
->>>>>>> 77f75839d6c75846da4bcdcf0c1396a97d724576
 
   const proportionCalc = (proportion: number, water: string, measuramentUnit: string) => {
     if (!proportion || !water || measuaramentUnit.length < 0) return 0
@@ -272,7 +249,6 @@ export default function Calculadora() {
             )
             }
           </Box>
-<<<<<<< HEAD
           <Box w={{ base: '100%', md: '50%' }} display={'flex'} flexDir={'column'} justifyContent={'flex-end'}>
             <Button
               colorScheme='messenger'
@@ -284,29 +260,6 @@ export default function Calculadora() {
               <DownloadIcon mr={2} />
               Instalar App
             </Button>
-=======
-          <Box w={{ base: '100%', md: '50%' }} display={'flex'} flexDir={'column'} justifyContent={'space-between'}>
-            {enabledPwa && !isPwa ? (
-              <Button
-                colorScheme='messenger'
-                onClick={showInstallPrompt}
-                isDisabled={!canInstallprompt || appinstalled}
-                flexFlow={'row'}
-              >
-                {!canInstallprompt || appinstalled ? (
-                  <>
-                    <CheckCircleIcon mr={2} />
-                    Calculadora instalada
-                  </>
-                ) : (
-                  <>
-                    <DownloadIcon mr={2} />
-                    Instalar Calculadora
-                  </>
-                )}
-              </Button>
-            ) : null}
->>>>>>> 77f75839d6c75846da4bcdcf0c1396a97d724576
           </Box>
         </Flex>
       </Container>
