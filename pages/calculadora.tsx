@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import {
   Box,
   Container,
@@ -10,30 +11,47 @@ import {
   FormErrorMessage,
   Flex,
 } from '@chakra-ui/react'
+import { DownloadIcon } from '@chakra-ui/icons'
 import MotionLayout from '@/components/MotionLayout'
-import { useState } from 'react'
+
+interface BeforeInstallPromptEvent extends Event {
+  readonly platforms: string[];
+  readonly userChoice: Promise<{
+    outcome: "accepted" | "dismissed";
+    platform: string;
+  }>;
+  prompt(): Promise<void>;
+}
+
+declare global {
+  interface WindowEventMap {
+    beforeinstallprompt: BeforeInstallPromptEvent;
+    transitioned: BeforeInstallPromptEvent;
+  }
+}
+
 
 export default function Calculadora() {
-  const [proportion, setProportion] = useState<number>(0)
+  const [proportion, setProportion] = useState<number>(0);
   const isProportionInvalid = proportion <= 0
   const [water, setWater] = useState<string>('');
-  const isWaterInvalid = water.length <= 0
+  const isWaterInvalid = water.length <= 0;
   const [measuaramentUnit, setMeasuaramentUnit] = useState<string>('');
-  const isMeasuaramentUnitInvalid = measuaramentUnit.length <= 0
-  const [result, setResult] = useState<number>(0)
-  const isButtonDisabled = isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid
-
-
+  const isMeasuaramentUnitInvalid = measuaramentUnit.length <= 0;
+  const [result, setResult] = useState<number>(0);
+  const isButtonDisabled = isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid;
+  const [beforeInstallPrompt, setBeforeInstallPrompt] = useState<BeforeInstallPromptEvent>();
+  const [supportsPWA, setSupportsPWA] = useState<boolean>(false);
+  const [isInstalled, setIsInstalled] = useState<boolean>();
 
   const proportionCalc = (proportion: number, water: string, measuramentUnit: string) => {
     if (!proportion || !water || measuaramentUnit.length < 0) return 0
+    const waterFloat = parseFloat(water.replace(',', '.'))
 
     if (measuramentUnit === 'l') {
-      const waterFloat = parseFloat(water.replace(',', '.'))
       const productQuantity = 1000 / proportion
       return waterFloat * productQuantity
     } else {
-      const waterFloat = parseFloat(water.replace(',', '.'))
       const productQuantity = 1 / proportion
       return waterFloat * productQuantity
     }
@@ -47,38 +65,78 @@ export default function Calculadora() {
 
   const proportions = [
     {
-      title: '1 x 400',
+      title: '1 : 400',
       value: 400
     },
     {
-      title: '1 x 200',
+      title: '1 : 200',
       value: 200
     },
     {
-      title: '1 x 100',
+      title: '1 : 100',
       value: 100
     },
     {
-      title: '1 x 50',
+      title: '1 : 50',
       value: 50
     },
     {
-      title: '1 x 40',
+      title: '1 : 40',
       value: 40
     },
     {
-      title: '1 x 20',
+      title: '1 : 30',
+      value: 30
+    },
+    {
+      title: '1 : 20',
       value: 20
     },
     {
-      title: '1 x 10',
+      title: '1 : 10',
       value: 10
     },
     {
-      title: '1 x 5',
+      title: '1 : 5',
       value: 5
     },
   ]
+
+  useEffect(() => {
+    const handleBeforeInstallPrompt = (e: BeforeInstallPromptEvent) => {
+      e.preventDefault()
+      setBeforeInstallPrompt(e)
+      setSupportsPWA(true)
+    }
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
+    }
+
+    return () => {
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('transitioned', handleBeforeInstallPrompt)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isAppInstalled = window.matchMedia('(display-mode: standalone)').matches
+      setIsInstalled(isAppInstalled)
+    }
+  }, [])
+
+  const installApp = async () => {
+    if (beforeInstallPrompt) {
+      beforeInstallPrompt.prompt()
+      const { outcome } = await beforeInstallPrompt.userChoice
+      if (outcome === 'accepted') {
+        setIsInstalled(true)
+      }
+      setBeforeInstallPrompt(undefined)
+    }
+  }
 
   return (
     <MotionLayout title='Calculadora de Diluição'>
@@ -191,10 +249,17 @@ export default function Calculadora() {
             )
             }
           </Box>
-          <Box w={{ base: '100%', md: '50%' }}>
-            <Text as="p">
-              Para saber a quantidade correta de produto à ser utilizado na limpeza, insira nos campos da Calculadora a recomendação de diluição do produto (que, geralmente, está descrita na embalagem de cada produto) e a quantidade de água que você vai utilizar (a capacidade do seu balde). Após inserir estes dados, o resultado irá aparecer logo abaixo.
-            </Text>
+          <Box w={{ base: '100%', md: '50%' }} display={'flex'} flexDir={'column'} justifyContent={'flex-end'}>
+            <Button
+              colorScheme='messenger'
+              onClick={installApp}
+              isDisabled={!supportsPWA}
+              flexFlow={'row'}
+              display={isInstalled ? 'none' : 'flex'}
+            >
+              <DownloadIcon mr={2} />
+              Instalar App
+            </Button>
           </Box>
         </Flex>
       </Container>
