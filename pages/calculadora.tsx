@@ -253,7 +253,6 @@ export default function Calculadora() {
             <Button
               colorScheme='messenger'
               onClick={installApp}
-              isDisabled={!supportsPWA}
               flexFlow={'row'}
               display={isInstalled ? 'none' : 'flex'}
             >
