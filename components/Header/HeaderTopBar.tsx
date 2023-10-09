@@ -80,7 +80,7 @@ export default function HeaderTopBar() {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Box maxW={100} maxH={"auto"} as={Link} href="/">
+      <Box as={Link} maxW={100} maxH={"auto"} href="/">
         <Image
           src="/logo.png"
           alt="G&S Home Solutions"
