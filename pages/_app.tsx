@@ -2,10 +2,14 @@ import type { AppProps } from "next/app"
 import { useRouter } from "next/router"
 import { ChakraProvider } from "@chakra-ui/react"
 import { AnimatePresence } from "framer-motion"
+import { QueryClient, QueryClientProvider } from "react-query"
+import { ReactQueryDevtools } from "react-query/devtools"
 import theme from "@/libs/theme"
 import GoogleAnalytics from "@/components/GoogleAnalytics"
 import Layout from "@/components/Layout"
 import Head from "next/head"
+
+const queryClient = new QueryClient()
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter()
@@ -36,7 +40,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <ChakraProvider theme={theme}>
         <Layout route={router.route}>
           <AnimatePresence mode="wait">
-            <Component {...pageProps} key={router.route} />
+            <QueryClientProvider client={queryClient}>
+              <Component {...pageProps} key={router.route} />
+              <ReactQueryDevtools initialIsOpen={false} />
+            </QueryClientProvider>
           </AnimatePresence>
         </Layout>
       </ChakraProvider>
