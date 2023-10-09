@@ -81,7 +81,7 @@ export const NAV_ITEMS: Array<NavItem> = [
       },
       {
         label: "Manual",
-        href: "#manual"
+        href: "/#manual",
       },
     ],
   },
