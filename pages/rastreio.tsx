@@ -1,12 +1,89 @@
-import { Box, Button, Container, Flex, Text, Icon } from "@chakra-ui/react"
-import VideoFrame from "@/components/iFrame"
+import { FormEvent, useState } from "react"
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Text,
+  Icon,
+  FormControl,
+  FormLabel,
+  Input,
+  FormHelperText,
+  Step,
+  StepDescription,
+  StepIcon,
+  StepIndicator,
+  StepNumber,
+  StepSeparator,
+  StepStatus,
+  StepTitle,
+  Stepper,
+  useSteps,
+} from "@chakra-ui/react"
+import { useMutation } from 'react-query'
 import MotionLayout from "@/components/MotionLayout"
 import { Carousel } from "@/components/Carousel/"
 import { CAR_ITEMS } from "@/components/Carousel/CAR_ITEMS"
 import { Carousel as CarouselReact } from "@trendyol-js/react-carousel"
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
+import { baseApi } from '@/libs/api'
+import { TrackingData } from './api/rastreio'
+
+interface RastreioProps {
+  cnpj: string;
+  nro_nf: string;
+}
 
 export default function Rastreio() {
+  const [cnpj, setCnpj] = useState('');
+  const regex = /^\d{11}$|^\d{14}$/;
+  const isErrorCnpj = !regex.test(cnpj)
+  console.log(isErrorCnpj)
+  const [nf, setNf] = useState('');
+  const isErrorNf = nf.length === 0;
+  const [tracking, setTracking] = useState<TrackingData>();
+
+  const stepObjects = [
+    {
+      title: tracking?.stepperData?.[0]?.ocorrencia ?? "Pedido recebido pela transportadora.",
+      description: tracking?.stepperData?.[0]?.descricao ?? "Seu pedido foi recebido pela transportadora e está sendo preparado para envio.",
+    },
+    {
+      title: tracking?.stepperData?.[1]?.ocorrencia ?? "Pedido em trânsito",
+      description: tracking?.stepperData?.[1]?.descricao ?? "Seu pedido está em trânsito.",
+    },
+    {
+      title: tracking?.stepperData?.[2]?.ocorrencia ?? "Pedido entregue",
+      description: tracking?.stepperData?.[2]?.descricao ?? "Seu pedido foi entregue com sucesso.",
+    }
+  ]
+
+  const { activeStep, setActiveStep } = useSteps({
+    count: stepObjects.length,
+  })
+
+  const getTracking = async ({ cnpj, nro_nf }: RastreioProps): Promise<TrackingData> => {
+    const { data } = await baseApi.post('/rastreio', { cnpj, nro_nf })
+    return data
+  }
+
+  const rastrearPedido = useMutation(getTracking, {
+    onSuccess: (data) => {
+      console.log(data)
+      setTracking(data)
+      setActiveStep(data.activeStep ?? data.activeStep as unknown as number)
+    },
+    onError: (error) => {
+      console.log(error)
+    }
+  })
+
+  const handleSubmit = (e: FormEvent<HTMLDivElement>) => {
+    e.preventDefault()
+    rastrearPedido.mutate({ cnpj, nro_nf: nf })
+  }
+
   return (
     <MotionLayout title="Rastreio">
       <Container maxW={"container.xl"} as="section">
@@ -32,15 +109,61 @@ export default function Rastreio() {
           rounded={"md"}
         >
           <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
-            <Box width={{ base: "100%", md: "60%" }}>
-              <VideoFrame
-                embedID="nQQ8AF8-otE"
-                title="G&S Home Solutions"
-                ariaDescription="G&S Home Solutions video de apresentação"
-              />
+            <Box width={{ base: "100%", md: "40%" }} as='form' textColor={'white'} onSubmit={(e) => handleSubmit(e)} display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
+              <Flex flexDirection={'column'}>
+                <FormControl mb={4} isInvalid={isErrorCnpj} isRequired>
+                  <FormLabel>
+                    CNPJ ou CPF
+                  </FormLabel>
+                  <Input colorScheme="gray" variant={'filled'} color={'black'} _focus={{
+                    bgColor: 'white'
+                  }} type="text" placeholder='Digite seu CNPJ...' value={cnpj} onChange={(e) => setCnpj(e.target.value)} />
+                  {!isErrorCnpj ? (
+                    <FormHelperText textColor={'gray.400'}>
+                      Digite o CNPJ da sua empresa ou um CPF sem pontos ou traços.
+                    </FormHelperText>
+                  ) : (
+                    <FormHelperText textColor={'red.400'}>
+                      Digite um CNPJ ou um CPF válido.
+                    </FormHelperText>
+                  )}
+                </FormControl>
+                <FormControl isInvalid={isErrorNf} isRequired>
+                  <FormLabel>
+                    Número da NF
+                  </FormLabel>
+                  <Input colorScheme="gray" variant={'filled'} _focus={{
+                    bgColor: 'white'
+                  }} color='black' type="text" placeholder='Digite o número da NF...' value={nf} onChange={(e) => setNf(e.target.value)} />
+                  {!isErrorNf ? (
+                    <FormHelperText textColor={'gray.400'}>
+                      Digite o número da nota fiscal sem pontos ou traços.
+                    </FormHelperText>
+                  ) : (
+                    <FormHelperText textColor={'red.400'}>
+                      Digite um número de nota fiscal.
+                    </FormHelperText>
+                  )}
+                </FormControl>
+              </Flex>
+              <Button
+                mt={4}
+                textTransform={"uppercase"}
+                type='submit'
+                isLoading={rastrearPedido.isLoading}
+                isDisabled={isErrorCnpj || isErrorNf}
+                w={'100%'}
+              >
+                Rastrear pedido
+              </Button>
+              {tracking?.success === false ? (
+                <Text as="p" color={"red.500"} mt={4}>
+                  {tracking.message}, verifique os dados e tente novamente.
+                </Text>
+              ) : (null)}
             </Box>
             <Flex
-              width={{ base: "100%", md: "40%" }}
+              width={{ base: "100%", md: "60%" }}
               flexDirection={"column"}
               justify={"space-between"}
             >
@@ -50,28 +173,49 @@ export default function Rastreio() {
                   fontSize={"lg"}
                   color={"white"}
                   fontWeight={"bold"}
-                  marginBottom={{ base: 0, md: 2 }}
+                  mb={2}
                 >
                   Duvidas de como rastrear seu pedido?
                 </Text>
                 <Text as="p" color={"white"}>
-                  Não deixe de acompanhar o video
-                </Text>
-                <Text as="p" color={"white"} mt={8}>
                   Com o número da nota fiscal em mãos, escolha a opção de
                   pesquisa pelo DESTINATÁRIO insira seu CPF/CNPJ e clique em
                   RASTREAR.
                 </Text>
+                {tracking && tracking.success === true ? (
+                  <Stepper index={activeStep} colorScheme='green' orientation='vertical' mt={4} height={'250px'}>
+                    {stepObjects.map((step, index) => (
+                      <Step key={index}>
+                        <StepIndicator color="white">
+                          <StepStatus
+                            complete={<StepIcon />}
+                            incomplete={<StepNumber />}
+                            active={<StepNumber />}
+                          />
+                        </StepIndicator>
+
+                        <Box>
+                          <Text
+                            color={"white"}
+                            as={StepTitle}
+                            fontWeight={"bold"}
+                          >
+                            {step.title}
+                          </Text>
+                          <Text
+                            color={"gray.400"}
+                            as={StepDescription}
+                          >
+                            {step.description}
+                          </Text>
+                        </Box>
+
+                        <StepSeparator />
+                      </Step>
+                    ))}
+                  </Stepper>
+                ) : (null)}
               </Box>
-              <Button
-                mt={4}
-                textTransform={"uppercase"}
-                _hover={{
-                  bgColor: "#06EC46",
-                }}
-              >
-                Acompanhe seu pedido
-              </Button>
             </Flex>
           </Flex>
         </Container>
