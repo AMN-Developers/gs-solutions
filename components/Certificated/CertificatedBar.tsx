@@ -15,7 +15,7 @@ export default function CertificatedBar() {
       </Text>
       <Flex
         as={Link}
-        href="#"
+        href="/certificado"
         justifyContent="space-between"
         alignItems={"center"}
         flexDirection={{ base: "column", md: "row" }}
