@@ -80,11 +80,13 @@ export default function HeaderTopBar() {
       alignItems="center"
     >
       <Box maxW={100} maxH={"auto"}>
-        <Image
+        <Link
+          as={Image}
           src="/logo.png"
           alt="G&S Home Solutions"
           width={245}
           height={319}
+          href="/"
         />
       </Box>
       {/* <StyledLink
