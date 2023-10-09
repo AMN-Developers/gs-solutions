@@ -1,16 +1,22 @@
 import MotionLayout from "@/components/MotionLayout"
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Container,
   Divider,
   Flex,
   Text,
+  Box,
 } from "@chakra-ui/react"
 import Image from "next/image"
 
 export default function Cartificado() {
   return (
     <MotionLayout title="Certificado e Homologação">
-      <Container maxW="container.xl">
+      <Container maxW={"container.xl"}>
         <Text
           as="h1"
           textAlign={"center"}
@@ -22,7 +28,7 @@ export default function Cartificado() {
           Certificados e Homologações
         </Text>
         <Text as="h2" py={4} fontWeight={"semibold"} fontSize={"lg"}>
-          Preocupação com o meio ambiente
+          G&S Home Solutions juntos com a Eureciclo para um mundo melhor!
         </Text>
         <Flex gap={4} flexDirection={{ base: "column", md: "row" }}>
           <Image
@@ -49,96 +55,74 @@ export default function Cartificado() {
           </Flex>
         </Flex>
         <Divider borderColor={"blackAlpha.400"} />
-        <Text as="h2" py={4} fontWeight={"semibold"} fontSize={"lg"}>
-          Sistema de Gestão de Qualidade
-        </Text>
-        <Flex flexDirection={{ base: "column", md: "row" }}>
-          <Flex
-            flexDirection={"column"}
-            p={4}
-            gap={4}
-            w={{ base: "100%", md: "70%" }}
-          >
-            <Text>
-              O objetivo da norma, é trazer confiança ao cliente de que os
-              produtos e serviços da empresa serão criados de modo repetitivo e
-              consistente, afim de que adquira uma qualidade, de acordo com
-              aquilo que foi definido pela empresa
-            </Text>
-            <Text fontWeight={"semibold"}>
-              Aprovação de funcionamento especial e notificação de todos os
-              produtos:
-            </Text>
-            <Text>
-              Tem por finalidade institucional promover a proteção da saúde da
-              população, por intermédio do controle sanitário da produção e
-              consumo de produtos e serviços submetidos à vigilância sanitária,
-              inclusive dos ambientes, dos processos, dos insumos e das
-              tecnologias a eles relacionados, bem com o controle de portos,
-              aeroportos, fronteiras e recintos alfandegados..
-            </Text>
-          </Flex>
-          <Flex
-            flexDirection={{ base: "row", md: "column" }}
-            gap={4}
-            mx={"auto"}
-            display={{ base: "none", md: "flex" }}
-          >
-            <Image
-              src={"/iso-logo.svg"}
-              alt="Iso 9001 Logo"
-              width={200}
-              height={200}
-            />
-            <Image
-              src={"/anvisa.png"}
-              alt="Iso 9001 Logo"
-              width={200}
-              height={200}
-            />
-          </Flex>
-        </Flex>
-        <Divider borderColor={"blackAlpha.400"} />
-        <Text as="h2" py={4} fontWeight={"semibold"} fontSize={"lg"}>
-          Autorização para produção de produtos controlados
-        </Text>
-        <Flex gap={4} flexDirection={{ base: "column", md: "row" }}>
-          <Flex
-            justifyContent={"space-between"}
-            w={{ base: "100%", md: "40%" }}
-            p={4}
-            display={{ base: "none", lg: "flex" }}
-          >
-            <Image
-              src={"/policiacivil.png"}
-              alt="Iso 9001 Logo"
-              width={150}
-              height={150}
-            />
-            <Image
-              src={"/policiafederal.png"}
-              alt="Iso 9001 Logo"
-              width={140}
-              height={150}
-            />
-            <Image
-              src={"/cetesb.png"}
-              alt="Iso 9001 Logo"
-              width={150}
-              height={100}
-            />
-          </Flex>
-          <Flex w={{ base: "100%", md: "60%" }} py={4} px={10}>
-            <Text>
-              Através da Divisão de Controle e Fiscalização de Produtos Químicos
-              (DCPQ) a Policia Federal realiza o controle e a fiscalização da
-              fabricação, produção, armazenamento, transformação, embalagem,
-              compra, venda, comercialização, aquisição, posse, doação,
-              empréstimo, permuta, remessa, transporte, distribuição,
-              importação, exportação, reexportação, cessão, reaproveitamento,
-              reciclagem, transferência e utilização de produtos químicos
-            </Text>
-          </Flex>
+        <Flex
+          flexDirection={"column"}
+          fontSize={"sm"}
+          my={4}
+          textAlign={"justify"}
+        >
+          <Accordion defaultIndex={[0]} allowMultiple>
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box
+                    as="span"
+                    flex="1"
+                    textAlign="left"
+                    fontWeight={"semibold"}
+                  >
+                    Sistema de Gestão de Qualidade
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <Flex>
+                  <Box w={"30%"} display={"flex"} justifyContent={"center"}>
+                    <Text>Teste</Text>
+                  </Box>
+                  <Text w={"70%"}>
+                    O objetivo da norma, é trazer confiança ao cliente de que os
+                    produtos e serviços da empresa serão criados de modo
+                    repetitivo e consistente, afim de que adquira uma qualidade,
+                    de acordo com aquilo que foi definido pela empresa
+                  </Text>
+                </Flex>
+              </AccordionPanel>
+            </AccordionItem>
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box
+                    as="span"
+                    flex="1"
+                    textAlign="left"
+                    fontWeight={"semibold"}
+                  >
+                    Autorização para produção de produtos controlados
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <Flex>
+                  <Box w={"30%"} display={"flex"} justifyContent={"center"}>
+                    <Text>Teste</Text>
+                  </Box>
+                  <Text w={"70%"}>
+                    Através da Divisão de Controle e Fiscalização de Produtos
+                    Químicos (DCPQ) a Policia Federal realiza o controle e a
+                    fiscalização da fabricação, produção, armazenamento,
+                    transformação, embalagem, compra, venda, comercialização,
+                    aquisição, posse, doação, empréstimo, permuta, remessa,
+                    transporte, distribuição, importação, exportação,
+                    reexportação, cessão, reaproveitamento, reciclagem,
+                    transferência e utilização de produtos químicos
+                  </Text>
+                </Flex>
+              </AccordionPanel>
+            </AccordionItem>
+          </Accordion>
         </Flex>
       </Container>
     </MotionLayout>
