@@ -7,7 +7,11 @@ interface CarouselRootProps {
 
 export default function CarouselRoot({ children }: CarouselRootProps) {
   return (
-    <Container maxW={"container.xl"} my={4}>
+    <Container
+      maxW={"container.xl"}
+      my={4}
+      display={{ base: "none", md: "flex" }}
+    >
       {children}
     </Container>
   )

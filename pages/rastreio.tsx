@@ -21,50 +21,61 @@ import {
   Stepper,
   useSteps,
 } from "@chakra-ui/react"
-import { useMutation } from 'react-query'
+import { useMutation } from "react-query"
 import MotionLayout from "@/components/MotionLayout"
 import { Carousel } from "@/components/Carousel/"
 import { CAR_ITEMS } from "@/components/Carousel/CAR_ITEMS"
 import { Carousel as CarouselReact } from "@trendyol-js/react-carousel"
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
-import { baseApi } from '@/libs/api'
-import { TrackingData } from './api/rastreio'
+import { baseApi } from "@/libs/api"
+import { TrackingData } from "./api/rastreio"
+import { ListTrans } from "@/components/ListTrans"
 
 interface RastreioProps {
-  cnpj: string;
-  nro_nf: string;
+  cnpj: string
+  nro_nf: string
 }
 
 export default function Rastreio() {
-  const [cnpj, setCnpj] = useState('');
-  const regex = /^\d{11}$|^\d{14}$/;
+  const [cnpj, setCnpj] = useState("")
+  const regex = /^\d{11}$|^\d{14}$/
   const isErrorCnpj = !regex.test(cnpj)
   console.log(isErrorCnpj)
-  const [nf, setNf] = useState('');
-  const isErrorNf = nf.length === 0;
-  const [tracking, setTracking] = useState<TrackingData>();
+  const [nf, setNf] = useState("")
+  const isErrorNf = nf.length === 0
+  const [tracking, setTracking] = useState<TrackingData>()
 
   const stepObjects = [
     {
-      title: tracking?.stepperData?.[0]?.ocorrencia ?? "Pedido recebido pela transportadora.",
-      description: tracking?.stepperData?.[0]?.descricao ?? "Seu pedido foi recebido pela transportadora e está sendo preparado para envio.",
+      title:
+        tracking?.stepperData?.[0]?.ocorrencia ??
+        "Pedido recebido pela transportadora.",
+      description:
+        tracking?.stepperData?.[0]?.descricao ??
+        "Seu pedido foi recebido pela transportadora e está sendo preparado para envio.",
     },
     {
       title: tracking?.stepperData?.[1]?.ocorrencia ?? "Pedido em trânsito",
-      description: tracking?.stepperData?.[1]?.descricao ?? "Seu pedido está em trânsito.",
+      description:
+        tracking?.stepperData?.[1]?.descricao ?? "Seu pedido está em trânsito.",
     },
     {
       title: tracking?.stepperData?.[2]?.ocorrencia ?? "Pedido entregue",
-      description: tracking?.stepperData?.[2]?.descricao ?? "Seu pedido foi entregue com sucesso.",
-    }
+      description:
+        tracking?.stepperData?.[2]?.descricao ??
+        "Seu pedido foi entregue com sucesso.",
+    },
   ]
 
   const { activeStep, setActiveStep } = useSteps({
     count: stepObjects.length,
   })
 
-  const getTracking = async ({ cnpj, nro_nf }: RastreioProps): Promise<TrackingData> => {
-    const { data } = await baseApi.post('/rastreio', { cnpj, nro_nf })
+  const getTracking = async ({
+    cnpj,
+    nro_nf,
+  }: RastreioProps): Promise<TrackingData> => {
+    const { data } = await baseApi.post("/rastreio", { cnpj, nro_nf })
     return data
   }
 
@@ -72,11 +83,11 @@ export default function Rastreio() {
     onSuccess: (data) => {
       console.log(data)
       setTracking(data)
-      setActiveStep(data.activeStep ?? data.activeStep as unknown as number)
+      setActiveStep(data.activeStep ?? (data.activeStep as unknown as number))
     },
     onError: (error) => {
       console.log(error)
-    }
+    },
   })
 
   const handleSubmit = (e: FormEvent<HTMLDivElement>) => {
@@ -109,38 +120,61 @@ export default function Rastreio() {
           rounded={"md"}
         >
           <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
-            <Box width={{ base: "100%", md: "40%" }} as='form' textColor={'white'} onSubmit={(e) => handleSubmit(e)} display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
-              <Flex flexDirection={'column'}>
+            <Box
+              width={{ base: "100%", md: "40%" }}
+              as="form"
+              textColor={"white"}
+              onSubmit={(e) => handleSubmit(e)}
+              display={"flex"}
+              flexDirection={"column"}
+              justifyContent={"space-between"}
+            >
+              <Flex flexDirection={"column"}>
                 <FormControl mb={4} isInvalid={isErrorCnpj} isRequired>
-                  <FormLabel>
-                    CNPJ ou CPF
-                  </FormLabel>
-                  <Input colorScheme="gray" variant={'filled'} color={'black'} _focus={{
-                    bgColor: 'white'
-                  }} type="text" placeholder='Digite seu CNPJ...' value={cnpj} onChange={(e) => setCnpj(e.target.value)} />
+                  <FormLabel>CNPJ ou CPF</FormLabel>
+                  <Input
+                    colorScheme="gray"
+                    variant={"filled"}
+                    color={"black"}
+                    _focus={{
+                      bgColor: "white",
+                    }}
+                    type="text"
+                    placeholder="Digite seu CNPJ..."
+                    value={cnpj}
+                    onChange={(e) => setCnpj(e.target.value)}
+                  />
                   {!isErrorCnpj ? (
-                    <FormHelperText textColor={'gray.400'}>
-                      Digite o CNPJ da sua empresa ou um CPF sem pontos ou traços.
+                    <FormHelperText textColor={"gray.400"}>
+                      Digite o CNPJ da sua empresa ou um CPF sem pontos ou
+                      traços.
                     </FormHelperText>
                   ) : (
-                    <FormHelperText textColor={'red.400'}>
+                    <FormHelperText textColor={"red.400"}>
                       Digite um CNPJ ou um CPF válido.
                     </FormHelperText>
                   )}
                 </FormControl>
                 <FormControl isInvalid={isErrorNf} isRequired>
-                  <FormLabel>
-                    Número da NF
-                  </FormLabel>
-                  <Input colorScheme="gray" variant={'filled'} _focus={{
-                    bgColor: 'white'
-                  }} color='black' type="text" placeholder='Digite o número da NF...' value={nf} onChange={(e) => setNf(e.target.value)} />
+                  <FormLabel>Número da NF</FormLabel>
+                  <Input
+                    colorScheme="gray"
+                    variant={"filled"}
+                    _focus={{
+                      bgColor: "white",
+                    }}
+                    color="black"
+                    type="text"
+                    placeholder="Digite o número da NF..."
+                    value={nf}
+                    onChange={(e) => setNf(e.target.value)}
+                  />
                   {!isErrorNf ? (
-                    <FormHelperText textColor={'gray.400'}>
+                    <FormHelperText textColor={"gray.400"}>
                       Digite o número da nota fiscal sem pontos ou traços.
                     </FormHelperText>
                   ) : (
-                    <FormHelperText textColor={'red.400'}>
+                    <FormHelperText textColor={"red.400"}>
                       Digite um número de nota fiscal.
                     </FormHelperText>
                   )}
@@ -149,10 +183,10 @@ export default function Rastreio() {
               <Button
                 mt={4}
                 textTransform={"uppercase"}
-                type='submit'
+                type="submit"
                 isLoading={rastrearPedido.isLoading}
                 isDisabled={isErrorCnpj || isErrorNf}
-                w={'100%'}
+                w={"100%"}
               >
                 Rastrear pedido
               </Button>
@@ -160,7 +194,7 @@ export default function Rastreio() {
                 <Text as="p" color={"red.500"} mt={4}>
                   {tracking.message}, verifique os dados e tente novamente.
                 </Text>
-              ) : (null)}
+              ) : null}
             </Box>
             <Flex
               width={{ base: "100%", md: "60%" }}
@@ -183,7 +217,13 @@ export default function Rastreio() {
                   RASTREAR.
                 </Text>
                 {tracking && tracking.success === true ? (
-                  <Stepper index={activeStep} colorScheme='green' orientation='vertical' mt={4} height={'250px'}>
+                  <Stepper
+                    index={activeStep}
+                    colorScheme="green"
+                    orientation="vertical"
+                    mt={4}
+                    height={"250px"}
+                  >
                     {stepObjects.map((step, index) => (
                       <Step key={index}>
                         <StepIndicator color="white">
@@ -202,10 +242,7 @@ export default function Rastreio() {
                           >
                             {step.title}
                           </Text>
-                          <Text
-                            color={"gray.400"}
-                            as={StepDescription}
-                          >
+                          <Text color={"gray.400"} as={StepDescription}>
                             {step.description}
                           </Text>
                         </Box>
@@ -214,7 +251,7 @@ export default function Rastreio() {
                       </Step>
                     ))}
                   </Stepper>
-                ) : (null)}
+                ) : null}
               </Box>
             </Flex>
           </Flex>
@@ -234,8 +271,8 @@ export default function Rastreio() {
       <Carousel.Root>
         <Box
           as={CarouselReact}
-          show={3}
-          slide={1}
+          show={4}
+          slide={4}
           swiping={true}
           leftArrow={<Icon as={ChevronLeftIcon} w={10} h={30} />}
           rightArrow={<Icon as={ChevronRightIcon} w={10} h={30} />}
@@ -253,6 +290,7 @@ export default function Rastreio() {
           ))}
         </Box>
       </Carousel.Root>
+      <ListTrans.Root />
       <Container
         maxW={"container.xl"}
         display={"flex"}

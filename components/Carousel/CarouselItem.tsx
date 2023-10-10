@@ -10,10 +10,9 @@ export default function CarouselItem({ image, alt, label }: CarouselItem) {
       alignItems={"center"}
       userSelect={"none"}
       gap={4}
-      mx={4}
     >
-      <Image alt={alt} src={image} width={250} height={100} />
-      <Text>{label}</Text>
+      <Image alt={alt} src={image} width={150} height={50} />
+      <Text fontSize={"sm"}>{label}</Text>
     </Box>
   )
 }
