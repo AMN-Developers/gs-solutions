@@ -20,15 +20,33 @@ import {
   StepTitle,
   Stepper,
   useSteps,
+  Modal,
+  ModalOverlay,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  useDisclosure,
+  Table,
+  Thead,
+  Th,
+  Tr,
+  Tbody,
+  Td,
 } from "@chakra-ui/react"
 import { useMutation } from 'react-query'
+// Table for tracking using react-table
+import { useReactTable, createColumnHelper, ColumnDef, getCoreRowModel, flexRender } from "@tanstack/react-table"
+import { format } from "date-fns"
 import MotionLayout from "@/components/MotionLayout"
 import { Carousel } from "@/components/Carousel/"
 import { CAR_ITEMS } from "@/components/Carousel/CAR_ITEMS"
 import { Carousel as CarouselReact } from "@trendyol-js/react-carousel"
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
 import { baseApi } from '@/libs/api'
-import { TrackingData } from './api/rastreio'
+import { TrackingData, Tracking } from './api/rastreio'
+import React from 'react'
 
 interface RastreioProps {
   cnpj: string;
@@ -39,23 +57,50 @@ export default function Rastreio() {
   const [cnpj, setCnpj] = useState('');
   const regex = /^\d{11}$|^\d{14}$/;
   const isErrorCnpj = !regex.test(cnpj)
-  console.log(isErrorCnpj)
   const [nf, setNf] = useState('');
   const isErrorNf = nf.length === 0;
   const [tracking, setTracking] = useState<TrackingData>();
+  const columnHelper = createColumnHelper<Tracking>();
+
+  const columns = [
+    columnHelper.accessor("data_hora", {
+      cell: (row) => format(new Date(row.getValue() as unknown as Date), 'dd/MM/yyyy'),
+      header: "Data/Hora",
+    }),
+    columnHelper.accessor("cidade", {
+      cell: (row) => row.getValue(),
+      header: "Unidade",
+    }),
+    columnHelper.accessor("ocorrencia", {
+      cell: (row) => row.getValue(),
+      header: "Situação",
+    }),
+  ]
+
+  const table = useReactTable({
+    data: tracking?.tracking ?? [],
+    columns: columns as unknown as ColumnDef<Tracking>[],
+    getCoreRowModel: getCoreRowModel(),
+  });
+
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
 
   const stepObjects = [
     {
       title: tracking?.stepperData?.[0]?.ocorrencia ?? "Pedido recebido pela transportadora.",
-      description: tracking?.stepperData?.[0]?.descricao ?? "Seu pedido foi recebido pela transportadora e está sendo preparado para envio.",
+      description: tracking?.stepperData?.[0]?.descricao ?? "Seu pedido foi recebido pela transportadora e está sendo preparado para envio",
+      date: tracking?.stepperData?.[0]?.data_hora ?? null,
     },
     {
       title: tracking?.stepperData?.[1]?.ocorrencia ?? "Pedido em trânsito",
-      description: tracking?.stepperData?.[1]?.descricao ?? "Seu pedido está em trânsito.",
+      description: tracking?.stepperData?.[1]?.descricao ?? "Seu pedido está em trânsito",
+      date: tracking?.stepperData?.[1]?.data_hora ?? null,
     },
     {
       title: tracking?.stepperData?.[2]?.ocorrencia ?? "Pedido entregue",
-      description: tracking?.stepperData?.[2]?.descricao ?? "Seu pedido foi entregue com sucesso.",
+      description: tracking?.stepperData?.[2]?.descricao ?? "Seu pedido foi entregue com sucesso",
+      date: tracking?.stepperData?.[2]?.data_hora ?? null,
     }
   ]
 
@@ -183,37 +228,93 @@ export default function Rastreio() {
                   RASTREAR.
                 </Text>
                 {tracking && tracking.success === true ? (
-                  <Stepper index={activeStep} colorScheme='green' orientation='vertical' mt={4} height={'250px'}>
-                    {stepObjects.map((step, index) => (
-                      <Step key={index}>
-                        <StepIndicator color="white">
-                          <StepStatus
-                            complete={<StepIcon />}
-                            incomplete={<StepNumber />}
-                            active={<StepNumber />}
-                          />
-                        </StepIndicator>
+                  <>
+                    <Stepper index={activeStep} colorScheme='green' orientation='vertical' mt={4}>
+                      {stepObjects.map((step, index) => (
+                        <Step key={index}>
+                          <StepIndicator color="white">
+                            <StepStatus
+                              complete={<StepIcon />}
+                              incomplete={<StepNumber />}
+                              active={<StepNumber />}
+                            />
+                          </StepIndicator>
 
-                        <Box>
-                          <Text
-                            color={"white"}
-                            as={StepTitle}
-                            fontWeight={"bold"}
-                          >
-                            {step.title}
-                          </Text>
-                          <Text
-                            color={"gray.400"}
-                            as={StepDescription}
-                          >
-                            {step.description}
-                          </Text>
-                        </Box>
+                          <Box>
+                            <Text
+                              color={"white"}
+                              as={StepTitle}
+                              fontWeight={"bold"}
+                            >
+                              {step.title}  {step.date && ` - ${format(new Date(step.date), 'dd/MM/yyyy')}`}
+                            </Text>
+                            <Text
+                              color={"gray.400"}
+                              as={StepDescription}
+                            >
+                              {step.description}
+                            </Text>
+                          </Box>
 
-                        <StepSeparator />
-                      </Step>
-                    ))}
-                  </Stepper>
+                          <StepSeparator />
+                        </Step>
+                      ))}
+                    </Stepper>
+                    <Button variant={'unstyled'} color={'white'} fontWeight={'normal'} textDecoration={'underline'} w={'full'} mt={4} onClick={onOpen}>Ver todos os detalhes</Button>
+                    <Modal isOpen={isOpen} onClose={onClose} size={'4xl'}>
+                      <ModalOverlay />
+                      <ModalContent>
+                        <ModalHeader>Destinatário: {tracking?.header?.destinatario}</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>
+                          <Table fontSize={{ base: 'xs', md: 'md' }}>
+                            <Thead>
+                              {table.getHeaderGroups().map((headerGroup) => (
+                                <Tr
+                                  key={headerGroup.id}
+                                >
+                                  {headerGroup.headers.map((header) => (
+                                    <Th
+                                      key={header.id}
+                                    >
+                                      {flexRender(
+                                        header.column.columnDef.header,
+                                        header.getContext()
+                                      )}
+                                    </Th>
+                                  ))}
+                                </Tr>
+                              ))}
+                            </Thead>
+                            <Tbody>
+                              {table.getRowModel().rows.map((row) => (
+                                <Tr
+                                  key={row.id}
+                                >
+                                  {row.getVisibleCells().map((cell) => (
+                                    <Td
+                                      key={cell.id}
+                                    >
+                                      {flexRender(
+                                        cell.column.columnDef.cell,
+                                        cell.getContext()
+                                      )}
+                                    </Td>
+                                  ))}
+                                </Tr>
+                              ))}
+                            </Tbody>
+                          </Table>
+                        </ModalBody>
+
+                        <ModalFooter>
+                          <Button colorScheme='blue' mr={3} onClick={onClose}>
+                            Fechar
+                          </Button>
+                        </ModalFooter>
+                      </ModalContent>
+                    </Modal>
+                  </>
                 ) : (null)}
               </Box>
             </Flex>
