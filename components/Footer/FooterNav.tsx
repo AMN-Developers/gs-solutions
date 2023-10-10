@@ -1,8 +1,12 @@
-import { Box, Container, Link as ChakraLink } from "@chakra-ui/react"
+import { Box, Container, Link as ChakraLink, Button } from "@chakra-ui/react"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function FooterNav() {
+interface FooterNavProps {
+  openDrawer: () => void
+}
+
+export default function FooterNav({ openDrawer }: FooterNavProps) {
   return (
     <Container
       maxW={"container.xl"}
@@ -32,9 +36,9 @@ export default function FooterNav() {
         <ChakraLink as={Link} href="#">
           Home
         </ChakraLink>
-        <ChakraLink as={Link} href="#">
+        <Button color={"white"} fontWeight={"thin"} fontSize={"sm"} variant="link" onClick={openDrawer}>
           Entre em Contato
-        </ChakraLink>
+        </Button>
         <ChakraLink as={Link} href="/privacy">
           Politica de Privacidade
         </ChakraLink>

@@ -170,7 +170,7 @@ export default function Layout({ children, route }: LayoutProps) {
       />
       <main>{children}</main>
       <Footer.Root>
-        <Footer.FooterNav />
+        <Footer.FooterNav openDrawer={onOpenDrawer} />
         <Footer.LowBar />
       </Footer.Root>
       <CookieBanner />
