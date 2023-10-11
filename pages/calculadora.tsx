@@ -194,14 +194,14 @@ export default function Calculadora() {
                 ))}
               </Select>
               {isProportionInvalid && (
-                <FormErrorMessage mb={4}>
+                <FormErrorMessage mb={4} fontWeight={'bold'}>
                   Selecione uma proporção
                 </FormErrorMessage>
               )}
             </FormControl>
             <Box display={"flex"} gap={4}>
               <FormControl isInvalid={isWaterInvalid}>
-                <Text
+                {/* <Text
                   as="label"
                   htmlFor="water"
                   fontSize={"lg"}
@@ -209,7 +209,7 @@ export default function Calculadora() {
                   mb={2}
                 >
                   Quantidade de água:
-                </Text>
+                </Text> */}
                 <Input
                   id="water"
                   placeholder="Digite a quantidade de água"
@@ -218,13 +218,13 @@ export default function Calculadora() {
                   value={water}
                 />
                 {isWaterInvalid && (
-                  <FormErrorMessage mb={4}>
+                  <FormErrorMessage mb={4} fontWeight={'bold'}>
                     Digite a quantidade de água
                   </FormErrorMessage>
                 )}
               </FormControl>
               <FormControl isInvalid={isMeasuaramentUnitInvalid} w={"25%"}>
-                <Text
+                {/* <Text
                   as="label"
                   htmlFor="water"
                   fontSize={"lg"}
@@ -232,7 +232,7 @@ export default function Calculadora() {
                   mb={2}
                 >
                   UNID:
-                </Text>
+                </Text> */}
                 <Select
                   placeholder="Selecione..."
                   onChange={(event) => setMeasuaramentUnit(event.target.value)}
@@ -241,7 +241,7 @@ export default function Calculadora() {
                   <option value="l">L</option>
                 </Select>
                 {isMeasuaramentUnitInvalid && (
-                  <FormErrorMessage mb={4}>
+                  <FormErrorMessage mb={4} fontWeight={'bold'}>
                     Selecione a unidade de medida
                   </FormErrorMessage>
                 )}
