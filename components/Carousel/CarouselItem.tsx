@@ -11,7 +11,9 @@ export default function CarouselItem({ image, alt, label }: CarouselItem) {
       userSelect={"none"}
       gap={4}
     >
-      <Image alt={alt} src={image} width={150} height={50} />
+      <Box w={150} h={50}>
+        <Image alt={alt} src={image} width={240} height={98} />
+      </Box>
       <Text fontSize={"sm"}>{label}</Text>
     </Box>
   )

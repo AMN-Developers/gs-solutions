@@ -163,8 +163,8 @@ export default function TableRoot() {
                 <Image
                   src={"/trans/exata.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>
