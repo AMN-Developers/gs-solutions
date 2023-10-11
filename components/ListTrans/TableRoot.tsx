@@ -28,12 +28,12 @@ export default function TableRoot() {
           </Thead>
           <Tbody>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/aceville.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>
@@ -44,100 +44,100 @@ export default function TableRoot() {
               </Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/apucarana.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>(11)2207-7466</Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/tecmar.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>(11)3238-1400</Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/ouronegro.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>(11)2085-5121</Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/binho.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>(11)98455-0050</Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/rodomac.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>(22)99999-1100</Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/exlog.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>(11)2967-5656</Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/alfa.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>(11)2595-0880</Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/wrj.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>(11)2413-1480</Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/aceville.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>
@@ -148,18 +148,18 @@ export default function TableRoot() {
               </Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/velocargas.png"}
                   alt={"tranportadora Aceville"}
-                  width={150}
-                  height={50}
+                  width={240}
+                  height={98}
                 />
               </Td>
               <Td>(11)2412-1212</Td>
             </Tr>
             <Tr>
-              <Td>
+              <Td w={150} h={50}>
                 <Image
                   src={"/trans/exata.png"}
                   alt={"tranportadora Aceville"}

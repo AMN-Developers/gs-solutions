@@ -35,7 +35,6 @@ import {
   Tbody,
   Td,
 } from "@chakra-ui/react"
-// Table for tracking using react-table
 import { useReactTable, createColumnHelper, ColumnDef, getCoreRowModel, flexRender } from "@tanstack/react-table"
 import { format } from "date-fns"
 import { useMutation } from "react-query"
