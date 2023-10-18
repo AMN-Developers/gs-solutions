@@ -128,7 +128,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    1 - A quem essa Política de Privacidade se aplica?
+                    A quem essa Política de Privacidade se aplica?
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -149,7 +149,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    2- Que tipo de informações pessoais coletamos e utilizamos?
+                    Que tipo de informações pessoais coletamos e utilizamos?
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -194,7 +194,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    3- Por que solicitamos seus dados pessoais?
+                    Por que solicitamos seus dados pessoais?
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -243,7 +243,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    4 - Com quem compartilhamos seus dados?
+                    Com quem compartilhamos seus dados?
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -280,7 +280,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    5 - Transferência Internacional de dados
+                    Transferência Internacional de dados
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -313,7 +313,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    6 - Por quanto tempo armazenamos informações pessoais?
+                    Por quanto tempo armazenamos informações pessoais?
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -332,7 +332,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    7 - Quais são os direitos do titular de dados?
+                    Quais são os direitos do titular de dados?
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -393,7 +393,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    8 - Como exercer os seus direitos?
+                    Como exercer os seus direitos?
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -421,7 +421,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    9 - Crianças podem comprar na G&S Home Solutions?
+                    Crianças podem comprar na G&S Home Solutions?
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -440,7 +440,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    10 - Cookies e tecnologias semelhantes
+                    Cookies e tecnologias semelhantes
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -494,8 +494,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    11 - Como você pode manter suas informações pessoais
-                    seguras?
+                    Como você pode manter suas informações pessoais seguras?
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -516,7 +515,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    12 - Outras informações importantes sobre proteção de dados
+                    Outras informações importantes sobre proteção de dados
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -535,7 +534,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    13 - Como entrar em contato com o encarregado da proteção de
+                    Como entrar em contato com o encarregado da proteção de
                     dados da G&S Home Solutions?
                   </Box>
                   <AccordionIcon />
@@ -559,7 +558,7 @@ export default function Privacy() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    14 - Legislação e foro
+                    Legislação e foro
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>

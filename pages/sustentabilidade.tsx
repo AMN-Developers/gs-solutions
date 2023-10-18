@@ -29,49 +29,49 @@ export default function Sustentabilidade() {
           sustentável.
         </Text>
         <Flex>
-          <Flex flexDirection={"column"} gap={4} p={4}>
-            <Text>
-              O plano de melhoria para o meio ambiente implantado pela G&S Home
-              Solutions são os 5 <strong>R’s</strong>
-            </Text>
-            <Text>
-              <strong>Repensar:</strong> cada produto que você utiliza passa por
-              várias produções, matéria-prima, o manuseio, as condições que
-              levam esse produto até você, e como será na hora de descartar esse
-              produto? Então: Repense!
-            </Text>
-            <Text>
-              <strong>Recusar:</strong> produtos que causam dano ao meio
-              ambiente;
-            </Text>
-            <Text>
-              <strong>Reduzir:</strong> o lixo, por isso controle o consumo!
-              Evite exageros, usar somente o necessário e opte por produtos a
-              favores da natureza como os de refil.
-            </Text>
-            <Text>
-              <strong>Reutilizar:</strong> reaproveite alguns produtos, use sua
-              criatividade, muitas vezes fazemos coisas incríveis com o que
-              menos imaginamos!
-            </Text>
-            <Text>
-              <strong>Reciclar:</strong> e ajude a reciclar! Separe o papel, o
-              plástico, o vidro, o metal e tudo aquilo que for lixo orgânico,
-              ajude a transformar um lixo velho num produto novo!
-            </Text>
-          </Flex>
           <Box
             alignSelf={"center"}
             ml={"auto"}
             display={{ base: "none", lg: "flex" }}
           >
             <Image
-              src={"/meioambiente.png"}
+              src={"/sustentabilidade.svg"}
               alt="Imagem de sustentabilidade"
-              height={600}
-              width={600}
+              height={1000}
+              width={1000}
             />
           </Box>
+          <Flex flexDirection={"column"} gap={4} p={4}>
+            <Text>
+              O plano de melhoria para o meio ambiente implantado pela G&S Home
+              Solutions são os 5 <strong>R’s</strong>
+            </Text>
+            <Text>
+              <strong>Reduzir:</strong> O lixo, por isso controle o consumo!
+              Evite exageros, usar somente o necessário e opte por produtos a
+              favores da natureza como os de refil.
+            </Text>
+            <Text>
+              <strong>Reutilizar:</strong> Reaproveite alguns produtos, use sua
+              criatividade, muitas vezes fazemos coisas incríveis com o que
+              menos imaginamos!
+            </Text>
+            <Text>
+              <strong>Reciclar:</strong> Ajude a reciclar! Separe o papel, o
+              plástico, o vidro, o metal e tudo aquilo que for lixo orgânico,
+              ajude a transformar um lixo velho num produto novo!
+            </Text>
+            <Text>
+              <strong>Recusar:</strong> Produtos que causam dano ao meio
+              ambiente;
+            </Text>
+            <Text>
+              <strong>Repensar:</strong> Cada produto que você utiliza passa por
+              várias produções, matéria-prima, o manuseio, as condições que
+              levam esse produto até você, e como será na hora de descartar esse
+              produto? Então: Repense!
+            </Text>
+          </Flex>
         </Flex>
         <Divider borderColor={"blackAlpha.400"} />
         <Flex flexDirection={"column"} gap={2} p={4}>
