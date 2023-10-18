@@ -18,13 +18,13 @@ export default function Higienização() {
         >
           Linha de Higienização
         </Text>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} my={4} rounded={"md"}>
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} my={4} mb={8} rounded={"md"}>
           <Text
             as="h2"
             fontWeight={"bold"}
             textTransform={"uppercase"}
             fontSize={"xl"}
-            pb={4}
+            py={4}
           >
             Linha VEGANA
           </Text>

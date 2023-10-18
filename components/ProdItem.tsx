@@ -35,12 +35,15 @@ export default function ProdItem({
         overflow={"hidden"}
         color={"white"}
         bgImage={bgImage}
+        bgSize={{ base: "contain", md: "auto" }}
         bgRepeat={"no-repeat"}
         bgPosition={"center"}
-        bgSize={"contain"}
+        maxW={"320px"}
         textColor={"transparent"}
-        maxH={"220px"}
+        maxH={"290px"}
+        p={4}
         _hover={{
+          transition: "all 1s ease-in-out",
           bgImage: hoverColor,
           color: "black",
         }}
@@ -54,7 +57,7 @@ export default function ProdItem({
           boxSize={"full"}
           fontWeight={"bold"}
           gap={2}
-          py={{ base: 10, md: 20 }}
+          py={{ base: 10, md: 24 }}
           fontSize={{ base: "xx-small", md: "smaller" }}
           textTransform={"uppercase"}
         >
