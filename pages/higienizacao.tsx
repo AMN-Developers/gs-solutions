@@ -2,9 +2,9 @@ import MotionLayout from "@/components/MotionLayout"
 import ProdItem from "@/components/ProdItem"
 import { Box, Container, Flex, Text } from "@chakra-ui/react"
 
-export default function Lotus() {
+export default function Higienização() {
   return (
-    <MotionLayout title="Lotus">
+    <MotionLayout title="Higienização">
       <Container maxW={"container.xl"}>
         <Text
           display={"flex"}
@@ -80,10 +80,10 @@ export default function Lotus() {
           <Flex flexDirection={{ base: "column", sm: "row" }} gap={4}>
             <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
               <ProdItem
-                bgImage="/produtos/preimper.png"
-                hoverColor=""
-                alt="Fix Float"
-                title="Fix Float"
+                bgImage="/produtos/fixflot.png"
+                hoverColor="linear-gradient(0deg, rgba(168,53,65,1) 10%, rgba(255,255,255,1) 10%, rgba(255,255,255,1) 51%, rgba(255,255,255,1) 90%, rgba(168,53,65,1) 90%)"
+                alt="Fix Flot"
+                title="Fix Flot"
                 description="LÓTUS FIX-FLOT é um flotador extremamente concentrado com espumação controlada e com ativos anti-migrantes, através da tecnologia “Lótus Omni FIX”, especialmente desenvolvido para limpeza de todos os tipos de tapetes e carpetes. Com alta capacidade na remoção das mais variadas sujidades, além de revitalizar a coloração e o toque natural da fibra. É extremamente seguro para realizar a higienização de tapetes persas, orientais, kilim, fibras naturais, fibras sintéticas e carpetes, sem risco de migração/transferência de cor."
                 slogan="Flotador extremamente concentrado com espumação controlada e com ativos anti-migrantes"
               />
@@ -117,7 +117,7 @@ export default function Lotus() {
             </Flex>
           </Flex>
         </Box>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"}>
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
           <Flex flexDirection={{ base: "column", sm: "row" }} gap={4}>
             <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
               <ProdItem
@@ -139,7 +139,7 @@ export default function Lotus() {
             </Flex>
           </Flex>
         </Box>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"}>
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
           <Text
             as="h2"
             fontWeight={"bold"}
