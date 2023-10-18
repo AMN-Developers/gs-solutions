@@ -44,7 +44,8 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
         </Box>
       )
     },
-    "/lotus": () => {
+
+    "/higienizacao": () => {
       return (
         <Flex
           justifyContent={"space-between"}
