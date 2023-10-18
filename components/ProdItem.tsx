@@ -72,6 +72,11 @@ export default function ProdItem({
           <Text as="p" textAlign={"justify"}>
             {description}
           </Text>
+          <Text as="p" textAlign={"justify"}>
+            <em>
+              Rendimento, armazenamento e demais informações no Boletim Técnico
+            </em>
+          </Text>
           <Text fontWeight={"semibold"}>Faça o download:</Text>
           <Flex flexDirection={"row"} gap={2}>
             <Button colorScheme="messenger" size={"sm"}>
