@@ -6,7 +6,6 @@ import {
   useDisclosure,
   Text,
   Card,
-  Container,
 } from "@chakra-ui/react"
 
 interface ProdItemProps {
@@ -21,12 +20,11 @@ interface ProdItemProps {
 export default function ProdItem({
   title,
   bgImage,
-  description,
   slogan,
   hoverColor,
 }: ProdItemProps) {
   const { isOpen, onToggle } = useDisclosure()
-  console.log(hoverColor)
+
   return (
     <Flex flexDirection={"column"} mb={2}>
       <Card
@@ -43,7 +41,7 @@ export default function ProdItem({
         maxH={"290px"}
         p={4}
         _hover={{
-          transition: "all 1s ease-in-out",
+          transition: "all 0.8s ease-in-out",
           bgImage: hoverColor,
           color: "black",
         }}
@@ -67,30 +65,6 @@ export default function ProdItem({
           </Text>
         </Flex>
       </Card>
-      <Box as={Collapse} in={isOpen} maxW={{ base: "xs", md: "250" }} my={2}>
-        <Flex flexDirection={"column"} gap={2}>
-          <Text as="h2" textTransform={"uppercase"} fontWeight={"bold"}>
-            {title}
-          </Text>
-          <Text as="p" textAlign={"justify"}>
-            {description}
-          </Text>
-          <Text as="p" textAlign={"justify"}>
-            <em>
-              Rendimento, armazenamento e demais informações no Boletim Técnico
-            </em>
-          </Text>
-          <Text fontWeight={"semibold"}>Faça o download:</Text>
-          <Flex flexDirection={"row"} gap={2}>
-            <Button colorScheme="messenger" size={"sm"}>
-              FISPQ
-            </Button>
-            <Button colorScheme="messenger" size={"sm"}>
-              Boletim Tecnico
-            </Button>
-          </Flex>
-        </Flex>
-      </Box>
     </Flex>
   )
 }

@@ -85,6 +85,46 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
         </Flex>
       )
     },
+    "/impermeabilizantes": () => {
+      return (
+        <Flex
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          flexDirection={{ base: "column", md: "row" }}
+          px={{ base: 4, lg: 0 }}
+          gap={{ base: 4, md: 0 }}
+          key={route}
+          as={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: "0.5", ease: "easeInOut" }}
+          minH={40}
+        >
+          <Box minH={100}>
+            <Image
+              width={445}
+              height={100}
+              src="/logo-lotus.svg"
+              alt="Lotus logo"
+            />
+          </Box>
+          <Box
+            color="black"
+            fontSize={"xl"}
+            textAlign={{ base: "left", md: "right" }}
+          >
+            <Text as="h1" fontWeight={"bold"}>
+              G&S HOME SOLUTIONS
+            </Text>
+            <Text as="h2" fontWeight={"semibold"}>
+              Uma linha completa de higienização e impermeabilização de
+              estofados
+            </Text>
+          </Box>
+        </Flex>
+      )
+    },
     "/limpoo": () => {
       return (
         <Flex
