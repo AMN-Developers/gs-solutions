@@ -89,6 +89,7 @@ export default function Higienização() {
                 title={CatalogItem.title}
                 slogan={CatalogItem.slogan}
                 cor={CatalogItem.cor}
+                key={CatalogItem.title}
               />
             ))}
           </Catalog.Root>
