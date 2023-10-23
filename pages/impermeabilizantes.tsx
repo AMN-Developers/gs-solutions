@@ -37,6 +37,7 @@ export default function Impermeabilizantes() {
                 title={CatalogItem.title}
                 slogan={CatalogItem.slogan}
                 cor={CatalogItem.cor}
+                key={CatalogItem.title}
               />
             ))}
           </Catalog.Root>
