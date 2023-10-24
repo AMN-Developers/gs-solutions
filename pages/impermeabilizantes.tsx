@@ -1,13 +1,64 @@
+import { useRef, useState } from "react"
+import { Box, Button, Container, Flex, Skeleton, Text } from "@chakra-ui/react"
 import { Catalog } from "@/components/Catalog"
-import { CATALOG_ITEMS } from "@/components/Catalog/CATALOG_ITEMS"
 import MotionLayout from "@/components/MotionLayout"
 import ProdItem from "@/components/ProdItem"
-import { Box, Container, Flex, Text } from "@chakra-ui/react"
+import useProducts, { Product } from '@/hooks/useProducts'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export default function Impermeabilizantes() {
+  const { data, isLoading } = useProducts()
+  const [selectedProduct, setSelectedProduct] = useState<Product>()
+  // When the user clicks on a product put the product in the center of the screen
+  const productRef = useRef<HTMLDivElement>(null)
+  const productListRef = useRef<HTMLDivElement>(null)
+  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8]
+
+  const handleSelectProduct = (product: Product) => {
+    setSelectedProduct(product)
+    productRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center',
+    })
+  }
+
+  const handleGoBack = () => {
+    setSelectedProduct(undefined)
+    productListRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center',
+    })
+  }
+
+  console.log(selectedProduct)
+
   return (
     <MotionLayout title="Impermeabilizantes">
       <Container maxW={"container.xl"}>
+        <AnimatePresence mode='wait'>
+          <Box ref={productRef} pt={4}>
+            {selectedProduct && (
+              <Box
+                as={motion.article}
+                backgroundColor={"#f8f8f8"}
+                rounded={'md'}
+                p={8}
+                key={selectedProduct.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: '0.5', ease: 'easeInOut' }}
+              >
+                <Box display={'flex'} justifyContent={'space-between'}>
+                  <Text fontSize={'2xl'} fontWeight={'bold'} as={'h2'}>{selectedProduct.title}</Text>
+                  <Button onClick={() => handleGoBack()}>Voltar</Button>
+                </Box>
+              </Box>
+            )}
+          </Box>
+        </AnimatePresence>
         <Text
           display={"flex"}
           justifyContent={"center"}
@@ -20,7 +71,7 @@ export default function Impermeabilizantes() {
         >
           Linha de Impermeabilizantes
         </Text>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"}>
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} ref={productListRef}>
           <Text
             as="h2"
             fontWeight={"bold"}
@@ -31,18 +82,33 @@ export default function Impermeabilizantes() {
             Produtos
           </Text>
           <Catalog.Root>
-            {CATALOG_ITEMS.map((CatalogItem) => (
+            {data?.map((Product) => (
               <Catalog.Item
-                bgImage={CatalogItem.bgImage}
-                title={CatalogItem.title}
-                slogan={CatalogItem.slogan}
-                cor={CatalogItem.cor}
-                key={CatalogItem.title}
+                key={Product.id}
+                thumbnail={Product.thumbnail}
+                title={Product.title}
+                slogan={Product.slogan}
+                hover_color={Product.hover_color}
+                onClick={() => handleSelectProduct(Product)}
               />
             ))}
+            {isLoading && (
+              skeletons.map((skeleton) => (
+                <Skeleton key={skeleton} rounded={"md"}
+                  overflow={"hidden"}
+                  color={"white"}
+                  bgSize={{ base: "contain", md: "auto" }}
+                  bgRepeat={"no-repeat"}
+                  bgPosition={"center"}
+                  textColor={"transparent"}
+                  h={"290px"}
+                  p={4}
+                />
+              ))
+            )}
           </Catalog.Root>
         </Box>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
+        {/* <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
           <Text
             as="h2"
             fontWeight={"bold"}
@@ -90,7 +156,7 @@ export default function Impermeabilizantes() {
               />
             </Flex>
           </Flex>
-        </Box>
+        </Box> */}
       </Container>
     </MotionLayout>
   )
