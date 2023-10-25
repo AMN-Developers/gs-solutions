@@ -1,13 +1,109 @@
+import { useRef, useState, useEffect } from "react"
+import { useRouter } from 'next/router'
+import { Box, Button, Container, IconButton, Skeleton, Text, Link as ChakraLink } from "@chakra-ui/react"
+import { CloseIcon } from "@chakra-ui/icons"
 import { Catalog } from "@/components/Catalog"
-import { CATALOG_ITEMS } from "@/components/Catalog/CATALOG_ITEMS"
 import MotionLayout from "@/components/MotionLayout"
-import ProdItem from "@/components/ProdItem"
-import { Box, Container, Flex, Text } from "@chakra-ui/react"
+import { CustomImage } from '@/components/CustomImage'
+import useProducts, { Product } from '@/hooks/useProducts'
+import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Impermeabilizantes() {
+  const router = useRouter()
+
+  const { data, isLoading } = useProducts()
+  const [selectedProduct, setSelectedProduct] = useState<Product>()
+  const productRef = useRef<HTMLDivElement>(null)
+  const productListRef = useRef<HTMLDivElement>(null)
+  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8]
+
+  const handleSelectProduct = (product: Product) => {
+    setSelectedProduct(product)
+    productRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center',
+    })
+    router.push(`/impermeabilizantes#${product.id}`, undefined, { shallow: true })
+  }
+
+  const handleGoBack = () => {
+    setSelectedProduct(undefined)
+    productListRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: 'center',
+    })
+    // remove hash from url
+    router.push(`/impermeabilizantes`, undefined, { shallow: true })
+  }
+
+  useEffect(() => {
+    if (router.asPath.includes('#')) {
+      const id = Number(router.asPath.split('#')[1])
+      const product = data?.find((product) => product.id === id)
+      setSelectedProduct(product)
+    }
+  }, [data, router.asPath])
+
+
   return (
     <MotionLayout title="Impermeabilizantes">
       <Container maxW={"container.xl"}>
+        <AnimatePresence mode='wait'>
+          <Box ref={productRef} pt={4}>
+            {selectedProduct && (
+              <Box
+                as={motion.article}
+                backgroundColor={"#f8f8f8"}
+                rounded={'md'}
+                p={8}
+                key={selectedProduct.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: '0.5', ease: 'easeInOut' }}
+              >
+                <Box display={'flex'} justifyContent={'space-between'}>
+                  <Text fontSize={'2xl'} fontWeight={'bold'} as={'h2'}>{selectedProduct.title}</Text>
+                  <IconButton aria-label='Fechar detalhes do produto' icon={<CloseIcon />} onClick={() => handleGoBack()} />
+                </Box>
+                <Box
+                  w={'full'}
+                  mt={4}
+                  display={'flex'}
+                  flexDirection={{ base: 'column', md: 'row' }}
+                  gap={4}
+                >
+                  <CustomImage src={selectedProduct.large_image} alt='' width={183} height={268} mx={{ base: 'auto', md: 0 }} />
+                  <Box display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
+                    <Text>{selectedProduct.description}</Text>
+                    <Box>
+                      <Text fontWeight={'bold'}>Diluição recomendada: 1 : 200</Text>
+                      <ChakraLink as={Link} href='/calculadora'>acesse nossa calculadora</ChakraLink>
+                    </Box>
+                    <Box mt={{ base: 4, md: 0 }}>
+                      <Box display={'flex'} gap={4}>
+                        <Button
+                          colorScheme='whatsapp'
+                          onClick={() => window.open(selectedProduct.fiqasp, '_blank')}
+                        >
+                          FIQASP
+                        </Button>
+                        <Button
+                          colorScheme='whatsapp'
+                        >
+                          BOLETIM TÉCNICO
+                        </Button>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+              </Box>
+            )}
+          </Box>
+        </AnimatePresence>
         <Text
           display={"flex"}
           justifyContent={"center"}
@@ -20,7 +116,7 @@ export default function Impermeabilizantes() {
         >
           Linha de Impermeabilizantes
         </Text>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"}>
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} ref={productListRef}>
           <Text
             as="h2"
             fontWeight={"bold"}
@@ -31,18 +127,33 @@ export default function Impermeabilizantes() {
             Produtos
           </Text>
           <Catalog.Root>
-            {CATALOG_ITEMS.map((CatalogItem) => (
+            {data?.map((Product) => (
               <Catalog.Item
-                bgImage={CatalogItem.bgImage}
-                title={CatalogItem.title}
-                slogan={CatalogItem.slogan}
-                cor={CatalogItem.cor}
-                key={CatalogItem.title}
+                key={Product.id}
+                thumbnail={Product.thumbnail}
+                title={Product.title}
+                slogan={Product.slogan}
+                hover_color={Product.hover_color}
+                onClick={() => handleSelectProduct(Product)}
               />
             ))}
+            {isLoading && (
+              skeletons.map((skeleton) => (
+                <Skeleton key={skeleton} rounded={"md"}
+                  overflow={"hidden"}
+                  color={"white"}
+                  bgSize={{ base: "contain", md: "auto" }}
+                  bgRepeat={"no-repeat"}
+                  bgPosition={"center"}
+                  textColor={"transparent"}
+                  h={"290px"}
+                  p={4}
+                />
+              ))
+            )}
           </Catalog.Root>
         </Box>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
+        {/* <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
           <Text
             as="h2"
             fontWeight={"bold"}
@@ -90,7 +201,7 @@ export default function Impermeabilizantes() {
               />
             </Flex>
           </Flex>
-        </Box>
+        </Box> */}
       </Container>
     </MotionLayout>
   )
