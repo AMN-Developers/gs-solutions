@@ -28,12 +28,8 @@ export default function Sustentabilidade() {
           Na G&S Home Solutions, acreditamos que o futuro de soluções é verde e
           sustentável.
         </Text>
-        <Flex>
-          <Box
-            alignSelf={"center"}
-            ml={"auto"}
-            display={{ base: "none", lg: "flex" }}
-          >
+        <Flex flexDirection={{ base: "column", md: "row" }}>
+          <Box alignSelf={"center"} ml={"auto"}>
             <Image
               src={"/sustentabilidade.svg"}
               alt="Imagem de sustentabilidade"
@@ -41,7 +37,12 @@ export default function Sustentabilidade() {
               width={1000}
             />
           </Box>
-          <Flex flexDirection={"column"} gap={4} p={4}>
+          <Flex
+            flexDirection={"column"}
+            gap={4}
+            p={4}
+            fontSize={{ base: "sm", xl: "md" }}
+          >
             <Text>
               O plano de melhoria para o meio ambiente implantado pela G&S Home
               Solutions são os 5 <strong>R’s</strong>
@@ -177,6 +178,39 @@ export default function Sustentabilidade() {
               </Text>
             </Box>
           </Flex>
+        </Flex>
+        <Divider borderColor={"blackAlpha.400"} />
+        <Text
+          as="h2"
+          maxW={"container.xl"}
+          display={"flex"}
+          justifyContent={"center"}
+          fontSize={"xl"}
+          textTransform={"uppercase"}
+          py={4}
+          fontWeight={"bold"}
+        >
+          Os Objetivos de Desenvolvimento Sustentável no Brasil
+        </Text>
+        <Flex gap={4} my={"4"} flexDirection={{ base: "column", md: "row" }}>
+          <Flex flexDirection={"column"} w={{ base: "full", md: "50%" }}>
+            <Text as={"p"} fontSize={{ base: "sm", xl: "md" }}>
+              Os Objetivos de Desenvolvimento Sustentável são um apelo global à
+              ação para acabar com a pobreza, proteger o meio ambiente e o clima
+              e garantir que as pessoas, em todos os lugares, possam desfrutar
+              de paz e de prosperidade. Estes são os objetivos para os quais as
+              Nações Unidas estão contribuindo a fim de que possamos atingir a
+              Agenda 2030 no Brasil.
+            </Text>
+          </Flex>
+          <Box alignSelf={"center"} w={{ base: "full", md: "50%" }}>
+            <Image
+              src={"/sdgs.svg"}
+              alt="Imagem de sustentabilidade"
+              height={220}
+              width={620}
+            />
+          </Box>
         </Flex>
       </Container>
     </MotionLayout>
