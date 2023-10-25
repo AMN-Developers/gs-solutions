@@ -1,15 +1,19 @@
-import { useRef, useState } from "react"
-import { Box, Button, Container, Flex, Skeleton, Text } from "@chakra-ui/react"
+import { useRef, useState, useEffect } from "react"
+import { useRouter } from 'next/router'
+import { Box, Button, Container, IconButton, Skeleton, Text, Link as ChakraLink } from "@chakra-ui/react"
+import { CloseIcon } from "@chakra-ui/icons"
 import { Catalog } from "@/components/Catalog"
 import MotionLayout from "@/components/MotionLayout"
-import ProdItem from "@/components/ProdItem"
+import { CustomImage } from '@/components/CustomImage'
 import useProducts, { Product } from '@/hooks/useProducts'
 import { AnimatePresence, motion } from 'framer-motion'
+import Link from 'next/link'
 
 export default function Impermeabilizantes() {
+  const router = useRouter()
+
   const { data, isLoading } = useProducts()
   const [selectedProduct, setSelectedProduct] = useState<Product>()
-  // When the user clicks on a product put the product in the center of the screen
   const productRef = useRef<HTMLDivElement>(null)
   const productListRef = useRef<HTMLDivElement>(null)
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -21,6 +25,7 @@ export default function Impermeabilizantes() {
       block: 'center',
       inline: 'center',
     })
+    router.push(`/impermeabilizantes#${product.id}`, undefined, { shallow: true })
   }
 
   const handleGoBack = () => {
@@ -30,9 +35,18 @@ export default function Impermeabilizantes() {
       block: 'center',
       inline: 'center',
     })
+    // remove hash from url
+    router.push(`/impermeabilizantes`, undefined, { shallow: true })
   }
 
-  console.log(selectedProduct)
+  useEffect(() => {
+    if (router.asPath.includes('#')) {
+      const id = Number(router.asPath.split('#')[1])
+      const product = data?.find((product) => product.id === id)
+      setSelectedProduct(product)
+    }
+  }, [data, router.asPath])
+
 
   return (
     <MotionLayout title="Impermeabilizantes">
@@ -53,7 +67,38 @@ export default function Impermeabilizantes() {
               >
                 <Box display={'flex'} justifyContent={'space-between'}>
                   <Text fontSize={'2xl'} fontWeight={'bold'} as={'h2'}>{selectedProduct.title}</Text>
-                  <Button onClick={() => handleGoBack()}>Voltar</Button>
+                  <IconButton aria-label='Fechar detalhes do produto' icon={<CloseIcon />} onClick={() => handleGoBack()} />
+                </Box>
+                <Box
+                  w={'full'}
+                  mt={4}
+                  display={'flex'}
+                  flexDirection={{ base: 'column', md: 'row' }}
+                  gap={4}
+                >
+                  <CustomImage src={selectedProduct.large_image} alt='' width={183} height={268} mx={{ base: 'auto', md: 0 }} />
+                  <Box display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
+                    <Text>{selectedProduct.description}</Text>
+                    <Box>
+                      <Text fontWeight={'bold'}>Diluição recomendada: 1 : 200</Text>
+                      <ChakraLink as={Link} href='/calculadora'>acesse nossa calculadora</ChakraLink>
+                    </Box>
+                    <Box mt={{ base: 4, md: 0 }}>
+                      <Box display={'flex'} gap={4}>
+                        <Button
+                          colorScheme='whatsapp'
+                          onClick={() => window.open(selectedProduct.fiqasp, '_blank')}
+                        >
+                          FIQASP
+                        </Button>
+                        <Button
+                          colorScheme='whatsapp'
+                        >
+                          BOLETIM TÉCNICO
+                        </Button>
+                      </Box>
+                    </Box>
+                  </Box>
                 </Box>
               </Box>
             )}

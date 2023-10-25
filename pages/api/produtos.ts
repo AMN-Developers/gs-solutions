@@ -19,6 +19,7 @@ export interface Acf {
   slogan: string
   hover_color: string
   description: string
+  fiqasp: string
   category: Category[]
 }
 
@@ -43,7 +44,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
 
     const products = productsData.map(product => {
       const { id, title, acf } = product;
-      const { thumbnail, large_image, slogan, hover_color, description, category } = acf;
+      const { thumbnail, large_image, slogan, hover_color, description, category, fiqasp } = acf;
       return {
         id,
         title: title.rendered,
@@ -53,6 +54,7 @@ export default async function (req: NextApiRequest, res: NextApiResponse) {
         hover_color,
         description,
         category,
+        fiqasp,
       }
     })
 

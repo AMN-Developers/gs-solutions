@@ -9,6 +9,7 @@ export interface Product {
   slogan: string
   hover_color: string
   description: string
+  fiqasp: string
   category: Category[]
 }
 
