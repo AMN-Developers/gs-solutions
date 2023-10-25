@@ -36,6 +36,7 @@ export default function Layout({ children, route }: LayoutProps) {
     "/higienizacao": "/card-lotus.webp",
     "/impermeabilizantes": "/card-lotus.webp",
     "/limpoo": "/card-limpoo.webp",
+    "/fixflot": "/fixflot.webp",
   }
 
   const {
