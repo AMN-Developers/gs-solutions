@@ -31,13 +31,25 @@ export default function Cartificado() {
           G&S Home Solutions juntos com a Eureciclo para um mundo melhor!
         </Text>
         <Flex gap={4} flexDirection={{ base: "column", md: "row" }}>
-          <Image
-            src="/eureciclo-logo.png"
-            alt="Eu Reciclo"
-            width={245}
-            height={319}
-          />
-          <Flex flexDirection={"column"} p={4} gap={4}>
+          <Flex
+            justify={"center"}
+            boxSize={"full"}
+            w={{ base: "100%", md: "30%" }}
+          >
+            <Image
+              src="/eureciclo-logo.png"
+              alt="Eu Reciclo"
+              width={245}
+              height={319}
+            />
+          </Flex>
+
+          <Flex
+            flexDirection={"column"}
+            p={4}
+            gap={4}
+            w={{ base: "100%", md: "70%" }}
+          >
             <Text as="p">
               Você sabia que a G&S Home Solutions possui o selo eureciclo?
             </Text>
@@ -71,7 +83,7 @@ export default function Cartificado() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    Sistema de Gestão de Qualidade
+                    ISO 9001
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
@@ -79,13 +91,18 @@ export default function Cartificado() {
               <AccordionPanel pb={4}>
                 <Flex>
                   <Box w={"30%"} display={"flex"} justifyContent={"center"}>
-                    <Text>Teste</Text>
+                    <Image
+                      src="certificados/iso.svg"
+                      alt="Iso 9001"
+                      width={114}
+                      height={114}
+                    />
                   </Box>
                   <Text w={"70%"}>
-                    O objetivo da norma, é trazer confiança ao cliente de que os
-                    produtos e serviços da empresa serão criados de modo
-                    repetitivo e consistente, afim de que adquira uma qualidade,
-                    de acordo com aquilo que foi definido pela empresa
+                    A Iso 9001 designa um grupo de normas técnicas que
+                    estabelecem um modelo de gestão da qualidade para
+                    organizações em geral, pensando em toda nossa gestão de
+                    compliance.
                   </Text>
                 </Flex>
               </AccordionPanel>
