@@ -49,6 +49,7 @@ export default function Cartificado() {
             p={4}
             gap={4}
             w={{ base: "100%", md: "70%" }}
+            justifyContent={"center"}
           >
             <Text as="p">
               Você sabia que a G&S Home Solutions possui o selo eureciclo?
@@ -89,8 +90,13 @@ export default function Cartificado() {
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                <Flex>
-                  <Box w={"30%"} display={"flex"} justifyContent={"center"}>
+                <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"center"}
+                    w={"20%"}
+                    alignSelf={"center"}
+                  >
                     <Image
                       src="certificados/iso.svg"
                       alt="Iso 9001"
@@ -98,12 +104,18 @@ export default function Cartificado() {
                       height={114}
                     />
                   </Box>
-                  <Text w={"70%"}>
-                    A Iso 9001 designa um grupo de normas técnicas que
-                    estabelecem um modelo de gestão da qualidade para
-                    organizações em geral, pensando em toda nossa gestão de
-                    compliance.
-                  </Text>
+                  <Box
+                    w={{ base: "100%", md: "80%" }}
+                    display={"flex"}
+                    alignItems={"center"}
+                  >
+                    <Text>
+                      A Iso 9001 designa um grupo de normas técnicas que
+                      estabelecem um modelo de gestão da qualidade para
+                      organizações em geral, pensando em toda nossa gestão de
+                      compliance.
+                    </Text>
+                  </Box>
                 </Flex>
               </AccordionPanel>
             </AccordionItem>
@@ -116,26 +128,38 @@ export default function Cartificado() {
                     textAlign="left"
                     fontWeight={"semibold"}
                   >
-                    Autorização para produção de produtos controlados
+                    ANVISA
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
               <AccordionPanel pb={4}>
-                <Flex>
-                  <Box w={"30%"} display={"flex"} justifyContent={"center"}>
-                    <Text>Teste</Text>
+                <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"center"}
+                    w={"20%"}
+                    alignSelf={"center"}
+                  >
+                    <Image
+                      src="/certificados/anvisa.png"
+                      alt="Logo anvisa"
+                      width={114}
+                      height={114}
+                    />
                   </Box>
-                  <Text w={"70%"}>
-                    Através da Divisão de Controle e Fiscalização de Produtos
-                    Químicos (DCPQ) a Policia Federal realiza o controle e a
-                    fiscalização da fabricação, produção, armazenamento,
-                    transformação, embalagem, compra, venda, comercialização,
-                    aquisição, posse, doação, empréstimo, permuta, remessa,
-                    transporte, distribuição, importação, exportação,
-                    reexportação, cessão, reaproveitamento, reciclagem,
-                    transferência e utilização de produtos químicos
-                  </Text>
+                  <Box
+                    w={{ base: "100%", md: "80%" }}
+                    display={"flex"}
+                    alignItems={"center"}
+                  >
+                    <Text>
+                      Todos os produtos da G&S são notificados da ANVISA
+                      (Agência Nacional de Vigilância Sanitária) responsável por
+                      criar normas e regulamentos e dar suporte para todas as
+                      atividades da área no País.
+                    </Text>
+                  </Box>
                 </Flex>
               </AccordionPanel>
             </AccordionItem>
