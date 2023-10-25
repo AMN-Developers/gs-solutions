@@ -72,7 +72,7 @@ export default function Higienização() {
             />
           </SimpleGrid>
         </Box>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"}>
+        {/* <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"}>
           <Text
             as="h2"
             fontWeight={"bold"}
@@ -93,7 +93,7 @@ export default function Higienização() {
               />
             ))}
           </Catalog.Root>
-        </Box>
+        </Box> */}
 
         <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
           <Text
