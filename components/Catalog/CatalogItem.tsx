@@ -45,7 +45,7 @@ export default function CatalogItem({
         textTransform={"uppercase"}
       >
         <Text>{title}</Text>
-        <Text textAlign={"left"} px={4}>
+        <Text textAlign={"center"} px={4}>
           {slogan}
         </Text>
       </Flex>

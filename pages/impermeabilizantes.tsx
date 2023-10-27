@@ -51,12 +51,24 @@ export default function Impermeabilizantes() {
   return (
     <MotionLayout title="Impermeabilizantes">
       <Container maxW={"container.xl"}>
+        <Text
+          display={"flex"}
+          justifyContent={"center"}
+          textAlign={"center"}
+          py={4}
+          textTransform={"uppercase"}
+          fontWeight={"bold"}
+          fontSize={"2xl"}
+          my={4}
+        >
+          Linha de Impermeabilizantes
+        </Text>
         <AnimatePresence mode='wait'>
-          <Box ref={productRef} pt={4}>
+          <Box ref={productRef} pb={4}>
             {selectedProduct && (
               <Box
                 as={motion.article}
-                backgroundColor={"#f8f8f8"}
+                backgroundColor={"#f1f1f1"}
                 rounded={'md'}
                 p={8}
                 key={selectedProduct.id}
@@ -65,7 +77,7 @@ export default function Impermeabilizantes() {
                 exit={{ opacity: 0 }}
                 transition={{ duration: '0.5', ease: 'easeInOut' }}
               >
-                <Box display={'flex'} justifyContent={'space-between'}>
+                <Box display={'flex'} justifyContent={'space-between'} alignItems={'center'}>
                   <Text fontSize={'2xl'} fontWeight={'bold'} as={'h2'}>{selectedProduct.title}</Text>
                   <IconButton aria-label='Fechar detalhes do produto' icon={<CloseIcon />} onClick={() => handleGoBack()} />
                 </Box>
@@ -79,11 +91,11 @@ export default function Impermeabilizantes() {
                   <CustomImage src={selectedProduct.large_image} alt='' width={183} height={268} mx={{ base: 'auto', md: 0 }} />
                   <Box display={'flex'} flexDirection={'column'} justifyContent={'space-between'}>
                     <Text>{selectedProduct.description}</Text>
-                    <Box>
-                      <Text fontWeight={'bold'}>Diluição recomendada: 1 : 200</Text>
-                      <ChakraLink as={Link} href='/calculadora'>acesse nossa calculadora</ChakraLink>
-                    </Box>
-                    <Box mt={{ base: 4, md: 0 }}>
+                    <Box display={'flex'} flexDirection={{ base: 'column', md: 'row' }} justifyContent={'space-between'}>
+                      <Box>
+                        <Text fontWeight={'bold'}>Diluição recomendada: 1 : 200</Text>
+                        <ChakraLink as={Link} href='/calculadora'>acesse nossa calculadora</ChakraLink>
+                      </Box>
                       <Box display={'flex'} gap={4}>
                         <Button
                           colorScheme='whatsapp'
@@ -104,19 +116,7 @@ export default function Impermeabilizantes() {
             )}
           </Box>
         </AnimatePresence>
-        <Text
-          display={"flex"}
-          justifyContent={"center"}
-          textAlign={"center"}
-          py={4}
-          textTransform={"uppercase"}
-          fontWeight={"bold"}
-          fontSize={"2xl"}
-          my={4}
-        >
-          Linha de Impermeabilizantes
-        </Text>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} ref={productListRef}>
+        <Box w="full" backgroundColor={"#f1f1f1"} p={8} rounded={"md"} ref={productListRef} mb={4}>
           <Text
             as="h2"
             fontWeight={"bold"}
