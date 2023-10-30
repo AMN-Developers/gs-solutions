@@ -163,6 +163,67 @@ export default function Cartificado() {
                 </Flex>
               </AccordionPanel>
             </AccordionItem>
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box
+                    as="span"
+                    flex="1"
+                    textAlign="left"
+                    fontWeight={"semibold"}
+                    textTransform={"uppercase"}
+                  >
+                    Autorização para produção de produtos controlados
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <Flex flexDirection={{ base: "column", md: "row" }} gap={8}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"space-around"}
+                    w={"35%"}
+                    alignSelf={"center"}
+                  >
+                    <Image
+                      src="/certificados/policiafederal.svg"
+                      alt="Logo Policia Federal"
+                      width={100}
+                      height={100}
+                    />
+                    <Image
+                      src="/certificados/policiacivil.svg"
+                      alt="Logo Policia Federal"
+                      width={100}
+                      height={100}
+                    />
+                    <Image
+                      src="/certificados/cetesb.svg"
+                      alt="Logo Policia Federal"
+                      width={100}
+                      height={100}
+                    />
+                  </Box>
+                  <Box
+                    w={{ base: "100%", md: "65%" }}
+                    display={"flex"}
+                    alignItems={"center"}
+                  >
+                    <Text>
+                      Através da Divisão de Controle e Fiscalização de Produtos
+                      Químicos (DCPQ) a Policia Federal realiza o controle e a
+                      fiscalização da fabricação, produção, armazenamento,
+                      transformação, embalagem, compra, venda, comercialização,
+                      aquisição, posse, doação, empréstimo, permuta, remessa,
+                      transporte, distribuição, importação, exportação,
+                      reexportação, cessão, reaproveitamento, reciclagem,
+                      transferência e utilização de produtos químicos
+                    </Text>
+                  </Box>
+                </Flex>
+              </AccordionPanel>
+            </AccordionItem>
           </Accordion>
         </Flex>
       </Container>
