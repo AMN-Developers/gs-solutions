@@ -10,8 +10,10 @@ import {
   ModalOverlay,
   ModalContent,
   Image,
+  Collapse,
 } from "@chakra-ui/react"
 import { motion, AnimatePresence } from "framer-motion"
+import HiddenText from "@/components/HiddenText"
 
 import { useState } from "react"
 const variants = {
@@ -21,6 +23,7 @@ const variants = {
 }
 
 export default function FixFlot() {
+  const { isOpen, onToggle } = useDisclosure()
   const [image, setImage] = useState(2)
   const handleChangeImage = (src: number) => {
     setImage(src)
@@ -47,7 +50,7 @@ export default function FixFlot() {
   return (
     <MotionLayout title="Fix-Flot">
       <Container maxW={"container.xl"}>
-        <Text
+        {/* <Text
           as={"h1"}
           py={4}
           fontSize={"2xl"}
@@ -55,7 +58,7 @@ export default function FixFlot() {
           textAlign={"center"}
         >
           Fix-Flot - O Melhor flotador do mercado
-        </Text>
+        </Text> */}
         <Flex flexDirection={{ base: "column", lg: "row" }} gap={4}>
           <Flex w={{ base: "full", lg: "50%" }}>
             <Flex flexDirection={"column"} gap={4}>
@@ -102,6 +105,7 @@ export default function FixFlot() {
                       rounded={"md"}
                       p={4}
                       cursor={"pointer"}
+                      key={index}
                     >
                       <Image
                         alt={Thumb.alt}
@@ -149,22 +153,29 @@ export default function FixFlot() {
               Diluição recomendada
             </Text>
             <Flex gap={4} flexDirection={"column"} fontSize={"sm"}>
-              <Text as={"p"}>
-                <strong>Sujidade leve</strong>: realizar diluição de 1:130
-                (7,5mL de FIX-FLOT para 992,5ml de água);
-              </Text>
-              <Text as={"p"}>
-                <strong>Sujidade média</strong>: realizar diluição de 1:100
-                (10mL de FIX-FLOT para 990mL de água);
-              </Text>
-              <Text as={"p"}>
-                <strong>Sujidade alto</strong>: realizar diluição de 1:70 (15mL
-                de FIX-FLOT para 985mL de água).
-              </Text>
-              <Text as={"p"}>
-                <strong>Sujidade muito alta</strong>: realizar diluição de 1:50
-                (20mL de FIX-FLOT para 980mL de água).
-              </Text>
+              <HiddenText
+                title="Sujidade Leve"
+                text="Realizar diluição de 1:130
+                (7,5mL de FIX-FLOT para 992,5ml de água);"
+              />
+              <HiddenText
+                title="Sujidade média"
+                text="Realizar diluição de 1:100
+                (10mL de FIX-FLOT para 990mL de água);"
+              />
+              <HiddenText
+                title="Sujidade alto"
+                text=" Realizar diluição de 1:70 (15mL
+                de FIX-FLOT para 985mL de água)."
+              />
+              <HiddenText
+                title="Sujidade muito alta"
+                text="Realizar diluição de 1:50
+                (20mL de FIX-FLOT para 980mL de água)."
+              />
+            </Flex>
+
+            <Flex gap={4} flexDirection={"column"} fontSize={"sm"}>
               <Text
                 as={"h2"}
                 textTransform={"uppercase"}
@@ -195,6 +206,7 @@ export default function FixFlot() {
                 realizando a extração do produto com a extratora, sem enxágue.
               </Text>
             </Flex>
+
             <Flex flexDirection={"column"} gap={4} pb={4}>
               <Text
                 as={"h2"}
