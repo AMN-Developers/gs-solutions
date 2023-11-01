@@ -11,6 +11,11 @@ import {
   ModalContent,
   Image,
   Collapse,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
 } from "@chakra-ui/react"
 import { motion, AnimatePresence } from "framer-motion"
 import HiddenText from "@/components/HiddenText"
@@ -50,15 +55,6 @@ export default function FixFlot() {
   return (
     <MotionLayout title="Fix-Flot">
       <Container maxW={"container.xl"}>
-        {/* <Text
-          as={"h1"}
-          py={4}
-          fontSize={"2xl"}
-          fontWeight={"bold"}
-          textAlign={"center"}
-        >
-          Fix-Flot - O Melhor flotador do mercado
-        </Text> */}
         <Flex flexDirection={{ base: "column", lg: "row" }} gap={4}>
           <Flex w={{ base: "full", lg: "50%" }}>
             <Flex flexDirection={"column"} gap={4}>
@@ -117,10 +113,15 @@ export default function FixFlot() {
                   ))}
                 </Flex>
               </Flex>
-              <Text as={"p"} fontWeight={"semibold"} fontSize={"2xl"}>
+              <Text
+                as={"p"}
+                fontWeight={"semibold"}
+                fontSize={"md"}
+                color={"#A22C37"}
+              >
                 O que é FixFlot?
               </Text>
-              <Text as={"p"} textAlign={"justify"}>
+              <Text as={"p"} textAlign={"justify"} fontSize={"md"}>
                 LÓTUS FIX-FLOT é um flotador extremamente concentrado com
                 espumação controlada e com ativos anti-migrantes através da
                 tecnologia “Lótus Omni FIX”, especialmente desenvolvido para
@@ -137,22 +138,21 @@ export default function FixFlot() {
             w={{ base: "full", lg: "50%" }}
             flexDirection={"column"}
             gap={4}
-            bgColor={"#A22C37"}
             rounded={"md"}
             px={4}
-            textColor={"white"}
             my={4}
           >
             <Text
               as={"h2"}
               fontWeight={"semibold"}
-              fontSize={"xl"}
+              fontSize={"md"}
               textTransform={"uppercase"}
               py={4}
+              color={"#A22C37"}
             >
               Diluição recomendada
             </Text>
-            <Flex gap={4} flexDirection={"column"} fontSize={"sm"}>
+            <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
               <HiddenText
                 title="Sujidade Leve"
                 text="Realizar diluição de 1:130
@@ -175,11 +175,12 @@ export default function FixFlot() {
               />
             </Flex>
 
-            <Flex gap={4} flexDirection={"column"} fontSize={"sm"}>
+            <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
               <Text
                 as={"h2"}
                 textTransform={"uppercase"}
                 fontWeight={"semibold"}
+                color={"#A22C37"}
               >
                 Sugestão de processo Úmido :
               </Text>
@@ -194,6 +195,7 @@ export default function FixFlot() {
                 as={"h2"}
                 textTransform={"uppercase"}
                 fontWeight={"semibold"}
+                color={"#A22C37"}
               >
                 Sugestão de processo Semi-Seco :
               </Text>
@@ -208,34 +210,45 @@ export default function FixFlot() {
             </Flex>
 
             <Flex flexDirection={"column"} gap={4} pb={4}>
-              <Text
-                as={"h2"}
-                fontWeight={"semibold"}
-                fontSize={"xl"}
-                textTransform={"uppercase"}
-                py={4}
-              >
-                Propriedades
-              </Text>
-              <Image
-                src="/pH.svg"
-                alt="ph tabela"
-                width={"md"}
-                mx={"auto"}
-                bgColor={"whiteAlpha.300"}
-                rounded={"md"}
-                p={4}
-              />
-              <Text>
-                <strong>PH</strong>: 2,5 - 3,5
-              </Text>
-              <Text>
-                <strong>Densidade</strong>: aproximadamente 0,985 g/cm3.
-              </Text>
-              <Text>
-                <strong>Solubilidade</strong> em água: Solúvel em qualquer
-                proporção.
-              </Text>
+              <Accordion defaultIndex={[0]} allowMultiple>
+                <AccordionItem>
+                  <h2>
+                    <AccordionButton>
+                      <Box
+                        as="span"
+                        flex="1"
+                        textAlign="left"
+                        fontWeight={"semibold"}
+                        color={"#A22C37"}
+                      >
+                        Propriedades
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel pb={4} fontSize={"md"}>
+                    <Image
+                      src="/pH.svg"
+                      alt="ph tabela"
+                      width={"md"}
+                      mx={"auto"}
+                      bgColor={"whiteAlpha.300"}
+                      rounded={"md"}
+                      p={4}
+                    />
+                    <Text>
+                      <strong>PH</strong>: 2,5 - 3,5
+                    </Text>
+                    <Text>
+                      <strong>Densidade</strong>: aproximadamente 0,985 g/cm3.
+                    </Text>
+                    <Text>
+                      <strong>Solubilidade</strong> em água: Solúvel em qualquer
+                      proporção.
+                    </Text>
+                  </AccordionPanel>
+                </AccordionItem>
+              </Accordion>
             </Flex>
           </Flex>
         </Flex>

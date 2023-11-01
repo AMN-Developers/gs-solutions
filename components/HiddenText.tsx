@@ -10,17 +10,25 @@ export default function HiddenText({ text, title }: HiddenText) {
 
   return (
     <Box>
-      <Button onClick={onToggle} textTransform={"uppercase"} minW={"full"}>
+      <Button
+        onClick={onToggle}
+        textTransform={"uppercase"}
+        minW={"full"}
+        bgColor={"#A22C37"}
+        color={"white"}
+        fontSize={"sm"}
+      >
         {title}
       </Button>
       <Collapse in={isOpen} animateOpacity>
         <Box
           mt={4}
           p={4}
-          color="white"
           bg="whiteAlpha.300"
           rounded="md"
           shadow="md"
+          color={"white"}
+          bgColor={"#A22C37"}
         >
           {text}
         </Box>
