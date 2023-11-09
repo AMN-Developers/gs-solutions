@@ -210,7 +210,7 @@ export default function FixFlot() {
             </Flex>
 
             <Flex flexDirection={"column"} gap={4} pb={4}>
-              <Accordion defaultIndex={[0]} allowMultiple>
+              <Accordion allowToggle>
                 <AccordionItem>
                   <h2>
                     <AccordionButton>

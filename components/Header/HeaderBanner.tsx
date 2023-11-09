@@ -195,8 +195,8 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
             <Image
               width={455}
               height={130}
-              src="/logo-fixflot.svg"
-              alt="Fix Flot logo"
+              src="/logo-lotus.svg"
+              alt="Lotus logo"
             />
           </Box>
           <Box
