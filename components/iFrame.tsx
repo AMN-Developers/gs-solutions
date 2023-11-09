@@ -3,13 +3,16 @@ import { useState } from "react"
 import Image from "next/image"
 
 interface VideoFrameProps {
-  embedID: string;
-  title: string;
-  ariaDescription: string;
-
+  embedID: string
+  title: string
+  ariaDescription: string
 }
 
-export default function VideoFrame({ embedID, title, ariaDescription }: VideoFrameProps) {
+export default function VideoFrame({
+  embedID,
+  title,
+  ariaDescription,
+}: VideoFrameProps) {
   const [isImageClicked, setIsImageClicked] = useState(false)
 
   return (

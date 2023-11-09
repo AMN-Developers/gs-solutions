@@ -4,21 +4,17 @@ import {
   Box,
   Text,
   Flex,
-  useDisclosure,
-  Button,
-  Modal,
-  ModalOverlay,
-  ModalContent,
   Image,
-  Collapse,
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  SimpleGrid,
 } from "@chakra-ui/react"
 import { motion, AnimatePresence } from "framer-motion"
 import HiddenText from "@/components/HiddenText"
+import VideoFrame from "@/components/iFrame"
 
 import { useState } from "react"
 const variants = {
@@ -28,7 +24,6 @@ const variants = {
 }
 
 export default function FixFlot() {
-  const { isOpen, onToggle } = useDisclosure()
   const [image, setImage] = useState(2)
   const handleChangeImage = (src: number) => {
     setImage(src)
@@ -252,6 +247,70 @@ export default function FixFlot() {
             </Flex>
           </Flex>
         </Flex>
+        <Container
+          maxW="container.xl"
+          p={8}
+          mb={2}
+          bg={
+            "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+          }
+          rounded={"md"}
+        >
+          <Text
+            as="h2"
+            fontWeight={"bold"}
+            fontSize={"md"}
+            color={"white"}
+            marginBottom={4}
+          >
+            Conheça mais sobre o FixFlot
+          </Text>
+          <Flex
+            flexDirection={{ base: "column", sm: "row" }}
+            gap={4}
+            justifyContent={"space-between"}
+            color={"white"}
+            fontSize={"sm"}
+            fontWeight={"semibold"}
+          >
+            <Flex
+              width={{ base: "100%", md: "30%" }}
+              flexDirection={"column"}
+              gap={2}
+            >
+              <VideoFrame
+                embedID="dLLWw51CcHo"
+                title="G&S Home Solutions"
+                ariaDescription="G&S Home Solutions video de apresentação"
+              />
+              <Text>Higienizando com Lótus Fix-Flot</Text>
+            </Flex>
+            <Flex
+              width={{ base: "100%", md: "30%" }}
+              flexDirection={"column"}
+              gap={2}
+            >
+              <VideoFrame
+                embedID="uE71eR_bMh8"
+                title="G&S Home Solutions"
+                ariaDescription="G&S Home Solutions video de apresentação"
+              />
+              <Text>O melhor produto para lavar tapete?</Text>
+            </Flex>
+            <Flex
+              width={{ base: "100%", md: "30%" }}
+              flexDirection={"column"}
+              gap={2}
+            >
+              <VideoFrame
+                embedID="8BIYZO6ZSDU"
+                title="G&S Home Solutions"
+                ariaDescription="G&S Home Solutions video de apresentação"
+              />
+              <Text>Aula de higienização de tapete persa</Text>
+            </Flex>
+          </Flex>
+        </Container>
       </Container>
     </MotionLayout>
   )
