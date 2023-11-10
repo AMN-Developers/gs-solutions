@@ -25,7 +25,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: false,
+    fiqasp: "",
   },
   {
     id: 68,
@@ -62,7 +62,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: false,
+    fiqasp: "",
   },
   {
     id: 70,
@@ -114,7 +114,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: false,
+    fiqasp: "",
   },
   {
     id: 85,
@@ -140,7 +140,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: false,
+    fiqasp: "",
   },
   {
     id: 86,
@@ -166,7 +166,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: false,
+    fiqasp: "",
   },
 ];
 
@@ -300,5 +300,5 @@ const CATALOG_ITEMS_IMPER: Array<Product> = [
       },
     ],
     fiqasp: "",
-  }
+  },
 ];
