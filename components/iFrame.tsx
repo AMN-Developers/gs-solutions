@@ -45,13 +45,13 @@ export default function VideoFrame({
         </Box>
       ) : (
         <Box
-          as="iframe"
+          as={"iframe"}
           title={title}
           aria-description={ariaDescription}
-          src={`https://www.youtube.com/embed/${embedID}?controls=2&modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3&fs=0&disablekb=1&autoplay=1`}
-          allowFullScreen
+          src={`https://www.youtube.com/embed/${embedID}?controls=1&modestbranding=1&rel=0&showinfo=1&color=white&iv_load_policy=3&fs=1&disablekb=1&autoplay=1`}
           loading="lazy"
           rounded={"md"}
+          allowFullScreen
         />
       )}
     </AspectRatio>

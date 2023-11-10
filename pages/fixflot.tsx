@@ -266,7 +266,7 @@ export default function FixFlot() {
             Conheça mais sobre o FixFlot
           </Text>
           <Flex
-            flexDirection={{ base: "column", sm: "row" }}
+            flexDirection={{ base: "column", md: "row" }}
             gap={4}
             justifyContent={"space-between"}
             color={"white"}
