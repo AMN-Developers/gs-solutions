@@ -51,36 +51,36 @@ export default function FixFlot() {
 
   return (
     <MotionLayout title="Fix-Flot">
-      <Flex
+      <Box
         bgImage={"/lotusclean.gif"}
         bgRepeat={"no-repeat"}
         bgSize={"cover"}
         px={{ base: "10", md: "140", lg: "180px" }}
         py={{ base: "200", md: "140", lg: "180px" }}
-        justifyContent={"center"}
         boxShadow={"0px 4px 4px 1000px rgba(71, 0, 0, 0.50) inset"}
-        flexDirection={"column"}
       >
-        <Text
-          fontWeight={"black"}
-          fontSize={{ base: "40", md: "90" }}
-          color={"white"}
-          textAlign={"center"}
-          textTransform={"uppercase"}
-          w={"100%"}
-        >
-          FixFlot: Seu tapete mais limpo
-        </Text>
-        <Button
-          as={Link}
-          mx={"auto"}
-          href={"#fix"}
-          color={"white"}
-          bgColor={"#751E1E"}
-        >
-          Saiba mais
-        </Button>
-      </Flex>
+        <Flex flexDirection={"column"} justifyContent={"center"}>
+          <Text
+            fontWeight={"black"}
+            fontSize={{ base: "40", md: "90" }}
+            color={"white"}
+            textAlign={"center"}
+            textTransform={"uppercase"}
+            w={"100%"}
+          >
+            FixFlot: Seu tapete mais limpo
+          </Text>
+          <Button
+            as={Link}
+            mx={"auto"}
+            href={"#fix"}
+            color={"white"}
+            bgColor={"#751E1E"}
+          >
+            Saiba mais
+          </Button>
+        </Flex>
+      </Box>
       <Container maxW={"container.xl"}>
         <Flex flexDirection={{ base: "column", lg: "row" }} gap={4} id="fix">
           <Flex w={{ base: "full", lg: "50%" }}>
