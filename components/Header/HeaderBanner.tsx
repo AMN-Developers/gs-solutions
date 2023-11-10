@@ -172,50 +172,7 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
       )
     },
     "/fixflot": () => {
-      return (
-        <Flex
-          justifyContent={"space-between"}
-          flexDirection={{ base: "column", md: "row" }}
-          px={{ base: 4, lg: 0 }}
-          gap={{ base: 4, md: 0 }}
-          key={route}
-          as={motion.div}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: "0.5", ease: "easeInOut" }}
-          minH={40}
-        >
-          <Box
-            minH={130}
-            display={"flex"}
-            flexDir={"column"}
-            justifyContent={"center"}
-          >
-            <Image
-              width={455}
-              height={130}
-              src="/logo-fixflot.svg"
-              alt="Fix Flot logo"
-            />
-          </Box>
-          <Box
-            color="white"
-            fontSize={"xl"}
-            textAlign={{ base: "left", md: "right" }}
-            display={"flex"}
-            flexDir={"column"}
-            justifyContent={"center"}
-          >
-            <Text as="h1" fontWeight={"bold"}>
-              G&S HOME SOLUTIONS
-            </Text>
-            <Text as="h2" fontWeight={"semibold"} textTransform={"uppercase"}>
-              Ideal para todos os tipos de tapetes e carpetes
-            </Text>
-          </Box>
-        </Flex>
-      )
+      return <Flex></Flex>
     },
   }
 

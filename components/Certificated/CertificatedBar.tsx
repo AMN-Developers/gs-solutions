@@ -29,7 +29,12 @@ export default function CertificatedBar() {
             height={46}
           />
         </Box>
-        <Image src="SVB.svg" alt="logo svb" width={76} height={76} />
+        <Image
+          src="/certificados/SVB.svg"
+          alt="logo svb"
+          width={76}
+          height={76}
+        />
         <Box maxW={76}>
           <Image
             src="aatcc-logo.svg"

@@ -33,10 +33,17 @@ export default function FooterNav({ openDrawer }: FooterNavProps) {
         flexDirection={{ base: "column", md: "row" }}
         gap={4}
       >
-        <ChakraLink as={Link} href="#">
+        <ChakraLink as={Link} href="/">
           Home
         </ChakraLink>
-        <Button color={"white"} fontWeight={"thin"} fontSize={"sm"} variant="link" onClick={openDrawer} justifyContent={"left"}>
+        <Button
+          color={"white"}
+          fontWeight={"thin"}
+          fontSize={"sm"}
+          variant="link"
+          onClick={openDrawer}
+          justifyContent={"left"}
+        >
           Entre em Contato
         </Button>
         <ChakraLink as={Link} href="/privacy">
