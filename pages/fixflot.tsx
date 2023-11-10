@@ -75,8 +75,13 @@ export default function FixFlot() {
             as={Link}
             mx={"auto"}
             href={"#fix"}
-            color={"#751E1E"}
-            bgColor={"white"}
+            color={"white"}
+            bgColor={"transparent"}
+            
+            _hover={{
+              bgColor: "tranparent",
+              textDecoration: "underline",
+            }}
           >
             Saiba mais
           </Button>
