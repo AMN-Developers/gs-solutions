@@ -55,6 +55,7 @@ export default function FixFlot() {
         bgImage={"/lotusclean.gif"}
         bgRepeat={"no-repeat"}
         bgSize={"cover"}
+        bgPosition={"center"}
         px={{ base: "10", md: "140", lg: "180px" }}
         py={{ base: "200", md: "140", lg: "180px" }}
         boxShadow={"0px 4px 4px 1000px rgba(71, 0, 0, 0.50) inset"}
@@ -74,8 +75,8 @@ export default function FixFlot() {
             as={Link}
             mx={"auto"}
             href={"#fix"}
-            color={"white"}
-            bgColor={"#751E1E"}
+            color={"#751E1E"}
+            bgColor={"white"}
           >
             Saiba mais
           </Button>
