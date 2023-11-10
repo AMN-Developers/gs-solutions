@@ -1,8 +1,12 @@
-import { Flex, Card, Text } from "@chakra-ui/react"
-import { Product } from '@/hooks/useProducts'
+import { Flex, Card, Text } from "@chakra-ui/react";
+import Link from "next/link";
+import { Product } from "@/hooks/useProducts";
+import { RefObject } from "react";
 
 interface CatalogItemProps extends Partial<Product> {
-  onClick: () => void
+  lastProductRef: RefObject<HTMLDivElement> | null;
+  type: "higi" | "veg";
+  href: string;
 }
 
 export default function CatalogItem({
@@ -10,7 +14,10 @@ export default function CatalogItem({
   hover_color,
   title,
   slogan,
-  onClick,
+  lastProductRef,
+  id,
+  type,
+  href,
 }: CatalogItemProps) {
   return (
     <Card
@@ -30,7 +37,11 @@ export default function CatalogItem({
         color: "black",
         cursor: "pointer",
       }}
-      onClick={onClick}
+      ref={lastProductRef}
+      as={Link}
+      scroll={false}
+      href={href}
+      id={`${type}-${id}`}
     >
       <Flex
         justifyContent={"center"}
@@ -50,5 +61,5 @@ export default function CatalogItem({
         </Text>
       </Flex>
     </Card>
-  )
+  );
 }
