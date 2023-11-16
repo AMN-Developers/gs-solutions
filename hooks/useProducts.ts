@@ -11,6 +11,7 @@ export interface Product {
   description: string
   fiqasp: string
   category: Category[]
+  recomended: string
 }
 
 export interface Category {

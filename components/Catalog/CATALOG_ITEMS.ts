@@ -1,8 +1,9 @@
-import { Product } from "@/hooks/useProducts";
+import { Product } from "@/hooks/useProducts"
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
     id: 64,
+    recomended: "100",
     title: "FIX FLOT",
     thumbnail: "/produtos/fixflot.png",
     large_image: "/produtos/fixflot.png",
@@ -29,6 +30,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 68,
+    recomended: "30",
     title: "MULTI-C",
     thumbnail: "/produtos/multic.png",
     large_image: "/produtos/multic.png",
@@ -66,6 +68,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 70,
+    recomended: "200",
     title: "DESINFEKT",
     thumbnail: "/produtos/desinfekt.png",
     large_image: "/produtos/desinfekt.png",
@@ -92,6 +95,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 84,
+    recomended: "10",
     title: "CITRUSOLV",
     thumbnail: "/produtos/citrusolv.png",
     large_image: "/produtos/citrusolv.png",
@@ -118,6 +122,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 85,
+    recomended: "200",
     title: "CLEAN PROTECT",
     thumbnail: "/produtos/cleanprot.png",
     large_image: "/produtos/cleanprot.png",
@@ -144,6 +149,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 86,
+    recomended: "200",
     title: "HIDRA LEDER",
     thumbnail: "/produtos/hidraleder.png",
     large_image: "/produtos/hidraleder.png",
@@ -168,11 +174,12 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     ],
     fiqasp: "",
   },
-];
+]
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
     id: 1,
+    recomended: "40",
     title: "ALL01",
     thumbnail: "/produtos/allone.png",
     large_image: "/produtos/allone.png",
@@ -199,6 +206,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
   },
   {
     id: 2,
+    recomended: "20",
     title: "Pré-Imper",
     thumbnail: "/produtos/preimper.png",
     large_image: "/produtos/preimper.png",
@@ -224,6 +232,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
   },
   {
     id: 3,
+    recomended: "200",
     title: "Tira Manchas",
     thumbnail: "/produtos/tiramancha.png",
     large_image: "/produtos/tiramancha.png",
@@ -249,6 +258,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
   },
   {
     id: 4,
+    recomended: "5",
     title: "Max Fresh",
     thumbnail: "/produtos/maxfresh.png",
     large_image: "/produtos/maxfresh.png",
@@ -273,11 +283,12 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     ],
     fiqasp: "",
   },
-];
+]
 
 const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     id: 1,
+    recomended: "200",
     title: "HS 1000 IMPERTUDO",
     thumbnail: "/produtos/hipertudo.png",
     large_image: "/produtos/hipertudo.png",
@@ -301,4 +312,4 @@ const CATALOG_ITEMS_IMPER: Array<Product> = [
     ],
     fiqasp: "",
   },
-];
+]
