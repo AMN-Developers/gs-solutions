@@ -1,62 +1,17 @@
-import { useRef, useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import {
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Skeleton,
-  Text,
-  Link as ChakraLink,
-} from "@chakra-ui/react";
-import { CloseIcon } from "@chakra-ui/icons";
+import { useRef } from "react";
+import { useSearchParams } from "next/navigation";
+import { Container, Text, Box } from "@chakra-ui/react";
 import { Catalog } from "@/components/Catalog";
 import MotionLayout from "@/components/MotionLayout";
-import { CustomImage } from "@/components/CustomImage";
-import useProducts, { Product } from "@/hooks/useProducts";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
+import { AnimatePresence } from "framer-motion";
+import Product from "@/components/Product";
+import { CATALOG_ITEMS_IMPER } from "@/components/Catalog/CATALOG_ITEMS";
 
 export default function Impermeabilizantes() {
-  const router = useRouter();
-
-  const { data, isLoading } = useProducts();
-  const [selectedProduct, setSelectedProduct] = useState<Product>();
+  const searchParams = useSearchParams();
+  const imper = searchParams.get("imper");
   const productRef = useRef<HTMLDivElement>(null);
-  const productListRef = useRef<HTMLDivElement>(null);
   const lastProductRef = useRef<HTMLDivElement>(null);
-  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
-
-  const handleSelectProduct = (product: Product) => {
-    setSelectedProduct(product);
-    productRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center",
-    });
-
-    router.push(`/impermeabilizantes#${product.id}`, undefined, {
-      shallow: true,
-    });
-  };
-
-  const handleGoBack = () => {
-    lastProductRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center",
-    });
-    setSelectedProduct(undefined);
-  };
-
-  useEffect(() => {
-    console.log(router.asPath);
-    if (router.asPath.includes("#")) {
-      const id = Number(router.asPath.split("#")[1]);
-      const product = data?.find((product) => product.id === id);
-      setSelectedProduct(product);
-    }
-  }, [data, router.asPath]);
 
   return (
     <MotionLayout title="Impermeabilizantes">
@@ -73,6 +28,50 @@ export default function Impermeabilizantes() {
         >
           Linha de Impermeabilizantes
         </Text>
+        <Box
+          w="full"
+          backgroundColor={"#f8f8f8"}
+          p={8}
+          my={4}
+          mb={8}
+          rounded={"md"}
+          id="imper"
+        >
+          <Text
+            as="h2"
+            fontWeight={"bold"}
+            textTransform={"uppercase"}
+            fontSize={"xl"}
+            pb={4}
+          >
+            Produtos
+          </Text>
+          <AnimatePresence mode="wait">
+            <Product
+              type={"imper"}
+              param={imper}
+              productRef={productRef}
+              itemList={CATALOG_ITEMS_IMPER}
+            />
+          </AnimatePresence>
+          <Catalog.Root>
+            {CATALOG_ITEMS_IMPER.map((product) => (
+              <Catalog.Item
+                key={product.id}
+                thumbnail={product.thumbnail}
+                title={product.title}
+                slogan={product.slogan}
+                hover_color={product.hover_color}
+                lastProductRef={
+                  product.id === Number(imper) ? lastProductRef : null
+                }
+                id={product.id}
+                type={"imper"}
+                href={`?imper=${product.id}#imper-${product.id}`}
+              />
+            ))}
+          </Catalog.Root>
+        </Box>
       </Container>
     </MotionLayout>
   );
