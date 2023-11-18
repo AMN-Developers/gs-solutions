@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 
-import { useState, useEffect } from 'react'
-
+import { useSearchParams } from "next/navigation";
 import {
   Box,
   Container,
@@ -12,13 +12,12 @@ import {
   FormLabel,
   FormErrorMessage,
   Flex,
-  Icon
-} from '@chakra-ui/react'
-import { DownloadIcon } from '@chakra-ui/icons'
-import { IoShareOutline } from 'react-icons/io5'
-import { AiOutlineArrowDown } from 'react-icons/ai'
-import MotionLayout from '@/components/MotionLayout'
-
+  Icon,
+} from "@chakra-ui/react";
+import { DownloadIcon } from "@chakra-ui/icons";
+import { IoShareOutline } from "react-icons/io5";
+import { AiOutlineArrowDown } from "react-icons/ai";
+import MotionLayout from "@/components/MotionLayout";
 
 interface BeforeInstallPromptEvent extends Event {
   readonly platforms: string[];
@@ -36,40 +35,50 @@ declare global {
   }
 }
 
-
 export default function Calculadora() {
-  const [proportion, setProportion] = useState<number>(0)
-  const isProportionInvalid = proportion <= 0
+  const searchParams = useSearchParams();
+  const proportionParam = searchParams.get("proportion");
 
-  const [water, setWater] = useState<string>('');
+  const [proportion, setProportion] = useState<number>(
+    Number(proportionParam) || 0
+  );
+  const isProportionInvalid = proportion <= 0;
+
+  const [water, setWater] = useState<string>("");
   const isWaterInvalid = water.length <= 0;
-  const [measuaramentUnit, setMeasuaramentUnit] = useState<string>('');
+  const [measuaramentUnit, setMeasuaramentUnit] = useState<string>("");
   const isMeasuaramentUnitInvalid = measuaramentUnit.length <= 0;
   const [result, setResult] = useState<number>(0);
-  const isButtonDisabled = isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid;
-  const [beforeInstallPrompt, setBeforeInstallPrompt] = useState<BeforeInstallPromptEvent>();
+  const isButtonDisabled =
+    isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid;
+  const [beforeInstallPrompt, setBeforeInstallPrompt] =
+    useState<BeforeInstallPromptEvent>();
   const [supportsPWA, setSupportsPWA] = useState<boolean>(false);
   const [isInstalled, setIsInstalled] = useState<boolean>();
-  const [showIphoneInstallMessage, setShowIphoneInstallMessage] = useState<boolean>(false);
+  const [showIphoneInstallMessage, setShowIphoneInstallMessage] =
+    useState<boolean>(false);
 
-  const proportionCalc = (proportion: number, water: string, measuramentUnit: string) => {
-
-    if (!proportion || !water || measuaramentUnit.length < 0) return 0
-    const waterFloat = parseFloat(water.replace(",", "."))
+  const proportionCalc = (
+    proportion: number,
+    water: string,
+    measuramentUnit: string
+  ) => {
+    if (!proportion || !water || measuaramentUnit.length < 0) return 0;
+    const waterFloat = parseFloat(water.replace(",", "."));
 
     if (measuramentUnit === "l") {
-      const productQuantity = 1000 / proportion
-      return waterFloat * productQuantity
+      const productQuantity = 1000 / proportion;
+      return waterFloat * productQuantity;
     } else {
-      const productQuantity = 1 / proportion
-      return waterFloat * productQuantity
+      const productQuantity = 1 / proportion;
+      return waterFloat * productQuantity;
     }
-  }
+  };
 
   const handleCalc = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setResult(proportionCalc(proportion, water, measuaramentUnit))
-  }
+    event.preventDefault();
+    setResult(proportionCalc(proportion, water, measuaramentUnit));
+  };
 
   const proportions = [
     {
@@ -108,69 +117,85 @@ export default function Calculadora() {
       title: "1 : 5",
       value: 5,
     },
-  ]
+  ];
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: BeforeInstallPromptEvent) => {
-      e.preventDefault()
-      setBeforeInstallPrompt(e)
-      setSupportsPWA(true)
-    }
+      e.preventDefault();
+      setBeforeInstallPrompt(e);
+      setSupportsPWA(true);
+    };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt)
+    if (typeof window !== "undefined") {
+      window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
     }
 
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('transitioned', handleBeforeInstallPrompt)
+      if (typeof window !== "undefined") {
+        window.removeEventListener("transitioned", handleBeforeInstallPrompt);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const isAppInstalled = window.matchMedia('(display-mode: standalone)').matches
-      setIsInstalled(isAppInstalled)
+    if (typeof window !== "undefined") {
+      const isAppInstalled = window.matchMedia(
+        "(display-mode: standalone)"
+      ).matches;
+      setIsInstalled(isAppInstalled);
     }
 
     const isIos = () => {
       const userAgent = window.navigator.userAgent.toLowerCase();
       return /iphone|ipad|ipod/.test(userAgent);
-    }
+    };
     // Detects if device is in standalone mode
-    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+    const isInStandaloneMode = () =>
+      "standalone" in window.navigator && window.navigator.standalone;
     // Verifica se deve exibir notificação popup de instalação:
     if (isIos() && !isInStandaloneMode()) {
       setShowIphoneInstallMessage(true);
     }
-  }, [])
+  }, []);
 
   const installApp = async () => {
     if (beforeInstallPrompt) {
-      beforeInstallPrompt.prompt()
-      const { outcome } = await beforeInstallPrompt.userChoice
-      if (outcome === 'accepted') {
-        setIsInstalled(true)
+      beforeInstallPrompt.prompt();
+      const { outcome } = await beforeInstallPrompt.userChoice;
+      if (outcome === "accepted") {
+        setIsInstalled(true);
       }
-      setBeforeInstallPrompt(undefined)
+      setBeforeInstallPrompt(undefined);
     }
-  }
+  };
 
   return (
-
-    <MotionLayout title='Calculadora de Diluição'>
+    <MotionLayout title="Calculadora de Diluição">
       <Container
-        as='section'
+        as="section"
         maxW={"container.xl"}
         py={4}
-        position={'relative'}
+        position={"relative"}
       >
-        <Text as="h1" fontSize={'2xl'} fontWeight={'bold'} textAlign={'center'} mb={4}>Calculadora de diluição da G&S Home Solutions</Text>
-        <Text as="p" mb={4}>Ao utilizar produtos de limpeza, ou qualquer outro produto químico, é importante saber as instruções de uso e principalmente de diluição de cada produto. Ao fazer a diluição de forma correta, você obterá o resultado esperado, conforme a qualidade do produto, e economizará, pois, se você diluir o produto em bastante água, ele não terá o efeito esperado.</Text>
-        <Flex gap={4} flexDirection={{ base: 'column', md: 'row' }}>
-          <Box as='form' onSubmit={handleCalc} w={{ base: '100%', md: '50%' }}>
-
+        <Text
+          as="h1"
+          fontSize={"2xl"}
+          fontWeight={"bold"}
+          textAlign={"center"}
+          mb={4}
+        >
+          Calculadora de diluição da G&S Home Solutions
+        </Text>
+        <Text as="p" mb={4}>
+          Ao utilizar produtos de limpeza, ou qualquer outro produto químico, é
+          importante saber as instruções de uso e principalmente de diluição de
+          cada produto. Ao fazer a diluição de forma correta, você obterá o
+          resultado esperado, conforme a qualidade do produto, e economizará,
+          pois, se você diluir o produto em bastante água, ele não terá o efeito
+          esperado.
+        </Text>
+        <Flex gap={4} flexDirection={{ base: "column", md: "row" }}>
+          <Box as="form" onSubmit={handleCalc} w={{ base: "100%", md: "50%" }}>
             <FormControl isInvalid={isProportionInvalid}>
               <FormLabel
                 htmlFor="proportion"
@@ -186,6 +211,7 @@ export default function Calculadora() {
                 mb={isProportionInvalid ? 0 : 4}
                 required
                 onChange={(event) => setProportion(Number(event.target.value))}
+                value={proportion}
               >
                 {proportions.map((item, index) => (
                   <option key={index} value={item.value}>
@@ -194,7 +220,7 @@ export default function Calculadora() {
                 ))}
               </Select>
               {isProportionInvalid && (
-                <FormErrorMessage mb={4} fontWeight={'bold'}>
+                <FormErrorMessage mb={4} fontWeight={"bold"}>
                   Selecione uma proporção
                 </FormErrorMessage>
               )}
@@ -218,7 +244,7 @@ export default function Calculadora() {
                   value={water}
                 />
                 {isWaterInvalid && (
-                  <FormErrorMessage mb={4} fontWeight={'bold'}>
+                  <FormErrorMessage mb={4} fontWeight={"bold"}>
                     Digite a quantidade de água
                   </FormErrorMessage>
                 )}
@@ -241,7 +267,7 @@ export default function Calculadora() {
                   <option value="l">L</option>
                 </Select>
                 {isMeasuaramentUnitInvalid && (
-                  <FormErrorMessage mb={4} fontWeight={'bold'}>
+                  <FormErrorMessage mb={4} fontWeight={"bold"}>
                     Selecione a unidade de medida
                   </FormErrorMessage>
                 )}
@@ -279,14 +305,19 @@ export default function Calculadora() {
             )}
           </Box>
 
-          <Box w={{ base: '100%', md: '50%' }} display={'flex'} flexDir={'column'} justifyContent={'flex-end'}>
+          <Box
+            w={{ base: "100%", md: "50%" }}
+            display={"flex"}
+            flexDir={"column"}
+            justifyContent={"flex-end"}
+          >
             {!showIphoneInstallMessage ? (
               <Button
-                colorScheme='messenger'
+                colorScheme="messenger"
                 onClick={installApp}
                 isDisabled={!supportsPWA}
-                flexFlow={'row'}
-                display={isInstalled ? 'none' : 'flex'}
+                flexFlow={"row"}
+                display={isInstalled ? "none" : "flex"}
               >
                 <DownloadIcon mr={2} />
                 Instalar App
@@ -296,33 +327,47 @@ export default function Calculadora() {
         </Flex>
         {showIphoneInstallMessage ? (
           <Box
-            position={'fixed'}
+            position={"fixed"}
             bottom={0}
             left={0}
             right={0}
-            bg={'#f9f9f9'}
+            bg={"#f9f9f9"}
             p={4}
-            display={showIphoneInstallMessage ? 'flex' : 'none'}
-            flexDirection={'column'}
+            display={showIphoneInstallMessage ? "flex" : "none"}
+            flexDirection={"column"}
             zIndex={100}
             mx={4}
             my={4}
-            shadow={'sm'}
-            borderRadius={'md'}
+            shadow={"sm"}
+            borderRadius={"md"}
           >
-            <Box display={'flex'} flexDirection={'column'}>
-              <Text as={'p'} fontSize={'md'} fontWeight={'bold'}>Instale nossa calculadora:</Text>
+            <Box display={"flex"} flexDirection={"column"}>
+              <Text as={"p"} fontSize={"md"} fontWeight={"bold"}>
+                Instale nossa calculadora:
+              </Text>
               <Box>
-                <Text display={'inline'}>clicando abaixo em <Icon as={IoShareOutline} size={24} color={'#51A0D5'} /> e depois<Text as="span" fontWeight={'bold'}>{' '}&quot;Adicionar a tela de Inicio&quot;</Text></Text>
+                <Text display={"inline"}>
+                  clicando abaixo em{" "}
+                  <Icon as={IoShareOutline} size={24} color={"#51A0D5"} /> e
+                  depois
+                  <Text as="span" fontWeight={"bold"}>
+                    {" "}
+                    &quot;Adicionar a tela de Inicio&quot;
+                  </Text>
+                </Text>
               </Box>
             </Box>
-            <Box w={'full'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
+            <Box
+              w={"full"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
               <AiOutlineArrowDown size={24} />
             </Box>
           </Box>
-        ) : null
-        }
+        ) : null}
       </Container>
     </MotionLayout>
-  )
+  );
 }

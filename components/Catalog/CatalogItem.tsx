@@ -5,7 +5,7 @@ import { RefObject } from "react";
 
 interface CatalogItemProps extends Partial<Product> {
   lastProductRef: RefObject<HTMLDivElement> | null;
-  type: "higi" | "veg";
+  type: "higi" | "veg" | "imper";
   href: string;
 }
 

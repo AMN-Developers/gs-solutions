@@ -1,20 +1,9 @@
 import { useRef } from "react";
-import {
-  Box,
-  Button,
-  Container,
-  IconButton,
-  Text,
-  Link as ChakraLink,
-} from "@chakra-ui/react";
-import { AnimatePresence, motion } from "framer-motion";
-import { CloseIcon } from "@chakra-ui/icons";
+import { Box, Container, Text } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
 import { Catalog } from "@/components/Catalog";
 import MotionLayout from "@/components/MotionLayout";
-import { CustomImage } from "@/components/CustomImage";
-import ProdItem from "@/components/ProdItem";
 import Product from "@/components/Product";
-import Link from "next/link";
 import {
   CATALOG_ITEMS_HIGI,
   CATALOG_ITEMS_VEG,
@@ -24,20 +13,10 @@ import { useRouter } from "next/router";
 
 export default function Higienização() {
   const searchParams = useSearchParams();
-  const router = useRouter();
   const higi = searchParams.get("higi");
   const veg = searchParams.get("veg");
   const productRef = useRef<HTMLDivElement>(null);
   const lastProductRef = useRef<HTMLDivElement>(null);
-
-  const removeParam = (param: string) => {
-    const { pathname, query } = router;
-    const params = new URLSearchParams(query as unknown as string);
-    params.delete(param);
-    router.replace({ pathname, query: params.toString() }, undefined, {
-      shallow: true,
-    });
-  };
 
   return (
     <MotionLayout title="Higienização">
@@ -98,7 +77,7 @@ export default function Higienização() {
             ))}
           </Catalog.Root>
         </Box>
-        <Box w="full" backgroundColor={"#f1f1f1"} p={8} rounded={"md"} mb={4}>
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
           <Text
             as="h2"
             fontWeight={"bold"}

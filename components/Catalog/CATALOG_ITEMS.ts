@@ -1,8 +1,9 @@
-import { Product } from "@/hooks/useProducts";
+import { Product } from "@/hooks/useProducts"
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
     id: 64,
+    recomended: "100",
     title: "FIX FLOT",
     thumbnail: "/produtos/fixflot.png",
     large_image: "/produtos/fixflot.png",
@@ -29,6 +30,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 68,
+    recomended: "30",
     title: "MULTI-C",
     thumbnail: "/produtos/multic.png",
     large_image: "/produtos/multic.png",
@@ -66,6 +68,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 70,
+    recomended: "200",
     title: "DESINFEKT",
     thumbnail: "/produtos/desinfekt.png",
     large_image: "/produtos/desinfekt.png",
@@ -92,6 +95,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 84,
+    recomended: "10",
     title: "CITRUSOLV",
     thumbnail: "/produtos/citrusolv.png",
     large_image: "/produtos/citrusolv.png",
@@ -118,6 +122,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 85,
+    recomended: "200",
     title: "CLEAN PROTECT",
     thumbnail: "/produtos/cleanprot.png",
     large_image: "/produtos/cleanprot.png",
@@ -144,6 +149,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
   },
   {
     id: 86,
+    recomended: "200",
     title: "HIDRA LEDER",
     thumbnail: "/produtos/hidraleder.png",
     large_image: "/produtos/hidraleder.png",
@@ -168,11 +174,12 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     ],
     fiqasp: "",
   },
-];
+]
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
     id: 1,
+    recomended: "40",
     title: "ALL01",
     thumbnail: "/produtos/allone.png",
     large_image: "/produtos/allone.png",
@@ -199,6 +206,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
   },
   {
     id: 2,
+    recomended: "20",
     title: "Pré-Imper",
     thumbnail: "/produtos/preimper.png",
     large_image: "/produtos/preimper.png",
@@ -224,6 +232,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
   },
   {
     id: 3,
+    recomended: "200",
     title: "Tira Manchas",
     thumbnail: "/produtos/tiramancha.png",
     large_image: "/produtos/tiramancha.png",
@@ -249,6 +258,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
   },
   {
     id: 4,
+    recomended: "5",
     title: "Max Fresh",
     thumbnail: "/produtos/maxfresh.png",
     large_image: "/produtos/maxfresh.png",
@@ -273,11 +283,12 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     ],
     fiqasp: "",
   },
-];
+]
 
-const CATALOG_ITEMS_IMPER: Array<Product> = [
+export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     id: 1,
+    recomended: "200",
     title: "HS 1000 IMPERTUDO",
     thumbnail: "/produtos/hipertudo.png",
     large_image: "/produtos/hipertudo.png",
@@ -301,4 +312,193 @@ const CATALOG_ITEMS_IMPER: Array<Product> = [
     ],
     fiqasp: "",
   },
-];
+  {
+    // TODO: Update the image url, hover_color and fiqasp
+    id: 2,
+    recomended: "200",
+    title: "HS 1000 SAFE",
+    thumbnail: "/produtos/safe.png",
+    large_image: "/produtos/safe.png",
+    slogan: "Impermeabilizante Solvente não inflamável.",
+    hover_color: "239,196,73,1",
+    description:
+      "O LÓTUS HS 1000 SAFE é um impermeabilizante de tecidos para uso profissional com uma fórmula a base de solventes não inflamáveis que não alteram as características e não mancham os tecidos. Utilizada pelos profissionais mais exigentes do mercado e que pretendem proporcionar aos seus clientes o melhor resultado de qualidade e performance.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color and fiqasp
+    id: 3,
+    recomended: "200",
+    title: "HS 1000 ECO",
+    thumbnail: "/produtos/eco.png",
+    large_image: "/produtos/eco.png",
+    slogan: "Impermeabilizante a base de água.",
+    hover_color: "0,174,46,1",
+    description:
+      "LÓTUS HS 1000 ECO é um impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo, não alteram as características do material onde está sendo aplicado, mantendo a aparência natural. Sua fórmula a base de água torna seu manuseio mais seguro, por não ser inflamável e também ecologicamente correto.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 4,
+    recomended: "200",
+    title: "TECH BLOCK",
+    thumbnail: "/produtos/teckblock.png",
+    large_image: "/produtos/teckblock.png",
+    slogan: "Impermeabilizante a base de água.",
+    hover_color: "162,192,233,1",
+    description:
+      "LÓTUS TECH BLOCK é um impermeabilizante de tecidos a base de água que possui efeito antiviral e antibacteriano, apresentando alto poder de repelência a água e ao óleo, após sua aplicação além de garantir a impermeabilização dos têxteis.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 5,
+    recomended: "200",
+    title: "CLEAN PROTECT",
+    thumbnail: "/produtos/cleanprot.png",
+    large_image: "/produtos/cleanprot.png",
+    slogan: "Impermeabilizante a base de água.",
+    hover_color: "139,198,184,1",
+    description:
+      "LÓTUS CLEAN PROTECT foi desenvolvido para a realização de limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização e que por qualquer motivo ainda apresentam sombreamentos ou sujidades superficiais após a remoção do excesso da sujidade derramado.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 6,
+    recomended: "200",
+    title: "ACQUA-PRO",
+    thumbnail: "/produtos/acquapro.png",
+    large_image: "/produtos/acquapro.png",
+    slogan: "Impermeabilizante a base de água.",
+    hover_color: "178,132,106,1",
+    description:
+      "LÓTUS ACQUA-PRO é um protetor de tecidos a base de água, que oferece um efeito hidrofugante ao tecido, retardando a penetração de líquidos a base de água, evitando manchas nas fibras e facilitando a limpeza e conservação do tecido.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 7,
+    recomended: "200",
+    title: "HYDRA LEDER",
+    thumbnail: "/produtos/hidraleder.png",
+    large_image: "/produtos/hidraleder.png",
+    slogan: "Impermeabilizante a base de água.",
+    hover_color: "41,48,49,1",
+    description:
+      "O LÓTUS HYDRA LEDER, foi desenvolvido para aplicações em couro, courvin, laminados sintéticos e outras superfícies plásticas. É conferido aos materiais tratados uma revitalização, limpeza e hidratação, com efeito, hidrorrepelente (repelem líquidos) além de causar sensível melhora ao toque e elasticidade dos materiais que possuem essa característica.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 8,
+    recomended: "200",
+    title: "DRY STONE",
+    thumbnail: "/produtos/drystone.png",
+    large_image: "/produtos/drystone.png",
+    slogan: "Impermeabilizante a base de água.",
+    hover_color: "119,82,54,1",
+    description:
+      "O LÓTUS DRY STONE foi desenvolvido para aplicações em pedras, cerâmicas, bases cimenticias entre outras superfícies minerais. Confere a superfície tratada repelência aos líquidos e evita manchas, mantendo sua aparência original, facilitando sua manutenção.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+]

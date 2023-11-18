@@ -97,12 +97,12 @@ export default function Product({
                     >
                       <Box>
                         <Text fontWeight={"bold"}>
-                          Diluição recomendada: 1 : 200
+                          Diluição recomendada: 1:{selectedProduct.recomended}
                         </Text>
                         <ChakraLink
                           color={`rgba(${selectedProduct.hover_color})`}
                           as={Link}
-                          href={`/calculadora?proportion=200`}
+                          href={`/calculadora?proportion=${selectedProduct.recomended}`}
                         >
                           calculadora de diluição
                         </ChakraLink>

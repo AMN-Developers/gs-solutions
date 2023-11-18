@@ -77,7 +77,6 @@ export default function FixFlot() {
             href={"#fix"}
             color={"white"}
             bgColor={"transparent"}
-            
             _hover={{
               bgColor: "tranparent",
               textDecoration: "underline",
@@ -349,6 +348,18 @@ export default function FixFlot() {
             </Flex>
           </Flex>
         </Container>
+        <Button
+          my={4}
+          bg={
+            "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+          }
+          color={"white"}
+          w={"full"}
+          _hover={{ color: "#A22C37", bg: "gray.200" }}
+          textTransform={"uppercase"}
+        >
+          Compre conosco
+        </Button>
       </Container>
     </MotionLayout>
   )
