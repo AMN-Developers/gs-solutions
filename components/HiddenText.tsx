@@ -14,9 +14,14 @@ export default function HiddenText({ text, title }: HiddenText) {
         onClick={onToggle}
         textTransform={"uppercase"}
         minW={"full"}
-        bgColor={"#A22C37"}
+        bg={
+          "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+        }
         color={"white"}
         fontSize={"sm"}
+        _hover={{
+          bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
+        }}
       >
         {title}
       </Button>
@@ -24,11 +29,13 @@ export default function HiddenText({ text, title }: HiddenText) {
         <Box
           mt={4}
           p={4}
-          bg="whiteAlpha.300"
+          bg="gray.200"
           rounded="md"
           shadow="md"
-          color={"white"}
-          bgColor={"#A22C37"}
+          color={"black"}
+          bgColor={
+            "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+          }
         >
           {text}
         </Box>

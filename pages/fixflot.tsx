@@ -19,6 +19,7 @@ import VideoFrame from "@/components/iFrame"
 
 import { useState } from "react"
 import Link from "next/link"
+import Reveal from "@/components/Reveal"
 const variants = {
   hidden: { opacity: 0, scale: 0 },
   enter: { opacity: 1, scale: 1 },
@@ -90,61 +91,68 @@ export default function FixFlot() {
         <Flex flexDirection={{ base: "column", lg: "row" }} gap={4} id="fix">
           <Flex w={{ base: "full", lg: "50%" }}>
             <Flex flexDirection={"column"} gap={4}>
-              <Flex p={4} flexDirection={{ base: "column", md: "row" }} gap={4}>
-                <AnimatePresence mode="wait">
-                  {images[image] && (
-                    <Box
-                      w={"full"}
-                      h={"md"}
-                      rounded={"md"}
-                      bgColor={"gray.200"}
-                    >
+              <Reveal delay={0.3}>
+                <Flex
+                  p={4}
+                  flexDirection={{ base: "column", md: "row" }}
+                  gap={4}
+                >
+                  <AnimatePresence mode="wait">
+                    {images[image] && (
                       <Box
-                        as={motion.div}
-                        initial="hidden"
-                        animate="enter"
-                        exit="exit"
-                        variants={variants}
-                        key={image}
-                        boxSize={"full"}
+                        w={"full"}
+                        h={"md"}
+                        rounded={"md"}
+                        bgColor={"gray.200"}
+                      >
+                        <Box
+                          as={motion.div}
+                          initial="hidden"
+                          animate="enter"
+                          exit="exit"
+                          variants={variants}
+                          key={image}
+                          boxSize={"full"}
+                        >
+                          <Image
+                            alt="Imagem fixflot"
+                            src={images[image].src}
+                            boxSize={"full"}
+                            fit={"contain"}
+                          />
+                        </Box>
+                      </Box>
+                    )}
+                  </AnimatePresence>
+
+                  <Flex
+                    gap={2}
+                    flexDirection={{ base: "row", md: "column" }}
+                    justifyContent={{ base: "none", md: "space-between" }}
+                    w={{ base: "100%", md: "18%" }}
+                    align={"center"}
+                  >
+                    {images.map((Thumb, index) => (
+                      <Box
+                        onClick={() => handleChangeImage(index)}
+                        bgColor={"gray.200"}
+                        rounded={"md"}
+                        p={4}
+                        cursor={"pointer"}
+                        key={index}
                       >
                         <Image
-                          alt="Imagem fixflot"
-                          src={images[image].src}
-                          boxSize={"full"}
-                          fit={"contain"}
+                          alt={Thumb.alt}
+                          src={Thumb.src}
+                          boxSize={"64px"}
+                          objectFit={"contain"}
                         />
                       </Box>
-                    </Box>
-                  )}
-                </AnimatePresence>
-
-                <Flex
-                  gap={2}
-                  flexDirection={{ base: "row", md: "column" }}
-                  justifyContent={{ base: "none", md: "space-between" }}
-                  w={{ base: "100%", md: "18%" }}
-                  align={"center"}
-                >
-                  {images.map((Thumb, index) => (
-                    <Box
-                      onClick={() => handleChangeImage(index)}
-                      bgColor={"gray.200"}
-                      rounded={"md"}
-                      p={4}
-                      cursor={"pointer"}
-                      key={index}
-                    >
-                      <Image
-                        alt={Thumb.alt}
-                        src={Thumb.src}
-                        boxSize={"64px"}
-                        objectFit={"contain"}
-                      />
-                    </Box>
-                  ))}
+                    ))}
+                  </Flex>
                 </Flex>
-              </Flex>
+              </Reveal>
+
               <Text
                 as={"p"}
                 fontWeight={"semibold"}
@@ -185,26 +193,34 @@ export default function FixFlot() {
               Diluição recomendada
             </Text>
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
-              <HiddenText
-                title="Sujidade Leve"
-                text="Realizar diluição de 1:130
+              <Reveal delay={0.1}>
+                <HiddenText
+                  title="Sujidade Leve"
+                  text="Realizar diluição de 1:130
                 (7,5mL de FIX-FLOT para 992,5ml de água);"
-              />
-              <HiddenText
-                title="Sujidade média"
-                text="Realizar diluição de 1:100
+                />
+              </Reveal>
+              <Reveal delay={0.15}>
+                <HiddenText
+                  title="Sujidade média"
+                  text="Realizar diluição de 1:100
                 (10mL de FIX-FLOT para 990mL de água);"
-              />
-              <HiddenText
-                title="Sujidade alto"
-                text=" Realizar diluição de 1:70 (15mL
+                />
+              </Reveal>
+              <Reveal delay={0.2}>
+                <HiddenText
+                  title="Sujidade alto"
+                  text=" Realizar diluição de 1:70 (15mL
                 de FIX-FLOT para 985mL de água)."
-              />
-              <HiddenText
-                title="Sujidade muito alta"
-                text="Realizar diluição de 1:50
+                />
+              </Reveal>
+              <Reveal delay={0.25}>
+                <HiddenText
+                  title="Sujidade muito alta"
+                  text="Realizar diluição de 1:50
                 (20mL de FIX-FLOT para 980mL de água)."
-              />
+                />
+              </Reveal>
             </Flex>
 
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
@@ -284,6 +300,7 @@ export default function FixFlot() {
             </Flex>
           </Flex>
         </Flex>
+
         <Container
           maxW="container.xl"
           p={8}
@@ -355,7 +372,9 @@ export default function FixFlot() {
           }
           color={"white"}
           w={"full"}
-          _hover={{ color: "#A22C37", bg: "gray.200" }}
+          _hover={{
+            bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
+          }}
           textTransform={"uppercase"}
         >
           Compre conosco

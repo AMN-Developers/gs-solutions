@@ -118,7 +118,7 @@ export default function Privacy() {
           mb={4}
           textAlign={"justify"}
         >
-          <Accordion defaultIndex={[0]} allowMultiple>
+          <Accordion  allowMultiple>
             <AccordionItem>
               <h2>
                 <AccordionButton>

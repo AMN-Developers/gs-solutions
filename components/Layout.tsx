@@ -36,7 +36,8 @@ export default function Layout({ children, route }: LayoutProps) {
     "/higienizacao": "/card-lotus.webp",
     "/impermeabilizantes": "/card-lotus.webp",
     "/limpoo": "/card-limpoo.webp",
-    "/fixflot": "/fixflot-banner.webp",
+    "/fixflot":
+      "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
   }
 
   const {
