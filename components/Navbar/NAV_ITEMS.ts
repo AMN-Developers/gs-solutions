@@ -19,7 +19,7 @@ export const NAV_ITEMS: Array<NavItem> = [
         children: [
           {
             label: "Power Trio",
-            href: "/power-trio",
+            href: "/powertrio",
           },
           {
             label: "Fix Flot",

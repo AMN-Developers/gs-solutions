@@ -214,6 +214,9 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
     "/fixflot": () => {
       return <Flex></Flex>
     },
+    "/powertrio": () => {
+      return <Flex></Flex>
+    },
   }
 
   return (
