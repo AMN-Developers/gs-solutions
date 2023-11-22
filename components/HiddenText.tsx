@@ -33,7 +33,6 @@ export default function HiddenText({ text, title, color, hover }: HiddenText) {
           rounded="md"
           shadow="md"
           color={"black"}
-          bgColor={color}
         >
           {text}
         </Box>
