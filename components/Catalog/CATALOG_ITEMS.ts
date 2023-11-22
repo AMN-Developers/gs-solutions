@@ -1,4 +1,4 @@
-import { Product } from "@/hooks/useProducts"
+import { Product } from "@/hooks/useProducts";
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
@@ -174,7 +174,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     ],
     fiqasp: "",
   },
-]
+];
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
@@ -283,12 +283,11 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     ],
     fiqasp: "",
   },
-]
+];
 
 export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     id: 1,
-    recomended: "200",
     title: "HS 1000 IMPERTUDO",
     thumbnail: "/produtos/hipertudo.png",
     large_image: "/produtos/hipertudo.png",
@@ -315,7 +314,6 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color and fiqasp
     id: 2,
-    recomended: "200",
     title: "HS 1000 SAFE",
     thumbnail: "/produtos/safe.png",
     large_image: "/produtos/safe.png",
@@ -342,7 +340,6 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color and fiqasp
     id: 3,
-    recomended: "200",
     title: "HS 1000 ECO",
     thumbnail: "/produtos/eco.png",
     large_image: "/produtos/eco.png",
@@ -369,7 +366,6 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 4,
-    recomended: "200",
     title: "TECH BLOCK",
     thumbnail: "/produtos/teckblock.png",
     large_image: "/produtos/teckblock.png",
@@ -396,7 +392,6 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 5,
-    recomended: "200",
     title: "CLEAN PROTECT",
     thumbnail: "/produtos/cleanprot.png",
     large_image: "/produtos/cleanprot.png",
@@ -423,7 +418,6 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 6,
-    recomended: "200",
     title: "ACQUA-PRO",
     thumbnail: "/produtos/acquapro.png",
     large_image: "/produtos/acquapro.png",
@@ -450,7 +444,6 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 7,
-    recomended: "200",
     title: "HYDRA LEDER",
     thumbnail: "/produtos/hidraleder.png",
     large_image: "/produtos/hidraleder.png",
@@ -477,7 +470,6 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 8,
-    recomended: "200",
     title: "DRY STONE",
     thumbnail: "/produtos/drystone.png",
     large_image: "/produtos/drystone.png",
@@ -501,4 +493,4 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     ],
     fiqasp: "",
   },
-]
+];

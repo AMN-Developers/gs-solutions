@@ -9,7 +9,6 @@ import {
   CATALOG_ITEMS_VEG,
 } from "@/components/Catalog/CATALOG_ITEMS";
 import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
 
 export default function Higienização() {
   const searchParams = useSearchParams();
@@ -20,7 +19,7 @@ export default function Higienização() {
 
   return (
     <MotionLayout title="Higienização">
-      <Container maxW={"container.xl"} scrollBehavior={"smooth"}>
+      <Container maxW={"container.xl"}>
         <Text
           display={"flex"}
           justifyContent={"center"}
