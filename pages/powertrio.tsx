@@ -16,7 +16,6 @@ import Link from "next/link"
 import VideoFrame from "@/components/iFrame"
 import Reveal from "@/components/Reveal"
 
-
 export default function PowerTrio() {
   return (
     <MotionLayout title="Power Trio">
@@ -183,6 +182,14 @@ export default function PowerTrio() {
                       têxtil para todo tipo de tecido e que é de acordo com as
                       exigências da ANVISA.
                     </Text>
+                    <Flex gap={2}>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        Boletim Tecnico
+                      </Button>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        FISPQ
+                      </Button>
+                    </Flex>
                   </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem>
@@ -207,6 +214,14 @@ export default function PowerTrio() {
                       proveniente da higienização, garantindo uma eficiência
                       maior dos impermeabilizantes.
                     </Text>
+                    <Flex gap={2}>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        Boletim Tecnico
+                      </Button>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        FISPQ
+                      </Button>
+                    </Flex>
                   </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem>
@@ -230,6 +245,14 @@ export default function PowerTrio() {
                       de limpeza, tanto para tecidos brancos como tecidos
                       coloridos.
                     </Text>
+                    <Flex gap={2}>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        Boletim Tecnico
+                      </Button>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        FISPQ
+                      </Button>
+                    </Flex>
                   </AccordionPanel>
                 </AccordionItem>
               </Flex>

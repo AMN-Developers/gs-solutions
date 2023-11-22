@@ -264,7 +264,30 @@ export default function FixFlot() {
                 realizando a extração do produto com a extratora, sem enxágue.
               </Text>
             </Flex>
-
+            <Flex gap={2} w={"full"}>
+              <Button
+                bg={
+                  "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+                }
+                color={"white"}
+                _hover={{
+                  bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
+                }}
+              >
+                Boletim Tecnico
+              </Button>
+              <Button
+                bg={
+                  "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+                }
+                color={"white"}
+                _hover={{
+                  bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
+                }}
+              >
+                FISPQ
+              </Button>
+            </Flex>
             <Flex flexDirection={"column"} gap={4} pb={4}>
               <Accordion allowToggle>
                 <AccordionItem>

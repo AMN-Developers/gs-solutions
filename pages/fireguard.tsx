@@ -301,7 +301,26 @@ solvente de percloroetileno para tecidos e tapetes)."
                 exposição as intempéries.
               </Text>
             </Flex>
-
+            <Flex gap={2} w={"full"}>
+              <Button
+                bg={"rgba(255,180,44,1)"}
+                color={"white"}
+                _hover={{
+                  bg: "rgba(255,180,44,0.8)",
+                }}
+              >
+                Boletim Tecnico
+              </Button>
+              <Button
+                bg={"rgba(255,180,44,1)"}
+                color={"white"}
+                _hover={{
+                  bg: "rgba(255,180,44,0.8)",
+                }}
+              >
+                FISPQ
+              </Button>
+            </Flex>
             <Flex flexDirection={"column"} gap={4} pb={4}>
               <Accordion allowToggle>
                 <AccordionItem>
