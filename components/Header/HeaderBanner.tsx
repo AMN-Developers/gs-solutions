@@ -217,6 +217,9 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
     "/powertrio": () => {
       return <Flex></Flex>
     },
+    "/fireguard": () => {
+      return <Flex></Flex>
+    },
   }
 
   return (

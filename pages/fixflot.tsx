@@ -195,6 +195,8 @@ export default function FixFlot() {
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
               <Reveal delay={0.1}>
                 <HiddenText
+                  color="radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+                  hover="radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);"
                   title="Sujidade Leve"
                   text="Realizar diluição de 1:130
                 (7,5mL de FIX-FLOT para 992,5ml de água);"
@@ -202,6 +204,8 @@ export default function FixFlot() {
               </Reveal>
               <Reveal delay={0.15}>
                 <HiddenText
+                  color="radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+                  hover="radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);"
                   title="Sujidade média"
                   text="Realizar diluição de 1:100
                 (10mL de FIX-FLOT para 990mL de água);"
@@ -209,6 +213,8 @@ export default function FixFlot() {
               </Reveal>
               <Reveal delay={0.2}>
                 <HiddenText
+                  color="radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+                  hover="radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);"
                   title="Sujidade alto"
                   text=" Realizar diluição de 1:70 (15mL
                 de FIX-FLOT para 985mL de água)."
@@ -216,6 +222,8 @@ export default function FixFlot() {
               </Reveal>
               <Reveal delay={0.25}>
                 <HiddenText
+                  color="radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+                  hover="radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);"
                   title="Sujidade muito alta"
                   text="Realizar diluição de 1:50
                 (20mL de FIX-FLOT para 980mL de água)."
