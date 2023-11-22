@@ -35,12 +35,13 @@ export default function Cartificado() {
             justify={"center"}
             boxSize={"full"}
             w={{ base: "100%", md: "30%" }}
+            alignSelf={"center"}
           >
             <Image
               src="/eureciclo-logo.png"
               alt="Eu Reciclo"
-              width={245}
-              height={319}
+              width={114}
+              height={114}
             />
           </Flex>
 
@@ -54,7 +55,7 @@ export default function Cartificado() {
             <Text as="p">
               Você sabia que a G&S Home Solutions possui o selo eureciclo?
             </Text>
-            <Text as="p">
+            <Text as="p" fontSize={"sm"}>
               Isso significa que apoiamos e investimos em reciclagem no Brasil O
               selo eureciclo foi idealizado para solucionar dois grandes
               problemas: a destinação final de embalagens geradas por empresas e

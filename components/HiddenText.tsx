@@ -3,9 +3,11 @@ import { Box, Button, Collapse, useDisclosure } from "@chakra-ui/react"
 interface HiddenText {
   text: string
   title: string
+  color: string
+  hover: string
 }
 
-export default function HiddenText({ text, title }: HiddenText) {
+export default function HiddenText({ text, title, color, hover }: HiddenText) {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
@@ -14,13 +16,11 @@ export default function HiddenText({ text, title }: HiddenText) {
         onClick={onToggle}
         textTransform={"uppercase"}
         minW={"full"}
-        bg={
-          "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
-        }
+        bg={color}
         color={"white"}
         fontSize={"sm"}
         _hover={{
-          bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
+          bg: hover,
         }}
       >
         {title}
@@ -33,9 +33,7 @@ export default function HiddenText({ text, title }: HiddenText) {
           rounded="md"
           shadow="md"
           color={"black"}
-          bgColor={
-            "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
-          }
+          bgColor={color}
         >
           {text}
         </Box>
