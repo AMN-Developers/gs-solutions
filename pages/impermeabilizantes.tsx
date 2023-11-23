@@ -1,11 +1,12 @@
-import { useRef } from "react";
-import { useSearchParams } from "next/navigation";
-import { Container, Text, Box } from "@chakra-ui/react";
-import { Catalog } from "@/components/Catalog";
-import MotionLayout from "@/components/MotionLayout";
-import { AnimatePresence } from "framer-motion";
-import Product from "@/components/Product";
-import { CATALOG_ITEMS_IMPER } from "@/components/Catalog/CATALOG_ITEMS";
+import { useRef } from "react"
+import { useSearchParams } from "next/navigation"
+import { Container, Text, Box, Button } from "@chakra-ui/react"
+import { Catalog } from "@/components/Catalog"
+import MotionLayout from "@/components/MotionLayout"
+import { AnimatePresence } from "framer-motion"
+import Product from "@/components/Product"
+import { CATALOG_ITEMS_IMPER } from "@/components/Catalog/CATALOG_ITEMS"
+import Link from "next/link"
 
 export default function Impermeabilizantes() {
   const searchParams = useSearchParams();
@@ -117,7 +118,23 @@ export default function Impermeabilizantes() {
             ))}
           </Catalog.Root>
         </Box>
+        <Button
+          as={Link}
+          href={"/higienizacao"}
+          mb={4}
+          bg={
+            "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);;"
+          }
+          color={"white"}
+          w={"full"}
+          _hover={{
+            bg: "radial-gradient(circle, rgba(55,88,147,0.9) 0%, rgba(24,24,59,0.9) 93%, rgba(24,26,61,0.9) 100%);",
+          }}
+          textTransform={"uppercase"}
+        >
+          Não deixe de conhecer nossa linha de higienização
+        </Button>
       </Container>
     </MotionLayout>
-  );
+  )
 }

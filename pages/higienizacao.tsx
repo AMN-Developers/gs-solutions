@@ -1,9 +1,9 @@
-import { useRef } from "react";
-import { Box, Container, Text } from "@chakra-ui/react";
-import { AnimatePresence } from "framer-motion";
-import { Catalog } from "@/components/Catalog";
-import MotionLayout from "@/components/MotionLayout";
-import Product from "@/components/Product";
+import { useRef } from "react"
+import { Box, Button, Container, Text } from "@chakra-ui/react"
+import { AnimatePresence } from "framer-motion"
+import { Catalog } from "@/components/Catalog"
+import MotionLayout from "@/components/MotionLayout"
+import Product from "@/components/Product"
 import {
   CATALOG_ITEMS_HIGI,
   CATALOG_ITEMS_VEG,
@@ -11,11 +11,11 @@ import {
 import { useSearchParams } from "next/navigation";
 
 export default function Higienização() {
-  const searchParams = useSearchParams();
-  const higi = searchParams.get("higi");
-  const veg = searchParams.get("veg");
-  const productRef = useRef<HTMLDivElement>(null);
-  const lastProductRef = useRef<HTMLDivElement>(null);
+  const searchParams = useSearchParams()
+  const higi = searchParams.get("higi")
+  const veg = searchParams.get("veg")
+  const productRef = useRef<HTMLDivElement>(null)
+  const lastProductRef = useRef<HTMLDivElement>(null)
 
   return (
     <MotionLayout title="Higienização">
@@ -113,18 +113,23 @@ export default function Higienização() {
           </Catalog.Root>
         </Box>
 
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
-          <Text
-            as="h2"
-            fontWeight={"bold"}
-            textTransform={"uppercase"}
-            fontSize={"xl"}
-            pb={4}
-          >
-            Não deixe de conhecer nossa linha Imper
-          </Text>
-        </Box>
+        <Button
+          as={Link}
+          href={"/impermeabilizantes"}
+          mb={4}
+          bg={
+            "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);;"
+          }
+          color={"white"}
+          w={"full"}
+          _hover={{
+            bg: "radial-gradient(circle, rgba(55,88,147,0.9) 0%, rgba(24,24,59,0.9) 93%, rgba(24,26,61,0.9) 100%);",
+          }}
+          textTransform={"uppercase"}
+        >
+          Não deixe de conhecer nossa linha de impermeabilizantes
+        </Button>
       </Container>
     </MotionLayout>
-  );
+  )
 }

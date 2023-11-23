@@ -15,7 +15,6 @@ import Image from "next/image"
 import Link from "next/link"
 import VideoFrame from "@/components/iFrame"
 import Reveal from "@/components/Reveal"
-import { motion } from "framer-motion"
 
 export default function PowerTrio() {
   return (
@@ -157,7 +156,11 @@ export default function PowerTrio() {
             mb={4}
             gap={4}
           >
-            <Flex flexDirection={"column"} w={"40%"} gap={4}>
+            <Flex
+              flexDirection={"column"}
+              w={{ base: "100%", md: "40%" }}
+              gap={4}
+            >
               <Flex as={Accordion} flexDirection={"column"} allowToggle gap={4}>
                 <AccordionItem>
                   <h2>
@@ -179,6 +182,14 @@ export default function PowerTrio() {
                       têxtil para todo tipo de tecido e que é de acordo com as
                       exigências da ANVISA.
                     </Text>
+                    <Flex gap={2}>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        Boletim Tecnico
+                      </Button>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        FISPQ
+                      </Button>
+                    </Flex>
                   </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem>
@@ -203,6 +214,14 @@ export default function PowerTrio() {
                       proveniente da higienização, garantindo uma eficiência
                       maior dos impermeabilizantes.
                     </Text>
+                    <Flex gap={2}>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        Boletim Tecnico
+                      </Button>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        FISPQ
+                      </Button>
+                    </Flex>
                   </AccordionPanel>
                 </AccordionItem>
                 <AccordionItem>
@@ -226,6 +245,14 @@ export default function PowerTrio() {
                       de limpeza, tanto para tecidos brancos como tecidos
                       coloridos.
                     </Text>
+                    <Flex gap={2}>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        Boletim Tecnico
+                      </Button>
+                      <Button colorScheme="facebook" size={"sm"}>
+                        FISPQ
+                      </Button>
+                    </Flex>
                   </AccordionPanel>
                 </AccordionItem>
               </Flex>
