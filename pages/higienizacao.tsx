@@ -1,21 +1,22 @@
-import { useRef } from "react"
-import { Box, Button, Container, Text } from "@chakra-ui/react"
-import { AnimatePresence } from "framer-motion"
-import { Catalog } from "@/components/Catalog"
-import MotionLayout from "@/components/MotionLayout"
-import Product from "@/components/Product"
+import { useRef } from "react";
+import { Box, Button, Container, Text } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
+import { Catalog } from "@/components/Catalog";
+import MotionLayout from "@/components/MotionLayout";
+import Product from "@/components/Product";
 import {
   CATALOG_ITEMS_HIGI,
   CATALOG_ITEMS_VEG,
 } from "@/components/Catalog/CATALOG_ITEMS";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export default function Higienização() {
-  const searchParams = useSearchParams()
-  const higi = searchParams.get("higi")
-  const veg = searchParams.get("veg")
-  const productRef = useRef<HTMLDivElement>(null)
-  const lastProductRef = useRef<HTMLDivElement>(null)
+  const searchParams = useSearchParams();
+  const higi = searchParams.get("higi");
+  const veg = searchParams.get("veg");
+  const productRef = useRef<HTMLDivElement>(null);
+  const lastProductRef = useRef<HTMLDivElement>(null);
 
   return (
     <MotionLayout title="Higienização">
@@ -131,5 +132,5 @@ export default function Higienização() {
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }
