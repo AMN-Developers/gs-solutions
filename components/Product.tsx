@@ -95,18 +95,20 @@ export default function Product({
                       flexDirection={{ base: "column", md: "row" }}
                       justifyContent={"space-between"}
                     >
-                      <Box>
-                        <Text fontWeight={"bold"}>
-                          Diluição recomendada: 1:{selectedProduct.recomended}
-                        </Text>
-                        <ChakraLink
-                          color={`rgba(${selectedProduct.hover_color})`}
-                          as={Link}
-                          href={`/calculadora?proportion=${selectedProduct.recomended}`}
-                        >
-                          calculadora de diluição
-                        </ChakraLink>
-                      </Box>
+                      {selectedProduct.recomended && (
+                        <Box>
+                          <Text fontWeight={"bold"}>
+                            Diluição recomendada: 1:{selectedProduct.recomended}
+                          </Text>
+                          <ChakraLink
+                            color={`rgba(${selectedProduct.hover_color})`}
+                            as={Link}
+                            href={`/calculadora?proportion=${selectedProduct.recomended}`}
+                          >
+                            calculadora de diluição
+                          </ChakraLink>
+                        </Box>
+                      )}
                       <Box display={"flex"} gap={4}>
                         <Button
                           onClick={() =>
