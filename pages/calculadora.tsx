@@ -195,7 +195,12 @@ export default function Calculadora() {
           esperado.
         </Text>
         <Flex gap={4} flexDirection={{ base: "column" }}>
-          <Box as="form" onSubmit={handleCalc} m={"auto"} w={"50%"}>
+          <Box
+            as="form"
+            onSubmit={handleCalc}
+            m={"auto"}
+            w={{ base: "100%", md: "50%" }}
+          >
             <FormControl isInvalid={isProportionInvalid}>
               <FormLabel
                 htmlFor="proportion"
@@ -307,7 +312,7 @@ export default function Calculadora() {
 
           <Box
             m={"auto"}
-            w={"50%"}
+            w={{ base: "100%", md: "50%" }}
             display={"flex"}
             flexDir={"column"}
             justifyContent={"flex-end"}
