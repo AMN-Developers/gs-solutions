@@ -1,22 +1,22 @@
-import Link from "next/link";
+import Link from "next/link"
 import {
   Box,
   IconButton,
   Text,
   Link as ChakraLink,
   Button,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { CloseIcon } from "@chakra-ui/icons";
-import { CustomImage } from "@/components/CustomImage";
-import { useRouter } from "next/router";
-import { Product } from "@/hooks/useProducts";
+} from "@chakra-ui/react"
+import { motion } from "framer-motion"
+import { CloseIcon } from "@chakra-ui/icons"
+import { CustomImage } from "@/components/CustomImage"
+import { useRouter } from "next/router"
+import { Product } from "@/hooks/useProducts"
 
 interface ProductProps {
-  type: string;
-  param: string | null;
-  productRef: React.RefObject<HTMLDivElement>;
-  itemList: Product[];
+  type: string
+  param: string | null
+  productRef: React.RefObject<HTMLDivElement>
+  itemList: Product[]
 }
 
 export default function Product({
@@ -25,15 +25,15 @@ export default function Product({
   itemList,
   param,
 }: ProductProps) {
-  const router = useRouter();
+  const router = useRouter()
   const removeParam = (param: string) => {
-    const { pathname, query } = router;
-    const params = new URLSearchParams(query as unknown as string);
-    params.delete(param);
+    const { pathname, query } = router
+    const params = new URLSearchParams(query as unknown as string)
+    params.delete(param)
     router.replace({ pathname, query: params.toString() }, undefined, {
       shallow: true,
-    });
-  };
+    })
+  }
 
   return (
     <Box ref={productRef} pb={4} id={`${type}-${Number(param)}`}>
@@ -66,7 +66,7 @@ export default function Product({
                     aria-label="Fechar detalhes do produto"
                     icon={<CloseIcon />}
                     onClick={() => {
-                      removeParam(type);
+                      removeParam(type)
                     }}
                   />
                 </Box>
@@ -119,6 +119,7 @@ export default function Product({
                           _hover={{
                             bgColor: `rgba(${selectedProduct.hover_color})`,
                           }}
+                          fontSize={{ base: "xx-small", md: "md" }}
                         >
                           FIQASP
                         </Button>
@@ -128,6 +129,7 @@ export default function Product({
                           _hover={{
                             bgColor: `rgba(${selectedProduct.hover_color})`,
                           }}
+                          fontSize={{ base: "xx-small", md: "md" }}
                         >
                           BOLETIM TÉCNICO
                         </Button>
@@ -139,5 +141,5 @@ export default function Product({
             ))
         : null}
     </Box>
-  );
+  )
 }

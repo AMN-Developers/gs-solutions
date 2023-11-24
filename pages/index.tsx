@@ -89,61 +89,69 @@ export default function Home() {
             Caro cliente, segue o nosso Manual de uso, cuidados e
             responsabilidade profissional:
           </Text>
-          <Flex
-            flexDirection={{ base: "column", md: "row" }}
-            gap={4}
-            textAlign={"justify"}
-          >
+          <Flex flexDirection={{ base: "column-reverse", md: "column" }}>
             <Flex
-              flexDirection={"column"}
-              width={{ base: "100%", md: "40%" }}
-              gap={8}
-            >
-              <Image
-                src="/manualdeuso.svg"
-                alt="Imagem representando manual de uso"
-                width={848}
-                height={598}
-              />
-            </Flex>
-
-            <Flex
-              width={{ base: "100%", md: "80%" }}
-              flexDirection={"column"}
+              flexDirection={{ base: "column", md: "row" }}
               gap={4}
+              textAlign={"justify"}
             >
-              <Text as="p">
-                Este documento visa informar sobre as condições de uso, cuidados
-                especiais e responsabilidade para uso profissional de nossos
-                produtos. Sua leitura é importante, pois nele segue informações
-                fundamentais sobre o uso adequado e pontos de atenção que o
-                profissional deve conhecer.
-              </Text>
-              <Text as="p">
-                Como também informa aos nossos clientes e colaboradores, o grau
-                de risco nas aplicações de produtos específicos a base se
-                solventes não inflamáveis e inflamáveis devido a perigos
-                relacionados a incêndios, explosões que podem ser gerados pelo
-                uso de impermeabilizantes de base solvente inflamável sem a
-                devida atenção e conhecimento dos produtos, suas características
-                e cuidados necessários durante a aplicação, informações sobre
-                aplicações em geral e também tipos de tecidos que podem
-                comprometer um bom processo e consequentemente gerar problemas
-                caso não sejam seguidas.
-              </Text>
-              <Text as="p">
-                Solicitamos a todos os profissionais que ao receberem este
-                documento leia atentamente as orientações contidas em toda sua
-                extensão antes da utilização dos produtos e mesmo assim caso
-                ainda tenham alguma dúvida, entre em contato com nossa área
-                comercial/técnica para que possamos tirar suas eventuais
-                dúvidas.
-              </Text>
+              <Flex
+                flexDirection={"column"}
+                width={{ base: "100%", md: "40%" }}
+                gap={8}
+              >
+                <Image
+                  src="/manualdeuso.svg"
+                  alt="Imagem representando manual de uso"
+                  width={848}
+                  height={598}
+                />
+              </Flex>
+
+              <Flex
+                width={{ base: "100%", md: "80%" }}
+                flexDirection={"column"}
+                gap={4}
+              >
+                <Text as="p">
+                  Este documento visa informar sobre as condições de uso,
+                  cuidados especiais e responsabilidade para uso profissional de
+                  nossos produtos. Sua leitura é importante, pois nele segue
+                  informações fundamentais sobre o uso adequado e pontos de
+                  atenção que o profissional deve conhecer.
+                </Text>
+                <Text as="p">
+                  Como também informa aos nossos clientes e colaboradores, o
+                  grau de risco nas aplicações de produtos específicos a base se
+                  solventes não inflamáveis e inflamáveis devido a perigos
+                  relacionados a incêndios, explosões que podem ser gerados pelo
+                  uso de impermeabilizantes de base solvente inflamável sem a
+                  devida atenção e conhecimento dos produtos, suas
+                  características e cuidados necessários durante a aplicação,
+                  informações sobre aplicações em geral e também tipos de
+                  tecidos que podem comprometer um bom processo e
+                  consequentemente gerar problemas caso não sejam seguidas.
+                </Text>
+                <Text as="p">
+                  Solicitamos a todos os profissionais que ao receberem este
+                  documento leia atentamente as orientações contidas em toda sua
+                  extensão antes da utilização dos produtos e mesmo assim caso
+                  ainda tenham alguma dúvida, entre em contato com nossa área
+                  comercial/técnica para que possamos tirar suas eventuais
+                  dúvidas.
+                </Text>
+              </Flex>
             </Flex>
+            <Button
+              as={Link}
+              href="/"
+              w={"full"}
+              mt={4}
+              colorScheme="messenger"
+            >
+              Faça download do manual
+            </Button>
           </Flex>
-          <Button as={Link} href="/" w={"full"} mt={4} colorScheme="messenger">
-            Faça download do manual
-          </Button>
         </Container>
       </Container>
     </MotionLayout>

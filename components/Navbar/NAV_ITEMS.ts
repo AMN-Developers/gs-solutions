@@ -38,10 +38,6 @@ export const NAV_ITEMS: Array<NavItem> = [
             href: "/impermeabilizantes",
           },
           {
-            label: "Linha Max",
-            href: "/max",
-          },
-          {
             label: "Linha Auto",
             href: "/auto",
           },

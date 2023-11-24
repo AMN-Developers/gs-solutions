@@ -1,4 +1,4 @@
-import { Product } from "@/hooks/useProducts";
+import { Product } from "@/hooks/useProducts"
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
@@ -103,7 +103,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
       "MAX FRESH um composto sinergético, e um poderoso eliminador de odores",
     hover_color: "0,124,54,1",
     description:
-      "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno, tensoativos biodegradáveis e auxiliares antiredepositantes que não agridem o meio ambiente. Com alto poder de limpeza, remove rapidamente a sujidade sem alterar as características do substrato e de fácil remoção por enxague",
+      "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno, com alto poder de limpeza, remove rapidamente a sujidade sem alterar as características do substrato e de fácil remoção por enxague",
     category: [
       {
         term_id: 3,
@@ -174,7 +174,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     ],
     fiqasp: "",
   },
-];
+]
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
@@ -283,7 +283,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     ],
     fiqasp: "",
   },
-];
+]
 
 export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
@@ -493,4 +493,4 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     ],
     fiqasp: "",
   },
-];
+]
