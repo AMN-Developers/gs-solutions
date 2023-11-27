@@ -7,6 +7,7 @@ interface CardItemProps {
   logo: string
   alt: string
   title: string
+  bgPos?: string
 }
 
 export default function CardItem({
@@ -15,13 +16,14 @@ export default function CardItem({
   alt,
   title,
   bgImage,
+  bgPos,
 }: CardItemProps) {
   return (
     <Flex
       h={"sm"}
-      my={6}
+      my={{ base: 0, md: 0 }}
       gap={4}
-      w={{ base: "100%", md: "50%" }}
+      w={"full"}
       align="center"
       flexDirection={"column"}
     >
@@ -34,7 +36,7 @@ export default function CardItem({
         bgImage={bgImage}
         bgRepeat={"no-repeat"}
         bgSize={"cover"}
-        bgPosition={"center"}
+        bgPosition={bgPos}
         filter={"grayscale(100%)"}
         position={"relative"}
         justifyContent={"center"}
@@ -47,7 +49,7 @@ export default function CardItem({
           <Image width={445} height={100} src={logo} alt={alt} />
         </CardHeader>
       </Card>
-      <Text fontWeight={"bold"} fontSize={"lg"}>
+      <Text fontWeight={"bold"} fontSize={{ base: "md", md: "md" }}>
         {title}
       </Text>
     </Flex>

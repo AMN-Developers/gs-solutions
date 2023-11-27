@@ -12,7 +12,7 @@ export default function CardSectionTitle({ title }: CardSectionTitleProps) {
       justifyContent={"center"}
       fontSize={"2xl"}
       textTransform={"uppercase"}
-      p={2}
+      p={4}
       fontWeight={"bold"}
     >
       {title}

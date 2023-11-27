@@ -75,7 +75,11 @@ export default function PowerTrio() {
         >
           Os produtos que compõem Power Trio
         </Text>
-        <Flex justifyContent={"space-between"} gap={4}>
+        <Flex
+          justifyContent={"space-between"}
+          flexDirection={{ base: "column", md: "row" }}
+          gap={4}
+        >
           <Reveal delay={0.1}>
             <Flex
               p={{ base: "0", md: "4" }}
@@ -92,8 +96,12 @@ export default function PowerTrio() {
                   height={100}
                 />
               </Box>
-              <Text textAlign={"center"} fontSize={{ base: "xs", sm: "md" }}>
-                Detergente com poder de remoção
+              <Text
+                textAlign={"center"}
+                fontSize={{ base: "md", sm: "sm" }}
+                m={"auto"}
+              >
+                Detergente com alto pode de remoção
               </Text>
             </Flex>
           </Reveal>
@@ -113,8 +121,8 @@ export default function PowerTrio() {
                   height={100}
                 />
               </Box>
-              <Text textAlign={"center"} fontSize={{ base: "xs", sm: "md" }}>
-                Neutralizante para tensoativos
+              <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }}>
+                Potencializador do trio
               </Text>
             </Flex>
           </Reveal>
@@ -134,8 +142,8 @@ export default function PowerTrio() {
                   height={100}
                 />
               </Box>
-              <Text textAlign={"center"} fontSize={{ base: "xs", sm: "md" }}>
-                Poderoso removedor de manchas
+              <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }}>
+                Poderoso tira de manchas
               </Text>
             </Flex>
           </Reveal>

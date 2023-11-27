@@ -103,7 +103,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
       "MAX FRESH um composto sinergético, e um poderoso eliminador de odores",
     hover_color: "0,124,54,1",
     description:
-      "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno, tensoativos biodegradáveis e auxiliares antiredepositantes que não agridem o meio ambiente. Com alto poder de limpeza, remove rapidamente a sujidade sem alterar as características do substrato e de fácil remoção por enxague",
+      "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno, com alto poder de limpeza, remove rapidamente a sujidade sem alterar as características do substrato e de fácil remoção por enxague",
     category: [
       {
         term_id: 3,
@@ -477,6 +477,89 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     hover_color: "119,82,54,1",
     description:
       "O LÓTUS DRY STONE foi desenvolvido para aplicações em pedras, cerâmicas, bases cimenticias entre outras superfícies minerais. Confere a superfície tratada repelência aos líquidos e evita manchas, mantendo sua aparência original, facilitando sua manutenção.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+];
+
+export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 1,
+    title: "HS 1000 IMPERTUDO MAX",
+    thumbnail: "/produtos/impertudomax.png",
+    large_image: "/produtos/impertudomax.png",
+    slogan:
+      "impermeabilizante de secagem rápida para tecidos de uso profissional.",
+    hover_color: "21,26,64,1",
+    description:
+      "LÓTUS HS 1000 IMPERTUDO é um impermeabilizante a base de solvente INFLAMÁVEL de secagem rápida para tecidos de uso profissional, não altera as cores e não mancha os tecidos, não altera as características do material onde está sendo aplicado, mantendo a aparência natural.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 2,
+    title: "HS 1000 SAFE MAX",
+    thumbnail: "/produtos/safemax.png",
+    large_image: "/produtos/safemax.png",
+    slogan:
+      "impermeabilizante de secagem rápida para tecidos de uso profissional.",
+    hover_color: "239,196,73,1",
+    description:
+      "O LÓTUS HS 1000 SAFE é um impermeabilizante de tecidos para uso profissional com uma fórmula a base de solventes não inflamáveis que não alteram as características e não mancham os tecidos. Utilizada pelos profissionais mais exigentes do mercado e que pretendem proporcionar aos seus clientes o melhor resultado de qualidade e performance.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 3,
+    title: "HS 1000 ECO MAX",
+    thumbnail: "/produtos/ecomax.png",
+    large_image: "/produtos/ecomax.png",
+    slogan: "Impermeabilizante a base de água.",
+    hover_color: "0,174,46,1",
+    description:
+      "LÓTUS HS 1000 ECO é um impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo, não alteram as características do material onde está sendo aplicado, mantendo a aparência natural. Sua fórmula a base de água torna seu manuseio mais seguro, por não ser inflamável e também ecologicamente correto.",
     category: [
       {
         term_id: 3,

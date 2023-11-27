@@ -5,18 +5,20 @@ import {
   Icon,
   Collapse,
   useDisclosure,
-} from "@chakra-ui/react"
-import Link from "next/link"
-import { ChevronDownIcon } from "@chakra-ui/icons"
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { ChevronDownIcon } from "@chakra-ui/icons";
 
-import { NavItem } from "./NAV_ITEMS"
-import { Navbar } from "."
+import { NavItem } from "./NAV_ITEMS";
+import { Navbar } from ".";
+import { useEffect } from "react";
 
 interface MobileNavItemProps {
-  label: string
-  href?: string
-  children?: Array<NavItem>
-  onChangeRoute?: () => void
+  label: string;
+  href?: string;
+  children?: Array<NavItem>;
+  onChangeRoute: () => void;
+  route?: string;
 }
 
 export default function NavbarMobileItems({
@@ -24,11 +26,17 @@ export default function NavbarMobileItems({
   href,
   children,
   onChangeRoute,
+  route,
 }: MobileNavItemProps) {
-  const { isOpen, onToggle } = useDisclosure()
+  const { isOpen, onToggle } = useDisclosure();
   const handleToggle = (e: { preventDefault: () => any }) => {
-    return e.preventDefault(), onToggle()
-  }
+    return e.preventDefault(), onToggle();
+  };
+
+  useEffect(() => {
+    onChangeRoute();
+  }, [route]);
+
   return (
     <Stack spacing={4} w={"100%"}>
       <Box
@@ -77,5 +85,5 @@ export default function NavbarMobileItems({
         </Stack>
       </Collapse>
     </Stack>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "react"
 
-import { useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation"
 import {
   Box,
   Container,
@@ -13,72 +13,72 @@ import {
   FormErrorMessage,
   Flex,
   Icon,
-} from "@chakra-ui/react";
-import { DownloadIcon } from "@chakra-ui/icons";
-import { IoShareOutline } from "react-icons/io5";
-import { AiOutlineArrowDown } from "react-icons/ai";
-import MotionLayout from "@/components/MotionLayout";
+} from "@chakra-ui/react"
+import { DownloadIcon } from "@chakra-ui/icons"
+import { IoShareOutline } from "react-icons/io5"
+import { AiOutlineArrowDown } from "react-icons/ai"
+import MotionLayout from "@/components/MotionLayout"
 
 interface BeforeInstallPromptEvent extends Event {
-  readonly platforms: string[];
+  readonly platforms: string[]
   readonly userChoice: Promise<{
-    outcome: "accepted" | "dismissed";
-    platform: string;
-  }>;
-  prompt(): Promise<void>;
+    outcome: "accepted" | "dismissed"
+    platform: string
+  }>
+  prompt(): Promise<void>
 }
 
 declare global {
   interface WindowEventMap {
-    beforeinstallprompt: BeforeInstallPromptEvent;
-    transitioned: BeforeInstallPromptEvent;
+    beforeinstallprompt: BeforeInstallPromptEvent
+    transitioned: BeforeInstallPromptEvent
   }
 }
 
 export default function Calculadora() {
-  const searchParams = useSearchParams();
-  const proportionParam = searchParams.get("proportion");
+  const searchParams = useSearchParams()
+  const proportionParam = searchParams.get("proportion")
 
   const [proportion, setProportion] = useState<number>(
     Number(proportionParam) || 0
-  );
-  const isProportionInvalid = proportion <= 0;
+  )
+  const isProportionInvalid = proportion <= 0
 
-  const [water, setWater] = useState<string>("");
-  const isWaterInvalid = water.length <= 0;
-  const [measuaramentUnit, setMeasuaramentUnit] = useState<string>("");
-  const isMeasuaramentUnitInvalid = measuaramentUnit.length <= 0;
-  const [result, setResult] = useState<number>(0);
+  const [water, setWater] = useState<string>("")
+  const isWaterInvalid = water.length <= 0
+  const [measuaramentUnit, setMeasuaramentUnit] = useState<string>("")
+  const isMeasuaramentUnitInvalid = measuaramentUnit.length <= 0
+  const [result, setResult] = useState<number>(0)
   const isButtonDisabled =
-    isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid;
+    isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid
   const [beforeInstallPrompt, setBeforeInstallPrompt] =
-    useState<BeforeInstallPromptEvent>();
-  const [supportsPWA, setSupportsPWA] = useState<boolean>(false);
-  const [isInstalled, setIsInstalled] = useState<boolean>();
+    useState<BeforeInstallPromptEvent>()
+  const [supportsPWA, setSupportsPWA] = useState<boolean>(false)
+  const [isInstalled, setIsInstalled] = useState<boolean>()
   const [showIphoneInstallMessage, setShowIphoneInstallMessage] =
-    useState<boolean>(false);
+    useState<boolean>(false)
 
   const proportionCalc = (
     proportion: number,
     water: string,
     measuramentUnit: string
   ) => {
-    if (!proportion || !water || measuaramentUnit.length < 0) return 0;
-    const waterFloat = parseFloat(water.replace(",", "."));
+    if (!proportion || !water || measuaramentUnit.length < 0) return 0
+    const waterFloat = parseFloat(water.replace(",", "."))
 
     if (measuramentUnit === "l") {
-      const productQuantity = 1000 / proportion;
-      return waterFloat * productQuantity;
+      const productQuantity = 1000 / proportion
+      return waterFloat * productQuantity
     } else {
-      const productQuantity = 1 / proportion;
-      return waterFloat * productQuantity;
+      const productQuantity = 1 / proportion
+      return waterFloat * productQuantity
     }
-  };
+  }
 
   const handleCalc = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setResult(proportionCalc(proportion, water, measuaramentUnit));
-  };
+    event.preventDefault()
+    setResult(proportionCalc(proportion, water, measuaramentUnit))
+  }
 
   const proportions = [
     {
@@ -117,57 +117,57 @@ export default function Calculadora() {
       title: "1 : 5",
       value: 5,
     },
-  ];
+  ]
 
   useEffect(() => {
     const handleBeforeInstallPrompt = (e: BeforeInstallPromptEvent) => {
-      e.preventDefault();
-      setBeforeInstallPrompt(e);
-      setSupportsPWA(true);
-    };
+      e.preventDefault()
+      setBeforeInstallPrompt(e)
+      setSupportsPWA(true)
+    }
 
     if (typeof window !== "undefined") {
-      window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+      window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt)
     }
 
     return () => {
       if (typeof window !== "undefined") {
-        window.removeEventListener("transitioned", handleBeforeInstallPrompt);
+        window.removeEventListener("transitioned", handleBeforeInstallPrompt)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       const isAppInstalled = window.matchMedia(
         "(display-mode: standalone)"
-      ).matches;
-      setIsInstalled(isAppInstalled);
+      ).matches
+      setIsInstalled(isAppInstalled)
     }
 
     const isIos = () => {
-      const userAgent = window.navigator.userAgent.toLowerCase();
-      return /iphone|ipad|ipod/.test(userAgent);
-    };
+      const userAgent = window.navigator.userAgent.toLowerCase()
+      return /iphone|ipad|ipod/.test(userAgent)
+    }
     // Detects if device is in standalone mode
     const isInStandaloneMode = () =>
-      "standalone" in window.navigator && window.navigator.standalone;
+      "standalone" in window.navigator && window.navigator.standalone
     // Verifica se deve exibir notificação popup de instalação:
     if (isIos() && !isInStandaloneMode()) {
-      setShowIphoneInstallMessage(true);
+      setShowIphoneInstallMessage(true)
     }
-  }, []);
+  }, [])
 
   const installApp = async () => {
     if (beforeInstallPrompt) {
-      beforeInstallPrompt.prompt();
-      const { outcome } = await beforeInstallPrompt.userChoice;
+      beforeInstallPrompt.prompt()
+      const { outcome } = await beforeInstallPrompt.userChoice
       if (outcome === "accepted") {
-        setIsInstalled(true);
+        setIsInstalled(true)
       }
-      setBeforeInstallPrompt(undefined);
+      setBeforeInstallPrompt(undefined)
     }
-  };
+  }
 
   return (
     <MotionLayout title="Calculadora de Diluição">
@@ -194,8 +194,13 @@ export default function Calculadora() {
           pois, se você diluir o produto em bastante água, ele não terá o efeito
           esperado.
         </Text>
-        <Flex gap={4} flexDirection={{ base: "column", md: "row" }}>
-          <Box as="form" onSubmit={handleCalc} w={{ base: "100%", md: "50%" }}>
+        <Flex gap={4} flexDirection={{ base: "column" }}>
+          <Box
+            as="form"
+            onSubmit={handleCalc}
+            m={"auto"}
+            w={{ base: "100%", md: "50%" }}
+          >
             <FormControl isInvalid={isProportionInvalid}>
               <FormLabel
                 htmlFor="proportion"
@@ -306,6 +311,7 @@ export default function Calculadora() {
           </Box>
 
           <Box
+            m={"auto"}
             w={{ base: "100%", md: "50%" }}
             display={"flex"}
             flexDir={"column"}
@@ -369,5 +375,5 @@ export default function Calculadora() {
         ) : null}
       </Container>
     </MotionLayout>
-  );
+  )
 }

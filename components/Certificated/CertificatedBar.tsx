@@ -14,14 +14,12 @@ export default function CertificatedBar() {
         Empresa certificada por:
       </Text>
       <Flex
-        as={Link}
-        href="/certificado"
         justifyContent="space-between"
         alignItems={"center"}
         flexDirection={{ base: "column", md: "row" }}
         gap={4}
       >
-        <Box maxW={200}>
+        <Box maxW={200} as={Link} href="/certificado">
           <Image
             src="anvisa-logo.png"
             alt="logo anvisa"
@@ -29,13 +27,15 @@ export default function CertificatedBar() {
             height={46}
           />
         </Box>
-        <Image
-          src="/certificados/SVB.svg"
-          alt="logo svb"
-          width={76}
-          height={76}
-        />
-        <Box maxW={76}>
+        <Box maxW={200} as={Link} href="/powertrio">
+          <Image
+            src="/certificados/SVB.svg"
+            alt="logo svb"
+            width={76}
+            height={76}
+          />
+        </Box>
+        <Box maxW={76} as={Link} href="/certificado">
           <Image
             src="aatcc-logo.svg"
             alt="logo aatcc"
@@ -43,7 +43,9 @@ export default function CertificatedBar() {
             height={79}
           />
         </Box>
-        <Image src="iso-logo.svg" alt="logo aatcc" width={76} height={76} />
+        <Box as={Link} href="/certificado">
+          <Image src="iso-logo.svg" alt="logo aatcc" width={76} height={76} />
+        </Box>
       </Flex>
     </Container>
   )
