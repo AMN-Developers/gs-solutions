@@ -25,7 +25,7 @@ export default function CatalogItem({
       overflow={"hidden"}
       color={"white"}
       bgImage={thumbnail}
-      bgSize={{ base: "contain", md: "auto" }}
+      bgSize={"contain"}
       bgRepeat={"no-repeat"}
       bgPosition={"center"}
       textColor={"transparent"}

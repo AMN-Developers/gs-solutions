@@ -5,48 +5,34 @@ import {
   PopoverTrigger,
   Stack,
   useDisclosure,
-} from "@chakra-ui/react"
-import Link from "next/link"
-import { Header } from "./Header"
-import { Navbar } from "./Navbar"
-import { NAV_ITEMS } from "./Navbar/NAV_ITEMS"
-import DrawerRoot from "./Drawer/DrawerRoot"
-import React from "react"
-import { Footer } from "./Footer"
-import CookieBanner from "@/components/CookieBanner"
-import { AnimatePresence, motion } from "framer-motion"
-import { ChevronDownIcon } from "@chakra-ui/icons"
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { Header } from "./Header";
+import { Navbar } from "./Navbar";
+import { NAV_ITEMS } from "./Navbar/NAV_ITEMS";
+import DrawerRoot from "./Drawer/DrawerRoot";
+import React from "react";
+import { Footer } from "./Footer";
+import CookieBanner from "@/components/CookieBanner";
+import { AnimatePresence, motion } from "framer-motion";
+import { ChevronDownIcon } from "@chakra-ui/icons";
+import { bg } from "@/components/Header/HeaderBG";
 
 interface LayoutProps {
-  children: React.ReactNode
-  route: string
-}
-
-type background = {
-  [key: string]: string
+  children: React.ReactNode;
+  route: string;
 }
 
 export default function Layout({ children, route }: LayoutProps) {
-  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false })
-  const btnRef = React.useRef<HTMLButtonElement>(null)
-
-  const bg: background = {
-    "/": "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);",
-    "/lotus": "/card-lotus.webp",
-    "/higienizacao": "/card-lotus.webp",
-    "/impermeabilizantes": "/card-lotus.webp",
-    "/limpoo": "/card-limpoo.webp",
-    "/fixflot":
-      "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
-    "/fireguard":
-      "radial-gradient(circle, rgba(255,180,44,1) 0%, rgba(255,180,44,1) 93%, rgba(255,180,44,1) 100%);",
-  }
+  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false });
 
   const {
     isOpen: isOpenDrawer,
     onOpen: onOpenDrawer,
     onClose: onCloseDrawer,
-  } = useDisclosure()
+  } = useDisclosure();
+  const btnRef = React.useRef<HTMLButtonElement>(null);
 
   return (
     <>
@@ -91,12 +77,6 @@ export default function Layout({ children, route }: LayoutProps) {
                       color="black"
                       __css={{
                         textTransform: "uppercase",
-                      }}
-                      _hover={{
-                        textDecoration: "none",
-                        color: "#232c54",
-                        fontWeight: "semibold",
-                        transition: "all 0.3s ease-in-out",
                       }}
                     >
                       {navItem.label}
@@ -149,6 +129,7 @@ export default function Layout({ children, route }: LayoutProps) {
                 key={navItem.label}
                 {...navItem}
                 onChangeRoute={onToggle}
+                route={route}
               />
             ))}
             <Box
@@ -181,5 +162,5 @@ export default function Layout({ children, route }: LayoutProps) {
       </Footer.Root>
       <CookieBanner />
     </>
-  )
+  );
 }

@@ -1,8 +1,8 @@
 export interface NavItem {
-  label: string
-  subLabel?: string
-  children?: Array<NavItem>
-  href?: string
+  label: string;
+  subLabel?: string;
+  children?: Array<NavItem>;
+  href?: string;
 }
 
 export const NAV_ITEMS: Array<NavItem> = [
@@ -43,16 +43,16 @@ export const NAV_ITEMS: Array<NavItem> = [
           },
         ],
       },
-      {
-        label: "Limpoo",
-        href: "/limpoo",
-        children: [
-          {
-            label: "Teste",
-            href: "#",
-          },
-        ],
-      },
+      //{
+      //label: "Limpoo",
+      //href: "/limpoo",
+      //children: [
+      //{
+      //label: "Teste",
+      //href: "#",
+      //},
+      //],
+      //},
     ],
   },
 
@@ -76,7 +76,7 @@ export const NAV_ITEMS: Array<NavItem> = [
         href: "/sustentabilidade",
       },
       {
-        label: "Manual",
+        label: "Manual de Uso",
         href: "/#manual",
       },
     ],
@@ -89,4 +89,4 @@ export const NAV_ITEMS: Array<NavItem> = [
     label: "Distribuidores G&S",
     href: "/distribuidores",
   },
-]
+];

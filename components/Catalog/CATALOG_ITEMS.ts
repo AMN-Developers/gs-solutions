@@ -1,4 +1,4 @@
-import { Product } from "@/hooks/useProducts"
+import { Product } from "@/hooks/useProducts";
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
@@ -174,7 +174,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     ],
     fiqasp: "",
   },
-]
+];
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
@@ -283,7 +283,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     ],
     fiqasp: "",
   },
-]
+];
 
 export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
@@ -493,4 +493,87 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     ],
     fiqasp: "",
   },
-]
+];
+
+export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 1,
+    title: "HS 1000 IMPERTUDO MAX",
+    thumbnail: "/produtos/impertudomax.png",
+    large_image: "/produtos/impertudomax.png",
+    slogan:
+      "impermeabilizante de secagem rápida para tecidos de uso profissional.",
+    hover_color: "21,26,64,1",
+    description:
+      "LÓTUS HS 1000 IMPERTUDO é um impermeabilizante a base de solvente INFLAMÁVEL de secagem rápida para tecidos de uso profissional, não altera as cores e não mancha os tecidos, não altera as características do material onde está sendo aplicado, mantendo a aparência natural.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 2,
+    title: "HS 1000 SAFE MAX",
+    thumbnail: "/produtos/safemax.png",
+    large_image: "/produtos/safemax.png",
+    slogan:
+      "impermeabilizante de secagem rápida para tecidos de uso profissional.",
+    hover_color: "239,196,73,1",
+    description:
+      "O LÓTUS HS 1000 SAFE é um impermeabilizante de tecidos para uso profissional com uma fórmula a base de solventes não inflamáveis que não alteram as características e não mancham os tecidos. Utilizada pelos profissionais mais exigentes do mercado e que pretendem proporcionar aos seus clientes o melhor resultado de qualidade e performance.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 3,
+    title: "HS 1000 ECO MAX",
+    thumbnail: "/produtos/ecomax.png",
+    large_image: "/produtos/ecomax.png",
+    slogan: "Impermeabilizante a base de água.",
+    hover_color: "0,174,46,1",
+    description:
+      "LÓTUS HS 1000 ECO é um impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo, não alteram as características do material onde está sendo aplicado, mantendo a aparência natural. Sua fórmula a base de água torna seu manuseio mais seguro, por não ser inflamável e também ecologicamente correto.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "",
+  },
+];

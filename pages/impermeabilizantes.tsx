@@ -1,23 +1,26 @@
-import { useRef } from "react"
-import { useSearchParams } from "next/navigation"
-import { Container, Text, Box, Button } from "@chakra-ui/react"
-import { Catalog } from "@/components/Catalog"
-import MotionLayout from "@/components/MotionLayout"
-import { AnimatePresence } from "framer-motion"
-import Product from "@/components/Product"
-import { CATALOG_ITEMS_IMPER } from "@/components/Catalog/CATALOG_ITEMS"
-import Link from "next/link"
+import { useRef } from "react";
+import { useSearchParams } from "next/navigation";
+import { Container, Text, Box, Button } from "@chakra-ui/react";
+import { Catalog } from "@/components/Catalog";
+import MotionLayout from "@/components/MotionLayout";
+import { AnimatePresence } from "framer-motion";
+import Product from "@/components/Product";
+import {
+  CATALOG_ITEMS_IMPER,
+  CATALOG_ITEMS_IMPER_MAX,
+} from "@/components/Catalog/CATALOG_ITEMS";
+import Link from "next/link";
 
 export default function Impermeabilizantes() {
-  const searchParams = useSearchParams()
-  const imper = searchParams.get("imper")
-  const max = searchParams.get("max")
-  const productRef = useRef<HTMLDivElement>(null)
-  const lastProductRef = useRef<HTMLDivElement>(null)
+  const searchParams = useSearchParams();
+  const imper = searchParams.get("imper");
+  const max = searchParams.get("max");
+  const productRef = useRef<HTMLDivElement>(null);
+  const lastProductRef = useRef<HTMLDivElement>(null);
 
   return (
     <MotionLayout title="Impermeabilizantes">
-      <Container maxW={"container.xl"}>
+      <Container maxW={{ base: "full", md: "container.xl" }}>
         <Text
           display={"flex"}
           justifyContent={"center"}
@@ -34,7 +37,7 @@ export default function Impermeabilizantes() {
         <Box
           w="full"
           backgroundColor={"#f8f8f8"}
-          p={8}
+          p={{ base: 4, md: 8 }}
           my={4}
           mb={8}
           rounded={"md"}
@@ -102,7 +105,7 @@ export default function Impermeabilizantes() {
             />
           </AnimatePresence>
           <Catalog.Root>
-            {CATALOG_ITEMS_IMPER.map((Product) => (
+            {CATALOG_ITEMS_IMPER_MAX.map((Product) => (
               <Catalog.Item
                 key={Product.id}
                 thumbnail={Product.thumbnail}
@@ -137,5 +140,5 @@ export default function Impermeabilizantes() {
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }
