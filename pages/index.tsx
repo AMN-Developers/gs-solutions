@@ -144,7 +144,7 @@ export default function Home() {
             </Flex>
             <Button
               as={Link}
-              href="/"
+              href="/manual/manualdeuso.pdf"
               w={"full"}
               mt={4}
               colorScheme="messenger"
