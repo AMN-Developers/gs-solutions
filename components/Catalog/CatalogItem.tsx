@@ -31,6 +31,9 @@ export default function CatalogItem({
         justifyContent={"center"}
         p={4}
         flexDirection={"column"}
+        _hover={{
+          textDecor: "underline",
+        }}
       >
         <Text textAlign={"center"} fontSize={"sm"} fontWeight={"semibold"}>
           {title}
@@ -39,6 +42,7 @@ export default function CatalogItem({
         <Text fontSize={"x-small"} textAlign={"center"}>
           {chamada}
         </Text>
+        <Text fontSize={"x-small"}>saiba mais</Text>
       </Flex>
       <Card
         rounded={"md"}
@@ -79,7 +83,6 @@ export default function CatalogItem({
           <Text textAlign={"center"} px={4}>
             {slogan}
           </Text>
-          <Text>Saiba Mais!</Text>
         </Flex>
       </Card>
     </Flex>
