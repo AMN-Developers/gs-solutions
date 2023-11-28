@@ -15,6 +15,7 @@ interface ProdItemProps {
   description: string
   slogan: string
   hoverColor: string
+  chamada: string
 }
 
 export default function ProdItem({
@@ -22,11 +23,14 @@ export default function ProdItem({
   bgImage,
   slogan,
   hoverColor,
+  chamada
 }: ProdItemProps) {
   const { isOpen, onToggle } = useDisclosure()
 
   return (
     <Flex flexDirection={"column"} mb={2}>
+      <Text>{title}</Text>
+      <Text>{chamada}</Text>
       <Card
         onClick={onToggle}
         rounded={"md"}
@@ -63,6 +67,7 @@ export default function ProdItem({
           <Text textAlign={"left"} px={4}>
             {slogan}
           </Text>
+          <Text>Saiba mais!</Text>
         </Flex>
       </Card>
     </Flex>
