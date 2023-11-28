@@ -273,6 +273,11 @@ export default function FixFlot() {
                 _hover={{
                   bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1gRBY_TynwAY4VUFTGrK0Eu7MZ-OIAC75/view"
+                  )
+                }
               >
                 Boletim Tecnico
               </Button>
@@ -284,6 +289,11 @@ export default function FixFlot() {
                 _hover={{
                   bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1nL97bZPDRa3zXDUmArhpyCpbRQN9mHDa/view"
+                  )
+                }
               >
                 FISPQ
               </Button>
@@ -407,6 +417,11 @@ export default function FixFlot() {
             bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
           }}
           textTransform={"uppercase"}
+          onClick={() =>
+            window.open(
+              "https://api.whatsapp.com/send/?phone=%2B5511913591344&text&type=phone_number&app_absent=0"
+            )
+          }
         >
           Compre conosco
         </Button>

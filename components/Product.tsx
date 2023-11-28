@@ -124,6 +124,9 @@ export default function Product({
                           FIQASP
                         </Button>
                         <Button
+                          onClick={() =>
+                            window.open(selectedProduct.boletim, "_blank")
+                          }
                           bgColor={`rgba(${selectedProduct.hover_color})`}
                           color={"white"}
                           _hover={{
