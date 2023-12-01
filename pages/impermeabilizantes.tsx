@@ -25,7 +25,6 @@ export default function Impermeabilizantes() {
     return productCopy.slice(0, 4)
   }, [CATALOG_ITEMS_HIGI])
 
-
   const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
@@ -139,7 +138,7 @@ export default function Impermeabilizantes() {
             ))}
           </Catalog.Root>
         </Box>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mt={16}>
           <Text
             as="h2"
             fontWeight={"bold"}
@@ -180,8 +179,10 @@ export default function Impermeabilizantes() {
             href={"/higienizacao"}
             p={4}
             my={4}
+            w={"full"}
             colorScheme="facebook"
-            size={"sm"}
+            size={"md"}
+            textTransform={"uppercase"}
           >
             Conheça toda a linha
           </Button>
