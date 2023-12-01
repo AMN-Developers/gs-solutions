@@ -89,7 +89,11 @@ export default function Product({
                     flexDirection={"column"}
                     justifyContent={"space-between"}
                   >
-                    <Text>{selectedProduct.description}</Text>
+                    <Text
+                      dangerouslySetInnerHTML={{
+                        __html: selectedProduct.description,
+                      }}
+                    />
                     <Box
                       display={"flex"}
                       flexDirection={{ base: "column", md: "row" }}
