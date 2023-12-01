@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react"
+import { useRef, useState, useEffect, useMemo } from "react"
 import { useSearchParams } from "next/navigation"
 import { Container, Text, Box, Button } from "@chakra-ui/react"
 import { Catalog } from "@/components/Catalog"
@@ -19,8 +19,12 @@ export default function Impermeabilizantes() {
   const max = searchParams.get("max")
   const productRef = useRef<HTMLDivElement>(null)
   const lastProductRef = useRef<HTMLDivElement>(null)
-  const randomHigiItems = CATALOG_ITEMS_HIGI.sort(() => Math.random() - 0.5)
-  const higiShuffle = randomHigiItems.slice(0, 4)
+  const higiShuffle = useMemo(() => {
+    const productCopy = [...CATALOG_ITEMS_HIGI]
+    productCopy.sort(() => Math.random() - 0.5)
+    return productCopy.slice(0, 4)
+  }, [CATALOG_ITEMS_HIGI])
+
 
   const [isClient, setIsClient] = useState(false)
 

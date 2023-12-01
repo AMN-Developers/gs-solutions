@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
-import { Box, Button, Container, Text } from "@chakra-ui/react"
+import { Box, Button, Container, Divider, Text } from "@chakra-ui/react"
 import { AnimatePresence } from "framer-motion"
+
 import { Catalog } from "@/components/Catalog"
 import MotionLayout from "@/components/MotionLayout"
 import Product from "@/components/Product"
@@ -11,6 +12,8 @@ import {
 } from "@/components/Catalog/CATALOG_ITEMS"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
+import Reveal from "@/components/Reveal"
+import { useMemo } from "react"
 
 export default function Higienização() {
   const searchParams = useSearchParams()
@@ -19,8 +22,11 @@ export default function Higienização() {
   const veg = searchParams.get("veg")
   const productRef = useRef<HTMLDivElement>(null)
   const lastProductRef = useRef<HTMLDivElement>(null)
-  const randomImperItems = CATALOG_ITEMS_IMPER.sort(() => Math.random() - 0.5)
-  const imperShuffle = randomImperItems.slice(0, 4)
+  const imperShuffle = useMemo(() => {
+    const productCopy = [...CATALOG_ITEMS_IMPER]
+    productCopy.sort(() => Math.random() - 0.5)
+    return productCopy.slice(0, 4)
+  }, [CATALOG_ITEMS_IMPER])
 
   const [isClient, setIsClient] = useState(false)
 
@@ -39,7 +45,7 @@ export default function Higienização() {
           textTransform={"uppercase"}
           fontWeight={"bold"}
           fontSize={"2xl"}
-          my={4}
+          
         >
           Linha de Higienização
         </Text>
@@ -125,7 +131,8 @@ export default function Higienização() {
             ))}
           </Catalog.Root>
         </Box>
-        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mb={4}>
+
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mt={16}>
           <Text
             as="h2"
             fontWeight={"bold"}
@@ -143,6 +150,7 @@ export default function Higienização() {
               itemList={CATALOG_ITEMS_IMPER}
             />
           </AnimatePresence>
+
           <Catalog.Root>
             {isClient
               ? imperShuffle.map((product) => (
@@ -163,13 +171,16 @@ export default function Higienização() {
                 ))
               : null}
           </Catalog.Root>
+
           <Button
             as={Link}
             href={"/impermeabilizantes"}
             p={4}
             my={4}
+            w={"full"}
             colorScheme="facebook"
-            size={"sm"}
+            size={"md"}
+            textTransform={"uppercase"}
           >
             Conheça toda a linha
           </Button>
