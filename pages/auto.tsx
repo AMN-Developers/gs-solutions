@@ -1,62 +1,116 @@
 import Image from "next/image";
-import {
-  Container,
-  Box,
-  Tooltip,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
-  Button,
-  Text,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+import { Button } from "@chakra-ui/react";
+import { Container, Box, Text } from "@chakra-ui/react";
+import { motion, AnimatePresence } from "framer-motion";
 import MotionLayout from "@/components/MotionLayout";
+import { forwardRef, useState } from "react";
+
+const images = [
+  {
+    src: "/auto/car.jpg",
+    alt: "Carro",
+  },
+  {
+    src: "/auto/estofado.jpg",
+    alt: "Estofado",
+  },
+  {
+    src: "/auto/plastico.jpg",
+    alt: "Estofado",
+  },
+  {
+    src: "/auto/roda.jpg",
+    alt: "Estofado",
+  },
+];
+
+type ImageProps = {
+  src: string;
+  alt: string;
+  fill?: boolean;
+  objectFit?: "cover" | "contain";
+};
+
+const ExoticImage = forwardRef<HTMLImageElement, ImageProps>(
+  function ExoticImageWrapper(props, ref) {
+    // eslint-disable-next-line jsx-a11y/alt-text
+    return <Image {...props} ref={ref} />;
+  }
+);
+
+const MotionComponent = motion(ExoticImage);
 
 export default function Auto() {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const handleNext = () => {
+    setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentImage(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+
   return (
     <MotionLayout title="Auto">
-      <Container maxW={"container.xl"} p={0}>
-        <Box h={"2xl"} position="relative">
-          <Image src="/car.png" alt="Auto" fill />
-          <Box
-            position="absolute"
-            left={`480px`}
-            top={`${460}px`}
-            cursor="pointer"
-            display="inline-block"
+      <Box position={"relative"} h={"768px"} overflow={"hidden"}>
+        <Box
+          position={"absolute"}
+          top={"50%"}
+          left={"0"}
+          transform={"translateY(-50%)"}
+          w={"100%"}
+          h={"100%"}
+          display={"flex"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          zIndex={50}
+          px={8}
+        >
+          <Button
+            w={"50px"}
+            h={"50px"}
+            bg={"white"}
+            borderRadius={"50%"}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            cursor={"pointer"}
+            onClick={handlePrev}
           >
-            <Popover trigger="hover">
-              <PopoverTrigger>
-                <Box
-                  as={motion.div}
-                  whileHover={{ scale: 1.2 }}
-                  bg="whatsapp.600"
-                  borderRadius="100%"
-                  w="20px"
-                  h="20px"
-                  display="inline-block"
-                />
-              </PopoverTrigger>
-              <PopoverContent borderColor={"whatsapp.600"} bgColor={"white"}>
-                <PopoverArrow />
-                <PopoverHeader borderColor={"whatsapp.600"}>
-                  <Text fontWeight={"bold"}>CARPETES</Text>
-                </PopoverHeader>
-                <PopoverBody>
-                  <Text fontWeight={"bold"}>MULTI-C - TIRA-MANCHAS</Text>
-                  <Text>Borrifar produto + Extratora</Text>
-                </PopoverBody>
-              </PopoverContent>
-            </Popover>
-          </Box>
+            <SlArrowLeft size={"20px"} />
+          </Button>
+          <Button
+            w={"50px"}
+            h={"50px"}
+            bg={"white"}
+            borderRadius={"50%"}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
+            cursor={"pointer"}
+            onClick={handleNext}
+          >
+            <SlArrowRight size={"20px"} />
+          </Button>
         </Box>
-      </Container>
+        <AnimatePresence>
+          <MotionComponent
+            src={images[currentImage].src}
+            alt={images[currentImage].alt}
+            fill
+            objectFit="cover"
+            key={images[currentImage].src}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+          />
+        </AnimatePresence>
+      </Box>
     </MotionLayout>
   );
 }
