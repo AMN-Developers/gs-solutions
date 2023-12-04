@@ -63,6 +63,7 @@ export default function Impermeabilizantes() {
           <Catalog.Root>
             {CATALOG_ITEMS_IMPER.map((product) => (
               <Catalog.Item
+                chamada={product.chamada}
                 key={product.id}
                 thumbnail={product.thumbnail}
                 title={product.title}
@@ -105,19 +106,20 @@ export default function Impermeabilizantes() {
             />
           </AnimatePresence>
           <Catalog.Root>
-            {CATALOG_ITEMS_IMPER_MAX.map((Product) => (
+            {CATALOG_ITEMS_IMPER_MAX.map((product) => (
               <Catalog.Item
-                key={Product.id}
-                thumbnail={Product.thumbnail}
-                title={Product.title}
-                slogan={Product.slogan}
-                hover_color={Product.hover_color}
+                chamada={product.chamada}
+                key={product.id}
+                thumbnail={product.thumbnail}
+                title={product.title}
+                slogan={product.slogan}
+                hover_color={product.hover_color}
                 lastProductRef={
-                  Product.id === Number(max) ? lastProductRef : null
+                  product.id === Number(max) ? lastProductRef : null
                 }
-                id={Product.id}
+                id={product.id}
                 type={"max"}
-                href={`?max=${Product.id}#max-${Product.id}`}
+                href={`?max=${product.id}#max-${product.id}`}
               />
             ))}
           </Catalog.Root>
@@ -140,5 +142,5 @@ export default function Impermeabilizantes() {
         </Button>
       </Container>
     </MotionLayout>
-  );
+  )
 }

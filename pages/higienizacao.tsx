@@ -1,22 +1,22 @@
-import { useRef } from "react";
-import { Box, Button, Container, Text } from "@chakra-ui/react";
-import { AnimatePresence } from "framer-motion";
-import { Catalog } from "@/components/Catalog";
-import MotionLayout from "@/components/MotionLayout";
-import Product from "@/components/Product";
+import { useRef } from "react"
+import { Box, Button, Container, Text } from "@chakra-ui/react"
+import { AnimatePresence } from "framer-motion"
+import { Catalog } from "@/components/Catalog"
+import MotionLayout from "@/components/MotionLayout"
+import Product from "@/components/Product"
 import {
   CATALOG_ITEMS_HIGI,
   CATALOG_ITEMS_VEG,
-} from "@/components/Catalog/CATALOG_ITEMS";
-import { useSearchParams } from "next/navigation";
-import Link from "next/link";
+} from "@/components/Catalog/CATALOG_ITEMS"
+import { useSearchParams } from "next/navigation"
+import Link from "next/link"
 
 export default function Higienização() {
-  const searchParams = useSearchParams();
-  const higi = searchParams.get("higi");
-  const veg = searchParams.get("veg");
-  const productRef = useRef<HTMLDivElement>(null);
-  const lastProductRef = useRef<HTMLDivElement>(null);
+  const searchParams = useSearchParams()
+  const higi = searchParams.get("higi")
+  const veg = searchParams.get("veg")
+  const productRef = useRef<HTMLDivElement>(null)
+  const lastProductRef = useRef<HTMLDivElement>(null)
 
   return (
     <MotionLayout title="Higienização">
@@ -60,19 +60,20 @@ export default function Higienização() {
             />
           </AnimatePresence>
           <Catalog.Root>
-            {CATALOG_ITEMS_VEG.map((Product) => (
+            {CATALOG_ITEMS_VEG.map((product) => (
               <Catalog.Item
-                key={Product.id}
-                thumbnail={Product.thumbnail}
-                title={Product.title}
-                slogan={Product.slogan}
-                hover_color={Product.hover_color}
+                chamada={product.chamada}
+                key={product.id}
+                thumbnail={product.thumbnail}
+                title={product.title}
+                slogan={product.slogan}
+                hover_color={product.hover_color}
                 lastProductRef={
-                  Product.id === Number(veg) ? lastProductRef : null
+                  product.id === Number(veg) ? lastProductRef : null
                 }
-                id={Product.id}
+                id={product.id}
                 type={"veg"}
-                href={`?veg=${Product.id}#veg-${Product.id}`}
+                href={`?veg=${product.id}#veg-${product.id}`}
               />
             ))}
           </Catalog.Root>
@@ -96,19 +97,20 @@ export default function Higienização() {
             />
           </AnimatePresence>
           <Catalog.Root>
-            {CATALOG_ITEMS_HIGI.map((Product) => (
+            {CATALOG_ITEMS_HIGI.map((product) => (
               <Catalog.Item
-                key={Product.id}
-                thumbnail={Product.thumbnail}
-                title={Product.title}
-                slogan={Product.slogan}
-                hover_color={Product.hover_color}
+                chamada={product.chamada}
+                key={product.id}
+                thumbnail={product.thumbnail}
+                title={product.title}
+                slogan={product.slogan}
+                hover_color={product.hover_color}
                 lastProductRef={
-                  Product.id === Number(higi) ? lastProductRef : null
+                  product.id === Number(higi) ? lastProductRef : null
                 }
-                id={Product.id}
+                id={product.id}
                 type={"higi"}
-                href={`?higi=${Product.id}#higi-${Product.id}`}
+                href={`?higi=${product.id}#higi-${product.id}`}
               />
             ))}
           </Catalog.Root>
@@ -132,5 +134,5 @@ export default function Higienização() {
         </Button>
       </Container>
     </MotionLayout>
-  );
+  )
 }
