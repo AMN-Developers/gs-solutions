@@ -111,8 +111,8 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     thumbnail: "/produtos/citrusolv.png",
     large_image: "/produtos/citrusolv.png",
     slogan:
-      "MAX FRESH um composto sinergético, e um poderoso eliminador de odores",
-    chamada: "Eliminador de odores",
+      "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno",
+    chamada: "Solvente natural",
     hover_color: "0,124,54,1",
     description:
       "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno, com alto poder de limpeza, remove rapidamente a sujidade sem alterar as características do substrato e de fácil remoção por enxague",
@@ -301,7 +301,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     chamada: "Eliminador de odores vegano",
     hover_color: "236,236,236,1",
     description:
-      "Neutralizador/eliminador de odores Vegano. Age na remoção/eliminação de odores desagradáveis, como, urina animal, humana, vômitos, umidade, derramamento de líquidos fermentados, odores causados por bactérias e fungos, etc. Também promove a ação de proteção prolongada, evitando que os maus odores voltem a contaminar o artigo tratado (efeito bacteriostático). Não interfere negativamente com impermeabilizantes, não mancha, não altera as características do tecido, possui odor agradável e aconchegante.",
+      "Neutralizador/eliminador de odores Vegano. Age na remoção/eliminação de odores desagradáveis, como, urina animal, humana, vômitos, umidade, derramamento de líquidos fermentados, odores causados por bactérias e fungos, etc. Também promove a ação de proteção prolongada, evitando que os maus odores voltem a contaminar o artigo tratado (<b>efeito bacteriostático</b>). Não interfere negativamente com impermeabilizantes, não mancha, não altera as características do tecido, possui odor agradável e aconchegante.",
     category: [
       {
         term_id: 3,
@@ -425,7 +425,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     chamada: "Impermeabilizante antiviral e antibacteriano",
     hover_color: "162,192,233,1",
     description:
-      "LÓTUS TECH BLOCK é um impermeabilizante de tecidos a base de água que possui efeito antiviral e antibacteriano, apresentando alto poder de repelência a água e ao óleo, após sua aplicação além de garantir a impermeabilização dos têxteis.",
+      "LÓTUS TECH BLOCK é um impermeabilizante de tecidos a base de água com uma tecnologia exclusiva: Lótus OmniControl que garante um efeito antiviral e antibacteriano, ideal para tecidos que tem constante contato com pets pois previ a proliferação do odor do pet ao estofado.",
     category: [
       {
         term_id: 3,

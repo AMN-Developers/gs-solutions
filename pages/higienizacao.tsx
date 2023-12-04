@@ -1,22 +1,38 @@
-import { useRef } from "react"
-import { Box, Button, Container, Text } from "@chakra-ui/react"
+import { useEffect, useRef, useState } from "react"
+import { Box, Button, Container, Divider, Text } from "@chakra-ui/react"
 import { AnimatePresence } from "framer-motion"
+
 import { Catalog } from "@/components/Catalog"
 import MotionLayout from "@/components/MotionLayout"
 import Product from "@/components/Product"
 import {
   CATALOG_ITEMS_HIGI,
+  CATALOG_ITEMS_IMPER,
   CATALOG_ITEMS_VEG,
 } from "@/components/Catalog/CATALOG_ITEMS"
 import { useSearchParams } from "next/navigation"
 import Link from "next/link"
+import Reveal from "@/components/Reveal"
+import { useMemo } from "react"
 
 export default function Higienização() {
   const searchParams = useSearchParams()
+  const imper = searchParams.get("imper")
   const higi = searchParams.get("higi")
   const veg = searchParams.get("veg")
   const productRef = useRef<HTMLDivElement>(null)
   const lastProductRef = useRef<HTMLDivElement>(null)
+  const imperShuffle = useMemo(() => {
+    const productCopy = [...CATALOG_ITEMS_IMPER]
+    productCopy.sort(() => Math.random() - 0.5)
+    return productCopy.slice(0, 4)
+  }, [CATALOG_ITEMS_IMPER])
+
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   return (
     <MotionLayout title="Higienização">
@@ -29,7 +45,7 @@ export default function Higienização() {
           textTransform={"uppercase"}
           fontWeight={"bold"}
           fontSize={"2xl"}
-          my={4}
+          
         >
           Linha de Higienização
         </Text>
@@ -116,22 +132,59 @@ export default function Higienização() {
           </Catalog.Root>
         </Box>
 
-        <Button
-          as={Link}
-          href={"/impermeabilizantes"}
-          mb={4}
-          bg={
-            "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);;"
-          }
-          color={"white"}
-          w={"full"}
-          _hover={{
-            bg: "radial-gradient(circle, rgba(55,88,147,0.9) 0%, rgba(24,24,59,0.9) 93%, rgba(24,26,61,0.9) 100%);",
-          }}
-          textTransform={"uppercase"}
-        >
-          Não deixe de conhecer nossa linha de impermeabilizantes
-        </Button>
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mt={16}>
+          <Text
+            as="h2"
+            fontWeight={"bold"}
+            textTransform={"uppercase"}
+            fontSize={"xl"}
+            pb={4}
+          >
+            Não deixe de conhecer nossa linha de Impermeabilizantes
+          </Text>
+          <AnimatePresence mode="wait">
+            <Product
+              type={"imper"}
+              param={imper}
+              productRef={productRef}
+              itemList={CATALOG_ITEMS_IMPER}
+            />
+          </AnimatePresence>
+
+          <Catalog.Root>
+            {isClient
+              ? imperShuffle.map((product) => (
+                  <Catalog.Item
+                    chamada={product.chamada}
+                    key={product.id}
+                    thumbnail={product.thumbnail}
+                    title={product.title}
+                    slogan={product.slogan}
+                    hover_color={product.hover_color}
+                    lastProductRef={
+                      product.id === Number(imper) ? lastProductRef : null
+                    }
+                    id={product.id}
+                    type={"imper"}
+                    href={`?imper=${product.id}#imper-${product.id}`}
+                  />
+                ))
+              : null}
+          </Catalog.Root>
+
+          <Button
+            as={Link}
+            href={"/impermeabilizantes"}
+            p={4}
+            my={4}
+            w={"full"}
+            colorScheme="facebook"
+            size={"md"}
+            textTransform={"uppercase"}
+          >
+            Conheça toda a linha
+          </Button>
+        </Box>
       </Container>
     </MotionLayout>
   )

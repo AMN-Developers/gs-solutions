@@ -1,22 +1,35 @@
-import { useRef } from "react";
-import { useSearchParams } from "next/navigation";
-import { Container, Text, Box, Button } from "@chakra-ui/react";
-import { Catalog } from "@/components/Catalog";
-import MotionLayout from "@/components/MotionLayout";
-import { AnimatePresence } from "framer-motion";
-import Product from "@/components/Product";
+import { useRef, useState, useEffect, useMemo } from "react"
+import { useSearchParams } from "next/navigation"
+import { Container, Text, Box, Button } from "@chakra-ui/react"
+import { Catalog } from "@/components/Catalog"
+import MotionLayout from "@/components/MotionLayout"
+import { AnimatePresence } from "framer-motion"
+import Product from "@/components/Product"
 import {
+  CATALOG_ITEMS_HIGI,
   CATALOG_ITEMS_IMPER,
   CATALOG_ITEMS_IMPER_MAX,
-} from "@/components/Catalog/CATALOG_ITEMS";
-import Link from "next/link";
+} from "@/components/Catalog/CATALOG_ITEMS"
+import Link from "next/link"
 
 export default function Impermeabilizantes() {
-  const searchParams = useSearchParams();
-  const imper = searchParams.get("imper");
-  const max = searchParams.get("max");
-  const productRef = useRef<HTMLDivElement>(null);
-  const lastProductRef = useRef<HTMLDivElement>(null);
+  const searchParams = useSearchParams()
+  const imper = searchParams.get("imper")
+  const higi = searchParams.get("higi")
+  const max = searchParams.get("max")
+  const productRef = useRef<HTMLDivElement>(null)
+  const lastProductRef = useRef<HTMLDivElement>(null)
+  const higiShuffle = useMemo(() => {
+    const productCopy = [...CATALOG_ITEMS_HIGI]
+    productCopy.sort(() => Math.random() - 0.5)
+    return productCopy.slice(0, 4)
+  }, [CATALOG_ITEMS_HIGI])
+
+  const [isClient, setIsClient] = useState(false)
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
 
   return (
     <MotionLayout title="Impermeabilizantes">
@@ -49,6 +62,7 @@ export default function Impermeabilizantes() {
             textTransform={"uppercase"}
             fontSize={"xl"}
             pb={4}
+            id="productFocus"
           >
             Produtos
           </Text>
@@ -124,22 +138,55 @@ export default function Impermeabilizantes() {
             ))}
           </Catalog.Root>
         </Box>
-        <Button
-          as={Link}
-          href={"/higienizacao"}
-          mb={4}
-          bg={
-            "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);;"
-          }
-          color={"white"}
-          w={"full"}
-          _hover={{
-            bg: "radial-gradient(circle, rgba(55,88,147,0.9) 0%, rgba(24,24,59,0.9) 93%, rgba(24,26,61,0.9) 100%);",
-          }}
-          textTransform={"uppercase"}
-        >
-          Não deixe de conhecer nossa linha de higienização
-        </Button>
+        <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mt={16}>
+          <Text
+            as="h2"
+            fontWeight={"bold"}
+            textTransform={"uppercase"}
+            fontSize={"xl"}
+            pb={4}
+          >
+            Não deixe de conhecer nossa linha de Higienização
+          </Text>
+          <Product
+            type={"higi"}
+            param={higi}
+            productRef={productRef}
+            itemList={CATALOG_ITEMS_HIGI}
+          />
+          <Catalog.Root>
+            {isClient
+              ? higiShuffle.map((product) => (
+                  <Catalog.Item
+                    chamada={product.chamada}
+                    key={product.id}
+                    thumbnail={product.thumbnail}
+                    title={product.title}
+                    slogan={product.slogan}
+                    hover_color={product.hover_color}
+                    lastProductRef={
+                      product.id === Number(higi) ? lastProductRef : null
+                    }
+                    id={product.id}
+                    type={"higi"}
+                    href={`?higi=${product.id}#higi-${product.id}`}
+                  />
+                ))
+              : null}
+          </Catalog.Root>
+          <Button
+            as={Link}
+            href={"/higienizacao"}
+            p={4}
+            my={4}
+            w={"full"}
+            colorScheme="facebook"
+            size={"md"}
+            textTransform={"uppercase"}
+          >
+            Conheça toda a linha
+          </Button>
+        </Box>
       </Container>
     </MotionLayout>
   )
