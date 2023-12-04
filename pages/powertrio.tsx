@@ -191,10 +191,26 @@ export default function PowerTrio() {
                       exigências da ANVISA.
                     </Text>
                     <Flex gap={2}>
-                      <Button colorScheme="facebook" size={"sm"}>
+                      <Button
+                        colorScheme="facebook"
+                        size={"sm"}
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view"
+                          )
+                        }
+                      >
                         Boletim Tecnico
                       </Button>
-                      <Button colorScheme="facebook" size={"sm"}>
+                      <Button
+                        colorScheme="facebook"
+                        size={"sm"}
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1lcmXp5sFwL7nQlMjAk8JH6lXcjlZcK10/view"
+                          )
+                        }
+                      >
                         FISPQ
                       </Button>
                     </Flex>
@@ -223,10 +239,26 @@ export default function PowerTrio() {
                       maior dos impermeabilizantes.
                     </Text>
                     <Flex gap={2}>
-                      <Button colorScheme="facebook" size={"sm"}>
+                      <Button
+                        colorScheme="facebook"
+                        size={"sm"}
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view"
+                          )
+                        }
+                      >
                         Boletim Tecnico
                       </Button>
-                      <Button colorScheme="facebook" size={"sm"}>
+                      <Button
+                        colorScheme="facebook"
+                        size={"sm"}
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1yDgShU7fhVugq-A84FBJ1orPbdtN7IOr/view"
+                          )
+                        }
+                      >
                         FISPQ
                       </Button>
                     </Flex>
@@ -254,10 +286,26 @@ export default function PowerTrio() {
                       coloridos.
                     </Text>
                     <Flex gap={2}>
-                      <Button colorScheme="facebook" size={"sm"}>
+                      <Button
+                        colorScheme="facebook"
+                        size={"sm"}
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view"
+                          )
+                        }
+                      >
                         Boletim Tecnico
                       </Button>
-                      <Button colorScheme="facebook" size={"sm"}>
+                      <Button
+                        colorScheme="facebook"
+                        size={"sm"}
+                        onClick={() =>
+                          window.open(
+                            "https://drive.google.com/file/d/1citFyeEvhbvAZ-hEKGaEOLYHmXbUt3Cx/view"
+                          )
+                        }
+                      >
                         FISPQ
                       </Button>
                     </Flex>
@@ -368,6 +416,11 @@ export default function PowerTrio() {
             bg: "radial-gradient(circle, rgba(55,88,147,0.9) 0%, rgba(24,24,59,0.9) 93%, rgba(24,26,61,0.9) 100%);",
           }}
           textTransform={"uppercase"}
+          onClick={() =>
+            window.open(
+              "https://api.whatsapp.com/send/?phone=%2B5511913591344&text&type=phone_number&app_absent=0"
+            )
+          }
         >
           Compre conosco
         </Button>

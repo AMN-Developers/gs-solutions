@@ -1,4 +1,4 @@
-import { Product } from "@/hooks/useProducts";
+import { Product } from "@/hooks/useProducts"
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
@@ -26,7 +26,10 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1nL97bZPDRa3zXDUmArhpyCpbRQN9mHDa/view",
+    boletim:
+      "https://drive.google.com/file/d/1gRBY_TynwAY4VUFTGrK0Eu7MZ-OIAC75/view",
   },
   {
     id: 68,
@@ -64,7 +67,10 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1y_NFl5YUt_cYAnOMsXRte9Lg-onMTJ8e/view",
+    boletim:
+      "https://drive.google.com/file/d/1upuDxMxIr1ESXYTXf2xxqcTmTB-2ItwC/view",
   },
   {
     id: 70,
@@ -91,7 +97,9 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
       },
     ],
     fiqasp:
-      "http://gshomesolutions.test/wp-content/uploads/2023/10/FISPQ-LOTUS-DESINFEKT-formato-ABNT-rev.-01.pdf",
+      "https://drive.google.com/file/d/11VfcyqnoAo7ZjLZdoHz-wS219xF8lX3F/view",
+    boletim:
+      "https://drive.google.com/file/d/13ZKpJGS4tkwMLM288MR6hxzvrjsYj-n5/view",
   },
   {
     id: 84,
@@ -118,7 +126,10 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1R2qHUp369OVLQZeHRmHXp3qd_r17wj_v/view",
+    boletim:
+      "https://drive.google.com/file/d/14Seqgv-bX6rHzFc4MWghuPvr6IfDvx7c/view",
   },
   {
     id: 85,
@@ -145,7 +156,10 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1VXJTbUUktlyEOEtzFTwzeteUWC0KUANW/view",
+    boletim:
+      "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
   },
   {
     id: 86,
@@ -172,9 +186,12 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1mmoFimvYWyexs9ICjBRVzFnAw7otRh58/view",
+    boletim:
+      "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
   },
-];
+]
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
@@ -202,7 +219,10 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
+    boletim:
+      "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view",
   },
   {
     id: 2,
@@ -228,7 +248,10 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1yDgShU7fhVugq-A84FBJ1orPbdtN7IOr/view",
+    boletim:
+      "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view",
   },
   {
     id: 3,
@@ -254,7 +277,10 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1citFyeEvhbvAZ-hEKGaEOLYHmXbUt3Cx/view",
+    boletim:
+      "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view",
   },
   {
     id: 4,
@@ -281,9 +307,12 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/12RIHXVAmUinJXoW0pTWBFtYPoV49Cgth/view",
+    boletim:
+      "https://drive.google.com/file/d/1Ls29Xw5IDVKNJJsLBB6kipwgJ68jOf8_/view",
   },
-];
+]
 
 export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
@@ -309,7 +338,10 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1PRiL0eEI9EUSNNLtNxIVbfoSs2jARvw0/view",
+    boletim:
+      "https://drive.google.com/file/d/1oY5Ey_ozsct2P_cfKDwouaKpv_xLVtJ2/view",
   },
   {
     // TODO: Update the image url, hover_color and fiqasp
@@ -335,7 +367,10 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1q4Dyhb4jClfdXgnyxaH5MpLuFv-2B2-E/view",
+    boletim:
+      "https://drive.google.com/file/d/19H_15rc1IYTAG2c6MX3hDMgtW5pKJ1Rv/view",
   },
   {
     // TODO: Update the image url, hover_color and fiqasp
@@ -361,7 +396,10 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1gv1TW8F_dO0a4Zo3sfiGzwVLutJP58t8/view",
+    boletim:
+      "https://drive.google.com/file/d/10fkhVOL41wf8Qby--5QwwKS-aTNJdMiM/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
@@ -387,7 +425,10 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/17ukZ9SvaZaRqO74-mhivF8aUVMpfSjAT/view",
+    boletim:
+      "https://drive.google.com/file/d/1cGDyHD5Y7qPOTRGI2kPd49oGlLZF4mJ9/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
@@ -413,7 +454,10 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1VXJTbUUktlyEOEtzFTwzeteUWC0KUANW/view",
+    boletim:
+      "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
@@ -439,7 +483,10 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1kYTLyFW906pT0Jn2PRui2w7nTF8H7CKV/view",
+    boletim:
+      "https://drive.google.com/file/d/1AaLOWpjb9HMPP_h4Ye3Uk4EGNgUYFQAu/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
@@ -465,7 +512,10 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1mmoFimvYWyexs9ICjBRVzFnAw7otRh58/view",
+    boletim:
+      "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
@@ -491,9 +541,12 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1xfw8W56W4_hjgSJDg1zyKCJKznekaVSc/view",
+    boletim:
+      "https://drive.google.com/file/d/1IwXKKqKsQ-PfJEwPwyFEdwyCU_-wTJ1n/view",
   },
-];
+]
 
 export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
   {
@@ -521,7 +574,10 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1rlVlBqG52C5Dl1k9jj3b_axo-uwxePCt/view",
+    boletim:
+      "https://drive.google.com/file/d/1nF1xz7VYaYTi6iMectl9oK5HcKm-YE1Y/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
@@ -548,7 +604,10 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/1bdmAgRke-bzYziLZzg0ZpdKuQ9tgrM0s/view",
+    boletim:
+      "https://drive.google.com/file/d/1fDGNOSDpm0EOMt9mndwobQvKR2IAU5ZC/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
@@ -574,6 +633,9 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "",
+    fiqasp:
+      "https://drive.google.com/file/d/19pW5tUTP2MBihDbRboG8X7NOx7mvvQR_/view",
+    boletim:
+      "https://drive.google.com/file/d/1_Xl-vvTKoVOFTfWyw_t67uTeM4WmKYR7/view",
   },
-];
+]

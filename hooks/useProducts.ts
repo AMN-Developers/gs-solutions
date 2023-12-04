@@ -10,6 +10,7 @@ export interface Product {
   hover_color: string;
   description: string;
   fiqasp: string;
+  boletim: string;
   category: Category[];
   recomended?: string;
 }

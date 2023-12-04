@@ -21,15 +21,20 @@ export default function HeaderTopBar() {
         />
       </Box>
       <Button
+        onClick={() =>
+          window.open(
+            "https://api.whatsapp.com/send/?phone=%2B5511913591344&text&type=phone_number&app_absent=0"
+          )
+        }
         variant={"outline"}
         color={"black"}
         bg={"white"}
         _hover={{
-          bg: "whiteAlpha.900",
+          bg: "whiteAlpha.800",
         }}
       >
         FAÇA UMA COTAÇÃO
       </Button>
     </Container>
-  );
+  )
 }

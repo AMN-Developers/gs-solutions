@@ -308,6 +308,11 @@ solvente de percloroetileno para tecidos e tapetes)."
                 _hover={{
                   bg: "rgba(255,180,44,0.8)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1KZBEykmdS2nvfxtI8Z9-iA9c3qB7FIjk/view"
+                  )
+                }
               >
                 Boletim Tecnico
               </Button>
@@ -317,6 +322,11 @@ solvente de percloroetileno para tecidos e tapetes)."
                 _hover={{
                   bg: "rgba(255,180,44,0.8)",
                 }}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/13M6kAG2RKxtCAIPFNd2Qj49vFkTEbu1L/view"
+                  )
+                }
               >
                 FISPQ
               </Button>
@@ -435,6 +445,11 @@ solvente de percloroetileno para tecidos e tapetes)."
             bg: "rgba(255,180,44,0.8)",
           }}
           textTransform={"uppercase"}
+          onClick={() =>
+            window.open(
+              "https://api.whatsapp.com/send/?phone=%2B5511913591344&text&type=phone_number&app_absent=0"
+            )
+          }
         >
           Compre conosco
         </Button>
