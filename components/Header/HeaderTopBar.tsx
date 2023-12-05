@@ -33,7 +33,7 @@ export default function HeaderTopBar() {
           bg: "whiteAlpha.800",
         }}
       >
-        FAÇA UMA COTAÇÃO
+        COMPRE AGORA!
       </Button>
     </Container>
   )
