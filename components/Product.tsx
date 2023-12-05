@@ -125,7 +125,7 @@ export default function Product({
                           }}
                           fontSize={{ base: "xx-small", md: "md" }}
                         >
-                          FIQASP
+                          FISPQ
                         </Button>
                         <Button
                           onClick={() =>
