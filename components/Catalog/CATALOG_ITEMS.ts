@@ -390,7 +390,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     thumbnail: "/produtos/eco.png",
     large_image: "/produtos/eco.png",
     slogan:
-      "Impermeabilizante fácil de aplicar, com alto poder de repelência a água e ao óleo",
+      "Impermeabilizantes de tecido base água de fácil aplicação com alta repelência para água e óleo",
     chamada: "Alto poder de repelência",
     hover_color: "0,174,46,1",
     description:
