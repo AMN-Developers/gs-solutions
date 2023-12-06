@@ -106,6 +106,7 @@ const MotionComponent = motion(ExoticImage);
 
 export default function Auto() {
   const [currentImage, setCurrentImage] = useState(0);
+  const [touchStartX, setTouchStartX] = useState(0);
 
   const handleNext = () => {
     setCurrentImage((prevIndex) => (prevIndex + 1) % images.length);
@@ -117,9 +118,32 @@ export default function Auto() {
     );
   };
 
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStartX(event.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    const touchEndX = e.touches[0].clientX;
+    const deltaX = touchStartX - touchEndX;
+
+    if (deltaX > 50) {
+      // Swipe right, move to the next slide
+      handleNext();
+    } else if (deltaX < -50) {
+      // Swipe left, move to the previous slide
+      handlePrev();
+    }
+  };
+
   return (
     <MotionLayout title="Auto">
-      <Box position={"relative"} h={"768px"} overflow={"hidden"}>
+      <Box
+        position={"relative"}
+        h={"768px"}
+        overflow={"hidden"}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+      >
         <Box
           position={"absolute"}
           top={"50%"}
@@ -138,11 +162,12 @@ export default function Auto() {
             h={"50px"}
             bg={"white"}
             borderRadius={"50%"}
-            display={"flex"}
+            display={{ base: "none", md: "flex" }}
             justifyContent={"center"}
             alignItems={"center"}
             cursor={"pointer"}
             onClick={handlePrev}
+            // hide on mobile
           >
             <SlArrowLeft size={"20px"} />
           </Button>
@@ -151,7 +176,7 @@ export default function Auto() {
             h={"50px"}
             bg={"white"}
             borderRadius={"50%"}
-            display={"flex"}
+            display={{ base: "none", md: "flex" }}
             justifyContent={"center"}
             alignItems={"center"}
             cursor={"pointer"}
@@ -171,17 +196,6 @@ export default function Auto() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            // Change image on swipe left/right
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.5}
-            onDragEnd={(event, info) => {
-              if (info.offset.x > 100) {
-                handlePrev();
-              } else if (info.offset.x < -100) {
-                handleNext();
-              }
-            }}
           />
           <Container
             maxW={"container.xl"}
@@ -192,7 +206,7 @@ export default function Auto() {
             right={0}
             bottom={0}
             display={"flex"}
-            alignItems={{ base: "flex-start", md: "center" }}
+            alignItems={"center"}
           >
             {images[currentImage] && (
               <AnimatePresence>
