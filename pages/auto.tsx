@@ -171,6 +171,17 @@ export default function Auto() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
+            // Change image on swipe left/right
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.5}
+            onDragEnd={(event, info) => {
+              if (info.offset.x > 100) {
+                handlePrev();
+              } else if (info.offset.x < -100) {
+                handleNext();
+              }
+            }}
           />
           <Container
             maxW={"container.xl"}
@@ -181,7 +192,7 @@ export default function Auto() {
             right={0}
             bottom={0}
             display={"flex"}
-            alignItems={"center"}
+            alignItems={{ base: "flex-start", md: "center" }}
           >
             {images[currentImage] && (
               <AnimatePresence>
