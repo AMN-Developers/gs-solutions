@@ -374,7 +374,7 @@ solvente de percloroetileno para tecidos e tapetes)."
           </Flex>
         </Flex>
 
-        <Container
+        {/* <Container
           maxW="container.xl"
           p={8}
           mb={2}
@@ -435,7 +435,7 @@ solvente de percloroetileno para tecidos e tapetes)."
               <Text>Aula de higienização de tapete persa</Text>
             </Flex>
           </Flex>
-        </Container>
+        </Container> */}
         <Button
           my={4}
           bg={"rgba(255,180,44,1)"}
