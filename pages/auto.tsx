@@ -220,7 +220,7 @@ export default function Auto() {
             bottom={0}
             display={"flex"}
             alignItems={"center"}
-            p={{ base: 4, md: 24, lg: 24, xl: 0 }}
+            p={{ base: 4, md: 24, lg: 24, xl: 32, "2xl": 0 }}
           >
             {images[currentImage] && (
               <AnimatePresence>
