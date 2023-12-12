@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import MotionLayout from "@/components/MotionLayout";
 import { forwardRef, useState } from "react";
 import { Reveal } from "@/components/Auto/Reveal";
+import Link from "next/link";
 
 const images = [
   {
@@ -18,23 +19,24 @@ const images = [
     alt: "Imagem do interior de um carro",
     products: [
       {
-        image: "/embalagens-auto.png",
+        image: "/auto/powertrio.png",
         type: "BANCO POLIESTER",
         product: "POWER TRIO",
         description: "Borrifar produto + Extratora",
         delay: 0.25,
-        size: 200,
+        size: 250,
+        href: "/powertrio",
       },
       {
-        image: "/embalagens-auto.png",
+        image: "/auto/multic.png",
         type: "BANCO SEM IMPER",
         product: "MULTI-C",
         description: "Borrifar produto + Extratora",
         delay: 0.5,
-        size: 200,
+        size: 100,
       },
       {
-        image: "/embalagens-auto.png",
+        image: "/auto/all01hydra.png",
         type: "BANCO DE COURO",
         product: "ALL-01 LIMPEZA & HYDRA LEDER HIDRATAÇÃO",
         description:
@@ -63,12 +65,12 @@ const images = [
     alt: "Imagem da parte interior do teto de um Carro",
     products: [
       {
-        image: "/produtos/allone.png",
+        image: "/auto/pretira.png",
         type: "TETO",
         product: "PRE-IMER & TIRA MANCHAS",
         description: "Borrifar produto + passar pano de microfibra",
         delay: 0.25,
-        size: 100,
+        size: 200,
       },
     ],
   },
@@ -77,10 +79,24 @@ const images = [
     alt: "Imagem da parte interior do carpete de um Carro",
     products: [
       {
-        image: "/produtos/allone.png",
+        image: "/auto/multitira.png",
         type: "CARPETE",
         product: "MULTI-C & TIRA MANCHAS",
         description: "Borrifar produto + extratora",
+        delay: 0.25,
+        size: 200,
+      },
+    ],
+  },
+  {
+    src: "/auto/roda.jpg",
+    alt: "Imagem da roda de um Carro",
+    products: [
+      {
+        image: "/auto/multic.png",
+        type: "CAIXA DE RODA",
+        product: "MULTI-C",
+        description: "Borrifar produto + passar pano de microfibra",
         delay: 0.25,
         size: 100,
       },
@@ -127,10 +143,8 @@ export default function Auto() {
     const deltaX = touchStartX - touchEndX;
 
     if (deltaX > 50) {
-      // Swipe right, move to the next slide
       handleNext();
     } else if (deltaX < -50) {
-      // Swipe left, move to the previous slide
       handlePrev();
     }
   };
@@ -167,7 +181,6 @@ export default function Auto() {
             alignItems={"center"}
             cursor={"pointer"}
             onClick={handlePrev}
-            // hide on mobile
           >
             <SlArrowLeft size={"20px"} />
           </Button>
@@ -207,6 +220,7 @@ export default function Auto() {
             bottom={0}
             display={"flex"}
             alignItems={"center"}
+            p={{ base: 4, md: 24, lg: 24, xl: 32, "2xl": 0 }}
           >
             {images[currentImage] && (
               <AnimatePresence>
@@ -249,6 +263,7 @@ export default function Auto() {
                         alignItems={"center"}
                         boxShadow={"0 0 8px black"}
                         w={"500px"}
+                        zIndex={20}
                       >
                         <Image
                           src={product.image}
@@ -256,7 +271,12 @@ export default function Auto() {
                           width={product.size}
                           height={product.size}
                         />
-                        <Box ml={4}>
+                        <Box
+                          ml={4}
+                          display={"flex"}
+                          flexDir={"column"}
+                          justifyContent={"space-between"}
+                        >
                           <Text fontSize={"lg"} fontWeight={"bold"}>
                             {product.type}
                           </Text>
