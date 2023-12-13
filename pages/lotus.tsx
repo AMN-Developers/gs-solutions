@@ -100,7 +100,7 @@ export default function Lotus() {
               <Card.Item
                 alt="Linha auto Logo"
                 href="/auto"
-                bgImage="/auto-bg.png"
+                bgImage="/auto/car.jpg"
                 title="Linha automotiva - completa para seu carro"
                 logo="logo-auto.png"
                 bgPos="center"
