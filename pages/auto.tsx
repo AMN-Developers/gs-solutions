@@ -259,7 +259,7 @@ export default function Auto() {
               gap={4}
               as={motion.div}
               justifyContent={"space-between"}
-              flexDir={{ base: "column-reverse", md: "row" }}
+              flexDir={{ base: "column-reverse", md: "row-reverse" }}
             >
               <Box gap={4} display={"flex"} flexDir={"column"}>
                 {images[currentImage].products &&
