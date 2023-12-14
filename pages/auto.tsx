@@ -16,7 +16,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import MotionLayout from "@/components/MotionLayout";
 import { forwardRef, useState } from "react";
 import { Reveal as AutoReveal } from "@/components/Auto/Reveal";
-import VideoFrame from "@/components/iFrame";
 import Reveal from "@/components/Reveal";
 
 const images = [
@@ -28,6 +27,7 @@ const images = [
   {
     src: "/auto/estofado.jpg",
     alt: "Imagem do interior de um carro",
+    type: "HIGIENIZAÇÃO DE BANCOS",
     products: [
       {
         image: "/auto/powertrio.png",
@@ -60,6 +60,7 @@ const images = [
   {
     src: "/auto/plastico.jpg",
     alt: "Imagem do painel de um carro",
+    type: "HIGIENIZAÇÃO DE PAINEL PLÁSTICO",
     products: [
       {
         image: "/produtos/allone.png",
@@ -74,6 +75,7 @@ const images = [
   {
     src: "/auto/teto.jpg",
     alt: "Imagem da parte interior do teto de um Carro",
+    type: "HIGIENIZAÇÃO DE TETO",
     products: [
       {
         image: "/auto/pretira.png",
@@ -88,6 +90,7 @@ const images = [
   {
     src: "/auto/interior.webp",
     alt: "Imagem da parte interior do carpete de um Carro",
+    type: "HIGIENIZAÇÃO DE CARPETE",
     products: [
       {
         image: "/auto/multitira.png",
@@ -102,6 +105,7 @@ const images = [
   {
     src: "/auto/roda.jpg",
     alt: "Imagem da roda de um Carro",
+    type: "HIGIENIZAÇÃO DE CAIXA DE RODA",
     products: [
       {
         image: "/auto/multic.png",
@@ -216,8 +220,9 @@ export default function Auto() {
             fill
             objectFit="cover"
             key={images[currentImage].src}
+            style={{ filter: "grayscale(100%)" }}
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            animate={{ opacity: 1, filter: "none" }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           />
@@ -239,8 +244,8 @@ export default function Auto() {
                   key={images[currentImage].text as unknown as string}
                 >
                   <Text
-                    fontSize={"4xl"}
-                    fontWeight={"semibold"}
+                    fontSize={"6xl"}
+                    fontWeight={"bold"}
                     color={"white"}
                     textShadow={"0 0 8px black"}
                   >
@@ -251,57 +256,68 @@ export default function Auto() {
             )}
             <Box
               display={"flex"}
-              flexDir={"column"}
               gap={4}
               as={motion.div}
-              initial={"hidden"}
-              animate={"visible"}
-              variants={{
-                visible: {
-                  transition: {
-                    staggerChildren: 1.5,
-                  },
-                },
-              }}
+              justifyContent={"space-between"}
             >
-              {images[currentImage].products &&
-                images[currentImage].products?.map((product) => (
-                  <AnimatePresence key={product.product} mode="wait">
-                    <AutoReveal key={product.product} delay={product.delay}>
-                      <Box
-                        bg={"white"}
-                        borderRadius={"md"}
-                        p={4}
-                        display={"flex"}
-                        alignItems={"center"}
-                        boxShadow={"0 0 8px black"}
-                        w={"500px"}
-                        zIndex={20}
-                      >
-                        <Image
-                          src={product.image}
-                          alt={product.product}
-                          width={product.size}
-                          height={product.size}
-                        />
+              <Box gap={4} display={"flex"} flexDir={"column"}>
+                {images[currentImage].products &&
+                  images[currentImage].products?.map((product) => (
+                    <AnimatePresence key={product.product} mode="wait">
+                      <AutoReveal key={product.product} delay={product.delay}>
                         <Box
-                          ml={4}
+                          bg={"white"}
+                          borderRadius={"md"}
+                          p={4}
                           display={"flex"}
-                          flexDir={"column"}
-                          justifyContent={"space-between"}
+                          alignItems={"center"}
+                          boxShadow={"0 0 8px black"}
+                          w={"500px"}
+                          zIndex={20}
                         >
-                          <Text fontSize={"lg"} fontWeight={"bold"}>
-                            {product.type}
-                          </Text>
-                          <Text fontSize={"md"} fontWeight={"semibold"}>
-                            {product.product}
-                          </Text>
-                          <Text fontSize={"sm"}>{product.description}</Text>
+                          <Image
+                            src={product.image}
+                            alt={product.product}
+                            width={product.size}
+                            height={product.size}
+                          />
+                          <Box
+                            ml={4}
+                            display={"flex"}
+                            flexDir={"column"}
+                            justifyContent={"space-between"}
+                          >
+                            <Text fontSize={"lg"} fontWeight={"bold"}>
+                              {product.type}
+                            </Text>
+                            <Text fontSize={"md"} fontWeight={"semibold"}>
+                              {product.product}
+                            </Text>
+                            <Text fontSize={"sm"}>{product.description}</Text>
+                          </Box>
                         </Box>
-                      </Box>
-                    </AutoReveal>
-                  </AnimatePresence>
-                ))}
+                      </AutoReveal>
+                    </AnimatePresence>
+                  ))}
+              </Box>
+              {images[currentImage].type && (
+                <AnimatePresence>
+                  <Reveal
+                    delay={0.3}
+                    key={images[currentImage].type as unknown as string}
+                  >
+                    <Text
+                      fontSize={"6xl"}
+                      fontWeight={"bold"}
+                      color={"white"}
+                      textShadow={"0 0 8px black"}
+                      align={"center"}
+                    >
+                      {images[currentImage].type as unknown as string}
+                    </Text>
+                  </Reveal>
+                </AnimatePresence>
+              )}
             </Box>
           </Container>
         </AnimatePresence>
@@ -410,7 +426,7 @@ export default function Auto() {
               </Text>
             </Flex>
           </Reveal>
-          <Reveal delay={0.3}>
+          <Reveal delay={0.4}>
             <Flex
               p={{ base: "0", md: "4" }}
               flexDirection={"column"}
@@ -441,7 +457,7 @@ export default function Auto() {
         >
           QUER SABER MAIS SOBRE OS PRODUTOS?
         </Text>
-        <Reveal delay={0.3}>
+        <Reveal delay={0.5}>
           <Flex
             flexDirection={{ base: "column", md: "row" }}
             justifyContent={"space-between"}
@@ -690,83 +706,9 @@ export default function Auto() {
                   </AccordionPanel>
                 </AccordionItem>
               </Flex>
-
-              <Text>
-                Estes 3 produtos têm suas vantagens porque eles podem ser
-                misturados no mesmo banho sem perder eficiência, pelo contrário,
-                um potencializa a ação do outro criando sinergia e garantindo um
-                resultado melhor, o que possibilita um trabalho de higienização
-                completa com o uso de apenas 3 produtos.
-              </Text>
             </Flex>
           </Flex>
         </Reveal>
-
-        <Box
-          p={8}
-          mb={2}
-          bg={
-            "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);"
-          }
-          rounded={"md"}
-        >
-          <Text
-            fontWeight={"bold"}
-            fontSize={{ base: "md", md: "2xl" }}
-            textAlign={"left"}
-            textTransform={"uppercase"}
-            color={"white"}
-            pb={4}
-          >
-            Conheça mais!
-          </Text>
-          <Flex
-            flexDirection={{ base: "column", md: "row" }}
-            gap={4}
-            justifyContent={"space-between"}
-            color={"white"}
-            fontSize={"sm"}
-            fontWeight={"semibold"}
-          >
-            <Flex
-              width={{ base: "100%", md: "30%" }}
-              flexDirection={"column"}
-              gap={2}
-            >
-              <VideoFrame
-                embedID="LrYJJCz53ns"
-                title="Conhecendo Power Trio"
-                ariaDescription="G&S Home Solutions Power trio apresentação"
-              />
-              <Text>Conhecendo Power Trio</Text>
-            </Flex>
-            <Flex
-              width={{ base: "100%", md: "30%" }}
-              flexDirection={"column"}
-              gap={2}
-            >
-              <VideoFrame
-                embedID="bmJ_rxhFJ0A"
-                title="Limpeza e Higienização em tecido Acquablock"
-                ariaDescription="Limpeza e Higienização em tecido Acquablock"
-              />
-              <Text>Limpeza e Higienização em tecido Acquablock</Text>
-            </Flex>
-            <Flex
-              width={{ base: "100%", md: "30%" }}
-              flexDirection={"column"}
-              gap={2}
-            >
-              <VideoFrame
-                embedID="1F4N_zts5zI"
-                title="INFORMAÇÕES IMPORTANTES!"
-                ariaDescription="INFORMAÇÕES IMPORTANTES!"
-              />
-              <Text>INFORMAÇÕES IMPORTANTES!</Text>
-            </Flex>
-          </Flex>
-        </Box>
-
         <Button
           my={4}
           bg={
