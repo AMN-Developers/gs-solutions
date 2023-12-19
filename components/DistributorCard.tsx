@@ -40,19 +40,21 @@ export const DistributorCard = ({ distributor }: IDistributorCardProps) => {
           {distributor.website}
         </ChakraLink>
       </Flex>
-      <Flex
-        alignItems={"center"}
-        mt={2}
-        _hover={{
-          textDecoration: "underline",
-        }}
-        color={"blue.500"}
-      >
-        <BsArrow90DegLeft />
-        <Text ml={2} onClick={() => handleSelectStore(distributor)}>
-          mostrar no mapa
-        </Text>
-      </Flex>
+      {distributor.latitude !== 0 && distributor.longitude !== 0 && (
+        <Flex
+          alignItems={"center"}
+          mt={2}
+          _hover={{
+            textDecoration: "underline",
+          }}
+          color={"blue.500"}
+        >
+          <BsArrow90DegLeft />
+          <Text ml={2} onClick={() => handleSelectStore(distributor)}>
+            mostrar no mapa
+          </Text>
+        </Flex>
+      )}
     </Flex>
   );
 };

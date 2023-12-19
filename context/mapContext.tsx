@@ -83,7 +83,21 @@ const MapProvider = ({ children }: MapProviderProps) => {
             store.latitude,
             store.longitude
           );
+
           return distance <= 100;
+        });
+
+        // Add distance to each store in the array of nearby stores
+
+        nearbyStores.forEach((store) => {
+          const distance = calculateDistance(
+            location.lat,
+            location.lng,
+            store.latitude,
+            store.longitude
+          );
+          // parseFloat to round to 2 decimal places
+          store.distance = distance;
         });
 
         setFilteredStores(nearbyStores);
