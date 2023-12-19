@@ -1,244 +1,138 @@
-import { useState } from "react";
 import MotionLayout from "@/components/MotionLayout";
-import { Container, Box, Flex, Select, Text } from "@chakra-ui/react";
-import {
-  APIProvider,
-  Map,
-  AdvancedMarker,
-  Marker,
-  Pin,
-  InfoWindow,
-} from "@vis.gl/react-google-maps";
+import { Container, Box, Flex, Text, Input, Button } from "@chakra-ui/react";
+import MapProvider from "@/context/mapContext";
+import useMapContext from "@/hooks/useMapContext";
+import { Map, AdvancedMarker, Pin } from "@vis.gl/react-google-maps";
+import { DistributorCard } from "@/components/DistributorCard";
+import { randomUUID } from "crypto";
+
+const MapContainer = () => {
+  const { zoom, centerLocation, distributors, filteredStores, userLocation } =
+    useMapContext();
+
+  return (
+    <Box
+      w={"100%"}
+      h={"400px"}
+      bg={"gray.100"}
+      borderRadius={"md"}
+      overflow={"hidden"}
+    >
+      <Map
+        zoom={zoom}
+        center={centerLocation}
+        mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID}
+        fullscreenControl={false}
+        zoomControl={false}
+        mapTypeControl={false}
+        streetViewControl={false}
+      >
+        {filteredStores.length > 0 ? (
+          filteredStores.map((store) => (
+            <AdvancedMarker
+              position={{ lat: store.latitude, lng: store.longitude }}
+              key={store.id}
+            >
+              <Pin
+                background={"blue"}
+                glyphColor={"white"}
+                borderColor={"white"}
+                scale={0.7}
+              />
+            </AdvancedMarker>
+          ))
+        ) : (
+          <>
+            {distributors.map((store) => (
+              <AdvancedMarker
+                position={{ lat: store.latitude, lng: store.longitude }}
+                key={store.id}
+              >
+                <Pin
+                  background={"blue"}
+                  glyphColor={"white"}
+                  borderColor={"white"}
+                  scale={0.7}
+                />
+              </AdvancedMarker>
+            ))}
+          </>
+        )}
+        {userLocation && (
+          <AdvancedMarker position={userLocation}>
+            <Pin
+              background={"transparent"}
+              glyphColor={"blue"}
+              borderColor={"white"}
+              scale={0.7}
+            />
+          </AdvancedMarker>
+        )}
+      </Map>
+    </Box>
+  );
+};
+
+const StoreLocator = () => {
+  const { userAddress, handleSearch, handleChangeAddress, inputRef } =
+    useMapContext();
+
+  return (
+    <>
+      <Box
+        as="form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSearch();
+        }}
+      >
+        <Text mb={4} fontWeight={"bold"} fontSize={"2xl"} as="label">
+          Encontre o distribuidor da G&S mais próximo de você!
+        </Text>
+        <Flex gap={4}>
+          <Input
+            placeholder="Digite seu endereço..."
+            value={userAddress}
+            onChange={handleChangeAddress}
+            ref={inputRef}
+            mb={4}
+          />
+          <Button mb={4} type="submit">
+            Buscar
+          </Button>
+        </Flex>
+      </Box>
+      <MapContainer />
+    </>
+  );
+};
 
 export default function Distribuidores() {
-  const [selectedState, setSelectedState] = useState("");
-  const [selectedDistributor, setSelectedDistributor] = useState("");
-  console.log(selectedDistributor);
-  const distributors = [
-    {
-      state: "SP",
-      lat: -23.54867,
-      lng: -46.63825,
-      zoom: 9,
-      cities: [
-        {
-          city: "São Paulo",
-          lat: -23.533773,
-          lng: -46.62529,
-        },
-        {
-          city: "Guarulhos",
-          lat: -22.303074,
-          lng: -49.065628,
-        },
-      ],
-      dealers: [
-        {
-          name: "QUICK CLEAN",
-          address: "RUA TABAJARA, 124 - VILA SÃO JORGE - GUARULHOS / SP",
-          phone: "(11) 2414-4145",
-          website: "https://www.quickclean.com.br/",
-          city: "Guarulhos",
-          lat: -23.46517,
-          lng: -46.52364,
-          zoom: 14,
-        },
-        {
-          name: "LOJA DO PROFISSIONAL",
-          address: "Rua Guaicurus, 101 - Água Branca - São Paulo / SP",
-          phone: "(11) 3863-7200",
-          website: "https://www.lojadoprofissional.com.br/",
-          city: "São Paulo",
-          lat: -23.52348,
-          lng: -46.68671,
-          zoom: 14,
-        },
-        {
-          name: "JATO SUPER",
-          address: "Av. Feira De Santana, 71 –  - São José dos Campos / SP",
-          phone: "(12) 3931-0594",
-          website: "https://www.jatosuper.com.br/",
-          city: "São Paulo",
-          lat: -23.25721,
-          lng: -45.91123,
-          zoom: 14,
-        },
-        {
-          name: "ARTWAX",
-          address: "LOJA VIRTUAL",
-          phone: "(11) 2339-3524 / (11) 98492-5351",
-          website: "https://www.artwax.com.br/",
-          city: "São Paulo",
-          lat: 0,
-          lng: 0,
-          zoom: 7,
-        },
-        {
-          name: "PRISMA TECIDOS",
-          phone: "(11) 4391-4800 / (11) 99191-9433",
-          address:
-            "Rua 24 de Fevereiro, 73 – Jardim Olavo Bilac, São Bernardo do Campo / SP",
-          city: "São Paulo",
-          lat: -23.70128,
-          lng: -46.556,
-          zoom: 14,
-        },
-        {
-          name: "BURNOUT CA LTDA",
-          phone: "(11) 94233-3524",
-          address:
-            "Alameda São Caetano, 960, 09070-210, Jardim Santa Maria, Santo André / SP",
-          city: "São Paulo",
-          lat: -23.64728,
-          lng: -46.54712,
-          zoom: 14,
-        },
-      ],
-    },
-    {
-      state: "RJ",
-      lat: -22.0582339,
-      lng: -44.2428579,
-      zoom: 8,
-      cities: [
-        {
-          city: "Rio de Janeiro",
-          lat: -23.533773,
-          lng: -46.62529,
-        },
-      ],
-      dealers: [
-        {
-          name: "Distribuidor 3",
-          address: "Rua 3, 123",
-          phone: "11 1234-5678",
-          city: "Rio de Janeiro",
-          lat: -23.533773,
-          lng: -46.62529,
-          zoom: 14,
-        },
-      ],
-    },
-  ];
-
-  let filteredDistributors = distributors.filter(
-    (distributor) => distributor.state === selectedState
-  );
-  let filteredDistributor =
-    filteredDistributors[0]?.dealers.filter(
-      (dealer) => dealer.name === selectedDistributor
-    ) || [];
-  const position = {
-    lat:
-      filteredDistributor[0]?.lat || filteredDistributors[0]?.lat || -14.235004,
-    lng:
-      filteredDistributor[0]?.lng || filteredDistributors[0]?.lng || -51.925282,
-  };
+  const { combinedDistributors } = useMapContext();
 
   return (
     <MotionLayout title="Distribuidores">
-      <APIProvider
-        apiKey={
-          process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as unknown as string
-        }
-      >
-        <Container maxW="container.xl" px={0} py={4}>
+      <MapProvider>
+        <Container maxW="container.xl" py="8">
           <Flex gap={4}>
-            <Box height={"lg"} width={"50%"} rounded={"md"} overflow={"hidden"}>
-              <Map
-                zoom={
-                  filteredDistributor[0]?.zoom ||
-                  filteredDistributors[0]?.zoom ||
-                  4
-                }
-                center={position}
-                mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID}
-                gestureHandling={"greedy"}
-                disableDefaultUI={true}
-              >
-                {filteredDistributors[0]?.dealers.map((dealer) => {
+            <Box w={"60%"}>
+              <StoreLocator />
+            </Box>
+            <Flex flexDir={"column"}>
+              <Flex flexDir={"column"} overflowY={"scroll"} maxH={"lg"} pr={4}>
+                {combinedDistributors.map((distributor, index) => {
                   return (
-                    <AdvancedMarker
-                      key={dealer.name}
-                      position={{ lat: dealer.lat, lng: dealer.lng }}
-                    >
-                      <Pin
-                        background={"blue"}
-                        borderColor={"green"}
-                        glyphColor={"white"}
-                      />
-                      <InfoWindow>
-                        <div>
-                          <h1>{dealer.name}</h1>
-                          <p>{dealer.address}</p>
-                          <p>{dealer.phone}</p>
-                          <p>{dealer.website}</p>
-                        </div>
-                      </InfoWindow>
-                    </AdvancedMarker>
+                    <DistributorCard
+                      distributor={distributor}
+                      key={`${distributor.id}-${index}-${distributor.distance}`}
+                    />
                   );
                 })}
-                {filteredDistributors.length === 0 &&
-                  distributors.map((state) =>
-                    state.dealers.map((dealer) => {
-                      return (
-                        <AdvancedMarker
-                          key={dealer.name}
-                          position={{ lat: dealer.lat, lng: dealer.lng }}
-                        >
-                          <Pin
-                            background={"blue"}
-                            borderColor={"green"}
-                            glyphColor={"white"}
-                          />
-                          <InfoWindow>
-                            <div>
-                              <h1>{dealer.name}</h1>
-                              <p>{dealer.address}</p>
-                              <p>{dealer.phone}</p>
-                              <p>{dealer.website}</p>
-                            </div>
-                          </InfoWindow>
-                        </AdvancedMarker>
-                      );
-                    })
-                  )}
-              </Map>
-            </Box>
-            <Box w="50%">
-              <Flex flexDir={"column"} gap={4}>
-                <Text fontSize={"xl"} fontWeight={"bold"}>
-                  Encontre um distribuidor G&S mais próximo de você
-                </Text>
-                <Select
-                  placeholder="Selecione um estado"
-                  value={selectedState}
-                  onChange={(e) => setSelectedState(e.target.value)}
-                >
-                  {distributors.map((state) => {
-                    return <option key={state.state}>{state.state}</option>;
-                  })}
-                </Select>
-                {selectedState && (
-                  <Select
-                    placeholder="Selecione um distribuidor"
-                    value={selectedDistributor}
-                    onChange={(e) => setSelectedDistributor(e.target.value)}
-                  >
-                    {filteredDistributors[0]?.dealers.map((dealer) => {
-                      return (
-                        <option key={dealer.address} value={dealer.name}>
-                          {dealer.name} - {dealer.address}
-                        </option>
-                      );
-                    })}
-                  </Select>
-                )}
               </Flex>
-            </Box>
+            </Flex>
           </Flex>
         </Container>
-      </APIProvider>
+      </MapProvider>
     </MotionLayout>
   );
 }

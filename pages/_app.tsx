@@ -1,18 +1,20 @@
-import type { AppProps } from "next/app"
-import { useRouter } from "next/router"
-import { ChakraProvider } from "@chakra-ui/react"
-import { AnimatePresence } from "framer-motion"
-import { QueryClient, QueryClientProvider } from "react-query"
-import { ReactQueryDevtools } from "react-query/devtools"
-import theme from "@/libs/theme"
-import GoogleAnalytics from "@/components/GoogleAnalytics"
-import Layout from "@/components/Layout"
-import Head from "next/head"
+import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
+import { ChakraProvider } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
+import theme from "@/libs/theme";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import Layout from "@/components/Layout";
+import Head from "next/head";
+import MapProvider from "@/context/mapContext";
+import { APIProvider } from "@vis.gl/react-google-maps";
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+  const router = useRouter();
   return (
     <>
       <Head>
@@ -41,12 +43,22 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <Layout route={router.route}>
           <AnimatePresence mode="wait">
             <QueryClientProvider client={queryClient}>
-              <Component {...pageProps} key={router.route} />
+              <APIProvider
+                apiKey={
+                  process.env
+                    .NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as unknown as string
+                }
+                libraries={["places"]}
+              >
+                <MapProvider>
+                  <Component {...pageProps} key={router.route} />
+                </MapProvider>
+              </APIProvider>
               <ReactQueryDevtools initialIsOpen={false} />
             </QueryClientProvider>
           </AnimatePresence>
         </Layout>
       </ChakraProvider>
     </>
-  )
+  );
 }
