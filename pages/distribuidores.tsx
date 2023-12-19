@@ -114,8 +114,8 @@ export default function Distribuidores() {
     <MotionLayout title="Distribuidores">
       <MapProvider>
         <Container maxW="container.xl" py="8">
-          <Flex gap={4}>
-            <Box w={"60%"}>
+          <Flex gap={4} flexDir={{ base: "column", md: "row" }}>
+            <Box w={{ base: "100%", md: "60%" }}>
               <StoreLocator />
             </Box>
             <Flex flexDir={"column"}>
