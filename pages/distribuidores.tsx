@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MotionLayout from "@/components/MotionLayout";
-import { Container, Box, Flex, Select } from "@chakra-ui/react";
+import { Container, Box, Flex, Select, Text } from "@chakra-ui/react";
 import {
   APIProvider,
   Map,
@@ -13,12 +13,13 @@ import {
 export default function Distribuidores() {
   const [selectedState, setSelectedState] = useState("");
   const [selectedDistributor, setSelectedDistributor] = useState("");
+  console.log(selectedDistributor);
   const distributors = [
     {
       state: "SP",
-      lat: -23.6814347,
-      lng: -46.9249393,
-      zoom: 7,
+      lat: -23.54867,
+      lng: -46.63825,
+      zoom: 9,
       cities: [
         {
           city: "São Paulo",
@@ -54,7 +55,7 @@ export default function Distribuidores() {
         },
         {
           name: "JATO SUPER",
-          address: "Av. Feira De Santana, 71 – Jardim Vale Do Sol, SP",
+          address: "Av. Feira De Santana, 71 –  - São José dos Campos / SP",
           phone: "(12) 3931-0594",
           website: "https://www.jatosuper.com.br/",
           city: "São Paulo",
@@ -65,11 +66,32 @@ export default function Distribuidores() {
         {
           name: "ARTWAX",
           address: "LOJA VIRTUAL",
-          phone: "(12) 3931-0594",
+          phone: "(11) 2339-3524 / (11) 98492-5351",
           website: "https://www.artwax.com.br/",
           city: "São Paulo",
           lat: 0,
           lng: 0,
+          zoom: 7,
+        },
+        {
+          name: "PRISMA TECIDOS",
+          phone: "(11) 4391-4800 / (11) 99191-9433",
+          address:
+            "Rua 24 de Fevereiro, 73 – Jardim Olavo Bilac, São Bernardo do Campo / SP",
+          city: "São Paulo",
+          lat: -23.70128,
+          lng: -46.556,
+          zoom: 14,
+        },
+        {
+          name: "BURNOUT CA LTDA",
+          phone: "(11) 94233-3524",
+          address:
+            "Alameda São Caetano, 960, 09070-210, Jardim Santa Maria, Santo André / SP",
+          city: "São Paulo",
+          lat: -23.64728,
+          lng: -46.54712,
+          zoom: 14,
         },
       ],
     },
@@ -93,6 +115,7 @@ export default function Distribuidores() {
           city: "Rio de Janeiro",
           lat: -23.533773,
           lng: -46.62529,
+          zoom: 14,
         },
       ],
     },
@@ -101,18 +124,17 @@ export default function Distribuidores() {
   let filteredDistributors = distributors.filter(
     (distributor) => distributor.state === selectedState
   );
-
   let filteredDistributor =
     filteredDistributors[0]?.dealers.filter(
       (dealer) => dealer.name === selectedDistributor
     ) || [];
-  console.log(filteredDistributor[0]);
   const position = {
     lat:
-      filteredDistributor[0]?.lat || filteredDistributors[0]?.lat || -23.533773,
+      filteredDistributor[0]?.lat || filteredDistributors[0]?.lat || -14.235004,
     lng:
-      filteredDistributor[0]?.lng || filteredDistributors[0]?.lng || -46.62529,
+      filteredDistributor[0]?.lng || filteredDistributors[0]?.lng || -51.925282,
   };
+
   return (
     <MotionLayout title="Distribuidores">
       <APIProvider
@@ -156,10 +178,38 @@ export default function Distribuidores() {
                     </AdvancedMarker>
                   );
                 })}
+                {filteredDistributors.length === 0 &&
+                  distributors.map((state) =>
+                    state.dealers.map((dealer) => {
+                      return (
+                        <AdvancedMarker
+                          key={dealer.name}
+                          position={{ lat: dealer.lat, lng: dealer.lng }}
+                        >
+                          <Pin
+                            background={"blue"}
+                            borderColor={"green"}
+                            glyphColor={"white"}
+                          />
+                          <InfoWindow>
+                            <div>
+                              <h1>{dealer.name}</h1>
+                              <p>{dealer.address}</p>
+                              <p>{dealer.phone}</p>
+                              <p>{dealer.website}</p>
+                            </div>
+                          </InfoWindow>
+                        </AdvancedMarker>
+                      );
+                    })
+                  )}
               </Map>
             </Box>
             <Box w="50%">
               <Flex flexDir={"column"} gap={4}>
+                <Text fontSize={"xl"} fontWeight={"bold"}>
+                  Encontre um distribuidor G&S mais próximo de você
+                </Text>
                 <Select
                   placeholder="Selecione um estado"
                   value={selectedState}
@@ -177,7 +227,9 @@ export default function Distribuidores() {
                   >
                     {filteredDistributors[0]?.dealers.map((dealer) => {
                       return (
-                        <option key={dealer.address}>{dealer.name}</option>
+                        <option key={dealer.address} value={dealer.name}>
+                          {dealer.name} - {dealer.address}
+                        </option>
                       );
                     })}
                   </Select>
