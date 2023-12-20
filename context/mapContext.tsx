@@ -93,7 +93,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
             store.latitude,
             store.longitude
           );
-          return distance <= 300;
+          return distance <= 10000;
         });
 
         const closestStore = filtered.sort((a, b) => {
@@ -127,12 +127,9 @@ const MapProvider = ({ children }: MapProviderProps) => {
           );
         });
         setFilteredStores(filtered);
-        setCenterLocation({
-          lat: closestStore[0].latitude,
-          lng: closestStore[0].longitude,
-        });
+        setCenterLocation(geocodingData.results[0].geometry.location);
         setUserLocation(geocodingData.results[0].geometry.location);
-        setZoom(8);
+        setZoom(7);
       } else {
         console.error("Geocoding API did not return valid results");
       }

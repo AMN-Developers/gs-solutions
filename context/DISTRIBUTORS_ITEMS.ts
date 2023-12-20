@@ -328,8 +328,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     phone: "(75) 99946-5661",
     address: "Ribeira do Pombal / BA",
     state: "BA",
-    latitude: 0,
-    longitude: 0,
+    latitude: -10.83619,
+    longitude: -38.54356,
     zoom: 14,
   },
   {
