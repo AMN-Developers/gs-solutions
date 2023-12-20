@@ -98,7 +98,15 @@ const MapProvider = ({ children }: MapProviderProps) => {
           } else {
             return 0;
           }
-        })[0];
+        });
+
+        closestStore.sort((a, b) => {
+          if (a.distance && b.distance) {
+            return a.distance - b.distance;
+          } else {
+            return 0;
+          }
+        });
 
         if (!closestStore) {
           setError(
@@ -116,8 +124,8 @@ const MapProvider = ({ children }: MapProviderProps) => {
         });
         setFilteredStores(filtered);
         setCenterLocation({
-          lat: closestStore.latitude,
-          lng: closestStore.longitude,
+          lat: closestStore[0].latitude,
+          lng: closestStore[0].longitude,
         });
         setUserLocation(geocodingData.results[0].geometry.location);
         setZoom(8);
@@ -177,8 +185,6 @@ const MapProvider = ({ children }: MapProviderProps) => {
 
   const combinedDistributors = useMemo(() => {
     if (filteredStores.length > 0) {
-      // sort by distance
-
       const sortedStores = filteredStores.sort((a, b) => {
         if (a.distance && b.distance) {
           return a.distance - b.distance;
