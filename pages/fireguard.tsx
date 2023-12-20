@@ -188,6 +188,7 @@ export default function Fireguard() {
                 intempéries, recomenda-se a aplicação de impermeabilizante para
                 tecidos da linha LÓTUS HS 1000.
               </Text>
+              <Text fontWeight={"semibold"}>RETARDANTE DE CHAMAS PARA TECIDOS CLASSE "IIA"</Text>
             </Flex>
           </Flex>
           <Flex
@@ -329,6 +330,20 @@ solvente de percloroetileno para tecidos e tapetes)."
                 }
               >
                 FISPQ
+              </Button>
+              <Button
+                bg={"rgba(255,180,44,1)"}
+                color={"white"}
+                _hover={{
+                  bg: "rgba(255,180,44,0.8)",
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1gwMLAQM1Zxusjf8Dm4dn7Zsgq_ODl9T1/view?pli=1"
+                  )
+                }
+              >
+                Relatorio Tec.
               </Button>
             </Flex>
             <Flex flexDirection={"column"} gap={4} pb={4}>
