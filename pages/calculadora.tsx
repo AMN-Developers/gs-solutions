@@ -86,6 +86,10 @@ export default function Calculadora() {
       value: 400,
     },
     {
+      title: "1 : 300",
+      value: 300,
+    },
+    {
       title: "1 : 200",
       value: 200,
     },
