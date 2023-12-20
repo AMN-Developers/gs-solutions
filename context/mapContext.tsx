@@ -87,11 +87,21 @@ const MapProvider = ({ children }: MapProviderProps) => {
             store.longitude
           );
           store.distance = distance;
-          return distance <= 100;
+          return distance <= 300;
         });
-        console.log(filtered);
+        // Grab the closest store and set it to the center of the map
+        const closestStore = filtered.sort((a, b) => {
+          if (a.distance && b.distance) {
+            return a.distance - b.distance;
+          } else {
+            return 0;
+          }
+        })[0];
         setFilteredStores(filtered);
-        setCenterLocation(geocodingData.results[0].geometry.location);
+        setCenterLocation({
+          lat: closestStore.latitude,
+          lng: closestStore.longitude,
+        });
         setUserLocation(geocodingData.results[0].geometry.location);
         setZoom(8);
       } else {
