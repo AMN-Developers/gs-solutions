@@ -78,8 +78,9 @@ const StoreLocator = () => {
     handleChangeAddress,
     inputRef,
     handleResetMap,
+    error,
   } = useMapContext();
-
+  console.log(error);
   return (
     <>
       <Box
@@ -108,6 +109,11 @@ const StoreLocator = () => {
           </Button>
         </Flex>
       </Box>
+      {error && (
+        <Text color={"red.500"} fontWeight={"bold"}>
+          {error}
+        </Text>
+      )}
       <MapContainer />
     </>
   );
