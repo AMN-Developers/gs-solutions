@@ -26,6 +26,7 @@ interface MapContextData {
   setCenterLocation: (location: { lat: number; lng: number }) => void;
   setZoom: (zoom: number) => void;
   setUserLocation: (location: { lat: number; lng: number } | null) => void;
+  error: string;
 }
 
 interface MapProviderProps {
@@ -49,6 +50,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
     lng: number;
   } | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [error, setError] = useState("");
 
   const onPlaceChanged = (place: any) => {
     if (place) {
@@ -79,6 +81,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
       if (geocodingData.results && geocodingData.results.length > 0) {
         const location = geocodingData.results[0].geometry.location;
 
+        // is stores in the range of 300 km?
         const filtered = DISTRIBUTORS_ITEMS.filter((store) => {
           const distance = calculateDistance(
             location.lat,
@@ -86,10 +89,9 @@ const MapProvider = ({ children }: MapProviderProps) => {
             store.latitude,
             store.longitude
           );
-          store.distance = distance;
           return distance <= 300;
         });
-        // Grab the closest store and set it to the center of the map
+
         const closestStore = filtered.sort((a, b) => {
           if (a.distance && b.distance) {
             return a.distance - b.distance;
@@ -97,6 +99,21 @@ const MapProvider = ({ children }: MapProviderProps) => {
             return 0;
           }
         })[0];
+
+        if (!closestStore) {
+          setError(
+            "Não encontramos nenhum distribuidor próximo a sua localização."
+          );
+          return;
+        }
+        filtered.forEach((store) => {
+          store.distance = calculateDistance(
+            location.lat,
+            location.lng,
+            store.latitude,
+            store.longitude
+          );
+        });
         setFilteredStores(filtered);
         setCenterLocation({
           lat: closestStore.latitude,
@@ -155,6 +172,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
     setZoom(3.5);
     setSelectedStore(null);
     setUserLocation(null);
+    setError("");
   };
 
   const combinedDistributors = useMemo(() => {
@@ -196,6 +214,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
         setCenterLocation,
         setZoom,
         setUserLocation,
+        error,
       }}
     >
       {children}
