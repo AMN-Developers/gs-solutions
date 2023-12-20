@@ -34,12 +34,14 @@ export const DistributorCard = ({ distributor }: IDistributorCardProps) => {
         <BsTelephoneFill />
         <Text ml={2}>{distributor.phone}</Text>
       </Flex>
-      <Flex alignItems={"center"} mt={2} color={"blue.500"}>
-        <BsLink />
-        <ChakraLink as={Link} href={distributor.website} ml={2}>
-          {distributor.website}
-        </ChakraLink>
-      </Flex>
+      {distributor.website && (
+        <Flex alignItems={"center"} mt={2} color={"blue.500"}>
+          <BsLink />
+          <ChakraLink as={Link} href={distributor.website} ml={2}>
+            {distributor.website}
+          </ChakraLink>
+        </Flex>
+      )}
       {distributor.latitude !== 0 && distributor.longitude !== 0 && (
         <Flex
           alignItems={"center"}
