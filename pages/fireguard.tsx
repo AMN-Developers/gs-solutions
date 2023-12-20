@@ -78,7 +78,7 @@ export default function Fireguard() {
             textTransform={"uppercase"}
             w={"100%"}
           >
-            RETARDANTE DE CHAMAS PARA TECIDOS CLASSE "IIA"
+            RETARDANTE DE CHAMAS PARA TECIDOS CLASSE &quot;IIA&quot;
           </Text>
           <Button
             as={Link}
