@@ -84,9 +84,9 @@ export default function PowerTrio() {
             <Flex
               p={{ base: "0", md: "4" }}
               flexDirection={"column"}
-              bgColor={"gray.200"}
+              bgColor={"white"}
               rounded={"md"}
-              boxShadow={"md"}
+              boxShadow={"lg"}
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
@@ -109,9 +109,9 @@ export default function PowerTrio() {
             <Flex
               p={{ base: "0", md: "4" }}
               flexDirection={"column"}
-              bgColor={"gray.200"}
+              bgColor={"white"}
               rounded={"md"}
-              boxShadow={"md"}
+              boxShadow={"lg"}
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
@@ -130,9 +130,9 @@ export default function PowerTrio() {
             <Flex
               p={{ base: "0", md: "4" }}
               flexDirection={"column"}
-              bgColor={"gray.200"}
+              bgColor={"white"}
               rounded={"md"}
-              boxShadow={"md"}
+              boxShadow={"lg"}
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
@@ -327,8 +327,9 @@ export default function PowerTrio() {
               w={{ base: "100%", md: "60%" }}
               p={4}
               px={{ base: "4", sm: "36", md: "4" }}
-              bgColor={"gray.200"}
+              bgColor={"white"}
               rounded={"md"}
+              boxShadow= {"lg"}
             >
               <Image
                 src="/embalagens-power.png"
