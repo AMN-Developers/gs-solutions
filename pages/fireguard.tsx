@@ -78,7 +78,7 @@ export default function Fireguard() {
             textTransform={"uppercase"}
             w={"100%"}
           >
-            Poderoso antichamas
+            RETARDANTE DE CHAMAS PARA TECIDOS CLASSE "IIA"
           </Text>
           <Button
             as={Link}
@@ -188,7 +188,7 @@ export default function Fireguard() {
                 intempéries, recomenda-se a aplicação de impermeabilizante para
                 tecidos da linha LÓTUS HS 1000.
               </Text>
-              <Text fontWeight={"semibold"}>RETARDANTE DE CHAMAS PARA TECIDOS CLASSE "IIA"</Text>
+              
             </Flex>
           </Flex>
           <Flex
