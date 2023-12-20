@@ -140,6 +140,22 @@ export default function Product({
                         >
                           BOLETIM TÉCNICO
                         </Button>
+                        <Button
+                          bgColor={`rgba(${selectedProduct.hover_color})`}
+                          color={"white"}
+                          _hover={{
+                            bgColor: `rgba(${selectedProduct.hover_color})`,
+                          }}
+                          fontSize={{ base: "xx-small", md: "md" }}
+                          textTransform={"uppercase"}
+                          onClick={() =>
+                            window.open(
+                              "https://api.whatsapp.com/send/?phone=%2B5511913591344&text&type=phone_number&app_absent=0"
+                            )
+                          }
+                        >
+                          Compre Agora!
+                        </Button>
                       </Box>
                     </Box>
                   </Box>
