@@ -68,6 +68,10 @@ const MapProvider = ({ children }: MapProviderProps) => {
 
   const handleSearch = async () => {
     try {
+      if (error) {
+        setError("");
+      }
+
       const geocodingResponse = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
           userAddress
