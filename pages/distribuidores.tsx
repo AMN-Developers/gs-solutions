@@ -1,10 +1,8 @@
 import MotionLayout from "@/components/MotionLayout";
 import { Container, Box, Flex, Text, Input, Button } from "@chakra-ui/react";
-import MapProvider from "@/context/mapContext";
 import useMapContext from "@/hooks/useMapContext";
 import { Map, AdvancedMarker, Pin } from "@vis.gl/react-google-maps";
-import { DistributorCard } from "@/components/DistributorCard";
-import { randomUUID } from "crypto";
+import { DistributorsMap } from "@/components/DistributorsMap";
 
 const MapContainer = () => {
   const { zoom, centerLocation, distributors, filteredStores, userLocation } =
@@ -74,8 +72,13 @@ const MapContainer = () => {
 };
 
 const StoreLocator = () => {
-  const { userAddress, handleSearch, handleChangeAddress, inputRef } =
-    useMapContext();
+  const {
+    userAddress,
+    handleSearch,
+    handleChangeAddress,
+    inputRef,
+    handleResetMap,
+  } = useMapContext();
 
   return (
     <>
@@ -100,6 +103,9 @@ const StoreLocator = () => {
           <Button mb={4} type="submit">
             Buscar
           </Button>
+          <Button mb={4} onClick={handleResetMap}>
+            Limpar
+          </Button>
         </Flex>
       </Box>
       <MapContainer />
@@ -109,30 +115,18 @@ const StoreLocator = () => {
 
 export default function Distribuidores() {
   const { combinedDistributors } = useMapContext();
-
   return (
     <MotionLayout title="Distribuidores">
-      <MapProvider>
-        <Container maxW="container.xl" py="8">
-          <Flex gap={4} flexDir={{ base: "column", md: "row" }}>
-            <Box w={{ base: "100%", md: "60%" }}>
-              <StoreLocator />
-            </Box>
-            <Flex flexDir={"column"}>
-              <Flex flexDir={"column"} overflowY={"scroll"} maxH={"lg"} pr={4}>
-                {combinedDistributors.map((distributor, index) => {
-                  return (
-                    <DistributorCard
-                      distributor={distributor}
-                      key={`${distributor.id}-${index}-${distributor.distance}`}
-                    />
-                  );
-                })}
-              </Flex>
-            </Flex>
+      <Container maxW="container.xl" py="8">
+        <Flex gap={4} flexDir={{ base: "column", md: "row" }}>
+          <Box w={{ base: "100%", md: "60%" }}>
+            <StoreLocator />
+          </Box>
+          <Flex flexDir={"column"}>
+            <DistributorsMap distributors={combinedDistributors} />
           </Flex>
-        </Container>
-      </MapProvider>
+        </Flex>
+      </Container>
     </MotionLayout>
   );
 }
