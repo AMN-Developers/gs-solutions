@@ -77,7 +77,7 @@ export const NAV_ITEMS: Array<NavItem> = [
       },
       {
         label: "Manual de Uso",
-        href: "/#manual",
+        href: "/manual/manualdeuso.pdf",
       },
     ],
   },
