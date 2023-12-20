@@ -23,6 +23,9 @@ interface MapContextData {
   handleSelectStore: (store: Distributor) => void;
   handleResetMap: () => void;
   combinedDistributors: Distributor[];
+  setCenterLocation: (location: { lat: number; lng: number }) => void;
+  setZoom: (zoom: number) => void;
+  setUserLocation: (location: { lat: number; lng: number } | null) => void;
 }
 
 interface MapProviderProps {
@@ -76,31 +79,18 @@ const MapProvider = ({ children }: MapProviderProps) => {
       if (geocodingData.results && geocodingData.results.length > 0) {
         const location = geocodingData.results[0].geometry.location;
 
-        const nearbyStores = DISTRIBUTORS_ITEMS.filter((store) => {
+        const filtered = DISTRIBUTORS_ITEMS.filter((store) => {
           const distance = calculateDistance(
             location.lat,
             location.lng,
             store.latitude,
             store.longitude
           );
-
+          store.distance = distance;
           return distance <= 100;
         });
-
-        // Add distance to each store in the array of nearby stores
-
-        nearbyStores.forEach((store) => {
-          const distance = calculateDistance(
-            location.lat,
-            location.lng,
-            store.latitude,
-            store.longitude
-          );
-          // parseFloat to round to 2 decimal places
-          store.distance = distance;
-        });
-
-        setFilteredStores(nearbyStores);
+        console.log(filtered);
+        setFilteredStores(filtered);
         setCenterLocation(geocodingData.results[0].geometry.location);
         setUserLocation(geocodingData.results[0].geometry.location);
         setZoom(8);
@@ -158,21 +148,21 @@ const MapProvider = ({ children }: MapProviderProps) => {
   };
 
   const combinedDistributors = useMemo(() => {
-    const combined =
-      filteredStores.length > 0 ? filteredStores : DISTRIBUTORS_ITEMS;
+    if (filteredStores.length > 0) {
+      // sort by distance
 
-    return combined.sort((a, b) => {
-      const distanceA = a.distance !== undefined ? a.distance : Infinity;
-      const distanceB = b.distance !== undefined ? b.distance : Infinity;
+      const sortedStores = filteredStores.sort((a, b) => {
+        if (a.distance && b.distance) {
+          return a.distance - b.distance;
+        } else {
+          return 0;
+        }
+      });
 
-      if (distanceA < distanceB) {
-        return -1;
-      } else if (distanceA > distanceB) {
-        return 1;
-      } else {
-        return 0;
-      }
-    });
+      return sortedStores;
+    } else {
+      return DISTRIBUTORS_ITEMS;
+    }
   }, [filteredStores]);
 
   return (
@@ -193,6 +183,9 @@ const MapProvider = ({ children }: MapProviderProps) => {
         handleSelectStore,
         handleResetMap,
         combinedDistributors,
+        setCenterLocation,
+        setZoom,
+        setUserLocation,
       }}
     >
       {children}
