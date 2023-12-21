@@ -1,8 +1,17 @@
 import MotionLayout from "@/components/MotionLayout";
-import { Container, Box, Flex, Text, Input, Button } from "@chakra-ui/react";
+import {
+  Container,
+  Box,
+  Flex,
+  Text,
+  Input,
+  Button,
+  Select,
+} from "@chakra-ui/react";
 import useMapContext from "@/hooks/useMapContext";
 import { Map, AdvancedMarker, Pin } from "@vis.gl/react-google-maps";
 import { DistributorsMap } from "@/components/DistributorsMap";
+import { DISTRIBUTORS_ITEMS } from "@/context/DISTRIBUTORS_ITEMS";
 
 const MapContainer = () => {
   const { zoom, centerLocation, distributors, filteredStores, userLocation } =
@@ -120,7 +129,14 @@ const StoreLocator = () => {
 };
 
 export default function Distribuidores() {
-  const { combinedDistributors } = useMapContext();
+  const { combinedDistributors, selectedState, setSelectedState } =
+    useMapContext();
+  const distributorsStates = DISTRIBUTORS_ITEMS.map(
+    (distributor) => distributor.state
+  );
+
+  const uniqueDistributorsStates = Array.from(new Set(distributorsStates));
+
   return (
     <MotionLayout title="Distribuidores">
       <Container maxW="container.xl" py="8">
@@ -129,6 +145,18 @@ export default function Distribuidores() {
             <StoreLocator />
           </Box>
           <Flex flexDir={"column"}>
+            <Select
+              placeholder="Filtrar por estado"
+              mb={4}
+              value={selectedState}
+              onChange={(e) => setSelectedState(e.target.value)}
+            >
+              {uniqueDistributorsStates.map((distributor) => (
+                <option key={distributor} value={distributor}>
+                  {distributor}
+                </option>
+              ))}
+            </Select>
             <DistributorsMap distributors={combinedDistributors} />
           </Flex>
         </Flex>

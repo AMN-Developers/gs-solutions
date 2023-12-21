@@ -27,6 +27,8 @@ interface MapContextData {
   setZoom: (zoom: number) => void;
   setUserLocation: (location: { lat: number; lng: number } | null) => void;
   error: string;
+  selectedState: string;
+  setSelectedState: (state: string) => void;
 }
 
 interface MapProviderProps {
@@ -51,6 +53,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
   } | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState("");
+  const [selectedState, setSelectedState] = useState("");
 
   const onPlaceChanged = (place: any) => {
     if (place) {
@@ -93,7 +96,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
             store.latitude,
             store.longitude
           );
-          return distance <= 10000;
+          return distance <= 450;
         });
 
         const closestStore = filtered.sort((a, b) => {
@@ -194,11 +197,25 @@ const MapProvider = ({ children }: MapProviderProps) => {
         }
       });
 
+      // filter then by selectedState
+
+      if (selectedState) {
+        return sortedStores.filter(
+          (store) => store.state.toLowerCase() === selectedState.toLowerCase()
+        );
+      }
+
       return sortedStores;
     } else {
+      if (selectedState) {
+        return DISTRIBUTORS_ITEMS.filter(
+          (store) => store.state.toLowerCase() === selectedState.toLowerCase()
+        );
+      }
+
       return DISTRIBUTORS_ITEMS;
     }
-  }, [filteredStores]);
+  }, [filteredStores, selectedState]);
 
   return (
     <MapContext.Provider
@@ -222,6 +239,8 @@ const MapProvider = ({ children }: MapProviderProps) => {
         setZoom,
         setUserLocation,
         error,
+        selectedState,
+        setSelectedState,
       }}
     >
       {children}
