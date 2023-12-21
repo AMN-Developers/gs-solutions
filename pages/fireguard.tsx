@@ -1,4 +1,4 @@
-import MotionLayout from "@/components/MotionLayout"
+import MotionLayout from "@/components/MotionLayout";
 import {
   Container,
   Box,
@@ -11,25 +11,25 @@ import {
   AccordionPanel,
   AccordionIcon,
   Button,
-} from "@chakra-ui/react"
-import { motion, AnimatePresence } from "framer-motion"
-import HiddenText from "@/components/HiddenText"
-import VideoFrame from "@/components/iFrame"
+} from "@chakra-ui/react";
+import { motion, AnimatePresence } from "framer-motion";
+import HiddenText from "@/components/HiddenText";
+import VideoFrame from "@/components/iFrame";
 
-import { useState } from "react"
-import Link from "next/link"
-import Reveal from "@/components/Reveal"
+import { useState } from "react";
+import Link from "next/link";
+import Reveal from "@/components/Reveal";
 const variants = {
   hidden: { opacity: 0, scale: 0 },
   enter: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 0 },
-}
+};
 
 export default function Fireguard() {
-  const [image, setImage] = useState(2)
+  const [image, setImage] = useState(2);
   const handleChangeImage = (src: number) => {
-    setImage(src)
-  }
+    setImage(src);
+  };
   const images = [
     {
       src: "/produtos/fireguard/fireguard1.png",
@@ -47,7 +47,7 @@ export default function Fireguard() {
       src: "/produtos/fireguard/fireguard4.png",
       alt: "bombona diagonal baixo",
     },
-  ]
+  ];
 
   return (
     <MotionLayout title="Fireguard">
@@ -188,7 +188,6 @@ export default function Fireguard() {
                 intempéries, recomenda-se a aplicação de impermeabilizante para
                 tecidos da linha LÓTUS HS 1000.
               </Text>
-              
             </Flex>
           </Flex>
           <Flex
@@ -470,5 +469,5 @@ solvente de percloroetileno para tecidos e tapetes)."
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }
