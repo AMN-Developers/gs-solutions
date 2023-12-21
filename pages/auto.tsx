@@ -504,7 +504,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1lcmXp5sFwL7nQlMjAk8JH6lXcjlZcK10/view"
+                            "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view"
                           )
                         }
                       >
@@ -637,7 +637,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view"
+                            "https://drive.google.com/file/d/1upuDxMxIr1ESXYTXf2xxqcTmTB-2ItwC/view"
                           )
                         }
                       >
@@ -648,7 +648,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1citFyeEvhbvAZ-hEKGaEOLYHmXbUt3Cx/view"
+                            "https://drive.google.com/file/d/1y_NFl5YUt_cYAnOMsXRte9Lg-onMTJ8e/view"
                           )
                         }
                       >
@@ -686,7 +686,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view"
+                            "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view"
                           )
                         }
                       >
@@ -697,7 +697,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1citFyeEvhbvAZ-hEKGaEOLYHmXbUt3Cx/view"
+                            "https://drive.google.com/file/d/1mmoFimvYWyexs9ICjBRVzFnAw7otRh58/view"
                           )
                         }
                       >
