@@ -1,13 +1,17 @@
-import { Box, Container, Text, Flex, Button } from "@chakra-ui/react"
-import { Card } from "@/components/Card"
-import { Certificated } from "@/components/Certificated"
-import VideoFrame from "@/components/iFrame"
-import TabsHistory from "@/components/TabsHistory"
-import MotionLayout from "@/components/MotionLayout"
-import Image from "next/image"
-import Link from "next/link"
+import { Box, Container, Text, Flex, Button } from "@chakra-ui/react";
+import { Card } from "@/components/Card";
+import { Certificated } from "@/components/Certificated";
+import VideoFrame from "@/components/iFrame";
+import TabsHistory from "@/components/TabsHistory";
+import MotionLayout from "@/components/MotionLayout";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
+  const openPDF = () => {
+    window.open("/manual/manualdeuso.pdf", "_blank");
+  };
+
   return (
     <MotionLayout title="Home">
       <Card.Root>
@@ -143,18 +147,12 @@ export default function Home() {
                 </Text>
               </Flex>
             </Flex>
-            <Button
-              as={Link}
-              href="/manual/manualdeuso.pdf"
-              w={"full"}
-              mt={4}
-              colorScheme="messenger"
-            >
+            <Button w={"full"} mt={4} colorScheme="messenger" onClick={openPDF}>
               Faça download do manual
             </Button>
           </Flex>
         </Container>
       </Container>
     </MotionLayout>
-  )
+  );
 }
