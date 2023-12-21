@@ -88,7 +88,7 @@ const images = [
     ],
   },
   {
-    src: "/auto/interior.webp",
+    src: "/auto/interior.jpg",
     alt: "Imagem da parte interior do carpete de um Carro",
     type: "HIGIENIZAÇÃO DE CARPETE",
     products: [
