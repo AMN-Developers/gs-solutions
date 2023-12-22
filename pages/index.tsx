@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <MotionLayout title="Home">
       <Card.Root>
-        <Card.Tittle title="Conheça nossas linhas" />
+        <Card.Tittle title="Conheça nossa linha" />
         <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
           <Card.Item
             alt="Lotus logo"
@@ -91,7 +91,7 @@ export default function Home() {
         <Certificated.Bar />
         <Container maxW="container.xl" my={4} id="manual">
           <Text as="h2" fontWeight={"bold"} fontSize={"xl"} py={8}>
-            Caro cliente, segue o nosso Manual de uso, cuidados e
+            Caro cliente, segue o nosso manual de uso, cuidados e
             responsabilidade profissional:
           </Text>
           <Flex flexDirection={{ base: "column-reverse", md: "column" }}>

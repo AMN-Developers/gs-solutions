@@ -1,4 +1,4 @@
-import MotionLayout from "@/components/MotionLayout"
+import MotionLayout from "@/components/MotionLayout";
 import {
   Accordion,
   AccordionButton,
@@ -10,11 +10,11 @@ import {
   Container,
   Flex,
   Text,
-} from "@chakra-ui/react"
-import Image from "next/image"
-import Link from "next/link"
-import VideoFrame from "@/components/iFrame"
-import Reveal from "@/components/Reveal"
+} from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
+import VideoFrame from "@/components/iFrame";
+import Reveal from "@/components/Reveal";
 
 export default function PowerTrio() {
   return (
@@ -185,8 +185,8 @@ export default function PowerTrio() {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel fontSize={"md"}>
-                    <Text>
-                      É um detergente de PH Neutro especifico para higienização
+                    <Text mb={4}>
+                      É um detergente de PH Neutro específico para higienização
                       têxtil para todo tipo de tecido e que é de acordo com as
                       exigências da ANVISA.
                     </Text>
@@ -200,7 +200,7 @@ export default function PowerTrio() {
                           )
                         }
                       >
-                        Boletim Tecnico
+                        Boletim Técnico
                       </Button>
                       <Button
                         colorScheme="facebook"
@@ -231,7 +231,7 @@ export default function PowerTrio() {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel fontSize={"md"}>
-                    <Text>
+                    <Text mb={4}>
                       Tem função de potencializar ação do Detergente All 01
                       quando são misturados no momento da higienização, uma
                       segunda função é neutralizar o residual tensoativo que é
@@ -248,7 +248,7 @@ export default function PowerTrio() {
                           )
                         }
                       >
-                        Boletim Tecnico
+                        Boletim Técnico
                       </Button>
                       <Button
                         colorScheme="facebook"
@@ -279,7 +279,7 @@ export default function PowerTrio() {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel fontSize={"md"}>
-                    <Text>
+                    <Text mb={4}>
                       O tira manchas é um percabonato de sódio, ele tem um poder
                       muito bom em alvejamento e alto rendimento e performance
                       de limpeza, tanto para tecidos brancos como tecidos
@@ -295,7 +295,7 @@ export default function PowerTrio() {
                           )
                         }
                       >
-                        Boletim Tecnico
+                        Boletim Técnico
                       </Button>
                       <Button
                         colorScheme="facebook"
@@ -329,7 +329,7 @@ export default function PowerTrio() {
               px={{ base: "4", sm: "36", md: "4" }}
               bgColor={"white"}
               rounded={"md"}
-              boxShadow= {"lg"}
+              boxShadow={"lg"}
             >
               <Image
                 src="/embalagens-power.png"
@@ -427,5 +427,5 @@ export default function PowerTrio() {
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }

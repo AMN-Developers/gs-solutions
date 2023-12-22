@@ -31,7 +31,7 @@ const images = [
     products: [
       {
         image: "/auto/powertrio.png",
-        type: "BANCO POLIESTER",
+        type: "BANCO AUTOMOTIVO",
         product: "POWER TRIO",
         description: "Borrifar produto + Extratora",
         delay: 0.25,
@@ -40,7 +40,7 @@ const images = [
       },
       {
         image: "/auto/multic.png",
-        type: "BANCO SEM IMPER",
+        type: "BANCO AUTOMOTIVO SEM IMPERMEABILIZAÇÃO",
         product: "MULTI-C",
         description: "Borrifar produto + Extratora",
         delay: 0.5,
@@ -103,7 +103,7 @@ const images = [
     ],
   },
   {
-    src: "/auto/roda.jpg",
+    src: "/auto/roda.webp",
     alt: "Imagem da roda de um Carro",
     type: "HIGIENIZAÇÃO DE CAIXA DE RODA",
     products: [
@@ -248,6 +248,8 @@ export default function Auto() {
                     fontWeight={"bold"}
                     color={"white"}
                     textShadow={"0 0 8px black"}
+                    bg={"black"}
+                    px={4}
                   >
                     {images[currentImage].text as unknown as string}
                   </Text>
@@ -313,6 +315,9 @@ export default function Auto() {
                       color={"white"}
                       textShadow={"0 0 8px black"}
                       align={"center"}
+                      // black rbg with 0.9 opacity
+                      bg={"rgba(0,0,0,0.7)"}
+                      rounded={"md"}
                     >
                       {images[currentImage].type as unknown as string}
                     </Text>
@@ -482,7 +487,7 @@ export default function Auto() {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel fontSize={"md"}>
-                    <Text>
+                    <Text mb={4}>
                       É um detergente de PH Neutro especifico para higienização
                       têxtil para todo tipo de tecido e que é de acordo com as
                       exigências da ANVISA.
@@ -528,7 +533,7 @@ export default function Auto() {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel fontSize={"md"}>
-                    <Text>
+                    <Text mb={4}>
                       Tem função de potencializar ação do Detergente All 01
                       quando são misturados no momento da higienização, uma
                       segunda função é neutralizar o residual tensoativo que é
@@ -576,7 +581,7 @@ export default function Auto() {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel fontSize={"md"}>
-                    <Text>
+                    <Text mb={4}>
                       O tira manchas é um percabonato de sódio, ele tem um poder
                       muito bom em alvejamento e alto rendimento e performance
                       de limpeza, tanto para tecidos brancos como tecidos
@@ -623,7 +628,7 @@ export default function Auto() {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel fontSize={"md"}>
-                    <Text>
+                    <Text mb={4}>
                       Limpador multifuncional especialmente desenvolvido para
                       aplicações têxteis, indicado também para limpeza pesada de
                       superfícies em geral. Com alta capacidade de remoção de
@@ -672,7 +677,7 @@ export default function Auto() {
                     </AccordionButton>
                   </h2>
                   <AccordionPanel fontSize={"md"}>
-                    <Text>
+                    <Text mb={4}>
                       LÓTUS HYDRA LEDER é um hidratante impermeabilizante de
                       couro que tem função 4x1, hidrata, revitaliza, limpa e
                       realiza a proteção com efeito hidrorrepelente (repelem

@@ -111,12 +111,7 @@ export default function Fireguard() {
                 >
                   <AnimatePresence mode="wait">
                     {images[image] && (
-                      <Box
-                        w={"full"}
-                        h={"md"}
-                        rounded={"md"}
-                        bgColor={"gray.200"}
-                      >
+                      <Box w={"full"} h={"md"} rounded={"md"} boxShadow={"md"}>
                         <Box
                           as={motion.div}
                           initial="hidden"
@@ -147,7 +142,7 @@ export default function Fireguard() {
                     {images.map((Thumb, index) => (
                       <Box
                         onClick={() => handleChangeImage(index)}
-                        bgColor={"gray.200"}
+                        boxShadow={"md"}
                         rounded={"md"}
                         p={4}
                         cursor={"pointer"}

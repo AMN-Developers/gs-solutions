@@ -1,4 +1,4 @@
-import MotionLayout from "@/components/MotionLayout"
+import MotionLayout from "@/components/MotionLayout";
 import {
   Accordion,
   AccordionButton,
@@ -10,8 +10,8 @@ import {
   Flex,
   Text,
   Box,
-} from "@chakra-ui/react"
-import Image from "next/image"
+} from "@chakra-ui/react";
+import Image from "next/image";
 
 export default function Cartificado() {
   return (
@@ -205,6 +205,12 @@ export default function Cartificado() {
                       width={100}
                       height={100}
                     />
+                    <Image
+                      src="/ibama.png"
+                      alt="Logo Ibama"
+                      width={100}
+                      height={100}
+                    />
                   </Box>
                   <Box
                     w={{ base: "100%", md: "65%" }}
@@ -229,5 +235,5 @@ export default function Cartificado() {
         </Flex>
       </Container>
     </MotionLayout>
-  )
+  );
 }

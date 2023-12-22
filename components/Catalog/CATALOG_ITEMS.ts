@@ -1,4 +1,4 @@
-import { Product } from "@/hooks/useProducts"
+import { Product } from "@/hooks/useProducts";
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
@@ -8,8 +8,8 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     thumbnail: "/produtos/fixflot.png",
     large_image: "/produtos/fixflot.png",
     slogan:
-      "Flotador concentrado com espumação controlada e com ativos anti-migrantes",
-    chamada: "Flotador concentrado",
+      "Flotador concentrado com espumação controlada e com ativos anti-migrantes.",
+    chamada: "Flotador concentrado para tapetes",
     hover_color: "168,1,64,1",
     description:
       "LÓTUS FIX-FLOT é um flotador extremamente concentrado com espumação controlada e com ativos anti-migrantes, através da tecnologia “Lótus Omni FIX”, especialmente desenvolvido para limpeza de todos os tipos de tapetes e carpetes. Com alta capacidade na remoção das mais variadas sujidades, além de revitalizar a coloração e o toque natural da fibra. É extremamente seguro para realizar a higienização de tapetes persas, orientais, kilim, fibras naturais, fibras sintéticas e carpetes, sem risco de migração/transferência de cor.",
@@ -39,7 +39,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     thumbnail: "/produtos/multic.png",
     large_image: "/produtos/multic.png",
     slogan: "Ideal para aplicação de impermeabilizantes a base de água.",
-    chamada: "Limpador multifuncional",
+    chamada: "Limpador APC",
     hover_color: "0,92,142,1",
     description:
       "Limpador multifuncional especialmente desenvolvido para aplicações têxteis, indicado também para limpeza pesada de superfícies em geral. Com alta capacidade de remoção de gorduras, óleos, graxas e outras sujeiras de difícil remoção Devido ao seu pH alcalino o produto não é indicado para limpeza de superfícies que serão impermeabilizadas.",
@@ -80,7 +80,8 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     title: "DESINFEKT",
     thumbnail: "/produtos/desinfekt.png",
     large_image: "/produtos/desinfekt.png",
-    slogan: "Poderoso removedor e limpador de manchas e sujeiras.",
+    slogan:
+      "Desinfetante com efeito bactericida, bacteriostático e virucida sem odor.",
     chamada: "Desinfetante concentrado",
     hover_color: "32,188,211,1",
     description:
@@ -111,7 +112,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     thumbnail: "/produtos/citrusolv.png",
     large_image: "/produtos/citrusolv.png",
     slogan:
-      "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno",
+      "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno.",
     chamada: "Solvente natural",
     hover_color: "0,124,54,1",
     description:
@@ -142,7 +143,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     thumbnail: "/produtos/cleanprot.png",
     large_image: "/produtos/cleanprot.png",
     slogan:
-      "Limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização",
+      "Limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização.",
     chamada: "Limpezas de estofados e tecidos",
     hover_color: "160,211,204,1",
     description:
@@ -172,7 +173,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     title: "HIDRA LEDER",
     thumbnail: "/produtos/hidraleder.png",
     large_image: "/produtos/hidraleder.png",
-    slogan: "hidratante impermeabilizante de couro que tem função 4x1",
+    slogan: "hidratante impermeabilizante de couro que tem função 4x1.",
     chamada: "hidratante de couro",
     hover_color: "41,48,49,1",
     description:
@@ -196,7 +197,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
   },
-]
+];
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
@@ -206,7 +207,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     thumbnail: "/produtos/allone.png",
     large_image: "/produtos/allone.png",
     slogan:
-      "ALL-01-S DETERGENTE UNIVERSAL DE USO GERAL com alto poder de remoção",
+      "ALL-01-S DETERGENTE UNIVERSAL DE USO GERAL com alto poder de remoção.",
     chamada: "Detergente vegano",
     hover_color: "245,92,33,1",
     description:
@@ -236,7 +237,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     title: "Pré-Imper",
     thumbnail: "/produtos/preimper.png",
     large_image: "/produtos/preimper.png",
-    slogan: "Ideal para aplicação de impermeabilizantes a base de água.",
+    slogan: "Ideal para aplicação pré impermeabilização.",
     chamada: "Neutralizador de agentes tensoativos",
     hover_color: "0,167,177,1",
     description:
@@ -297,7 +298,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     thumbnail: "/produtos/maxfresh.png",
     large_image: "/produtos/maxfresh.png",
     slogan:
-      "MAX FRESH um composto sinergético, e um poderoso eliminador de odores",
+      "Neutralizador de odores bacteriostático e finalizador com odor de bambu.",
     chamada: "Eliminador de odores vegano",
     hover_color: "236,236,236,1",
     description:
@@ -321,19 +322,19 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1Ls29Xw5IDVKNJJsLBB6kipwgJ68jOf8_/view",
   },
-]
+];
 
 export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     id: 1,
-    title: "HS 1000 IMPERTUDO",
+    title: "LÓTUS IMPERTUDO",
     thumbnail: "/produtos/hipertudo.png",
     large_image: "/produtos/hipertudo.png",
-    slogan: "Ideal para aplicação de impermeabilizantes a base de água.",
+    slogan: "Impermeabilizante solvente inflamável de secagem rápida.",
     chamada: "Impermeabilizante de secagem rapida",
     hover_color: "21,26,64,1",
     description:
-      "LÓTUS HS 1000 IMPERTUDO é um impermeabilizante a base de solvente INFLAMÁVEL de secagem rápida para tecidos de uso profissional, não altera as cores e não mancha os tecidos, não altera as características do material onde está sendo aplicado, mantendo a aparência natural. Indicado para profissionais da área de limpeza, higienização de estofados residenciais e automotivos, inclusive na fabricação de estofados",
+      "LÓTUS IMPERTUDO é um impermeabilizante a base de solvente INFLAMÁVEL de secagem rápida para tecidos de uso profissional, não altera as cores e não mancha os tecidos, não altera as características do material onde está sendo aplicado, mantendo a aparência natural. Indicado para profissionais da área de limpeza, higienização de estofados residenciais e automotivos, inclusive na fabricação de estofados",
     category: [
       {
         term_id: 3,
@@ -356,14 +357,14 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color and fiqasp
     id: 2,
-    title: "HS 1000 SAFE",
+    title: "LÓTUS SAFE",
     thumbnail: "/produtos/safe.png",
     large_image: "/produtos/safe.png",
-    slogan: "Impermeabilizante Solvente não inflamável.",
+    slogan: "Impermeabilizante solvente não inflamável de secagem rápida.",
     chamada: "Impermeabilizante não inflamável",
     hover_color: "239,196,73,1",
     description:
-      "O LÓTUS HS 1000 SAFE é um impermeabilizante de tecidos para uso profissional com uma fórmula a base de solventes não inflamáveis que não alteram as características e não mancham os tecidos. Utilizada pelos profissionais mais exigentes do mercado e que pretendem proporcionar aos seus clientes o melhor resultado de qualidade e performance.",
+      "O LÓTUS SAFE é um impermeabilizante de tecidos para uso profissional com uma fórmula a base de solventes não inflamáveis que não alteram as características e não mancham os tecidos. Utilizada pelos profissionais mais exigentes do mercado e que pretendem proporcionar aos seus clientes o melhor resultado de qualidade e performance.",
     category: [
       {
         term_id: 3,
@@ -386,15 +387,15 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color and fiqasp
     id: 3,
-    title: "HS 1000 ECO",
+    title: "LÓTUS ECO",
     thumbnail: "/produtos/eco.png",
     large_image: "/produtos/eco.png",
     slogan:
-      "Impermeabilizantes de tecido base água de fácil aplicação com alta repelência para água e óleo",
+      "Impermeabilizantes de tecido base água de fácil aplicação com alta repelência para água e óleo.",
     chamada: "Alto poder de repelência",
     hover_color: "0,174,46,1",
     description:
-      "LÓTUS HS 1000 ECO é um impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo, não alteram as características do material onde está sendo aplicado, mantendo a aparência natural. Sua fórmula a base de água torna seu manuseio mais seguro, por não ser inflamável e também ecologicamente correto.",
+      "LÓTUS ECO é um impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo, não alteram as características do material onde está sendo aplicado, mantendo a aparência natural. Sua fórmula a base de água torna seu manuseio mais seguro, por não ser inflamável e também ecologicamente correto.",
     category: [
       {
         term_id: 3,
@@ -421,7 +422,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     thumbnail: "/produtos/teckblock.png",
     large_image: "/produtos/teckblock.png",
     slogan:
-      "Impermeabilizante de tecidos a base de água que possui efeito antiviral e antibacteriano",
+      "Impermeabilizante de tecidos a base de água que possui efeito antiviral e antibacteriano.",
     chamada: "Impermeabilizante antiviral e antibacteriano",
     hover_color: "162,192,233,1",
     description:
@@ -447,43 +448,12 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
-    id: 5,
-    title: "CLEAN PROTECT",
-    thumbnail: "/produtos/cleanprot.png",
-    large_image: "/produtos/cleanprot.png",
-    slogan:
-      "Desenvolvido para limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização",
-    chamada: "Limpezas de estofados e tecidos",
-    hover_color: "139,198,184,1",
-    description:
-      "LÓTUS CLEAN PROTECT foi desenvolvido para a realização de limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização e que por qualquer motivo ainda apresentam sombreamentos ou sujidades superficiais após a remoção do excesso da sujidade derramado.",
-    category: [
-      {
-        term_id: 3,
-        name: "Lótus",
-        slug: "lotus",
-        term_group: 0,
-        term_taxonomy_id: 3,
-        taxonomy: "product-category",
-        description: "",
-        parent: 0,
-        count: 6,
-        filter: "raw",
-      },
-    ],
-    fiqasp:
-      "https://drive.google.com/file/d/1VXJTbUUktlyEOEtzFTwzeteUWC0KUANW/view",
-    boletim:
-      "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
-  },
-  {
-    // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 6,
     title: "ACQUA-PRO",
     thumbnail: "/produtos/acquapro.png",
     large_image: "/produtos/acquapro.png",
     slogan:
-      "Protetor de tecidos a base de água, que oferece um efeito hidrofugante ao tecido",
+      "Protetor de tecidos a base de água, que oferece um efeito hidrofugante ao tecido.",
     chamada: "Protetor de tecidos a base de água",
     hover_color: "178,132,106,1",
     description:
@@ -507,6 +477,38 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1AaLOWpjb9HMPP_h4Ye3Uk4EGNgUYFQAu/view",
   },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 5,
+    title: "CLEAN PROTECT",
+    thumbnail: "/produtos/cleanprot.png",
+    large_image: "/produtos/cleanprot.png",
+    slogan:
+      "Desenvolvido para limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização.",
+    chamada: "Limpezas de estofados e tecidos",
+    hover_color: "139,198,184,1",
+    description:
+      "LÓTUS CLEAN PROTECT foi desenvolvido para a realização de limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização e que por qualquer motivo ainda apresentam sombreamentos ou sujidades superficiais após a remoção do excesso da sujidade derramado.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp:
+      "https://drive.google.com/file/d/1VXJTbUUktlyEOEtzFTwzeteUWC0KUANW/view",
+    boletim:
+      "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
+  },
+
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 7,
@@ -569,13 +571,13 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1IwXKKqKsQ-PfJEwPwyFEdwyCU_-wTJ1n/view",
   },
-]
+];
 
 export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 1,
-    title: "HS 1000 IMPERTUDO MAX",
+    title: "IMPERTUDO MAX",
     thumbnail: "/produtos/impertudomax.png",
     large_image: "/produtos/impertudomax.png",
     slogan:
@@ -583,7 +585,7 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
     chamada: "Impermeabilizante a base de solvente INFLAMÁVEL",
     hover_color: "21,26,64,1",
     description:
-      "LÓTUS HS 1000 IMPERTUDO é um impermeabilizante a base de solvente INFLAMÁVEL de secagem rápida para tecidos de uso profissional, não altera as cores e não mancha os tecidos, não altera as características do material onde está sendo aplicado, mantendo a aparência natural.",
+      "IMPERTUDO MAX é um impermeabilizante a base de solvente INFLAMÁVEL de secagem rápida para tecidos de uso profissional, não altera as cores e não mancha os tecidos, não altera as características do material onde está sendo aplicado, mantendo a aparência natural.",
     category: [
       {
         term_id: 3,
@@ -606,7 +608,7 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 2,
-    title: "HS 1000 SAFE MAX",
+    title: "SAFE MAX",
     thumbnail: "/produtos/safemax.png",
     large_image: "/produtos/safemax.png",
     slogan:
@@ -614,7 +616,7 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
     chamada: "Impermeabilizante de tecidos",
     hover_color: "239,196,73,1",
     description:
-      "O LÓTUS HS 1000 SAFE é um impermeabilizante de tecidos para uso profissional com uma fórmula a base de solventes não inflamáveis que não alteram as características e não mancham os tecidos. Utilizada pelos profissionais mais exigentes do mercado e que pretendem proporcionar aos seus clientes o melhor resultado de qualidade e performance.",
+      "O SAFE MAX é um impermeabilizante de tecidos para uso profissional com uma fórmula a base de solventes não inflamáveis que não alteram as características e não mancham os tecidos. Utilizada pelos profissionais mais exigentes do mercado e que pretendem proporcionar aos seus clientes o melhor resultado de qualidade e performance.",
     category: [
       {
         term_id: 3,
@@ -637,15 +639,15 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 3,
-    title: "HS 1000 ECO MAX",
+    title: "ECO MAX",
     thumbnail: "/produtos/ecomax.png",
     large_image: "/produtos/ecomax.png",
     slogan:
-      "Impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo",
+      "Impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo.",
     chamada: "Alto poder de repelência a água e ao óleo",
     hover_color: "0,174,46,1",
     description:
-      "LÓTUS HS 1000 ECO é um impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo, não alteram as características do material onde está sendo aplicado, mantendo a aparência natural. Sua fórmula a base de água torna seu manuseio mais seguro, por não ser inflamável e também ecologicamente correto.",
+      "ECO MAX é um impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo, não alteram as características do material onde está sendo aplicado, mantendo a aparência natural. Sua fórmula a base de água torna seu manuseio mais seguro, por não ser inflamável e também ecologicamente correto.",
     category: [
       {
         term_id: 3,
@@ -665,4 +667,4 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1_Xl-vvTKoVOFTfWyw_t67uTeM4WmKYR7/view",
   },
-]
+];

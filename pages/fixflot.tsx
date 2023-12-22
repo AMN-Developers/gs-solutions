@@ -1,4 +1,4 @@
-import MotionLayout from "@/components/MotionLayout"
+import MotionLayout from "@/components/MotionLayout";
 import {
   Container,
   Box,
@@ -12,25 +12,25 @@ import {
   AccordionIcon,
   SimpleGrid,
   Button,
-} from "@chakra-ui/react"
-import { motion, AnimatePresence } from "framer-motion"
-import HiddenText from "@/components/HiddenText"
-import VideoFrame from "@/components/iFrame"
+} from "@chakra-ui/react";
+import { motion, AnimatePresence } from "framer-motion";
+import HiddenText from "@/components/HiddenText";
+import VideoFrame from "@/components/iFrame";
 
-import { useState } from "react"
-import Link from "next/link"
-import Reveal from "@/components/Reveal"
+import { useState } from "react";
+import Link from "next/link";
+import Reveal from "@/components/Reveal";
 const variants = {
   hidden: { opacity: 0, scale: 0 },
   enter: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 0 },
-}
+};
 
 export default function FixFlot() {
-  const [image, setImage] = useState(2)
+  const [image, setImage] = useState(2);
   const handleChangeImage = (src: number) => {
-    setImage(src)
-  }
+    setImage(src);
+  };
   const images = [
     {
       src: "/produtos/fixflot/fixflot1.png",
@@ -48,7 +48,7 @@ export default function FixFlot() {
       src: "/produtos/fixflot/fixflot4.png",
       alt: "bombona diagonal baixo",
     },
-  ]
+  ];
 
   return (
     <MotionLayout title="Fix-Flot">
@@ -70,7 +70,7 @@ export default function FixFlot() {
             textTransform={"uppercase"}
             w={"100%"}
           >
-            FixFlot: Seu tapete mais limpo
+            FixFlot: IDEAL PARA A LAVAGEM DE TAPETES
           </Text>
           <Button
             as={Link}
@@ -99,12 +99,7 @@ export default function FixFlot() {
                 >
                   <AnimatePresence mode="wait">
                     {images[image] && (
-                      <Box
-                        w={"full"}
-                        h={"md"}
-                        rounded={"md"}
-                        bgColor={"gray.200"}
-                      >
+                      <Box w={"full"} h={"md"} rounded={"md"} boxShadow={"md"}>
                         <Box
                           as={motion.div}
                           initial="hidden"
@@ -135,7 +130,7 @@ export default function FixFlot() {
                     {images.map((Thumb, index) => (
                       <Box
                         onClick={() => handleChangeImage(index)}
-                        bgColor={"gray.200"}
+                        boxShadow={"md"}
                         rounded={"md"}
                         p={4}
                         cursor={"pointer"}
@@ -427,5 +422,5 @@ export default function FixFlot() {
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }

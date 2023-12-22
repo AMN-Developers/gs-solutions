@@ -14,7 +14,7 @@ export const NAV_ITEMS: Array<NavItem> = [
     label: "Linha de Produtos",
     children: [
       {
-        label: "Lotus",
+        label: "Lótus",
         href: "/lotus",
         children: [
           {
@@ -30,11 +30,11 @@ export const NAV_ITEMS: Array<NavItem> = [
             href: "/fireguard",
           },
           {
-            label: "Linha de higienização",
+            label: "Linha de Higienização",
             href: "/higienizacao",
           },
           {
-            label: "Linha de impermeabilizantes",
+            label: "Linha de Impermeabilizantes",
             href: "/impermeabilizantes",
           },
           {

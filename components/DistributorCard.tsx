@@ -25,6 +25,7 @@ export const DistributorCard = ({ distributor }: IDistributorCardProps) => {
       border={"2px solid"}
       borderColor={"gray.200"}
       _hover={{ cursor: "pointer" }}
+      w={"full"}
     >
       <Flex alignItems={"center"}>
         <Text fontWeight={"bold"}>{distributor.name}</Text>

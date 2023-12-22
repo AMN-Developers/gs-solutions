@@ -35,34 +35,46 @@ const MapContainer = () => {
         streetViewControl={false}
       >
         {filteredStores.length > 0 ? (
-          filteredStores.map((store) => (
-            <AdvancedMarker
-              position={{ lat: store.latitude, lng: store.longitude }}
-              key={store.id}
-            >
-              <Pin
-                background={"blue"}
-                glyphColor={"white"}
-                borderColor={"white"}
-                scale={0.7}
-              />
-            </AdvancedMarker>
-          ))
+          filteredStores.map((store) => {
+            if (store.latitude !== 0 && store.longitude !== 0) {
+              return (
+                <AdvancedMarker
+                  position={{ lat: store.latitude, lng: store.longitude }}
+                  key={store.id}
+                >
+                  <Pin
+                    background={"blue"}
+                    glyphColor={"white"}
+                    borderColor={"white"}
+                    scale={0.7}
+                  />
+                </AdvancedMarker>
+              );
+            } else {
+              return null;
+            }
+          })
         ) : (
           <>
-            {distributors.map((store) => (
-              <AdvancedMarker
-                position={{ lat: store.latitude, lng: store.longitude }}
-                key={store.id}
-              >
-                <Pin
-                  background={"blue"}
-                  glyphColor={"white"}
-                  borderColor={"white"}
-                  scale={0.7}
-                />
-              </AdvancedMarker>
-            ))}
+            {distributors.map((store) => {
+              if (store.latitude !== 0 && store.longitude !== 0) {
+                return (
+                  <AdvancedMarker
+                    position={{ lat: store.latitude, lng: store.longitude }}
+                    key={store.id}
+                  >
+                    <Pin
+                      background={"blue"}
+                      glyphColor={"white"}
+                      borderColor={"white"}
+                      scale={0.7}
+                    />
+                  </AdvancedMarker>
+                );
+              } else {
+                return null;
+              }
+            })}
           </>
         )}
         {userLocation && (
@@ -89,7 +101,7 @@ const StoreLocator = () => {
     handleResetMap,
     error,
   } = useMapContext();
-  console.log(error);
+
   return (
     <>
       <Box
@@ -129,8 +141,13 @@ const StoreLocator = () => {
 };
 
 export default function Distribuidores() {
-  const { combinedDistributors, selectedState, setSelectedState } =
-    useMapContext();
+  const {
+    combinedDistributors,
+    selectedState,
+    setSelectedState,
+    selectedCountry,
+    onCountryChange,
+  } = useMapContext();
   const distributorsStates = DISTRIBUTORS_ITEMS.map(
     (distributor) => distributor.state
   );
@@ -144,7 +161,16 @@ export default function Distribuidores() {
           <Box w={{ base: "100%", md: "60%" }}>
             <StoreLocator />
           </Box>
-          <Flex flexDir={"column"}>
+          <Flex flexDir={"column"} w={{ base: "100%", md: "40%" }}>
+            <Select
+              placeholder="Filtrar por país"
+              mb={4}
+              value={selectedCountry}
+              onChange={(e) => onCountryChange(e)}
+            >
+              <option value="br">Brasil</option>
+              <option value="pt">Portugal</option>
+            </Select>
             <Select
               placeholder="Filtrar por estado"
               mb={4}

@@ -1,38 +1,37 @@
-import { useEffect, useRef, useState } from "react"
-import { Box, Button, Container, Divider, Text } from "@chakra-ui/react"
-import { AnimatePresence } from "framer-motion"
+import { useEffect, useRef, useState } from "react";
+import { Box, Button, Container, Divider, Text } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
 
-import { Catalog } from "@/components/Catalog"
-import MotionLayout from "@/components/MotionLayout"
-import Product from "@/components/Product"
+import { Catalog } from "@/components/Catalog";
+import MotionLayout from "@/components/MotionLayout";
+import Product from "@/components/Product";
 import {
   CATALOG_ITEMS_HIGI,
   CATALOG_ITEMS_IMPER,
   CATALOG_ITEMS_VEG,
-} from "@/components/Catalog/CATALOG_ITEMS"
-import { useSearchParams } from "next/navigation"
-import Link from "next/link"
-import Reveal from "@/components/Reveal"
-import { useMemo } from "react"
+} from "@/components/Catalog/CATALOG_ITEMS";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
+import { useMemo } from "react";
 
 export default function Higienização() {
-  const searchParams = useSearchParams()
-  const imper = searchParams.get("imper")
-  const higi = searchParams.get("higi")
-  const veg = searchParams.get("veg")
-  const productRef = useRef<HTMLDivElement>(null)
-  const lastProductRef = useRef<HTMLDivElement>(null)
+  const searchParams = useSearchParams();
+  const imper = searchParams.get("imper");
+  const higi = searchParams.get("higi");
+  const veg = searchParams.get("veg");
+  const productRef = useRef<HTMLDivElement>(null);
+  const lastProductRef = useRef<HTMLDivElement>(null);
   const imperShuffle = useMemo(() => {
-    const productCopy = [...CATALOG_ITEMS_IMPER]
-    productCopy.sort(() => Math.random() - 0.5)
-    return productCopy.slice(0, 4)
-  }, [CATALOG_ITEMS_IMPER])
+    const productCopy = [...CATALOG_ITEMS_IMPER];
+    productCopy.sort(() => Math.random() - 0.5);
+    return productCopy.slice(0, 4);
+  }, []);
 
-  const [isClient, setIsClient] = useState(false)
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
   return (
     <MotionLayout title="Higienização">
@@ -45,7 +44,6 @@ export default function Higienização() {
           textTransform={"uppercase"}
           fontWeight={"bold"}
           fontSize={"2xl"}
-          
         >
           Linha de Higienização
         </Text>
@@ -187,5 +185,5 @@ export default function Higienização() {
         </Box>
       </Container>
     </MotionLayout>
-  )
+  );
 }

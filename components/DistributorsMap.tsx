@@ -8,8 +8,7 @@ interface IDistributorMapProps {
 
 export const DistributorsMap = ({ distributors }: IDistributorMapProps) => {
   return (
-    // hide scrollbar
-    <Flex flexDir={"column"} overflowY={"scroll"} maxH={"lg"} pr={4}>
+    <Flex flexDir={"column"} overflowY={"scroll"} h={"sm"} pr={4} w={"100%"}>
       {distributors.map((store) => (
         <DistributorCard key={store.id} distributor={store} />
       ))}

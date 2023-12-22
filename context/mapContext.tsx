@@ -29,6 +29,9 @@ interface MapContextData {
   error: string;
   selectedState: string;
   setSelectedState: (state: string) => void;
+  selectedCountry: string;
+  setSelectedCountry: (country: string) => void;
+  onCountryChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
 
 interface MapProviderProps {
@@ -39,11 +42,16 @@ export const MapContext = createContext({} as MapContextData);
 
 const MapProvider = ({ children }: MapProviderProps) => {
   const initialCenterLocation = {
-    lat: -14.235004,
-    lng: -51.925282,
+    br: {
+      lat: -14.235004,
+      lng: -51.925282,
+    },
+    pt: {
+      lat: 39.399872,
+      lng: -8.224454,
+    },
   };
   const [zoom, setZoom] = useState(3.5);
-  const [centerLocation, setCenterLocation] = useState(initialCenterLocation);
   const [userAddress, setUserAddress] = useState("");
   const [filteredStores, setFilteredStores] = useState<Distributor[]>([]);
   const [selectedStore, setSelectedStore] = useState<Distributor | null>(null);
@@ -54,7 +62,11 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [error, setError] = useState("");
   const [selectedState, setSelectedState] = useState("");
-
+  const [selectedCountry, setSelectedCountry] = useState("br");
+  const [centerLocation, setCenterLocation] = useState(
+    initialCenterLocation[selectedCountry as unknown as "br" | "pt"]
+  );
+  console.log(centerLocation);
   const onPlaceChanged = (place: any) => {
     if (place) {
       console.log(place);
@@ -62,6 +74,13 @@ const MapProvider = ({ children }: MapProviderProps) => {
     }
 
     inputRef.current && inputRef.current.focus();
+  };
+
+  const onCountryChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedCountry(e.target.value);
+    setCenterLocation(
+      initialCenterLocation[e.target.value as unknown as "br" | "pt"]
+    );
   };
 
   useAutocomplete({
@@ -180,7 +199,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const handleResetMap = () => {
     setUserAddress("");
     setFilteredStores([]);
-    setCenterLocation(initialCenterLocation);
+    setCenterLocation(initialCenterLocation["br"]);
     setZoom(3.5);
     setSelectedStore(null);
     setUserLocation(null);
@@ -241,6 +260,9 @@ const MapProvider = ({ children }: MapProviderProps) => {
         error,
         selectedState,
         setSelectedState,
+        selectedCountry,
+        setSelectedCountry,
+        onCountryChange,
       }}
     >
       {children}

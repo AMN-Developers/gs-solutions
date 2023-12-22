@@ -1,9 +1,9 @@
-import { Card } from "@/components/Card"
-import MotionLayout from "@/components/MotionLayout"
-import Reveal from "@/components/Reveal"
-import { Box, Container, Flex, Text, Button } from "@chakra-ui/react"
-import Image from "next/image"
-import Link from "next/link"
+import { Card } from "@/components/Card";
+import MotionLayout from "@/components/MotionLayout";
+import Reveal from "@/components/Reveal";
+import { Box, Container, Flex, Text, Button } from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Lotus() {
   return (
@@ -91,7 +91,7 @@ export default function Lotus() {
                 alt="Fireguard Logo"
                 href="/fireguard"
                 bgImage="/fireguard-bg.png"
-                title="Fireguard - Poderoso antichamas"
+                title="Fireguard - Poderoso hidrofugante"
                 logo="logo-fireguard.png"
                 bgPos="center"
               />
@@ -101,7 +101,7 @@ export default function Lotus() {
                 alt="Linha auto Logo"
                 href="/auto"
                 bgImage="/auto/car.jpg"
-                title="Linha automotiva - completa para seu carro"
+                title="Linha automotiva - Uma higienização completa para o carro"
                 logo="logo-auto.png"
                 bgPos="center"
               />
@@ -110,5 +110,5 @@ export default function Lotus() {
         </Flex>
       </Container>
     </MotionLayout>
-  )
+  );
 }
