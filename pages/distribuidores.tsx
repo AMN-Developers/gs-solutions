@@ -171,18 +171,20 @@ export default function Distribuidores() {
               <option value="br">Brasil</option>
               <option value="pt">Portugal</option>
             </Select>
-            <Select
-              placeholder="Filtrar por estado"
-              mb={4}
-              value={selectedState}
-              onChange={(e) => setSelectedState(e.target.value)}
-            >
-              {uniqueDistributorsStates.map((distributor) => (
-                <option key={distributor} value={distributor}>
-                  {distributor}
-                </option>
-              ))}
-            </Select>
+            {selectedCountry === "br" && (
+              <Select
+                placeholder="Filtrar por estado"
+                mb={4}
+                value={selectedState}
+                onChange={(e) => setSelectedState(e.target.value)}
+              >
+                {uniqueDistributorsStates.map((distributor) => (
+                  <option key={distributor} value={distributor}>
+                    {distributor}
+                  </option>
+                ))}
+              </Select>
+            )}
             <DistributorsMap distributors={combinedDistributors} />
           </Flex>
         </Flex>

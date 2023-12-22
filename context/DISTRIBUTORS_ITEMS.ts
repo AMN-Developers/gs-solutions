@@ -9,6 +9,7 @@ export interface Distributor {
   longitude: number;
   zoom: number;
   distance?: number;
+  country: string;
 }
 
 export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
@@ -22,6 +23,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -23.46517,
     longitude: -46.52364,
     zoom: 14,
+    country: "br",
   },
   {
     id: 2,
@@ -33,6 +35,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -23.52348,
     longitude: -46.68671,
     zoom: 14,
+    country: "br",
   },
   {
     id: 3,
@@ -45,6 +48,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -23.25721,
     longitude: -45.91123,
     zoom: 14,
+    country: "br",
   },
   {
     id: 4,
@@ -56,6 +60,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: 0,
     longitude: 0,
     zoom: 7,
+    country: "br",
   },
   {
     id: 5,
@@ -68,6 +73,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -46.556,
     zoom: 14,
     website: "https://www.prismatecidos.com.br/",
+    country: "br",
   },
   {
     id: 6,
@@ -78,6 +84,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -23.64728,
     longitude: -46.54712,
     zoom: 14,
+    country: "br",
   },
   {
     id: 7,
@@ -89,6 +96,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -51.12897,
     zoom: 14,
     website: "https://higienizasul.com.br/",
+    country: "br",
   },
   {
     id: 8,
@@ -101,6 +109,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -48.40251,
     zoom: 14,
     website: "https://www.higservicestore.com/",
+    country: "br",
   },
   {
     id: 9,
@@ -112,6 +121,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -49.33872,
     zoom: 14,
     website: "https://showcar.net.br/",
+    country: "br",
   },
   {
     id: 10,
@@ -123,6 +133,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -49.33872,
     zoom: 14,
     website: "https://verdecar.com.br/",
+    country: "br",
   },
   {
     id: 11,
@@ -134,6 +145,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -48.60749,
     zoom: 14,
     website: "https://www.instagram.com/smplimpo/",
+    country: "br",
   },
   {
     id: 12,
@@ -145,6 +157,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -49.26613,
     zoom: 14,
     website: "https://www.instagram.com/smplimpo/",
+    country: "br",
   },
   {
     id: 13,
@@ -156,6 +169,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: 0,
     zoom: 14,
     website: "https://www.limpshop.com/",
+    country: "br",
   },
   {
     id: 14,
@@ -167,6 +181,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -43.0904,
     zoom: 14,
     website: "https://www.emporioclean.com.br/",
+    country: "br",
   },
   {
     id: 15,
@@ -179,6 +194,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -43.35057,
     zoom: 14,
     website: "https://www.sbrio.com/",
+    country: "br",
   },
   {
     id: 16,
@@ -190,6 +206,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -43.55782,
     zoom: 14,
     website: "loja.hidrorio.com.br",
+    country: "br",
   },
   {
     id: 17,
@@ -202,6 +219,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -43.44075,
     zoom: 14,
     website: "loja.hidrorio.com.br",
+    country: "br",
   },
   {
     id: 18,
@@ -214,6 +232,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -43.23656,
     zoom: 14,
     website: "https://www.polibox.com.br/",
+    country: "br",
   },
   {
     id: 19,
@@ -225,6 +244,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -43.27932,
     zoom: 14,
     website: "https://www.centercleanbrasil.com.br/",
+    country: "br",
   },
   {
     id: 20,
@@ -236,6 +256,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -42.03588,
     zoom: 14,
     website: "https://www.facebook.com/centerpoahigienizacao/",
+    country: "br",
   },
   {
     id: 21,
@@ -247,6 +268,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -42.46728,
     zoom: 14,
     website: "https://instagram.com/retoquetintas",
+    country: "br",
   },
   {
     id: 22,
@@ -258,6 +280,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -44.45508,
     zoom: 14,
     website: "http://instagram.com/gbclean_produtos",
+    country: "br",
   },
   {
     id: 23,
@@ -269,6 +292,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -40.3657,
     zoom: 14,
     website: "https://www.maqclean.com.br/",
+    country: "br",
   },
   {
     id: 24,
@@ -279,6 +303,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -19.95318,
     longitude: -44.03852,
     zoom: 14,
+    country: "br",
   },
   {
     id: 25,
@@ -289,6 +314,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -18.89276,
     longitude: -48.26569,
     zoom: 14,
+    country: "br",
   },
   {
     id: 26,
@@ -299,6 +325,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -19.50239,
     longitude: -42.63044,
     zoom: 14,
+    country: "br",
   },
   {
     id: 27,
@@ -310,6 +337,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -43.41756,
     zoom: 14,
     website: "https://instagram.com/higienecars",
+    country: "br",
   },
   {
     id: 28,
@@ -321,6 +349,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -38.3351,
     zoom: 14,
     website: "https://www.instagram.com/evolucao_cleaning/",
+    country: "br",
   },
   {
     id: 29,
@@ -331,6 +360,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -10.83619,
     longitude: -38.54356,
     zoom: 14,
+    country: "br",
   },
   {
     id: 30,
@@ -342,6 +372,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -38.3628,
     zoom: 14,
     website: "https://www.instagram.com/higedprodutos/",
+    country: "br",
   },
   {
     id: 31,
@@ -352,6 +383,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -10.923637,
     longitude: -37.076237,
     zoom: 14,
+    country: "br",
   },
   {
     id: 32,
@@ -362,6 +394,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -8.07895,
     longitude: -34.9414,
     zoom: 14,
+    country: "br",
   },
   {
     id: 33,
@@ -373,6 +406,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -40.54943,
     zoom: 14,
     website: "https://www.jmimper.com.br",
+    country: "br",
   },
   {
     id: 34,
@@ -384,6 +418,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -34.8946,
     zoom: 14,
     website: "https://www.lojaautocare.com.br",
+    country: "br",
   },
   {
     id: 35,
@@ -394,6 +429,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -8.06018,
     longitude: -34.90713,
     zoom: 14,
+    country: "br",
   },
   {
     id: 36,
@@ -405,6 +441,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -48.05425,
     zoom: 14,
     website: "https://www.cleanpremiere.com.br",
+    country: "br",
   },
   {
     id: 37,
@@ -416,6 +453,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -48.084135,
     zoom: 14,
     website: "https://www.lojadourado.com.br",
+    country: "br",
   },
   {
     id: 38,
@@ -426,6 +464,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -5.132925,
     longitude: -42.784933,
     zoom: 14,
+    country: "br",
   },
   {
     id: 39,
@@ -437,6 +476,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -42.774912,
     zoom: 14,
     website: "https://www.authica.com.br",
+    country: "br",
   },
   {
     id: 40,
@@ -447,6 +487,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -5.08086,
     longitude: -42.81705,
     zoom: 14,
+    country: "br",
   },
   {
     id: 41,
@@ -458,6 +499,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -42.7488,
     zoom: 14,
     website: "https://www.lojadourado.com.br",
+    country: "br",
   },
   {
     id: 42,
@@ -468,6 +510,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -2.53468,
     longitude: -44.26947,
     zoom: 14,
+    country: "br",
   },
   {
     id: 43,
@@ -478,6 +521,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     latitude: -5.52842,
     longitude: -47.47378,
     zoom: 14,
+    country: "br",
   },
   {
     id: 44,
@@ -489,6 +533,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -48.50087,
     zoom: 14,
     website: "https://www.nortfix.com.br",
+    country: "br",
   },
   {
     id: 45,
@@ -501,6 +546,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -51.06833,
     zoom: 14,
     website: "https://linktr.ee/espacocleanap",
+    country: "br",
   },
   {
     id: 46,
@@ -512,5 +558,6 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -9.13564,
     zoom: 14,
     website: "https://loja.borahigienizaromundo.com/",
+    country: "pt",
   },
 ];

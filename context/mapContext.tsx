@@ -77,6 +77,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
   };
 
   const onCountryChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setSelectedState("");
     setSelectedCountry(e.target.value);
     setCenterLocation(
       initialCenterLocation[e.target.value as unknown as "br" | "pt"]
@@ -216,8 +217,6 @@ const MapProvider = ({ children }: MapProviderProps) => {
         }
       });
 
-      // filter then by selectedState
-
       if (selectedState) {
         return sortedStores.filter(
           (store) => store.state.toLowerCase() === selectedState.toLowerCase()
@@ -232,9 +231,13 @@ const MapProvider = ({ children }: MapProviderProps) => {
         );
       }
 
-      return DISTRIBUTORS_ITEMS;
+      const filtered = DISTRIBUTORS_ITEMS.filter(
+        (store) => store.country === selectedCountry
+      );
+
+      return filtered;
     }
-  }, [filteredStores, selectedState]);
+  }, [filteredStores, selectedCountry, selectedState]);
 
   return (
     <MapContext.Provider
