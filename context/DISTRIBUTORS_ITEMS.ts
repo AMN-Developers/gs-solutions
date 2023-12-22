@@ -502,4 +502,15 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://linktr.ee/espacocleanap",
   },
+  {
+    id: 46,
+    name: "BORA HIGIENIZAR O MUNDO",
+    phone: "+351 934677486",
+    address: "LOJA VIRTUAL",
+    state: "AP",
+    latitude: 38.70701,
+    longitude: -9.13564,
+    zoom: 14,
+    website: "https://loja.borahigienizaromundo.com/",
+  },
 ];
