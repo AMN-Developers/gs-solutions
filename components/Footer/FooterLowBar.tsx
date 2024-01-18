@@ -1,5 +1,5 @@
 import { Box, Container } from "@chakra-ui/react"
-import { BsFacebook, BsInstagram, BsWhatsapp } from "react-icons/bs"
+import { BsInstagram, BsWhatsapp, BsYoutube } from "react-icons/bs"
 import Link from "next/link"
 
 export default function FooterLowBar() {
@@ -21,13 +21,13 @@ export default function FooterLowBar() {
           margin={2}
           color={"white"}
           fontSize={"lg"}
-          href="#"
+          href="https://www.youtube.com/c/GSHomeSolutions"
           aria-label="Facebook Link"
           _hover={{
             color: "#06EC46",
           }}
         >
-          <BsFacebook />
+          <BsYoutube />
         </Box>
         <Box
           as={Link}
@@ -35,7 +35,7 @@ export default function FooterLowBar() {
           margin={2}
           color={"white"}
           fontSize={"lg"}
-          href="#"
+          href="https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
           aria-label="Whatsapp Link"
           _hover={{
             color: "#06EC46",
@@ -49,7 +49,7 @@ export default function FooterLowBar() {
           margin={2}
           color={"white"}
           fontSize={"lg"}
-          href="#"
+          href="https://www.instagram.com/gshomesolutions/"
           aria-label="Instagram Link"
           _hover={{
             color: "#06EC46",

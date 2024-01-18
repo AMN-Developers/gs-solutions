@@ -456,7 +456,7 @@ solvente de percloroetileno para tecidos e tapetes)."
           textTransform={"uppercase"}
           onClick={() =>
             window.open(
-              "https://api.whatsapp.com/send/?phone=%2B5511913591344&text&type=phone_number&app_absent=0"
+              "https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
             )
           }
         >
@@ -464,5 +464,5 @@ solvente de percloroetileno para tecidos e tapetes)."
         </Button>
       </Container>
     </MotionLayout>
-  );
+  )
 }

@@ -96,10 +96,10 @@ export default function DrawerRoot({
             as={Link}
             fontWeight={"light"}
             fontSize={"sm"}
-            href="https://api.whatsapp.com/send/?phone=%2B5511913591344&text&type=phone_number&app_absent=0"
+            href="https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
             target="_blank"
           >
-            +55 (11) 91359-1344
+            +55 (11) 98452-0087
           </ChakraLink>
           <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
             <Icon as={BiLogoInstagram} marginRight={2} />
