@@ -66,10 +66,8 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const [centerLocation, setCenterLocation] = useState(
     initialCenterLocation[selectedCountry as unknown as "br" | "pt"]
   );
-  console.log(centerLocation);
   const onPlaceChanged = (place: any) => {
     if (place) {
-      console.log(place);
       setUserAddress(place.formatted_address || place.name);
     }
 

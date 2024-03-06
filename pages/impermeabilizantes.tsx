@@ -1,35 +1,35 @@
-import { useRef, useState, useEffect, useMemo } from "react"
-import { useSearchParams } from "next/navigation"
-import { Container, Text, Box, Button } from "@chakra-ui/react"
-import { Catalog } from "@/components/Catalog"
-import MotionLayout from "@/components/MotionLayout"
-import { AnimatePresence } from "framer-motion"
-import Product from "@/components/Product"
+import { useRef, useState, useEffect, useMemo } from "react";
+import { useSearchParams } from "next/navigation";
+import { Container, Text, Box, Button } from "@chakra-ui/react";
+import { Catalog } from "@/components/Catalog";
+import MotionLayout from "@/components/MotionLayout";
+import { AnimatePresence } from "framer-motion";
+import Product from "@/components/Product";
 import {
   CATALOG_ITEMS_HIGI,
   CATALOG_ITEMS_IMPER,
   CATALOG_ITEMS_IMPER_MAX,
-} from "@/components/Catalog/CATALOG_ITEMS"
-import Link from "next/link"
+} from "@/components/Catalog/CATALOG_ITEMS";
+import Link from "next/link";
 
 export default function Impermeabilizantes() {
-  const searchParams = useSearchParams()
-  const imper = searchParams.get("imper")
-  const higi = searchParams.get("higi")
-  const max = searchParams.get("max")
-  const productRef = useRef<HTMLDivElement>(null)
-  const lastProductRef = useRef<HTMLDivElement>(null)
+  const searchParams = useSearchParams();
+  const imper = searchParams.get("imper");
+  const higi = searchParams.get("higi");
+  const max = searchParams.get("max");
+  const productRef = useRef<HTMLDivElement>(null);
+  const lastProductRef = useRef<HTMLDivElement>(null);
   const higiShuffle = useMemo(() => {
-    const productCopy = [...CATALOG_ITEMS_HIGI]
-    productCopy.sort(() => Math.random() - 0.5)
-    return productCopy.slice(0, 4)
-  }, [CATALOG_ITEMS_HIGI])
+    const productCopy = [...CATALOG_ITEMS_HIGI];
+    productCopy.sort(() => Math.random() - 0.5);
+    return productCopy.slice(0, 4);
+  }, []);
 
-  const [isClient, setIsClient] = useState(false)
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
   return (
     <MotionLayout title="Impermeabilizantes">
@@ -189,5 +189,5 @@ export default function Impermeabilizantes() {
         </Box>
       </Container>
     </MotionLayout>
-  )
+  );
 }

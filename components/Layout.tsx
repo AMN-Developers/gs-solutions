@@ -18,6 +18,8 @@ import CookieBanner from "@/components/CookieBanner";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { bg } from "@/components/Header/HeaderBG";
+import MobileItems from "./Navbar/MobileItems";
+import MobileItemsCollapse from "./Navbar/MobileItemsCollapse";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -124,14 +126,80 @@ export default function Layout({ children, route }: LayoutProps) {
           </Navbar.Desktop>
 
           <Navbar.Mobile isOpen={isOpen}>
-            {NAV_ITEMS.map((navItem) => (
-              <Navbar.MobileItems
-                key={navItem.label}
-                {...navItem}
-                onChangeRoute={onToggle}
-                route={route}
+            <Stack spacing={4} w={"100%"}>
+              <MobileItems label="Home" href="/" toggleMainDrawer={onToggle} />
+              <MobileItemsCollapse label="Linha de Produtos">
+                <MobileItemsCollapse label="Lótus">
+                  <MobileItems
+                    label="Power Trio"
+                    href="/powertrio"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Fix Flot"
+                    href="/fixflot"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Fireguard"
+                    href="/fireguard"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Linha de Higienização"
+                    href="/higienizacao"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Linha de Impermeabilizantes"
+                    href="/impermeabilizantes"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Linha Auto"
+                    href="/auto"
+                    toggleMainDrawer={onToggle}
+                  />
+                </MobileItemsCollapse>
+              </MobileItemsCollapse>
+              <MobileItems
+                label="Calculadora de Diluição"
+                href="/calculadora"
+                toggleMainDrawer={onToggle}
               />
-            ))}
+              <MobileItemsCollapse label="Empresa">
+                <MobileItems
+                  label="Certificados e Homologações"
+                  href="/certificado"
+                  toggleMainDrawer={onToggle}
+                />
+                <MobileItems
+                  label="Programa de Fidelidade"
+                  href="/fidelidade"
+                  toggleMainDrawer={onToggle}
+                />
+                <MobileItems
+                  label="Sustentabilidade"
+                  href="/sustentabilidade"
+                  toggleMainDrawer={onToggle}
+                />
+                <MobileItems
+                  label="Manual de Uso"
+                  href="/manual/manualdeuso.pdf"
+                  toggleMainDrawer={onToggle}
+                />
+              </MobileItemsCollapse>
+              <MobileItems
+                label="Rastreio"
+                href="/rastreio"
+                toggleMainDrawer={onToggle}
+              />
+              <MobileItems
+                label="Distribuidores G&S"
+                href="/distribuidores"
+                toggleMainDrawer={onToggle}
+              />
+            </Stack>
             <Box
               as="button"
               ref={btnRef}

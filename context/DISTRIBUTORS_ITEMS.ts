@@ -560,4 +560,17 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     website: "https://loja.borahigienizaromundo.com/",
     country: "pt",
   },
+  {
+    id: 47,
+    name: "New Clean",
+    phone: "(11) 94085-7408",
+    address:
+      "Rua Aparecida - R. Aparecido Eusébio De Souza, 6 - Parque Jandaia, Carapicuíba - SP",
+    state: "SP",
+    latitude: -23.55428,
+    longitude: -46.82407,
+    zoom: 14,
+    website: "https://newclean.jareservei.com/",
+    country: "br",
+  },
 ];

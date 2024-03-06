@@ -13,10 +13,15 @@ const withPWA = require("next-pwa")({
 module.exports = withPWA({
   reactStrictMode: false,
   images: {
-    domains: [
-      "img.youtube.com",
-      "addplaybuttontoimage.way4info.net",
-      "gshomesolutions.test",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+      },
+      {
+        protocol: "http",
+        hostname: "addplaybuttontoimage.way4info.net",
+      },
     ],
   },
 });

@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
   Box,
   Stack,
@@ -5,39 +6,29 @@ import {
   Icon,
   Collapse,
   useDisclosure,
+  Button,
 } from "@chakra-ui/react";
-import Link from "next/link";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 
-import { NavItem } from "./NAV_ITEMS";
-import { Navbar } from ".";
-
-interface MobileNavItemProps {
+interface MobileItemsCollapseProps {
   label: string;
-  href?: string;
-  children?: Array<NavItem>;
-  onChangeRoute: () => void;
-  route?: string;
+  children: React.ReactNode;
 }
 
-export default function NavbarMobileItems({
+export default function MobileItemsCollapse({
   label,
-  href,
   children,
-  onChangeRoute,
-}: MobileNavItemProps) {
-  const { isOpen, onToggle } = useDisclosure();
-  const handleToggle = (e: { preventDefault: () => any }) => {
-    return e.preventDefault(), onToggle();
-  };
+}: MobileItemsCollapseProps) {
+  const { isOpen, onToggle } = useDisclosure({
+    defaultIsOpen: false,
+  });
 
   return (
     <Stack spacing={4} w={"100%"}>
       <Box
-        onClick={children ? handleToggle : onChangeRoute}
+        onClick={onToggle}
         py={2}
-        as={Link}
-        href={href ?? "#"}
+        as={Button}
+        variant={"unstyled"}
         justifyContent="space-between"
         alignItems="center"
         display={"flex"}
@@ -73,14 +64,7 @@ export default function NavbarMobileItems({
           borderColor={"gray.200"}
           align={"start"}
         >
-          {children &&
-            children.map((child) => (
-              <Navbar.MobileItems
-                key={child.label}
-                {...child}
-                onChangeRoute={onToggle}
-              />
-            ))}
+          {children}
         </Stack>
       </Collapse>
     </Stack>
