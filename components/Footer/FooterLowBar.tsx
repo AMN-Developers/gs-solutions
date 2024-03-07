@@ -3,6 +3,9 @@ import { BsInstagram, BsWhatsapp, BsYoutube } from "react-icons/bs"
 import Link from "next/link"
 
 export default function FooterLowBar() {
+  const date = new Date()
+  const currentYear = date.getFullYear()
+
   return (
     <Container
       maxW={"container.xl"}
@@ -60,7 +63,7 @@ export default function FooterLowBar() {
       </Box>
 
       <Box as="p" color={"whiteAlpha.400"} fontSize={"xs"} fontWeight={"light"}>
-        AMN Desenvolvimento e Aplicações&copy; 2023
+        AMN Desenvolvimento e Aplicações&copy; 2023 - {currentYear}
       </Box>
     </Container>
   )
