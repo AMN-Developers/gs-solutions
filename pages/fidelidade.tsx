@@ -1,5 +1,5 @@
-import MotionLayout from "@/components/MotionLayout"
-import Reveal from "@/components/Reveal"
+import MotionLayout from "@/components/MotionLayout";
+import Reveal from "@/components/Reveal";
 import {
   Box,
   Button,
@@ -12,16 +12,16 @@ import {
   Tabs,
   Text,
   css,
-} from "@chakra-ui/react"
-import Link from "next/link"
-import { useState } from "react"
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Fidelidade() {
-  const [tabIndex, setTabIndex] = useState<number | null>(null)
+  const [tabIndex, setTabIndex] = useState<number | null>(0);
 
   const handleTabsChange = (index: number | null) => {
-    setTabIndex(index)
-  }
+    setTabIndex(index);
+  };
 
   return (
     <MotionLayout title="Programa de Fidelidade">
@@ -80,7 +80,7 @@ export default function Fidelidade() {
                 css={css({
                   scrollbarWidth: "none",
                   "::-webkit-scrollbar": { display: "none" },
-                  "-webkit-overflow-scrolling": "touch",
+                  WebkitOverflowScrolling: "touch",
                   boxShadow: "inset 0 -2px 0 rgba(0, 0, 0, 0.1)",
                   borderBottom: "2px solid #06EC46",
                 })}
@@ -302,5 +302,5 @@ export default function Fidelidade() {
         </Flex>
       </Container>
     </MotionLayout>
-  )
+  );
 }

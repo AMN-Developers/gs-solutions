@@ -32,7 +32,7 @@ export default function TabsHistory() {
         css={css({
           scrollbarWidth: "none",
           "::-webkit-scrollbar": { display: "none" },
-          "-webkit-overflow-scrolling": "touch",
+          WebkitOverflowScrolling: "touch",
           boxShadow: "inset 0 -2px 0 rgba(0, 0, 0, 0.1)",
           borderBottom: "2px solid #06EC46",
         })}
