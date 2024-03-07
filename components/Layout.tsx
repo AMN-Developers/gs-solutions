@@ -1,22 +1,11 @@
-import {
-  Box,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  Stack,
-  useDisclosure,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import { Box, Stack, useDisclosure } from "@chakra-ui/react";
 import { Header } from "./Header";
 import { Navbar } from "./Navbar";
-import { NAV_ITEMS } from "./Navbar/NAV_ITEMS";
 import DrawerRoot from "./Drawer/DrawerRoot";
 import React from "react";
 import { Footer } from "./Footer";
 import CookieBanner from "@/components/CookieBanner";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import { bg } from "@/components/Header/HeaderBG";
 import MobileItems from "./Navbar/MobileItems";
 import MobileItemsCollapse from "./Navbar/MobileItemsCollapse";

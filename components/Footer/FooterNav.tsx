@@ -1,9 +1,9 @@
-import { Box, Container, Link as ChakraLink, Button } from "@chakra-ui/react"
-import Image from "next/image"
-import Link from "next/link"
+import { Box, Container, Link as ChakraLink, Button } from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface FooterNavProps {
-  openDrawer: () => void
+  openDrawer: () => void;
 }
 
 export default function FooterNav({ openDrawer }: FooterNavProps) {
@@ -52,10 +52,10 @@ export default function FooterNav({ openDrawer }: FooterNavProps) {
         <ChakraLink as={Link} href="#">
           Distribuidores
         </ChakraLink>
-        <ChakraLink as={Link} href="#">
+        {/* <ChakraLink as={Link} href="#">
           FAQ
-        </ChakraLink>
+        </ChakraLink> */}
       </Box>
     </Container>
-  )
+  );
 }
