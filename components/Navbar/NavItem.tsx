@@ -16,6 +16,9 @@ function NavItem({ href, route, label }: Props) {
       href={href ?? "#"}
       fontSize={"sm"}
       fontWeight={href === route ? "semibold" : "normal"}
+      _hover={{
+        fontWeight: "semibold",
+      }}
       color="black"
       __css={{
         textTransform: "uppercase",
