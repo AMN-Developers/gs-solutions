@@ -60,7 +60,7 @@ export default function Layout({ children, route }: LayoutProps) {
           <Navbar.Desktop>
             <NavItem href="/" route={route} label="home" />
             <NavPopover label="linha de produtos">
-              <NavPopover label={"Lótus"} href={"/lotus"} placement="auto-end">
+              <Navbar.Sub label="Lótus" href="/lotus">
                 <NavItem href="/powertrio" route={route} label="power trio" />
                 <NavItem href="/fixflot" route={route} label="fix flot" />
                 <NavItem href="/fireguard" route={route} label="fireguard" />
@@ -75,7 +75,7 @@ export default function Layout({ children, route }: LayoutProps) {
                   label="Linha de Impermeabilizantes"
                 />
                 <NavItem href="/auto" route={route} label="Linha Auto" />
-              </NavPopover>
+              </Navbar.Sub>
             </NavPopover>
             <NavItem
               href="/calculadora"

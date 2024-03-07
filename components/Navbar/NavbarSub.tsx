@@ -7,22 +7,21 @@ import {
   Popover,
   PopoverTrigger,
   PopoverContent,
-} from "@chakra-ui/react"
-import Link from "next/link"
-import { ChevronRightIcon } from "@chakra-ui/icons"
-import { Navbar } from "."
+} from "@chakra-ui/react";
+import Link from "next/link";
+import { ChevronRightIcon } from "@chakra-ui/icons";
+import { Navbar } from ".";
+import React from "react";
 
 interface NavbarSubProps {
-  label: string
-  href?: string
-  subLabel?: string
-  children?: Array<NavbarSubProps>
+  label: string;
+  href?: string;
+  children?: React.ReactNode;
 }
 
 export default function NavbarSub({
   label,
   href = "#",
-  subLabel,
   children,
 }: NavbarSubProps) {
   return (
@@ -46,7 +45,6 @@ export default function NavbarSub({
               >
                 {label}
               </Text>
-              <Text fontSize={"sm"}>{subLabel}</Text>
             </Box>
             <Flex
               transition={"all .3s ease"}
@@ -62,22 +60,16 @@ export default function NavbarSub({
           </Stack>
         </Box>
       </PopoverTrigger>
-      {children && (
-        <PopoverContent
-          border={0}
-          boxShadow={"xl"}
-          bg="white"
-          p={4}
-          rounded={"xl"}
-          minW={"sm"}
-        >
-          <Stack>
-            {children.map((child) => (
-              <Navbar.Sub key={child.label} {...child} />
-            ))}
-          </Stack>
-        </PopoverContent>
-      )}
+      <PopoverContent
+        border={0}
+        boxShadow={"xl"}
+        bg="white"
+        p={4}
+        rounded={"xl"}
+        minW={"sm"}
+      >
+        <Stack>{children}</Stack>
+      </PopoverContent>
     </Popover>
-  )
+  );
 }
