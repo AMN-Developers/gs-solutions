@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react"
+import { FormEvent, useState } from "react";
 import {
   Box,
   Button,
@@ -34,36 +34,43 @@ import {
   Tr,
   Tbody,
   Td,
-} from "@chakra-ui/react"
-import { useReactTable, createColumnHelper, ColumnDef, getCoreRowModel, flexRender } from "@tanstack/react-table"
-import { format } from "date-fns"
-import { useMutation } from "react-query"
-import MotionLayout from "@/components/MotionLayout"
-import { Carousel } from "@/components/Carousel/"
-import { CAR_ITEMS } from "@/components/Carousel/CAR_ITEMS"
-import { Carousel as CarouselReact } from "@trendyol-js/react-carousel"
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons"
-import { baseApi } from '@/libs/api'
-import { TrackingData, Tracking } from './api/rastreio'
-import { ListTrans } from "@/components/ListTrans"
+} from "@chakra-ui/react";
+import {
+  useReactTable,
+  createColumnHelper,
+  ColumnDef,
+  getCoreRowModel,
+  flexRender,
+} from "@tanstack/react-table";
+import { format } from "date-fns";
+import { useMutation } from "react-query";
+import MotionLayout from "@/components/MotionLayout";
+import { Carousel } from "@/components/Carousel/";
+import { CAR_ITEMS } from "@/components/Carousel/CAR_ITEMS";
+import { Carousel as CarouselReact } from "@trendyol-js/react-carousel";
+import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
+import { baseApi } from "@/libs/api";
+import { TrackingData, Tracking } from "./api/rastreio";
+import { ListTrans } from "@/components/ListTrans";
 
 interface RastreioProps {
-  cnpj: string
-  nro_nf: string
+  cnpj: string;
+  nro_nf: string;
 }
 
 export default function Rastreio() {
-  const [cnpj, setCnpj] = useState("")
-  const regex = /^\d{11}$|^\d{14}$/
-  const isErrorCnpj = !regex.test(cnpj)
-  const [nf, setNf] = useState('');
+  const [cnpj, setCnpj] = useState("");
+  const regex = /^\d{11}$|^\d{14}$/;
+  const isErrorCnpj = !regex.test(cnpj);
+  const [nf, setNf] = useState("");
   const isErrorNf = nf.length === 0;
   const [tracking, setTracking] = useState<TrackingData>();
   const columnHelper = createColumnHelper<Tracking>();
 
   const columns = [
     columnHelper.accessor("data_hora", {
-      cell: (row) => format(new Date(row.getValue() as unknown as Date), 'dd/MM/yyyy'),
+      cell: (row) =>
+        format(new Date(row.getValue() as unknown as Date), "dd/MM/yyyy"),
       header: "Data/Hora",
     }),
     columnHelper.accessor("cidade", {
@@ -74,7 +81,7 @@ export default function Rastreio() {
       cell: (row) => row.getValue(),
       header: "Situação",
     }),
-  ]
+  ];
 
   const table = useReactTable({
     data: tracking?.tracking ?? [],
@@ -82,54 +89,59 @@ export default function Rastreio() {
     getCoreRowModel: getCoreRowModel(),
   });
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
-
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const stepObjects = [
     {
-      title: tracking?.stepperData?.[0]?.ocorrencia ?? "Pedido recebido pela transportadora.",
-      description: tracking?.stepperData?.[0]?.descricao ?? "Seu pedido foi recebido pela transportadora e está sendo preparado para envio",
+      title:
+        tracking?.stepperData?.[0]?.ocorrencia ??
+        "Pedido recebido pela transportadora.",
+      description:
+        tracking?.stepperData?.[0]?.descricao ??
+        "Seu pedido foi recebido pela transportadora e está sendo preparado para envio",
       date: tracking?.stepperData?.[0]?.data_hora ?? null,
     },
     {
       title: tracking?.stepperData?.[1]?.ocorrencia ?? "Pedido em trânsito",
-      description: tracking?.stepperData?.[1]?.descricao ?? "Seu pedido está em trânsito",
+      description:
+        tracking?.stepperData?.[1]?.descricao ?? "Seu pedido está em trânsito",
       date: tracking?.stepperData?.[1]?.data_hora ?? null,
     },
     {
       title: tracking?.stepperData?.[2]?.ocorrencia ?? "Pedido entregue",
-      description: tracking?.stepperData?.[2]?.descricao ?? "Seu pedido foi entregue com sucesso",
+      description:
+        tracking?.stepperData?.[2]?.descricao ??
+        "Seu pedido foi entregue com sucesso",
       date: tracking?.stepperData?.[2]?.data_hora ?? null,
-    }
-  ]
+    },
+  ];
 
   const { activeStep, setActiveStep } = useSteps({
     count: stepObjects.length,
-  })
+  });
 
   const getTracking = async ({
     cnpj,
     nro_nf,
   }: RastreioProps): Promise<TrackingData> => {
-    const { data } = await baseApi.post("/rastreio", { cnpj, nro_nf })
-    return data
-  }
+    const { data } = await baseApi.post("/rastreio", { cnpj, nro_nf });
+    return data;
+  };
 
   const rastrearPedido = useMutation(getTracking, {
     onSuccess: (data) => {
-      console.log(data)
-      setTracking(data)
-      setActiveStep(data.activeStep ?? (data.activeStep as unknown as number))
+      setTracking(data);
+      setActiveStep(data.activeStep ?? (data.activeStep as unknown as number));
     },
     onError: (error) => {
-      console.log(error)
+      console.log(error);
     },
-  })
+  });
 
   const handleSubmit = (e: FormEvent<HTMLDivElement>) => {
-    e.preventDefault()
-    rastrearPedido.mutate({ cnpj, nro_nf: nf })
-  }
+    e.preventDefault();
+    rastrearPedido.mutate({ cnpj, nro_nf: nf });
+  };
 
   return (
     <MotionLayout title="Rastreio">
@@ -254,7 +266,12 @@ export default function Rastreio() {
                 </Text>
                 {tracking && tracking.success === true ? (
                   <>
-                    <Stepper index={activeStep} colorScheme='green' orientation='vertical' mt={4}>
+                    <Stepper
+                      index={activeStep}
+                      colorScheme="green"
+                      orientation="vertical"
+                      mt={4}
+                    >
                       {stepObjects.map((step, index) => (
                         <Step key={index}>
                           <StepIndicator color="white">
@@ -271,12 +288,14 @@ export default function Rastreio() {
                               as={StepTitle}
                               fontWeight={"bold"}
                             >
-                              {step.title}  {step.date && ` - ${format(new Date(step.date), 'dd/MM/yyyy')}`}
+                              {step.title}{" "}
+                              {step.date &&
+                                ` - ${format(
+                                  new Date(step.date),
+                                  "dd/MM/yyyy"
+                                )}`}
                             </Text>
-                            <Text
-                              color={"gray.400"}
-                              as={StepDescription}
-                            >
+                            <Text color={"gray.400"} as={StepDescription}>
                               {step.description}
                             </Text>
                           </Box>
@@ -285,23 +304,31 @@ export default function Rastreio() {
                         </Step>
                       ))}
                     </Stepper>
-                    <Button variant={'unstyled'} color={'white'} fontWeight={'normal'} textDecoration={'underline'} w={'full'} mt={4} onClick={onOpen}>Ver todos os detalhes</Button>
-                    <Modal isOpen={isOpen} onClose={onClose} size={'4xl'}>
+                    <Button
+                      variant={"unstyled"}
+                      color={"white"}
+                      fontWeight={"normal"}
+                      textDecoration={"underline"}
+                      w={"full"}
+                      mt={4}
+                      onClick={onOpen}
+                    >
+                      Ver todos os detalhes
+                    </Button>
+                    <Modal isOpen={isOpen} onClose={onClose} size={"4xl"}>
                       <ModalOverlay />
                       <ModalContent>
-                        <ModalHeader>Destinatário: {tracking?.header?.destinatario}</ModalHeader>
+                        <ModalHeader>
+                          Destinatário: {tracking?.header?.destinatario}
+                        </ModalHeader>
                         <ModalCloseButton />
                         <ModalBody>
-                          <Table fontSize={{ base: 'xs', md: 'md' }}>
+                          <Table fontSize={{ base: "xs", md: "md" }}>
                             <Thead>
                               {table.getHeaderGroups().map((headerGroup) => (
-                                <Tr
-                                  key={headerGroup.id}
-                                >
+                                <Tr key={headerGroup.id}>
                                   {headerGroup.headers.map((header) => (
-                                    <Th
-                                      key={header.id}
-                                    >
+                                    <Th key={header.id}>
                                       {flexRender(
                                         header.column.columnDef.header,
                                         header.getContext()
@@ -313,13 +340,9 @@ export default function Rastreio() {
                             </Thead>
                             <Tbody>
                               {table.getRowModel().rows.map((row) => (
-                                <Tr
-                                  key={row.id}
-                                >
+                                <Tr key={row.id}>
                                   {row.getVisibleCells().map((cell) => (
-                                    <Td
-                                      key={cell.id}
-                                    >
+                                    <Td key={cell.id}>
                                       {flexRender(
                                         cell.column.columnDef.cell,
                                         cell.getContext()
@@ -333,14 +356,14 @@ export default function Rastreio() {
                         </ModalBody>
 
                         <ModalFooter>
-                          <Button colorScheme='blue' mr={3} onClick={onClose}>
+                          <Button colorScheme="blue" mr={3} onClick={onClose}>
                             Fechar
                           </Button>
                         </ModalFooter>
                       </ModalContent>
                     </Modal>
                   </>
-                ) : (null)}
+                ) : null}
               </Box>
             </Flex>
           </Flex>
@@ -363,8 +386,26 @@ export default function Rastreio() {
           show={4}
           slide={4}
           swiping={true}
-          leftArrow={<Icon as={ChevronLeftIcon} w={10} h={30} />}
-          rightArrow={<Icon as={ChevronRightIcon} w={10} h={30} />}
+          leftArrow={
+            <Icon
+              as={ChevronLeftIcon}
+              w={10}
+              h={30}
+              _hover={{
+                cursor: "pointer",
+              }}
+            />
+          }
+          rightArrow={
+            <Icon
+              as={ChevronRightIcon}
+              w={10}
+              h={30}
+              _hover={{
+                cursor: "pointer",
+              }}
+            />
+          }
           display={"flex"}
           justifyItems={"center"}
           alignItems={"center"}
@@ -399,5 +440,5 @@ export default function Rastreio() {
         </Text>
       </Container>
     </MotionLayout>
-  )
+  );
 }

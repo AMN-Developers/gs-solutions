@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import {
   Text,
   Tabs,
@@ -7,14 +7,14 @@ import {
   TabPanels,
   TabPanel,
   css,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
 export default function TabsHistory() {
-  const [tabIndex, setTabIndex] = useState<number | null>(null)
+  const [tabIndex, setTabIndex] = useState<number | null>(0);
 
   const handleTabsChange = (index: number | null) => {
-    setTabIndex(index)
-  }
+    setTabIndex(index);
+  };
 
   return (
     <Tabs
@@ -261,5 +261,5 @@ export default function TabsHistory() {
         </TabPanel>
       </TabPanels>
     </Tabs>
-  )
+  );
 }

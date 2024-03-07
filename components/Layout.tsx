@@ -20,6 +20,8 @@ import { ChevronDownIcon } from "@chakra-ui/icons";
 import { bg } from "@/components/Header/HeaderBG";
 import MobileItems from "./Navbar/MobileItems";
 import MobileItemsCollapse from "./Navbar/MobileItemsCollapse";
+import NavItem from "./Navbar/NavItem";
+import NavPopover from "./Navbar/NavPopover";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -35,6 +37,9 @@ export default function Layout({ children, route }: LayoutProps) {
     onClose: onCloseDrawer,
   } = useDisclosure();
   const btnRef = React.useRef<HTMLButtonElement>(null);
+  const openPDF = () => {
+    window.open("/manual/manualdeuso.pdf", "_blank");
+  };
 
   return (
     <>
@@ -64,47 +69,72 @@ export default function Layout({ children, route }: LayoutProps) {
         <Navbar.Root>
           <Navbar.Hamburger isOpen={isOpen} onToggle={onToggle} />
           <Navbar.Desktop>
-            {NAV_ITEMS.map((navItem) => (
-              <Box key={navItem.label}>
-                <Popover trigger={"hover"} placement={"bottom-start"}>
-                  <PopoverTrigger>
-                    <Box
-                      as={Link}
-                      p={2}
-                      href={navItem.href ?? "#"}
-                      fontSize={"sm"}
-                      fontWeight={
-                        navItem.href === route ? "semibold" : "normal"
-                      }
-                      color="black"
-                      __css={{
-                        textTransform: "uppercase",
-                      }}
-                    >
-                      {navItem.label}
-                      {navItem.children && <ChevronDownIcon marginLeft={2} />}
-                    </Box>
-                  </PopoverTrigger>
-
-                  {navItem.children && (
-                    <PopoverContent
-                      border={0}
-                      boxShadow={"xl"}
-                      bg="white"
-                      p={4}
-                      rounded={"xl"}
-                      minW={"sm"}
-                    >
-                      <Stack>
-                        {navItem.children.map((child) => (
-                          <Navbar.Sub key={child.label} {...child} />
-                        ))}
-                      </Stack>
-                    </PopoverContent>
-                  )}
-                </Popover>
+            <NavItem href="/" route={route} label="home" />
+            <NavPopover label="linha de produtos">
+              <NavPopover label={"Lótus"} href={"/lotus"} placement="auto-end">
+                <NavItem href="/powertrio" route={route} label="power trio" />
+                <NavItem href="/fixflot" route={route} label="fix flot" />
+                <NavItem href="/fireguard" route={route} label="fireguard" />
+                <NavItem
+                  href="/higienizacao"
+                  route={route}
+                  label="Linha de Higienização"
+                />
+                <NavItem
+                  href="/impermeabilizantes"
+                  route={route}
+                  label="Linha de Impermeabilizantes"
+                />
+                <NavItem href="/auto" route={route} label="Linha Auto" />
+              </NavPopover>
+            </NavPopover>
+            <NavItem
+              href="/calculadora"
+              route={route}
+              label="calculadora de diluição"
+            />
+            <NavPopover label="empresa">
+              <NavItem
+                href="/certificado"
+                route={route}
+                label="Certificados e Homologações"
+              />
+              <NavItem
+                href="/fidelidade"
+                route={route}
+                label="Programa de Fidelidade"
+              />
+              <NavItem
+                href="/sustentabilidade"
+                route={route}
+                label="Sustentabilidade"
+              />
+              <Box
+                as="button"
+                ref={btnRef}
+                aria-label="Open menu"
+                onClick={openPDF}
+                px={2}
+                bgColor={"none"}
+                textTransform={"uppercase"}
+                fontSize={"sm"}
+                _hover={{
+                  textDecoration: "none",
+                  color: "#232c54",
+                  fontWeight: "semibold",
+                  transition: "all 0.3s ease-in-out",
+                }}
+                textAlign={"left"}
+              >
+                Manual de Uso
               </Box>
-            ))}
+            </NavPopover>
+            <NavItem href="/rastreio" route={route} label="Rastreio" />
+            <NavItem
+              href="/distribuidores"
+              route={route}
+              label="Distribuidores G&S"
+            />
             <Box
               as="button"
               ref={btnRef}

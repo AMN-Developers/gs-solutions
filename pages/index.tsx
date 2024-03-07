@@ -5,7 +5,6 @@ import VideoFrame from "@/components/iFrame";
 import TabsHistory from "@/components/TabsHistory";
 import MotionLayout from "@/components/MotionLayout";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   const openPDF = () => {

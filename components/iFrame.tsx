@@ -1,11 +1,11 @@
-import { AspectRatio, Box } from "@chakra-ui/react"
-import { useState } from "react"
-import Image from "next/image"
+import { AspectRatio, Box } from "@chakra-ui/react";
+import { useState } from "react";
+import Image from "next/image";
 
 interface VideoFrameProps {
-  embedID: string
-  title: string
-  ariaDescription: string
+  embedID: string;
+  title: string;
+  ariaDescription: string;
 }
 
 export default function VideoFrame({
@@ -13,7 +13,7 @@ export default function VideoFrame({
   title,
   ariaDescription,
 }: VideoFrameProps) {
-  const [isImageClicked, setIsImageClicked] = useState(false)
+  const [isImageClicked, setIsImageClicked] = useState(false);
 
   return (
     <AspectRatio ratio={16 / 9}>
@@ -55,5 +55,5 @@ export default function VideoFrame({
         />
       )}
     </AspectRatio>
-  )
+  );
 }
