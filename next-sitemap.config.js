@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: process.env.baseURL || "http://localhost:3000",
+  siteUrl: "https://www.gshomesolutions.com.br/",
   generateRobotsTxt: true,
   changefreq: "monthly",
   exclude: ["/server-sitemap.xml", "/admin"],

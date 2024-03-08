@@ -4,7 +4,7 @@ Allow: /
 Disallow: /admin
 
 # Host
-Host: http://localhost:3000
+Host: https://www.gshomesolutions.com.br/
 
 # Sitemaps
-Sitemap: http://localhost:3000/sitemap.xml
+Sitemap: https://www.gshomesolutions.com.br/sitemap.xml
