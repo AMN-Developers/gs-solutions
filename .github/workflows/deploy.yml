@@ -11,7 +11,7 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
-      - name: Use Node.js 16
+      - name: Use Node.js 20.10.0
         uses: actions/setup-node@v2
         with:
           node-version: 20.10.0
@@ -28,3 +28,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: public_html/www/
+          exclude: |
+            .env
+            .env.example
