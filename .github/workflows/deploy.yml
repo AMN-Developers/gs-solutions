@@ -17,6 +17,10 @@ jobs:
           node-version: 20.10.0
 
       - name: 🔨 Build Project
+        env:
+          NEXT_PUBLIC_GOOGLE_MAPS_API_KEY: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY }}
+          NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID }}
+          NEXT_SHARP_PATH: ${{ secrets.NEXT_SHARP_PATH }}
         run: |
           npm install
           npm run build
