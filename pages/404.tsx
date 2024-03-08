@@ -1,5 +1,6 @@
 import MotionLayout from "@/components/MotionLayout"
-import { Button, Container, Flex, Text } from "@chakra-ui/react"
+import { ArrowForwardIcon } from "@chakra-ui/icons"
+import { Box, Button, Container, Flex, Text } from "@chakra-ui/react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -30,7 +31,7 @@ export default function Custom404() {
             fontWeight={"semibold"}
           >
             A pagina que está tentando acessar não existe, certifique-se do url
-            foi inserido corretamente
+            foi inserido corretamente!
           </Text>
           <Button
             size={{ base: "sm", sm: "md" }}
@@ -42,6 +43,45 @@ export default function Custom404() {
           >
             Retornar para pagina inicial
           </Button>
+          <Flex gap={4} py={4} flexDir={{ base: "column", md: "row" }}>
+            <Box>
+              <Text
+                as={Link}
+                href={"/calculadora"}
+                color={"facebook.900"}
+                _hover={{ textDecoration: "underline" }}
+              >
+                Calculadora de diluição <ArrowForwardIcon />
+              </Text>
+              <Text color={"gray.300"}>
+                Acesse nossa calculadora de diluição
+              </Text>
+            </Box>
+            <Box>
+              <Text
+                as={Link}
+                href={"/rastreio"}
+                color={"facebook.900"}
+                _hover={{ textDecoration: "underline" }}
+              >
+                Rastreios <ArrowForwardIcon />
+              </Text>
+              <Text color={"gray.300"}>Rastreie seu pedido!</Text>
+            </Box>
+            <Box>
+              <Text
+                as={Link}
+                href={"/distribuidores"}
+                color={"facebook.900"}
+                _hover={{ textDecoration: "underline" }}
+              >
+                Distribuidores G&S <ArrowForwardIcon />
+              </Text>
+              <Text color={"gray.300"}>
+                Está procurando algum distribuidor?
+              </Text>
+            </Box>
+          </Flex>
         </Flex>
       </Container>
     </MotionLayout>
