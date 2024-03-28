@@ -579,7 +579,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
   },
   {
     id: 49,
-    name: "SHOP RG CAR",
+    name: "CS DISTRIBUIDORA",
     phone: "(84) 98153-6899",
     address: "Rua Lídia Ferreira De Souza, 09CS-C - Nova Esperança - Parnamirim - RN",
     state: "RN",
