@@ -588,4 +588,16 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
   },
+  {
+    id: 50,
+    name: "KUCHAR",
+    phone: "(11) 5523-6364",
+    address: "Av. Washington Luís, 714 - Santo Amaro, São Paulo - SP",
+    state: "SP",
+    latitude: -23.66035,
+    longitude: -46.70345,
+    zoom: 14,
+    country: "br",
+    website: "https://www.kuchar.com.br/",
+  },
 ];
