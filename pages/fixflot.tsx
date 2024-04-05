@@ -92,11 +92,7 @@ export default function FixFlot() {
           <Flex w={{ base: "full", lg: "50%" }}>
             <Flex flexDirection={"column"} gap={4}>
               <Reveal delay={0.3}>
-                <Flex
-                  p={4}
-                  flexDirection={{ base: "column", md: "row" }}
-                  gap={4}
-                >
+                <Flex p={4} flexDirection={{ base: "column", md: "row" }} gap={4}>
                   <AnimatePresence mode="wait">
                     {images[image] && (
                       <Box w={"full"} h={"md"} rounded={"md"} boxShadow={"md"}>
@@ -109,12 +105,7 @@ export default function FixFlot() {
                           key={image}
                           boxSize={"full"}
                         >
-                          <Image
-                            alt="Imagem fixflot"
-                            src={images[image].src}
-                            boxSize={"full"}
-                            fit={"contain"}
-                          />
+                          <Image alt="Imagem fixflot" src={images[image].src} boxSize={"full"} fit={"contain"} />
                         </Box>
                       </Box>
                     )}
@@ -136,47 +127,27 @@ export default function FixFlot() {
                         cursor={"pointer"}
                         key={index}
                       >
-                        <Image
-                          alt={Thumb.alt}
-                          src={Thumb.src}
-                          boxSize={"64px"}
-                          objectFit={"contain"}
-                        />
+                        <Image alt={Thumb.alt} src={Thumb.src} boxSize={"64px"} objectFit={"contain"} />
                       </Box>
                     ))}
                   </Flex>
                 </Flex>
               </Reveal>
 
-              <Text
-                as={"p"}
-                fontWeight={"semibold"}
-                fontSize={"md"}
-                color={"#A22C37"}
-              >
+              <Text as={"p"} fontWeight={"semibold"} fontSize={"md"} color={"#A22C37"}>
                 O que é FixFlot?
               </Text>
               <Text as={"p"} textAlign={"justify"} fontSize={"md"}>
-                LÓTUS FIX-FLOT é um flotador extremamente concentrado com
-                espumação controlada e com ativos anti-migrantes através da
-                tecnologia “Lótus Omni FIX”, especialmente desenvolvido para
-                limpeza de todos os tipos de tapetes e carpetes. Com alta
-                capacidade na remoção das mais variadas sujidades, além de
-                revitalizar a coloração e o toque natural da fibra. É
-                extremamente seguro para realizar a higienização de tapetes
-                persas, orientais, kilim, fibras naturais, fibras sintéticas e
-                carpetes, sem risco de migração/transferência de cor.
+                LÓTUS FIX-FLOT é um flotador extremamente concentrado com espumação controlada e com ativos
+                anti-migrantes através da tecnologia “Lótus Omni FIX”, especialmente desenvolvido para limpeza de todos
+                os tipos de tapetes e carpetes. Com alta capacidade na remoção das mais variadas sujidades, além de
+                revitalizar a coloração e o toque natural da fibra. É extremamente seguro para realizar a higienização
+                de tapetes persas, orientais, kilim, fibras naturais, fibras sintéticas e carpetes, sem risco de
+                migração/transferência de cor.
               </Text>
             </Flex>
           </Flex>
-          <Flex
-            w={{ base: "full", lg: "50%" }}
-            flexDirection={"column"}
-            gap={4}
-            rounded={"md"}
-            px={4}
-            my={4}
-          >
+          <Flex w={{ base: "full", lg: "50%" }} flexDirection={"column"} gap={4} rounded={"md"} px={4} my={4}>
             <Text
               as={"h2"}
               fontWeight={"semibold"}
@@ -227,68 +198,42 @@ export default function FixFlot() {
             </Flex>
 
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
-              <Text
-                as={"h2"}
-                textTransform={"uppercase"}
-                fontWeight={"semibold"}
-                color={"#A22C37"}
-              >
+              <Text as={"h2"} textTransform={"uppercase"} fontWeight={"semibold"} color={"#A22C37"}>
                 Sugestão de processo Úmido :
               </Text>
               <Text>
-                Após a aspiração, aplicar 1 Litro de solução para cada 1m2 de
-                tapete a ser limpo, aguardar por pelo menos 10 minutos para que
-                o produto inicie o processo de ação química. Após este período
-                realizar a esfregação do tapete com enceradeira rotativa e
-                enxaguar com água para remoção da sujidade.
+                Após a aspiração, aplicar 1 Litro de solução para cada 1m2 de tapete a ser limpo, aguardar por pelo
+                menos 10 minutos para que o produto inicie o processo de ação química. Após este período realizar a
+                esfregação do tapete com enceradeira rotativa e enxaguar com água para remoção da sujidade.
               </Text>
-              <Text
-                as={"h2"}
-                textTransform={"uppercase"}
-                fontWeight={"semibold"}
-                color={"#A22C37"}
-              >
+              <Text as={"h2"} textTransform={"uppercase"} fontWeight={"semibold"} color={"#A22C37"}>
                 Sugestão de processo Semi-Seco :
               </Text>
               <Text>
-                Após a aspiração, aplicar o produto por pulverização sobre a
-                superfície do tapete, sem deixar o excesso de água em sua
-                superfície. Aguardar por pelo menos 10 minutos para que o
-                produto inicie o processo de ação química. Após este período,
-                realizar a esfregação do tapete com um Disco Bonnet. Finalizar
+                Após a aspiração, aplicar o produto por pulverização sobre a superfície do tapete, sem deixar o excesso
+                de água em sua superfície. Aguardar por pelo menos 10 minutos para que o produto inicie o processo de
+                ação química. Após este período, realizar a esfregação do tapete com um Disco Bonnet. Finalizar
                 realizando a extração do produto com a extratora, sem enxágue.
               </Text>
             </Flex>
             <Flex gap={2} w={"full"}>
               <Button
-                bg={
-                  "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
-                }
+                bg={"radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"}
                 color={"white"}
                 _hover={{
                   bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
                 }}
-                onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/1gRBY_TynwAY4VUFTGrK0Eu7MZ-OIAC75/view"
-                  )
-                }
+                onClick={() => window.open("https://drive.google.com/file/d/1gRBY_TynwAY4VUFTGrK0Eu7MZ-OIAC75/view")}
               >
                 Boletim Tecnico
               </Button>
               <Button
-                bg={
-                  "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
-                }
+                bg={"radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"}
                 color={"white"}
                 _hover={{
                   bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
                 }}
-                onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/1nL97bZPDRa3zXDUmArhpyCpbRQN9mHDa/view"
-                  )
-                }
+                onClick={() => window.open("https://drive.google.com/file/d/1nL97bZPDRa3zXDUmArhpyCpbRQN9mHDa/view")}
               >
                 FISPQ
               </Button>
@@ -298,13 +243,7 @@ export default function FixFlot() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box
-                        as="span"
-                        flex="1"
-                        textAlign="left"
-                        fontWeight={"semibold"}
-                        color={"#A22C37"}
-                      >
+                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"} color={"#A22C37"}>
                         Propriedades
                       </Box>
                       <AccordionIcon />
@@ -327,8 +266,7 @@ export default function FixFlot() {
                       <strong>Densidade</strong>: aproximadamente 0,985 g/cm3.
                     </Text>
                     <Text>
-                      <strong>Solubilidade</strong> em água: Solúvel em qualquer
-                      proporção.
+                      <strong>Solubilidade</strong> em água: Solúvel em qualquer proporção.
                     </Text>
                   </AccordionPanel>
                 </AccordionItem>
@@ -341,18 +279,10 @@ export default function FixFlot() {
           maxW="container.xl"
           p={8}
           mb={2}
-          bg={
-            "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
-          }
+          bg={"radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"}
           rounded={"md"}
         >
-          <Text
-            as="h2"
-            fontWeight={"bold"}
-            fontSize={"md"}
-            color={"white"}
-            marginBottom={4}
-          >
+          <Text as="h2" fontWeight={"bold"} fontSize={"md"} color={"white"} marginBottom={4}>
             Conheça mais sobre o FixFlot
           </Text>
           <Flex
@@ -363,11 +293,7 @@ export default function FixFlot() {
             fontSize={"sm"}
             fontWeight={"semibold"}
           >
-            <Flex
-              width={{ base: "100%", md: "30%" }}
-              flexDirection={"column"}
-              gap={2}
-            >
+            <Flex width={{ base: "100%", md: "30%" }} flexDirection={"column"} gap={2}>
               <VideoFrame
                 embedID="dLLWw51CcHo"
                 title="G&S Home Solutions"
@@ -375,11 +301,7 @@ export default function FixFlot() {
               />
               <Text>Higienizando com Lótus Fix-Flot</Text>
             </Flex>
-            <Flex
-              width={{ base: "100%", md: "30%" }}
-              flexDirection={"column"}
-              gap={2}
-            >
+            <Flex width={{ base: "100%", md: "30%" }} flexDirection={"column"} gap={2}>
               <VideoFrame
                 embedID="uE71eR_bMh8"
                 title="G&S Home Solutions"
@@ -387,11 +309,7 @@ export default function FixFlot() {
               />
               <Text>O melhor produto para lavar tapete?</Text>
             </Flex>
-            <Flex
-              width={{ base: "100%", md: "30%" }}
-              flexDirection={"column"}
-              gap={2}
-            >
+            <Flex width={{ base: "100%", md: "30%" }} flexDirection={"column"} gap={2}>
               <VideoFrame
                 embedID="8BIYZO6ZSDU"
                 title="G&S Home Solutions"
@@ -403,24 +321,18 @@ export default function FixFlot() {
         </Container>
         <Button
           my={4}
-          bg={
-            "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
-          }
+          bg={"radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"}
           color={"white"}
           w={"full"}
           _hover={{
             bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
           }}
           textTransform={"uppercase"}
-          onClick={() =>
-            window.open(
-              "https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
-            )
-          }
+          onClick={() => window.open("https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0")}
         >
           Compre conosco
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }
