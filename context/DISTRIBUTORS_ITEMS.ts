@@ -600,4 +600,16 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     website: "https://www.kuchar.com.br/",
   },
+  {
+    id: 51,
+    name: "NEW CLEAN",
+    phone: "(11) 94085-7408",
+    address: "R. José Soares de Andrade, 144 - Parque Jandaia, Carapicuíba - SP",
+    state: "SP",
+    latitude: -23.5545,
+    longitude: -46.82269,
+    zoom: 14,
+    country: "br",
+    website: "https://newclean.jareservei.com/",
+  },
 ];
