@@ -38,7 +38,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     title: "MULTI-C",
     thumbnail: "/produtos/multic.png",
     large_image: "/produtos/multic.png",
-    slogan: "Ideal para aplicação de impermeabilizantes a base de água.",
+    slogan: "Detergente alcalino para sujidade pesada",
     chamada: "Limpador APC",
     hover_color: "0,92,142,1",
     description:
@@ -197,7 +197,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
   },
-];
+]
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
