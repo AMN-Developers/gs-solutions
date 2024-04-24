@@ -1,5 +1,5 @@
-import MotionLayout from "@/components/MotionLayout";
-import Reveal from "@/components/Reveal";
+import MotionLayout from "@/components/MotionLayout"
+import Reveal from "@/components/Reveal"
 import {
   Box,
   Button,
@@ -12,16 +12,16 @@ import {
   Tabs,
   Text,
   css,
-} from "@chakra-ui/react";
-import Link from "next/link";
-import { useState } from "react";
+} from "@chakra-ui/react"
+import Link from "next/link"
+import { useState } from "react"
 
 export default function Fidelidade() {
-  const [tabIndex, setTabIndex] = useState<number | null>(0);
+  const [tabIndex, setTabIndex] = useState<number | null>(0)
 
   const handleTabsChange = (index: number | null) => {
-    setTabIndex(index);
-  };
+    setTabIndex(index)
+  }
 
   return (
     <MotionLayout title="Programa de Fidelidade">
@@ -58,7 +58,13 @@ export default function Fidelidade() {
               Este procedimento fixa sistemática do programa de fidelização de
               clientes.
             </Text>
-            <Button as={Link} href={"#"} colorScheme="whatsapp" m={4}>
+            <Button
+              as={Link}
+              href={"https://gshomesolutions.fidelimax.com.br"}
+              target="_blank"
+              colorScheme="whatsapp"
+              m={4}
+            >
               Cadastre agora
             </Button>
           </Flex>
@@ -162,21 +168,6 @@ export default function Fidelidade() {
                     consumo em questão ou ainda remover a participação do CPF/
                     CNPJ do programa Compre e Ganha com a G&S.
                   </Text>
-                  <Text>
-                    1.5 Será considerado um{" "}
-                    <strong>Cliente Fidelimax Premiun</strong>, o cliente que
-                    adquirir ao menos{" "}
-                    <strong>
-                      3 produtos da linha de higienização e 1 produto da linha
-                      de Impermeabilizantes da marca Lótus G&S Home Solutions
-                    </strong>{" "}
-                    e/ou ter um{" "}
-                    <strong>
-                      ticket médio superior a R$ 1.500,00 por compra
-                    </strong>
-                    , considerando um tempo de recorrência de compra de{" "}
-                    <strong>até 45 dias corridos.</strong>
-                  </Text>
                 </TabPanel>
                 <TabPanel>
                   <Text as={"p"} mb={2}>
@@ -262,7 +253,6 @@ export default function Fidelidade() {
               gap={2}
               minH={"36"}
               p={4}
-              border={"1px solid gray"}
               boxShadow={"md"}
             >
               <Text as={"h2"} fontWeight={"semibold"}>
@@ -274,33 +264,8 @@ export default function Fidelidade() {
               </Text>
             </Flex>
           </Reveal>
-          <Reveal delay={0.3}>
-            <Flex
-              justifyContent={"center"}
-              flexDir={"column"}
-              gap={2}
-              textAlign={"center"}
-              bg={"gray.200"}
-              rounded={"md"}
-              minH={"36"}
-              p={4}
-              border={"1px solid gray"}
-              boxShadow={"md"}
-            >
-              <Text as={"h2"} fontWeight={"semibold"}>
-                Clientes categoria Premium
-              </Text>
-              <Text as={"p"} fontSize={"sm"}>
-                R$ 1,00 multiplica por 1,35X, equivalendo a 1,35 pontos para
-                cada R$ 1,00 da NF referência
-              </Text>
-              <Text as={"p"} fontSize={"xs"} fontWeight={"bold"}>
-                35% a mais de pontos se comparado ao cliente Standard
-              </Text>
-            </Flex>
-          </Reveal>
         </Flex>
       </Container>
     </MotionLayout>
-  );
+  )
 }
