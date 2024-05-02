@@ -40,7 +40,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
   {
     id: 3,
     name: "JATO SUPER",
-    address: "Av. Feira De Santana, 71 – Jd. Vale do Sol - São José dos Campos / SP",
+    address:
+      "Av. Feira De Santana, 71 – Jd. Vale do Sol - São José dos Campos / SP",
     phone: "(12) 3931-0594",
     website: "https://www.jatosuper.com.br/",
     state: "SP",
@@ -65,7 +66,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 5,
     name: "PRISMA TECIDOS",
     phone: "(11) 4391-4800 / (11) 99191-9433",
-    address: "Rua 24 de Fevereiro, 73 – Jardim Olavo Bilac, São Bernardo do Campo / SP",
+    address:
+      "Rua 24 de Fevereiro, 73 – Jardim Olavo Bilac, São Bernardo do Campo / SP",
     state: "SP",
     latitude: -23.70128,
     longitude: -46.556,
@@ -100,7 +102,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 8,
     name: "HIG SERVICE",
     phone: "(48) 3050-5757",
-    address: "Rod. João Gualberto Soares, 56 - Sala 06 - Ingleses Norte, Florianópolis / SC",
+    address:
+      "Rod. João Gualberto Soares, 56 - Sala 06 - Ingleses Norte, Florianópolis / SC",
     state: "SC",
     latitude: -27.43983,
     longitude: -48.40251,
@@ -184,7 +187,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 15,
     name: "SB RIO",
     phone: "(21) 2424-5696",
-    address: "Estr. do Gabinal, 1521 - Freguesia de Jacarepaguá, Rio de Janeiro / RJ",
+    address:
+      "Estr. do Gabinal, 1521 - Freguesia de Jacarepaguá, Rio de Janeiro / RJ",
     state: "RJ",
     latitude: -22.95203,
     longitude: -43.35057,
@@ -208,7 +212,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 17,
     name: "LOJA HIDRORIO Unidade II",
     phone: "(21) 98346-5145",
-    address: "Rua Professora Luiza Nogueira Gonçalves, 350 - Lj 109 - Recreio Dos Bandeirantes, Rio De Janeiro / RJ",
+    address:
+      "Rua Professora Luiza Nogueira Gonçalves, 350 - Lj 109 - Recreio Dos Bandeirantes, Rio De Janeiro / RJ",
     state: "RJ",
     latitude: -23.00587,
     longitude: -43.44075,
@@ -220,7 +225,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 18,
     name: "POLIBOX",
     phone: "(21) 2580-7544 / (21) 99632-7544",
-    address: "CADEG Mercado Municipal do, R. Cap. Félix, 110 - 7 e 9 - Benfica, Rio de Janeiro / RJ",
+    address:
+      "CADEG Mercado Municipal do, R. Cap. Félix, 110 - 7 e 9 - Benfica, Rio de Janeiro / RJ",
     state: "RJ",
     latitude: -22.89459,
     longitude: -43.23656,
@@ -533,7 +539,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 45,
     name: "ESPAÇO CLEAN",
     phone: "(96) 98131-4456",
-    address: "D ao Lado do MPF - Av. Ernestino Borges, 525 - Julião Ramos, Macapá / AP",
+    address:
+      "D ao Lado do MPF - Av. Ernestino Borges, 525 - Julião Ramos, Macapá / AP",
     state: "AP",
     latitude: 0.04382,
     longitude: -51.06833,
@@ -557,7 +564,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 47,
     name: "NEW CLEAN",
     phone: "(11) 94085-7408",
-    address: "Rua Aparecida - R. Aparecido Eusébio De Souza, 6 - Parque Jandaia, Carapicuíba - SP",
+    address:
+      "Rua Aparecida - R. Aparecido Eusébio De Souza, 6 - Parque Jandaia, Carapicuíba - SP",
     state: "SP",
     latitude: -23.55428,
     longitude: -46.82407,
@@ -569,7 +577,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 48,
     name: "SHOP RG CAR",
     phone: "(43) 3029-0300",
-    address: "Av. Arcebispo Dom Geraldo Fernandes, 2777 - Loja 01 - Centro, Londrina - PR",
+    address:
+      "Av. Arcebispo Dom Geraldo Fernandes, 2777 - Loja 01 - Centro, Londrina - PR",
     state: "PR",
     latitude: -23.30136,
     longitude: -51.16966,
@@ -581,7 +590,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 49,
     name: "CS DISTRIBUIDORA",
     phone: "(84) 98153-6899",
-    address: "Rua Lídia Ferreira De Souza, 09CS-C - Nova Esperança - Parnamirim - RN",
+    address:
+      "Rua Lídia Ferreira De Souza, 09CS-C - Nova Esperança - Parnamirim - RN",
     state: "RN",
     latitude: -5.93614,
     longitude: -35.27701,
@@ -604,7 +614,8 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 51,
     name: "NEW CLEAN",
     phone: "(11) 94085-7408",
-    address: "R. José Soares de Andrade, 144 - Parque Jandaia, Carapicuíba - SP",
+    address:
+      "R. José Soares de Andrade, 144 - Parque Jandaia, Carapicuíba - SP",
     state: "SP",
     latitude: -23.5545,
     longitude: -46.82269,
@@ -612,4 +623,16 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     website: "https://newclean.jareservei.com/",
   },
-];
+  {
+    id: 52,
+    name: "ALLAN PRODUTOS AUTOMOTIVOS",
+    phone: "(64) 98133-3564",
+    address: "Rua 18, 1341, Qd. 67 Lt. 7B - Bairro Popular - Rio Verde - GO",
+    state: "GO",
+    latitude: -17.79713,
+    longitude: -50.92367,
+    zoom: 14,
+    country: "br",
+    website: "https://www.allanprodutos.com.br/contato/",
+  },
+]
