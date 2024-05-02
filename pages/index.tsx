@@ -24,13 +24,13 @@ export default function Home() {
             logo="logo-lotus.svg"
             bgPos="bottom right"
           />
-          {/* <Card.Item
+          <Card.Item
             alt="Limpoo logo"
             href="/limpoo"
             bgImage="/card-limpoo.webp"
             title="Limpeza pós-obra"
             logo="logo-limpoo.svg"
-          /> */}
+          />
         </Flex>
       </Card.Root>
       <Container maxW={"container.xl"} as="section">

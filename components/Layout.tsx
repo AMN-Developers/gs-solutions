@@ -1,34 +1,34 @@
-import { Box, Stack, useDisclosure } from "@chakra-ui/react";
-import { Header } from "./Header";
-import { Navbar } from "./Navbar";
-import DrawerRoot from "./Drawer/DrawerRoot";
-import React from "react";
-import { Footer } from "./Footer";
-import CookieBanner from "@/components/CookieBanner";
-import { AnimatePresence, motion } from "framer-motion";
-import { bg } from "@/components/Header/HeaderBG";
-import MobileItems from "./Navbar/MobileItems";
-import MobileItemsCollapse from "./Navbar/MobileItemsCollapse";
-import NavItem from "./Navbar/NavItem";
-import NavPopover from "./Navbar/NavPopover";
+import { Box, Stack, useDisclosure } from "@chakra-ui/react"
+import { Header } from "./Header"
+import { Navbar } from "./Navbar"
+import DrawerRoot from "./Drawer/DrawerRoot"
+import React from "react"
+import { Footer } from "./Footer"
+import CookieBanner from "@/components/CookieBanner"
+import { AnimatePresence, motion } from "framer-motion"
+import { bg } from "@/components/Header/HeaderBG"
+import MobileItems from "./Navbar/MobileItems"
+import MobileItemsCollapse from "./Navbar/MobileItemsCollapse"
+import NavItem from "./Navbar/NavItem"
+import NavPopover from "./Navbar/NavPopover"
 
 interface LayoutProps {
-  children: React.ReactNode;
-  route: string;
+  children: React.ReactNode
+  route: string
 }
 
 export default function Layout({ children, route }: LayoutProps) {
-  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false });
+  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false })
 
   const {
     isOpen: isOpenDrawer,
     onOpen: onOpenDrawer,
     onClose: onCloseDrawer,
-  } = useDisclosure();
-  const btnRef = React.useRef<HTMLButtonElement>(null);
+  } = useDisclosure()
+  const btnRef = React.useRef<HTMLButtonElement>(null)
   const openPDF = () => {
-    window.open("/manual/manualdeuso.pdf", "_blank");
-  };
+    window.open("/manual/manualdeuso.pdf", "_blank")
+  }
 
   return (
     <>
@@ -75,6 +75,13 @@ export default function Layout({ children, route }: LayoutProps) {
                   label="Linha de Impermeabilizantes"
                 />
                 <NavItem href="/auto" route={route} label="Linha Auto" />
+              </Navbar.Sub>
+              <Navbar.Sub label="Limpoo" href="/limpoo">
+                <NavItem
+                  href="/produtoslimpoo"
+                  route={route}
+                  label="Produtos limpoo"
+                />
               </Navbar.Sub>
             </NavPopover>
             <NavItem
@@ -249,5 +256,5 @@ export default function Layout({ children, route }: LayoutProps) {
       </Footer.Root>
       <CookieBanner />
     </>
-  );
+  )
 }
