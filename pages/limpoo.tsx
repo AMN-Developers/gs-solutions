@@ -30,28 +30,16 @@ export default function Lotus() {
           </Box>
           <Flex flexDirection={{ base: "column", sm: "row" }} gap={4}>
             <Button
-              w={{ base: "100%", sm: "50%" }}
+              w={"100%"}
               as={Link}
-              href={"/higienizacao"}
+              href={"/produtoslimpoo"}
               bgColor={"#222C54"}
               color={"white"}
               _hover={{
                 bgColor: "rgb(34, 44, 84,0.9)",
               }}
             >
-              Linha de Higienização
-            </Button>
-            <Button
-              w={{ base: "100%", sm: "50%" }}
-              as={Link}
-              href={"/impermeabilizantes"}
-              bgColor={"#222C54"}
-              color={"white"}
-              _hover={{
-                bgColor: "rgb(34, 44, 84,0.9)",
-              }}
-            >
-              Linha de Impermeabilizantes
+              Produtos limpoo
             </Button>
           </Flex>
 
