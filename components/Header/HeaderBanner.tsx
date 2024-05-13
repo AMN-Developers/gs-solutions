@@ -186,12 +186,12 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
             flexDir={"column"}
             justifyContent={"center"}
           >
-            <Image
+            {/* <Image
               width={455}
               height={130}
               src="/logo-limpoo.svg"
               alt="Limpoo logo"
-            />
+            /> */}
           </Box>
           <Box
             color="white"
@@ -205,7 +205,7 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
               G&S HOME SOLUTIONS
             </Text>
             <Text as="h2" fontWeight={"semibold"}>
-              SUJOU? LIMPOO!
+              NOVIDADES EM BREVE
             </Text>
           </Box>
         </Flex>
