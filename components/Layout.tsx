@@ -76,11 +76,11 @@ export default function Layout({ children, route }: LayoutProps) {
                 />
                 <NavItem href="/auto" route={route} label="Linha Auto" />
               </Navbar.Sub>
-              <Navbar.Sub label="Limpoo" href="/limpoo">
+              <Navbar.Sub label="NOVA LINHA" href="/embreve">
                 <NavItem
-                  href="/produtoslimpoo"
+                  href="/embreve"
                   route={route}
-                  label="Produtos limpoo"
+                  label="Em breve"
                 />
               </Navbar.Sub>
             </NavPopover>
