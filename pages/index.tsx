@@ -26,7 +26,7 @@ export default function Home() {
           />
           <Card.Item
             alt="Limpoo logo"
-            href="/embreve"
+            href="/limpoo"
             bgImage="/card-limpoo.webp"
             title="NOVA LINHA EM BREVE"
             logo="embreve.svg"

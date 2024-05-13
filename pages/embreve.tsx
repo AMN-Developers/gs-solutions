@@ -4,9 +4,9 @@ import { Box, Button, Container, Flex, Text } from "@chakra-ui/react"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Custom404() {
+export default function EmBreve() {
   return (
-    <MotionLayout title="404: Está pagina não foi encontrada">
+    <MotionLayout title="NOVA LINHA">
       <Container
         as="section"
         maxW={"container.xl"}
