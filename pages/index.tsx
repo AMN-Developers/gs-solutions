@@ -1,15 +1,15 @@
-import { Box, Container, Text, Flex, Button } from "@chakra-ui/react";
-import { Card } from "@/components/Card";
-import { Certificated } from "@/components/Certificated";
-import VideoFrame from "@/components/iFrame";
-import TabsHistory from "@/components/TabsHistory";
-import MotionLayout from "@/components/MotionLayout";
-import Image from "next/image";
+import { Box, Container, Text, Flex, Button } from "@chakra-ui/react"
+import { Card } from "@/components/Card"
+import { Certificated } from "@/components/Certificated"
+import VideoFrame from "@/components/iFrame"
+import TabsHistory from "@/components/TabsHistory"
+import MotionLayout from "@/components/MotionLayout"
+import Image from "next/image"
 
 export default function Home() {
   const openPDF = () => {
-    window.open("/manual/manualdeuso.pdf", "_blank");
-  };
+    window.open("/manual/manualdeuso.pdf", "_blank")
+  }
 
   return (
     <MotionLayout title="Home">
@@ -24,13 +24,13 @@ export default function Home() {
             logo="logo-lotus.svg"
             bgPos="bottom right"
           />
-          {/* <Card.Item
+          <Card.Item
             alt="Limpoo logo"
             href="/limpoo"
             bgImage="/card-limpoo.webp"
-            title="Limpeza pós-obra"
-            logo="logo-limpoo.svg"
-          /> */}
+            title="NOVA LINHA EM BREVE"
+            logo="embreve.svg"
+          />
         </Flex>
       </Card.Root>
       <Container maxW={"container.xl"} as="section">
@@ -153,5 +153,5 @@ export default function Home() {
         </Container>
       </Container>
     </MotionLayout>
-  );
+  )
 }
