@@ -10,6 +10,7 @@ import Layout from "@/components/Layout";
 import Head from "next/head";
 import MapProvider from "@/context/mapContext";
 import { APIProvider } from "@vis.gl/react-google-maps";
+import { GoogleTagManager } from "@next/third-parties/google"
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
       <GoogleAnalytics />
+      <GoogleTagManager gtmId="AW-397191489" />
+      <GoogleTagManager gtmId="GTM-PN2WG3X" />
       <ChakraProvider theme={theme}>
         <Layout route={router.route}>
           <AnimatePresence mode="wait">
@@ -60,5 +63,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </Layout>
       </ChakraProvider>
     </>
-  );
+  )
 }
