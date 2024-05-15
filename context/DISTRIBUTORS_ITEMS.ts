@@ -625,15 +625,14 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
   },
   {
     id: 52,
-    name: "NEW CLEAN",
-    phone: "(47) 3271-1716",
-    address:
-      "Rua Anita Garibaldi, 1381, sala 04 - Anita Garibaldi, Joinville - SC",
-    state: "SC",
-    latitude: -26.32414,
-    longitude: -48.85523,
+    name: "ALLAN PRODUTOS AUTOMOTIVOS",
+    phone: "(64) 98133-3564",
+    address: "Rua 18, 1341, Qd. 67 Lt. 7B - Bairro Popular - Rio Verde - GO",
+    state: "GO",
+    latitude: -17.79713,
+    longitude: -50.92367,
     zoom: 14,
     country: "br",
-    website: "https://italianidistribuidora.com.br/",
+    website: "https://www.allanprodutos.com.br/contato/",
   },
 ]
