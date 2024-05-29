@@ -651,7 +651,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 54,
     name: "VM AUTOCLEAN",
     phone: "(47) 3271-1716",
-    address: "Av. Dos Latinos, 647 B, Jardim Santa Teresinha, São Paulo - SP",
+    address: "Av. Dos Latinos, 647 B, Jardim Santa Terezinha, São Paulo - SP",
     state: "SP",
     latitude: -23.57292,
     longitude: -46.4981,
