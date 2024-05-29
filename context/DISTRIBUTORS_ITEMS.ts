@@ -657,6 +657,6 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -46.4981,
     zoom: 14,
     country: "br",
-    website: "https://www.vmautoclean.com.br",
+    website: "https://vmautoclean.com.br",
   },
 ]
