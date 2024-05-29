@@ -38,7 +38,7 @@ export default function EmBreve() {
             colorScheme="facebook"
             _hover={{ color: "facebook.100" }}
           >
-            Retornar para pagina inicial
+            Retornar para pagina inicial.
           </Button>
           <Flex gap={4} py={4} flexDir={{ base: "column", md: "row" }}>
             <Box>
