@@ -66,6 +66,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const [centerLocation, setCenterLocation] = useState(
     initialCenterLocation[selectedCountry as unknown as "br" | "pt"]
   );
+  const distributors = useMemo(() => DISTRIBUTORS_ITEMS, []);
   const onPlaceChanged = (place: any) => {
     if (place) {
       setUserAddress(place.formatted_address || place.name);
@@ -77,9 +78,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const onCountryChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectedState("");
     setSelectedCountry(e.target.value);
-    setCenterLocation(
-      initialCenterLocation[e.target.value as unknown as "br" | "pt"]
-    );
+    setCenterLocation(initialCenterLocation[e.target.value as unknown as "br" | "pt"]);
   };
 
   useAutocomplete({
@@ -94,9 +93,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
       }
 
       const geocodingResponse = await fetch(
-        `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(
-          userAddress
-        )}&key=${
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(userAddress)}&key=${
           process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as unknown as string
         }`
       );
@@ -108,12 +105,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
 
         // is stores in the range of 300 km?
         const filtered = DISTRIBUTORS_ITEMS.filter((store) => {
-          const distance = calculateDistance(
-            location.lat,
-            location.lng,
-            store.latitude,
-            store.longitude
-          );
+          const distance = calculateDistance(location.lat, location.lng, store.latitude, store.longitude);
           return distance <= 450;
         });
 
@@ -134,18 +126,11 @@ const MapProvider = ({ children }: MapProviderProps) => {
         });
 
         if (!closestStore) {
-          setError(
-            "Não encontramos nenhum distribuidor próximo a sua localização."
-          );
+          setError("Não encontramos nenhum distribuidor próximo a sua localização.");
           return;
         }
         filtered.forEach((store) => {
-          store.distance = calculateDistance(
-            location.lat,
-            location.lng,
-            store.latitude,
-            store.longitude
-          );
+          store.distance = calculateDistance(location.lat, location.lng, store.latitude, store.longitude);
         });
         setFilteredStores(filtered);
         setCenterLocation(geocodingData.results[0].geometry.location);
@@ -159,21 +144,13 @@ const MapProvider = ({ children }: MapProviderProps) => {
     }
   };
 
-  const calculateDistance = (
-    lat1: number,
-    lon1: number,
-    lat2: number,
-    lon2: number
-  ) => {
+  const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => {
     const R = 6371; // Radius of the Earth in kilometers
     const dLat = deg2rad(lat2 - lat1);
     const dLon = deg2rad(lon2 - lon1);
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(deg2rad(lat1)) *
-        Math.cos(deg2rad(lat2)) *
-        Math.sin(dLon / 2) *
-        Math.sin(dLon / 2);
+      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c; // Distance in kilometers
     return distance;
@@ -216,22 +193,16 @@ const MapProvider = ({ children }: MapProviderProps) => {
       });
 
       if (selectedState) {
-        return sortedStores.filter(
-          (store) => store.state.toLowerCase() === selectedState.toLowerCase()
-        );
+        return sortedStores.filter((store) => store.state.toLowerCase() === selectedState.toLowerCase());
       }
 
       return sortedStores;
     } else {
       if (selectedState) {
-        return DISTRIBUTORS_ITEMS.filter(
-          (store) => store.state.toLowerCase() === selectedState.toLowerCase()
-        );
+        return DISTRIBUTORS_ITEMS.filter((store) => store.state.toLowerCase() === selectedState.toLowerCase());
       }
 
-      const filtered = DISTRIBUTORS_ITEMS.filter(
-        (store) => store.country === selectedCountry
-      );
+      const filtered = DISTRIBUTORS_ITEMS.filter((store) => store.country === selectedCountry);
 
       return filtered;
     }
@@ -245,7 +216,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
         userAddress,
         setUserAddress,
         filteredStores,
-        distributors: DISTRIBUTORS_ITEMS,
+        distributors,
         handleSearch,
         selectedStore,
         setSelectedStore,

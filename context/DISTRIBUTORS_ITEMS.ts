@@ -649,7 +649,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     website: "https://vmautoclean.com.br",
   },
   {
-    id: 54,
+    id: 55,
     name: "MULTI SOLUÇÕES",
     phone: "(51) 996966446",
     address: "R. José Inácio da Cunha, 5 - Sarandi, Porto Alegre - RS",
