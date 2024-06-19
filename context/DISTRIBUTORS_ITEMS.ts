@@ -648,4 +648,16 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     website: "https://vmautoclean.com.br",
   },
+  {
+    id: 54,
+    name: "MULTI SOLUÇÕES",
+    phone: "(51) 996966446",
+    address: "R. José Inácio da Cunha, 5 - Sarandi, Porto Alegre - RS",
+    state: "RS",
+    latitude: -29.99525,
+    longitude: -51.13127,
+    zoom: 14,
+    country: "br",
+    website: "https://www.multisolucoesltda.com.br/",
+  },
 ];
