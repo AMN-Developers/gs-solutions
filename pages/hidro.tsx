@@ -1,15 +1,7 @@
 import MotionLayout from "@/components/MotionLayout"
-import {
-  Container,
-  Box,
-  Text,
-  Flex,
-  Image,
-  Button,
-} from "@chakra-ui/react"
+import { Container, Box, Text, Flex, Image, Button } from "@chakra-ui/react"
 import { motion, AnimatePresence } from "framer-motion"
 import HiddenText from "@/components/HiddenText"
-
 
 import { useState } from "react"
 import Link from "next/link"
@@ -221,11 +213,7 @@ export default function hidro() {
                 _hover={{
                   bg: "#e1e1e1",
                 }}
-                onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/1pkPh5ROm8CEyBJ3d9CegI5ukalshy4J7/view"
-                  )
-                }
+                onClick={() => window.open()}
               >
                 Boletim Tecnico
               </Button>
@@ -235,11 +223,7 @@ export default function hidro() {
                 _hover={{
                   bg: "#e1e1e1",
                 }}
-                onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/1nL97bZPDRa3zXDUmArhpyCpbRQN9mHDa/view"
-                  )
-                }
+                onClick={() => window.open()}
               >
                 FISPQ
               </Button>
@@ -249,11 +233,7 @@ export default function hidro() {
                 _hover={{
                   bg: "#e1e1e1",
                 }}
-                onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/10Aw6Pg0HAoahpo_AJ72wtUs4Bl5j3HVv/view?usp=sharing"
-                  )
-                }
+                onClick={() => window.open()}
               >
                 Ebook de higienização
               </Button>
