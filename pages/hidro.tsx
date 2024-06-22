@@ -192,8 +192,7 @@ export default function hidro() {
                   color="#a4a4a5;"
                   hover="#e1e1e1"
                   title="Durabilidade"
-                  text="Sua durabilidade é de 1 ano, respeitando as indicações de aplicação e cuidados após a impermeabilização. Uma reaplicação é necessária sempre que for observada uma perda na eficiência. Sempre realize um teste em uma pequena área, em caso de dúvidas quanto a aplicação e superfície. 
-                  "
+                  text="Sua durabilidade é de 1 ano, respeitando as indicações de aplicação e cuidados após a impermeabilização. Uma reaplicação é necessária sempre que for observada uma perda na eficiência. Sempre realize um teste em uma pequena área, em caso de dúvidas quanto a aplicação e superfície"
                 />
               </Reveal>
               <Reveal delay={0.25}>
