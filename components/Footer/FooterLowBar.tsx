@@ -1,10 +1,10 @@
-import { Box, Container } from "@chakra-ui/react"
-import { BsInstagram, BsWhatsapp, BsYoutube } from "react-icons/bs"
-import Link from "next/link"
+import { Box, Container } from "@chakra-ui/react";
+import { BsInstagram, BsWhatsapp, BsYoutube } from "react-icons/bs";
+import Link from "next/link";
 
 export default function FooterLowBar() {
-  const date = new Date()
-  const currentYear = date.getFullYear()
+  const date = new Date();
+  const currentYear = date.getFullYear();
 
   return (
     <Container
@@ -38,7 +38,7 @@ export default function FooterLowBar() {
           margin={2}
           color={"white"}
           fontSize={"lg"}
-          href="https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
+          href="https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
           aria-label="Whatsapp Link"
           _hover={{
             color: "#06EC46",
@@ -66,5 +66,5 @@ export default function FooterLowBar() {
         AMN Desenvolvimento e Aplicações&copy; 2023 - {currentYear}
       </Box>
     </Container>
-  )
+  );
 }

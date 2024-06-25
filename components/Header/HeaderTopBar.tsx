@@ -1,8 +1,8 @@
-import { Container, Box, Button } from "@chakra-ui/react"
-import styled, { keyframes } from "styled-components"
-import React from "react"
-import Link from "next/link"
-import Image from "next/image"
+import { Container, Box, Button } from "@chakra-ui/react";
+import styled, { keyframes } from "styled-components";
+import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 const shineAnimation = keyframes`
   0% {
@@ -21,7 +21,7 @@ const shineAnimation = keyframes`
     transform: scale(50) rotate(25deg);
     opacity: 0;
   }
-`
+`;
 
 const ShineBefore = styled.span`
   position: absolute;
@@ -34,30 +34,18 @@ const ShineBefore = styled.span`
   background-color: #fff;
   animation: ${shineAnimation} 3s ease-in-out infinite;
   transform-origin: top; /* Define o ponto de origem da transformação */
-`
+`;
 
 const HeaderTopBar = () => {
   return (
-    <Container
-      maxW="container.xl"
-      py={4}
-      px={0}
-      display="flex"
-      justifyContent="space-between"
-      alignItems="center"
-    >
+    <Container maxW="container.xl" py={4} px={0} display="flex" justifyContent="space-between" alignItems="center">
       <Box as={Link} maxW={100} maxH="auto" href="/">
-        <Image
-          src="/logo.png"
-          alt="G&S Home Solutions"
-          width={245}
-          height={319}
-        />
+        <Image src="/logo.png" alt="G&S Home Solutions" width={245} height={319} />
       </Box>
       <Button
         onClick={() =>
           window.open(
-            "https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
+            "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
           )
         }
         variant="outline"
@@ -75,6 +63,6 @@ const HeaderTopBar = () => {
         <ShineBefore />
       </Button>
     </Container>
-  )
-}
-export default HeaderTopBar
+  );
+};
+export default HeaderTopBar;
