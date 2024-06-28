@@ -68,7 +68,7 @@ export default function hidro() {
               textDecoration: "underline",
             }}
           >
-            Saiba mais
+            Saiba mais.
           </Button>
         </Flex>
       </Box>
