@@ -12,7 +12,7 @@ const variants = {
   exit: { opacity: 0, scale: 0 },
 }
 
-export default function hidro() {
+export default function Hidro() {
   const [image, setImage] = useState(2)
   const handleChangeImage = (src: number) => {
     setImage(src)
