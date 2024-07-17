@@ -78,6 +78,7 @@ export default function Layout({ children, route }: LayoutProps) {
               </Navbar.Sub>
               <Navbar.Sub label="LIMPOO" href="/limpoo">
                 <NavItem href="/hidro" route={route} label="Hidro e óleo" />
+                <NavItem href="/pine" route={route} label="Pine" />
               </Navbar.Sub>
             </NavPopover>
             <NavItem

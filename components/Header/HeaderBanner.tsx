@@ -1,15 +1,15 @@
-import { Box, Container, Flex, Text } from "@chakra-ui/react";
-import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
+import { Box, Container, Flex, Text } from "@chakra-ui/react"
+import Image from "next/image"
+import { AnimatePresence, motion } from "framer-motion"
+import { Typewriter } from "react-simple-typewriter"
 
 interface HeaderBannerProps {
-  route: string;
+  route: string
 }
 
 type banner = {
-  [key: string]: () => JSX.Element;
-};
+  [key: string]: () => JSX.Element
+}
 
 export default function HeaderBanner({ route }: HeaderBannerProps) {
   const banner: banner = {
@@ -36,10 +36,13 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
             G&S HOME SOLUTIONS
           </Text>
           <Text color={"#06EC46"} fontWeight={"bold"} fontSize={"2xl"}>
-            <Typewriter words={["Os melhores produtos para os melhores profissionais"]} typeSpeed={50} />
+            <Typewriter
+              words={["Os melhores produtos para os melhores profissionais"]}
+              typeSpeed={50}
+            />
           </Text>
         </Box>
-      );
+      )
     },
 
     "/higienizacao": () => {
@@ -59,18 +62,28 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           minH={40}
         >
           <Box minH={100}>
-            <Image width={445} height={100} src="/logo-lotus.svg" alt="Lotus logo" />
+            <Image
+              width={445}
+              height={100}
+              src="/logo-lotus.svg"
+              alt="Lotus logo"
+            />
           </Box>
-          <Box color="black" fontSize={"xl"} textAlign={{ base: "left", md: "right" }}>
+          <Box
+            color="black"
+            fontSize={"xl"}
+            textAlign={{ base: "left", md: "right" }}
+          >
             <Text as="h1" fontWeight={"bold"}>
               G&S HOME SOLUTIONS
             </Text>
             <Text as="h2" fontWeight={"semibold"}>
-              Uma linha completa de higienização e impermeabilização de estofados
+              Uma linha completa de higienização e impermeabilização de
+              estofados
             </Text>
           </Box>
         </Flex>
-      );
+      )
     },
     "/impermeabilizantes": () => {
       return (
@@ -89,18 +102,28 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           minH={40}
         >
           <Box minH={100}>
-            <Image width={445} height={100} src="/logo-lotus.svg" alt="Lotus logo" />
+            <Image
+              width={445}
+              height={100}
+              src="/logo-lotus.svg"
+              alt="Lotus logo"
+            />
           </Box>
-          <Box color="black" fontSize={"xl"} textAlign={{ base: "left", md: "right" }}>
+          <Box
+            color="black"
+            fontSize={"xl"}
+            textAlign={{ base: "left", md: "right" }}
+          >
             <Text as="h1" fontWeight={"bold"}>
               G&S HOME SOLUTIONS
             </Text>
             <Text as="h2" fontWeight={"semibold"}>
-              Uma linha completa de higienização e impermeabilização de estofados
+              Uma linha completa de higienização e impermeabilização de
+              estofados
             </Text>
           </Box>
         </Flex>
-      );
+      )
     },
     "/lotus": () => {
       return (
@@ -119,18 +142,28 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           minH={40}
         >
           <Box minH={100}>
-            <Image width={445} height={100} src="/logo-lotus.svg" alt="Lotus logo" />
+            <Image
+              width={445}
+              height={100}
+              src="/logo-lotus.svg"
+              alt="Lotus logo"
+            />
           </Box>
-          <Box color="black" fontSize={"xl"} textAlign={{ base: "left", md: "right" }}>
+          <Box
+            color="black"
+            fontSize={"xl"}
+            textAlign={{ base: "left", md: "right" }}
+          >
             <Text as="h1" fontWeight={"bold"}>
               G&S HOME SOLUTIONS
             </Text>
             <Text as="h2" fontWeight={"semibold"}>
-              Uma linha completa de higienização e impermeabilização de estofados
+              Uma linha completa de higienização e impermeabilização de
+              estofados
             </Text>
           </Box>
         </Flex>
-      );
+      )
     },
     "/limpoo": () => {
       return (
@@ -147,7 +180,12 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           transition={{ duration: "0.5", ease: "easeInOut" }}
           minH={40}
         >
-          <Box minH={130} display={"flex"} flexDir={"column"} justifyContent={"center"}>
+          <Box
+            minH={130}
+            display={"flex"}
+            flexDir={"column"}
+            justifyContent={"center"}
+          >
             {/* <Image
               width={455}
               height={130}
@@ -171,7 +209,7 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
             </Text>
           </Box>
         </Flex>
-      );
+      )
     },
     "/produtoslimpoo": () => {
       return (
@@ -188,8 +226,18 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
           transition={{ duration: "0.5", ease: "easeInOut" }}
           minH={40}
         >
-          <Box minH={130} display={"flex"} flexDir={"column"} justifyContent={"center"}>
-            <Image width={455} height={130} src="/logo-limpoo.svg" alt="Limpoo logo" />
+          <Box
+            minH={130}
+            display={"flex"}
+            flexDir={"column"}
+            justifyContent={"center"}
+          >
+            <Image
+              width={455}
+              height={130}
+              src="/logo-limpoo.svg"
+              alt="Limpoo logo"
+            />
           </Box>
           <Box
             color="white"
@@ -207,66 +255,37 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
             </Text>
           </Box>
         </Flex>
-      );
+      )
     },
     "/pine": () => {
-      return (
-        <Flex
-          justifyContent={"space-between"}
-          flexDirection={{ base: "column", md: "row" }}
-          px={{ base: 4, lg: 0 }}
-          gap={{ base: 4, md: 0 }}
-          key={route}
-          as={motion.div}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: "0.5", ease: "easeInOut" }}
-          minH={40}
-        >
-          <Box minH={130} display={"flex"} flexDir={"column"} justifyContent={"center"}>
-            <Image width={455} height={130} src="/logo-limpoo.svg" alt="Limpoo logo" />
-          </Box>
-          <Box
-            color="white"
-            fontSize={"xl"}
-            textAlign={{ base: "left", md: "right" }}
-            display={"flex"}
-            flexDir={"column"}
-            justifyContent={"center"}
-          >
-            <Text as="h1" fontWeight={"bold"}>
-              G&S HOME SOLUTIONS
-            </Text>
-            <Text as="h2" fontWeight={"semibold"}>
-              SUJOU? LIMPOO!
-            </Text>
-          </Box>
-        </Flex>
-      );
+      return <Flex></Flex>
     },
 
     "/fixflot": () => {
-      return <Flex></Flex>;
+      return <Flex></Flex>
     },
     "/powertrio": () => {
-      return <Flex></Flex>;
+      return <Flex></Flex>
     },
     "/fireguard": () => {
-      return <Flex></Flex>;
+      return <Flex></Flex>
     },
     "/hidro": () => {
       return <Flex></Flex>
     },
-  };
-
-    
-  
-
+  }
 
   return (
-    <Container maxW={"container.xl"} color={"white"} py={8} px={0} display={{ base: "none", md: "block" }}>
-      <AnimatePresence mode="wait">{route in banner ? banner[route]() : banner["/"]()}</AnimatePresence>
+    <Container
+      maxW={"container.xl"}
+      color={"white"}
+      py={8}
+      px={0}
+      display={{ base: "none", md: "block" }}
+    >
+      <AnimatePresence mode="wait">
+        {route in banner ? banner[route]() : banner["/"]()}
+      </AnimatePresence>
     </Container>
-  );
+  )
 }
