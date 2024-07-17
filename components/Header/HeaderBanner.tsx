@@ -245,6 +245,7 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
         </Flex>
       );
     },
+
     "/fixflot": () => {
       return <Flex></Flex>;
     },
@@ -254,7 +255,14 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
     "/fireguard": () => {
       return <Flex></Flex>;
     },
+    "/hidro": () => {
+      return <Flex></Flex>
+    },
   };
+
+    
+  
+
 
   return (
     <Container maxW={"container.xl"} color={"white"} py={8} px={0} display={{ base: "none", md: "block" }}>
