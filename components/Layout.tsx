@@ -152,6 +152,18 @@ export default function Layout({ children, route }: LayoutProps) {
             <Stack spacing={4} w={"100%"}>
               <MobileItems label="Home" href="/" toggleMainDrawer={onToggle} />
               <MobileItemsCollapse label="Linha de Produtos">
+                <MobileItemsCollapse label="Limpoo">
+                  <MobileItems
+                    label="Pine"
+                    href="/pine"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Hidro e Óleo"
+                    href="/hidro"
+                    toggleMainDrawer={onToggle}
+                  />
+                </MobileItemsCollapse>
                 <MobileItemsCollapse label="Lótus">
                   <MobileItems
                     label="Power Trio"
