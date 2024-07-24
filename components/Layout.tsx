@@ -23,7 +23,7 @@ export default function Layout({ children, route }: LayoutProps) {
   const { isOpen: isOpenDrawer, onOpen: onOpenDrawer, onClose: onCloseDrawer } = useDisclosure();
   const btnRef = React.useRef<HTMLButtonElement>(null);
   const openPDF = () => {
-    window.open("/manual/manualdeuso.pdf", "_blank");
+    window.open("https://drive.google.com/file/d/1YxrvPivrUA4rsBp1OQDyy4gdvewZ3itS/view?usp=sharing", "_blank");
   };
 
   return (
@@ -137,7 +137,11 @@ export default function Layout({ children, route }: LayoutProps) {
                 <MobileItems label="Certificados e Homologações" href="/certificado" toggleMainDrawer={onToggle} />
                 <MobileItems label="Programa de Fidelidade" href="/fidelidade" toggleMainDrawer={onToggle} />
                 <MobileItems label="Sustentabilidade" href="/sustentabilidade" toggleMainDrawer={onToggle} />
-                <MobileItems label="Manual de Uso" href="/manual/manualdeuso.pdf" toggleMainDrawer={onToggle} />
+                <MobileItems
+                  label="Manual de Uso"
+                  href="https://drive.google.com/file/d/1YxrvPivrUA4rsBp1OQDyy4gdvewZ3itS/view?usp=sharing"
+                  toggleMainDrawer={onToggle}
+                />
               </MobileItemsCollapse>
               <MobileItems label="Rastreio" href="/rastreio" toggleMainDrawer={onToggle} />
               <MobileItems label="Distribuidores G&S" href="/distribuidores" toggleMainDrawer={onToggle} />
