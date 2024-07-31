@@ -720,8 +720,21 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     website: "www.jrcleanhigienizacoes.com",
   },
+
   {
     id: 61,
+    name: "ESTÚDIO VIP",
+    phone: "(83) 98894-2569",
+    address: "Av. Barão de Mamanguape, 25. Loja 4 - Torre - João Pessoa, Brazil 58040-330",
+    state: "PB",
+    latitude: -7.12013,
+    longitude: -34.86175,
+    zoom: 14,
+    country: "br",
+    website: "https://www.instagram.com/lojaestudiovip/",
+  },
+  {
+    id: 62,
     name: "D'ARTIBALE DECOR",
     phone: "(19) 3461-6314",
     address: "R. São Marcos, 39 - São Manoel, Americana - SP, 13472-200",
