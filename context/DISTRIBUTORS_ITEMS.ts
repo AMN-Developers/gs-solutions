@@ -546,7 +546,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     name: "BORA HIGIENIZAR O MUNDO",
     phone: "+351 934677486",
     address: "LOJA VIRTUAL",
-    state: "AP",
+    state: "",
     latitude: 38.70701,
     longitude: -9.13564,
     zoom: 14,
