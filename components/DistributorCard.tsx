@@ -1,11 +1,6 @@
 import { Distributor } from "@/context/DISTRIBUTORS_ITEMS";
 import { Flex, Text, Link as ChakraLink } from "@chakra-ui/react";
-import {
-  BsTelephoneFill,
-  BsLink,
-  BsArrow90DegLeft,
-  BsFillPinMapFill,
-} from "react-icons/bs";
+import { BsTelephoneFill, BsLink, BsArrow90DegLeft, BsFillPinMapFill } from "react-icons/bs";
 import Link from "next/link";
 import useMapContext from "@/hooks/useMapContext";
 
@@ -37,10 +32,12 @@ export const DistributorCard = ({ distributor }: IDistributorCardProps) => {
         )}
       </Flex>
       <Text textColor={"gray.500"}>{distributor.address}</Text>
-      <Flex alignItems={"center"} mt={2}>
-        <BsTelephoneFill />
-        <Text ml={2}>{distributor.phone}</Text>
-      </Flex>
+      {distributor.phone.length > 0 && (
+        <Flex alignItems={"center"} mt={2}>
+          <BsTelephoneFill />
+          <Text ml={2}>{distributor.phone}</Text>
+        </Flex>
+      )}
       {distributor.website && (
         <Flex alignItems={"center"} mt={2} color={"blue.500"}>
           <BsLink />
