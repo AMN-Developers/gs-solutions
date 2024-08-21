@@ -142,7 +142,7 @@ export default function Distribuidores() {
             </Select>
             {selectedCountry === "br" && (
               <Select
-                placeholder="Filtrar por estado"
+                placeholder="Filtrar por estado / Loja Virtual"
                 mb={4}
                 value={selectedState}
                 onChange={(e) => setSelectedState(e.target.value)}
