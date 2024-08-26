@@ -748,4 +748,17 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     website: "https://www.instagram.com/lojaestudiovip/",
   },
+  {
+    id: 62,
+    name: "CASA DO IMPERMEABILIZADOR",
+    phone: "",
+    address:
+      "Rua 22-E Qd 135 Lt 30 SL 01 - Garavelo Residencial Park - Aparecida De Goiania - GO - 74932-410",
+    state: "GO",
+    latitude: -16.75795,
+    longitude: -49.33754,
+    zoom: 14,
+    country: "br",
+    website: "https://www.instagram.com/casadoimpermeabilizador/",
+  },
 ]
