@@ -1,5 +1,4 @@
-import { Container, Box, Button } from "@chakra-ui/react";
-import styled, { keyframes } from "styled-components";
+import { Container, Box, Button, keyframes } from "@chakra-ui/react";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,46 +22,62 @@ const shineAnimation = keyframes`
   }
 `;
 
-const ShineBefore = styled.span`
-  position: absolute;
-  content: "none";
-  display: inline-block;
-  top: -180px;
-  left: 0;
-  width: 30px;
-  height: 100%;
-  background-color: #fff;
-  animation: ${shineAnimation} 3s ease-in-out infinite;
-  transform-origin: top; /* Define o ponto de origem da transformação */
-`;
-
 const HeaderTopBar = () => {
+  const handleButtonClick = () => {
+    if (typeof window !== "undefined") {
+      window.open(
+        "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20",
+      );
+    }
+  };
+
   return (
-    <Container maxW="container.xl" py={4} px={0} display="flex" justifyContent="space-between" alignItems="center">
+    <Container
+      maxW="container.xl"
+      py={4}
+      px={0}
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+    >
       <Box as={Link} maxW={100} maxH="auto" href="/">
-        <Image src="/logo.png" alt="G&S Home Solutions" width={245} height={319} />
+        <Image
+          src="/logo.png"
+          alt="G&S Home Solutions"
+          width={245}
+          height={319}
+          priority
+        />
       </Box>
       <Button
-        onClick={() =>
-          window.open(
-            "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
-          )
-        }
+        onClick={handleButtonClick}
         variant="outline"
         color="white"
         bg="#06EC46"
-        overflow={"hidden"}
-        border={"none"}
+        overflow="hidden"
+        border="none"
+        position="relative"
         _hover={{
           bg: "#006B1E",
           textDecoration: "none",
           color: "#fff",
         }}
+        _before={{
+          content: '""',
+          position: "absolute",
+          top: "-180px",
+          left: 0,
+          width: "30px",
+          height: "100%",
+          backgroundColor: "#fff",
+          animation: `${shineAnimation} 3s ease-in-out infinite`,
+          transformOrigin: "top",
+        }}
       >
         COMPRE AGORA!
-        <ShineBefore />
       </Button>
     </Container>
   );
 };
+
 export default HeaderTopBar;
