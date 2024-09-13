@@ -300,6 +300,62 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
 
 export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 9,
+    title: "LÓTUS SAFE TECH",
+    thumbnail: "/produtos/safetech.png",
+    large_image: "/produtos/safetech.png",
+    slogan: "A Evolução dos Impermeabilizantes",
+    chamada: "A Evolução dos Impermeabilizantes",
+    hover_color: "239,196,73,1",
+    description:
+      "LÓTUS SAFE S-TECH é o impermeabilizante de tecidos base de solvente não inflamável, com tecnologia única no mercado mundial, por conta de sua tecnologia de Blends de Resinas fluoradas, com adição de nanopartículas de SiO2 e grafeno, contra líquidos a base de água e óleo, evitando manchas e a conservação do tecido. Sua fórmula a base de solvente não inflamável entrega uma secagem rápida de até 10 minutos e rendimento superior, quando comparado a outros impermeabilizantes do mercado.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "https://drive.google.com/file/d/1A6zJU0MkkKIEvYVg3XLvvyWWWLVVx_kB/view",
+    boletim: "https://drive.google.com/file/d/1hURwpDlXyaw3XRQ6Z1HHZi_WqY8kJ-mg/view",
+  },
+  {
+    // TODO: Update the image url, hover_color, slogan and fiqasp
+    id: 3,
+    title: "LÓTUS FAST PRO",
+    thumbnail: "/produtos/fastpro.png",
+    large_image: "/produtos/fastpro.png",
+    slogan: "Protetor de tecidos a base de solvente não inflamável",
+    chamada: "O Primeiro protetor a base solvente",
+    hover_color: "205,61,63,1",
+    description:
+      "O LÓTUS FAST-PRO é um protetor de tecidos a base de solvente não inflamável, que oferece um efeito hidrofugante ao tecido, retardando a penetração de líquidos a base de água, evitando manchas nas fibras e facilitando a limpeza e conservação do tecido. Sua fórmula a base de solvente não inflamável entrega uma secagem rápida de até 10 minutos.",
+    category: [
+      {
+        term_id: 3,
+        name: "Lótus",
+        slug: "lotus",
+        term_group: 0,
+        term_taxonomy_id: 3,
+        taxonomy: "product-category",
+        description: "",
+        parent: 0,
+        count: 6,
+        filter: "raw",
+      },
+    ],
+    fiqasp: "https://drive.google.com/file/d/1urj_Pu7Vfft1mfXVj4HcoAtpYm6QE6os/view",
+    boletim: "https://drive.google.com/file/d/19zMMMfMVPJgj2v4sKiLjCyo4j70jexpJ/view",
+  },
+  {
     id: 1,
     title: "LÓTUS IMPERTUDO",
     thumbnail: "/produtos/hipertudo.png",
@@ -356,7 +412,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color and fiqasp
-    id: 3,
+    id: 4,
     title: "LÓTUS ECO",
     thumbnail: "/produtos/eco.png",
     large_image: "/produtos/eco.png",
@@ -384,7 +440,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
-    id: 4,
+    id: 5,
     title: "TECH BLOCK",
     thumbnail: "/produtos/teckblock.png",
     large_image: "/produtos/teckblock.png",
@@ -440,7 +496,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
-    id: 5,
+    id: 7,
     title: "CLEAN PROTECT",
     thumbnail: "/produtos/cleanprot.png",
     large_image: "/produtos/cleanprot.png",
@@ -469,7 +525,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
 
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
-    id: 7,
+    id: 8,
     title: "HYDRA LEDER",
     thumbnail: "/produtos/hidraleder.png",
     large_image: "/produtos/hidraleder.png",
@@ -495,37 +551,6 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     fiqasp: "https://drive.google.com/file/d/1mmoFimvYWyexs9ICjBRVzFnAw7otRh58/view",
     boletim: "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
   },
-  // {
-  //   // TODO: Update the image url, hover_color, slogan and fiqasp
-  //   id: 8,
-  //   title: "DRY STONE",
-  //   thumbnail: "/produtos/drystone.png",
-  //   large_image: "/produtos/drystone.png",
-  //   slogan:
-  //     "Aplicações em pedras, cerâmicas, bases cimenticias entre outras superfícies minerais.",
-  //   chamada: "Repelência aos líquidos e evita manchas",
-  //   hover_color: "119,82,54,1",
-  //   description:
-  //     "O LÓTUS DRY STONE foi desenvolvido para aplicações em pedras, cerâmicas, bases cimenticias entre outras superfícies minerais. Confere a superfície tratada repelência aos líquidos e evita manchas, mantendo sua aparência original, facilitando sua manutenção.",
-  //   category: [
-  //     {
-  //       term_id: 3,
-  //       name: "Lótus",
-  //       slug: "lotus",
-  //       term_group: 0,
-  //       term_taxonomy_id: 3,
-  //       taxonomy: "product-category",
-  //       description: "",
-  //       parent: 0,
-  //       count: 6,
-  //       filter: "raw",
-  //     },
-  //   ],
-  //   fiqasp:
-  //     "https://drive.google.com/file/d/1xfw8W56W4_hjgSJDg1zyKCJKznekaVSc/view",
-  //   boletim:
-  //     "https://drive.google.com/file/d/1IwXKKqKsQ-PfJEwPwyFEdwyCU_-wTJ1n/view",
-  // },
 ];
 
 export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [

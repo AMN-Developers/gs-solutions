@@ -1,32 +1,18 @@
-import { Card, CardBody, CardHeader, Text, Image, Flex } from "@chakra-ui/react"
-import Link from "next/link"
+import { Card, CardBody, CardHeader, Text, Image, Flex } from "@chakra-ui/react";
+import Link from "next/link";
 
 interface CardItemProps {
-  href: string
-  bgImage: string
-  logo: string
-  alt: string
-  title: string
-  bgPos?: string
+  href: string;
+  bgImage: string;
+  logo?: string;
+  alt: string;
+  title: string;
+  bgPos?: string;
 }
 
-export default function CardItem({
-  href,
-  logo,
-  alt,
-  title,
-  bgImage,
-  bgPos,
-}: CardItemProps) {
+export default function CardItem({ href, logo, alt, title, bgImage, bgPos }: CardItemProps) {
   return (
-    <Flex
-      h={"sm"}
-      my={{ base: 0, md: 0 }}
-      gap={4}
-      w={"full"}
-      align="center"
-      flexDirection={"column"}
-    >
+    <Flex h={"sm"} my={{ base: 0, md: 0 }} gap={4} w={"full"} align="center" flexDirection={"column"}>
       <Card
         w={"100%"}
         h={"100%"}
@@ -45,13 +31,11 @@ export default function CardItem({
           transition: "all 0.6s ease-in-out",
         }}
       >
-        <CardHeader>
-          <Image width={445} height={100} src={logo} alt={alt} />
-        </CardHeader>
+        <CardHeader>{logo && <Image width={445} height={100} src={logo} alt={alt} />}</CardHeader>
       </Card>
       <Text fontWeight={"bold"} fontSize={{ base: "md", md: "md" }}>
         {title}
       </Text>
     </Flex>
-  )
+  );
 }

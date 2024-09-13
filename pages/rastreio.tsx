@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState } from 'react'
 import {
   Box,
   Button,
@@ -34,127 +34,127 @@ import {
   Tr,
   Tbody,
   Td,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react'
 import {
   useReactTable,
   createColumnHelper,
   ColumnDef,
   getCoreRowModel,
   flexRender,
-} from "@tanstack/react-table";
-import { format } from "date-fns";
-import { useMutation } from "react-query";
-import MotionLayout from "@/components/MotionLayout";
-import { Carousel } from "@/components/Carousel/";
-import { CAR_ITEMS } from "@/components/Carousel/CAR_ITEMS";
-import { Carousel as CarouselReact } from "@trendyol-js/react-carousel";
-import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
-import { baseApi } from "@/libs/api";
-import { TrackingData, Tracking } from "./api/rastreio";
-import { ListTrans } from "@/components/ListTrans";
+} from '@tanstack/react-table'
+import { format } from 'date-fns'
+import { useMutation } from 'react-query'
+import MotionLayout from '@/components/MotionLayout'
+import { Carousel } from '@/components/Carousel/'
+import { CAR_ITEMS } from '@/components/Carousel/CAR_ITEMS'
+import { Carousel as CarouselReact } from '@trendyol-js/react-carousel'
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons'
+import { baseApi } from '@/libs/api'
+import { TrackingData, Tracking } from './api/rastreio'
+import { ListTrans } from '@/components/ListTrans'
 
 interface RastreioProps {
-  cnpj: string;
-  nro_nf: string;
+  cnpj: string
+  nro_nf: string
 }
 
 export default function Rastreio() {
-  const [cnpj, setCnpj] = useState("");
-  const regex = /^\d{11}$|^\d{14}$/;
-  const isErrorCnpj = !regex.test(cnpj);
-  const [nf, setNf] = useState("");
-  const isErrorNf = nf.length === 0;
-  const [tracking, setTracking] = useState<TrackingData>();
-  const columnHelper = createColumnHelper<Tracking>();
+  const [cnpj, setCnpj] = useState('')
+  const regex = /^\d{11}$|^\d{14}$/
+  const isErrorCnpj = !regex.test(cnpj)
+  const [nf, setNf] = useState('')
+  const isErrorNf = nf.length === 0
+  const [tracking, setTracking] = useState<TrackingData>()
+  const columnHelper = createColumnHelper<Tracking>()
 
   const columns = [
-    columnHelper.accessor("data_hora", {
+    columnHelper.accessor('data_hora', {
       cell: (row) =>
-        format(new Date(row.getValue() as unknown as Date), "dd/MM/yyyy"),
-      header: "Data/Hora",
+        format(new Date(row.getValue() as unknown as Date), 'dd/MM/yyyy'),
+      header: 'Data/Hora',
     }),
-    columnHelper.accessor("cidade", {
+    columnHelper.accessor('cidade', {
       cell: (row) => row.getValue(),
-      header: "Unidade",
+      header: 'Unidade',
     }),
-    columnHelper.accessor("ocorrencia", {
+    columnHelper.accessor('ocorrencia', {
       cell: (row) => row.getValue(),
-      header: "Situação",
+      header: 'Situação',
     }),
-  ];
+  ]
 
   const table = useReactTable({
     data: tracking?.tracking ?? [],
     columns: columns as unknown as ColumnDef<Tracking>[],
     getCoreRowModel: getCoreRowModel(),
-  });
+  })
 
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   const stepObjects = [
     {
       title:
         tracking?.stepperData?.[0]?.ocorrencia ??
-        "Pedido recebido pela transportadora.",
+        'Pedido recebido pela transportadora.',
       description:
         tracking?.stepperData?.[0]?.descricao ??
-        "Seu pedido foi recebido pela transportadora e está sendo preparado para envio",
+        'Seu pedido foi recebido pela transportadora e está sendo preparado para envio',
       date: tracking?.stepperData?.[0]?.data_hora ?? null,
     },
     {
-      title: tracking?.stepperData?.[1]?.ocorrencia ?? "Pedido em trânsito",
+      title: tracking?.stepperData?.[1]?.ocorrencia ?? 'Pedido em trânsito',
       description:
-        tracking?.stepperData?.[1]?.descricao ?? "Seu pedido está em trânsito",
+        tracking?.stepperData?.[1]?.descricao ?? 'Seu pedido está em trânsito',
       date: tracking?.stepperData?.[1]?.data_hora ?? null,
     },
     {
-      title: tracking?.stepperData?.[2]?.ocorrencia ?? "Pedido entregue",
+      title: tracking?.stepperData?.[2]?.ocorrencia ?? 'Pedido entregue',
       description:
         tracking?.stepperData?.[2]?.descricao ??
-        "Seu pedido foi entregue com sucesso",
+        'Seu pedido foi entregue com sucesso',
       date: tracking?.stepperData?.[2]?.data_hora ?? null,
     },
-  ];
+  ]
 
   const { activeStep, setActiveStep } = useSteps({
     count: stepObjects.length,
-  });
+  })
 
   const getTracking = async ({
     cnpj,
     nro_nf,
   }: RastreioProps): Promise<TrackingData> => {
-    const { data } = await baseApi.post("/rastreio", { cnpj, nro_nf });
-    return data;
-  };
+    const { data } = await baseApi.post('/rastreio', { cnpj, nro_nf })
+    return data
+  }
 
   const rastrearPedido = useMutation(getTracking, {
     onSuccess: (data) => {
-      setTracking(data);
-      setActiveStep(data.activeStep ?? (data.activeStep as unknown as number));
+      setTracking(data)
+      setActiveStep(data.activeStep ?? (data.activeStep as unknown as number))
     },
     onError: (error) => {
-      console.log(error);
+      console.log(error)
     },
-  });
+  })
 
   const handleSubmit = (e: FormEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    rastrearPedido.mutate({ cnpj, nro_nf: nf });
-  };
+    e.preventDefault()
+    rastrearPedido.mutate({ cnpj, nro_nf: nf })
+  }
 
   return (
     <MotionLayout title="Rastreio">
-      <Container maxW={"container.xl"} as="section">
+      <Container maxW={'container.xl'} as="section">
         <Text
           as="h1"
-          maxW={"container.xl"}
-          display={"flex"}
-          justifyContent={"center"}
-          fontSize={"xl"}
-          textTransform={"uppercase"}
+          maxW={'container.xl'}
+          display={'flex'}
+          justifyContent={'center'}
+          fontSize={'xl'}
+          textTransform={'uppercase'}
           py={8}
-          fontWeight={"bold"}
+          fontWeight={'bold'}
         >
           A G&S Home Solutions está em busca de praticidade no acompanhamento de
           seus pedidos.
@@ -163,29 +163,29 @@ export default function Rastreio() {
           maxW="container.xl"
           p={8}
           bg={
-            "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);"
+            'radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);'
           }
-          rounded={"md"}
+          rounded={'md'}
         >
-          <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
+          <Flex flexDirection={{ base: 'column', md: 'row' }} gap={4}>
             <Box
-              width={{ base: "100%", md: "40%" }}
+              width={{ base: '100%', md: '40%' }}
               as="form"
-              textColor={"white"}
+              textColor={'white'}
               onSubmit={(e) => handleSubmit(e)}
-              display={"flex"}
-              flexDirection={"column"}
-              justifyContent={"space-between"}
+              display={'flex'}
+              flexDirection={'column'}
+              justifyContent={'space-between'}
             >
-              <Flex flexDirection={"column"}>
+              <Flex flexDirection={'column'}>
                 <FormControl mb={4} isInvalid={isErrorCnpj} isRequired>
                   <FormLabel>CNPJ ou CPF</FormLabel>
                   <Input
                     colorScheme="gray"
-                    variant={"filled"}
-                    color={"black"}
+                    variant={'filled'}
+                    color={'black'}
                     _focus={{
-                      bgColor: "white",
+                      bgColor: 'white',
                     }}
                     type="text"
                     placeholder="Digite seu CNPJ..."
@@ -193,12 +193,12 @@ export default function Rastreio() {
                     onChange={(e) => setCnpj(e.target.value)}
                   />
                   {!isErrorCnpj ? (
-                    <FormHelperText textColor={"gray.400"}>
+                    <FormHelperText textColor={'gray.400'}>
                       Digite o CNPJ da sua empresa ou um CPF sem pontos ou
                       traços.
                     </FormHelperText>
                   ) : (
-                    <FormHelperText textColor={"red.400"}>
+                    <FormHelperText textColor={'red.400'}>
                       Digite um CNPJ ou um CPF válido.
                     </FormHelperText>
                   )}
@@ -207,9 +207,9 @@ export default function Rastreio() {
                   <FormLabel>Número da NF</FormLabel>
                   <Input
                     colorScheme="gray"
-                    variant={"filled"}
+                    variant={'filled'}
                     _focus={{
-                      bgColor: "white",
+                      bgColor: 'white',
                     }}
                     color="black"
                     type="text"
@@ -218,11 +218,11 @@ export default function Rastreio() {
                     onChange={(e) => setNf(e.target.value)}
                   />
                   {!isErrorNf ? (
-                    <FormHelperText textColor={"gray.400"}>
+                    <FormHelperText textColor={'gray.400'}>
                       Digite o número da nota fiscal sem pontos ou traços.
                     </FormHelperText>
                   ) : (
-                    <FormHelperText textColor={"red.400"}>
+                    <FormHelperText textColor={'red.400'}>
                       Digite um número de nota fiscal.
                     </FormHelperText>
                   )}
@@ -230,36 +230,36 @@ export default function Rastreio() {
               </Flex>
               <Button
                 mt={4}
-                textTransform={"uppercase"}
+                textTransform={'uppercase'}
                 type="submit"
                 isLoading={rastrearPedido.isLoading}
                 isDisabled={isErrorCnpj || isErrorNf}
-                w={"100%"}
+                w={'100%'}
               >
                 Rastrear pedido
               </Button>
               {tracking?.success === false ? (
-                <Text as="p" color={"red.500"} mt={4}>
+                <Text as="p" color={'red.500'} mt={4}>
                   {tracking.message}, verifique os dados e tente novamente.
                 </Text>
               ) : null}
             </Box>
             <Flex
-              width={{ base: "100%", md: "60%" }}
-              flexDirection={"column"}
-              justify={"space-between"}
+              width={{ base: '100%', md: '60%' }}
+              flexDirection={'column'}
+              justify={'space-between'}
             >
               <Box>
                 <Text
                   as="h2"
-                  fontSize={"lg"}
-                  color={"white"}
-                  fontWeight={"bold"}
+                  fontSize={'lg'}
+                  color={'white'}
+                  fontWeight={'bold'}
                   mb={2}
                 >
                   Duvidas de como rastrear seu pedido?
                 </Text>
-                <Text as="p" color={"white"}>
+                <Text as="p" color={'white'}>
                   Com o número da nota fiscal em mãos, escolha a opção de
                   pesquisa pelo DESTINATÁRIO insira seu CPF/CNPJ e clique em
                   RASTREAR.
@@ -284,18 +284,18 @@ export default function Rastreio() {
 
                           <Box>
                             <Text
-                              color={"white"}
+                              color={'white'}
                               as={StepTitle}
-                              fontWeight={"bold"}
+                              fontWeight={'bold'}
                             >
-                              {step.title}{" "}
+                              {step.title}{' '}
                               {step.date &&
                                 ` - ${format(
                                   new Date(step.date),
-                                  "dd/MM/yyyy"
+                                  'dd/MM/yyyy',
                                 )}`}
                             </Text>
-                            <Text color={"gray.400"} as={StepDescription}>
+                            <Text color={'gray.400'} as={StepDescription}>
                               {step.description}
                             </Text>
                           </Box>
@@ -305,17 +305,17 @@ export default function Rastreio() {
                       ))}
                     </Stepper>
                     <Button
-                      variant={"unstyled"}
-                      color={"white"}
-                      fontWeight={"normal"}
-                      textDecoration={"underline"}
-                      w={"full"}
+                      variant={'unstyled'}
+                      color={'white'}
+                      fontWeight={'normal'}
+                      textDecoration={'underline'}
+                      w={'full'}
                       mt={4}
                       onClick={onOpen}
                     >
                       Ver todos os detalhes
                     </Button>
-                    <Modal isOpen={isOpen} onClose={onClose} size={"4xl"}>
+                    <Modal isOpen={isOpen} onClose={onClose} size={'4xl'}>
                       <ModalOverlay />
                       <ModalContent>
                         <ModalHeader>
@@ -323,7 +323,7 @@ export default function Rastreio() {
                         </ModalHeader>
                         <ModalCloseButton />
                         <ModalBody>
-                          <Table fontSize={{ base: "xs", md: "md" }}>
+                          <Table fontSize={{ base: 'xs', md: 'md' }}>
                             <Thead>
                               {table.getHeaderGroups().map((headerGroup) => (
                                 <Tr key={headerGroup.id}>
@@ -331,7 +331,7 @@ export default function Rastreio() {
                                     <Th key={header.id}>
                                       {flexRender(
                                         header.column.columnDef.header,
-                                        header.getContext()
+                                        header.getContext(),
                                       )}
                                     </Th>
                                   ))}
@@ -345,7 +345,7 @@ export default function Rastreio() {
                                     <Td key={cell.id}>
                                       {flexRender(
                                         cell.column.columnDef.cell,
-                                        cell.getContext()
+                                        cell.getContext(),
                                       )}
                                     </Td>
                                   ))}
@@ -369,11 +369,11 @@ export default function Rastreio() {
           </Flex>
         </Container>
         <Text
-          display={"flex"}
-          justifyContent={"center"}
-          fontSize={"lg"}
+          display={'flex'}
+          justifyContent={'center'}
+          fontSize={'lg'}
           py={8}
-          fontWeight={"bold"}
+          fontWeight={'bold'}
         >
           As Transportadoras abaixo não possuem nenhum sistema de rastreio e
           podem ser contatadas pelos telefones abaixo:
@@ -392,7 +392,7 @@ export default function Rastreio() {
               w={10}
               h={30}
               _hover={{
-                cursor: "pointer",
+                cursor: 'pointer',
               }}
             />
           }
@@ -402,13 +402,13 @@ export default function Rastreio() {
               w={10}
               h={30}
               _hover={{
-                cursor: "pointer",
+                cursor: 'pointer',
               }}
             />
           }
-          display={"flex"}
-          justifyItems={"center"}
-          alignItems={"center"}
+          display={'flex'}
+          justifyItems={'center'}
+          alignItems={'center'}
         >
           {CAR_ITEMS.map((carouselItem) => (
             <Carousel.Item
@@ -422,15 +422,15 @@ export default function Rastreio() {
       </Carousel.Root>
       <ListTrans.Root />
       <Container
-        maxW={"container.xl"}
-        display={"flex"}
-        flexDirection={"column"}
-        alignItems={"center"}
+        maxW={'container.xl'}
+        display={'flex'}
+        flexDirection={'column'}
+        alignItems={'center'}
         py={4}
-        textAlign={"center"}
+        textAlign={'center'}
         gap={2}
       >
-        <Text as="p" fontWeight={"bold"}>
+        <Text as="p" fontWeight={'bold'}>
           Siga as Recomendações:
         </Text>
         <Text>
@@ -440,5 +440,5 @@ export default function Rastreio() {
         </Text>
       </Container>
     </MotionLayout>
-  );
+  )
 }

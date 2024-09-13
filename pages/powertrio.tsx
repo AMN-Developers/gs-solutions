@@ -75,51 +75,21 @@ export default function PowerTrio() {
         >
           Os produtos que compõem Power Trio
         </Text>
-        <Flex
-          justifyContent={"space-between"}
-          flexDirection={{ base: "column", md: "row" }}
-          gap={4}
-        >
+        <Flex justifyContent={"space-between"} flexDirection={{ base: "column", md: "row" }} gap={4}>
           <Reveal delay={0.1}>
-            <Flex
-              p={{ base: "0", md: "4" }}
-              flexDirection={"column"}
-              bgColor={"white"}
-              rounded={"md"}
-              boxShadow={"lg"}
-            >
+            <Flex p={{ base: "0", md: "4" }} flexDirection={"column"} bgColor={"white"} rounded={"md"} boxShadow={"lg"}>
               <Box alignSelf={"center"} p={4}>
-                <Image
-                  src="/produtos/allone.png"
-                  alt="All in One"
-                  width={100}
-                  height={100}
-                />
+                <Image src="/produtos/allone.png" alt="All in One" width={100} height={100} />
               </Box>
-              <Text
-                textAlign={"center"}
-                fontSize={{ base: "md", sm: "sm" }}
-                m={"auto"}
-              >
+              <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }} m={"auto"}>
                 Detergente com alto pode de remoção
               </Text>
             </Flex>
           </Reveal>
           <Reveal delay={0.2}>
-            <Flex
-              p={{ base: "0", md: "4" }}
-              flexDirection={"column"}
-              bgColor={"white"}
-              rounded={"md"}
-              boxShadow={"lg"}
-            >
+            <Flex p={{ base: "0", md: "4" }} flexDirection={"column"} bgColor={"white"} rounded={"md"} boxShadow={"lg"}>
               <Box alignSelf={"center"} p={4}>
-                <Image
-                  src="/produtos/preimper.png"
-                  alt="All in One"
-                  width={100}
-                  height={100}
-                />
+                <Image src="/produtos/preimper.png" alt="All in One" width={100} height={100} />
               </Box>
               <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }}>
                 Potencializador do trio
@@ -127,20 +97,9 @@ export default function PowerTrio() {
             </Flex>
           </Reveal>
           <Reveal delay={0.3}>
-            <Flex
-              p={{ base: "0", md: "4" }}
-              flexDirection={"column"}
-              bgColor={"white"}
-              rounded={"md"}
-              boxShadow={"lg"}
-            >
+            <Flex p={{ base: "0", md: "4" }} flexDirection={"column"} bgColor={"white"} rounded={"md"} boxShadow={"lg"}>
               <Box alignSelf={"center"} p={4}>
-                <Image
-                  src="/produtos/tiramancha.png"
-                  alt="All in One"
-                  width={100}
-                  height={100}
-                />
+                <Image src="/produtos/tiramancha.png" alt="All in One" width={100} height={100} />
               </Box>
               <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }}>
                 Poderoso tira de manchas
@@ -158,27 +117,13 @@ export default function PowerTrio() {
           Porque usar juntos?
         </Text>
         <Reveal delay={0.3}>
-          <Flex
-            flexDirection={{ base: "column", md: "row" }}
-            justifyContent={"space-between"}
-            mb={4}
-            gap={4}
-          >
-            <Flex
-              flexDirection={"column"}
-              w={{ base: "100%", md: "40%" }}
-              gap={4}
-            >
+          <Flex flexDirection={{ base: "column", md: "row" }} justifyContent={"space-between"} mb={4} gap={4}>
+            <Flex flexDirection={"column"} w={{ base: "100%", md: "40%" }} gap={4}>
               <Flex as={Accordion} flexDirection={"column"} allowToggle gap={4}>
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box
-                        as="span"
-                        flex="1"
-                        textAlign="left"
-                        fontWeight={"semibold"}
-                      >
+                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
                         All01
                       </Box>
                       <AccordionIcon />
@@ -186,18 +131,15 @@ export default function PowerTrio() {
                   </h2>
                   <AccordionPanel fontSize={"md"}>
                     <Text mb={4}>
-                      É um detergente de PH Neutro específico para higienização
-                      têxtil para todo tipo de tecido e que é de acordo com as
-                      exigências da ANVISA.
+                      É um detergente de PH Neutro específico para higienização têxtil para todo tipo de tecido e que é
+                      de acordo com as exigências da ANVISA.
                     </Text>
                     <Flex gap={2}>
                       <Button
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view"
-                          )
+                          window.open("https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view")
                         }
                       >
                         Boletim Técnico
@@ -206,9 +148,7 @@ export default function PowerTrio() {
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1lcmXp5sFwL7nQlMjAk8JH6lXcjlZcK10/view"
-                          )
+                          window.open("https://drive.google.com/file/d/1lcmXp5sFwL7nQlMjAk8JH6lXcjlZcK10/view")
                         }
                       >
                         FISPQ
@@ -219,12 +159,7 @@ export default function PowerTrio() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box
-                        as="span"
-                        flex="1"
-                        textAlign="left"
-                        fontWeight={"semibold"}
-                      >
+                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
                         Pré-Imper
                       </Box>
                       <AccordionIcon />
@@ -232,20 +167,16 @@ export default function PowerTrio() {
                   </h2>
                   <AccordionPanel fontSize={"md"}>
                     <Text mb={4}>
-                      Tem função de potencializar ação do Detergente All 01
-                      quando são misturados no momento da higienização, uma
-                      segunda função é neutralizar o residual tensoativo que é
-                      proveniente da higienização, garantindo uma eficiência
-                      maior dos impermeabilizantes.
+                      Tem função de potencializar ação do Detergente All 01 quando são misturados no momento da
+                      higienização, uma segunda função é neutralizar o residual tensoativo que é proveniente da
+                      higienização, garantindo uma eficiência maior dos impermeabilizantes.
                     </Text>
                     <Flex gap={2}>
                       <Button
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view"
-                          )
+                          window.open("https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view")
                         }
                       >
                         Boletim Técnico
@@ -254,9 +185,7 @@ export default function PowerTrio() {
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1yDgShU7fhVugq-A84FBJ1orPbdtN7IOr/view"
-                          )
+                          window.open("https://drive.google.com/file/d/1yDgShU7fhVugq-A84FBJ1orPbdtN7IOr/view")
                         }
                       >
                         FISPQ
@@ -267,12 +196,7 @@ export default function PowerTrio() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box
-                        as="span"
-                        flex="1"
-                        textAlign="left"
-                        fontWeight={"semibold"}
-                      >
+                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
                         Tira Manchas
                       </Box>
                       <AccordionIcon />
@@ -280,19 +204,15 @@ export default function PowerTrio() {
                   </h2>
                   <AccordionPanel fontSize={"md"}>
                     <Text mb={4}>
-                      O tira manchas é um percabonato de sódio, ele tem um poder
-                      muito bom em alvejamento e alto rendimento e performance
-                      de limpeza, tanto para tecidos brancos como tecidos
-                      coloridos.
+                      O tira manchas é um percabonato de sódio, ele tem um poder muito bom em alvejamento e alto
+                      rendimento e performance de limpeza, tanto para tecidos brancos como tecidos coloridos.
                     </Text>
                     <Flex gap={2}>
                       <Button
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view"
-                          )
+                          window.open("https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view")
                         }
                       >
                         Boletim Técnico
@@ -301,9 +221,7 @@ export default function PowerTrio() {
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open(
-                            "https://drive.google.com/file/d/1citFyeEvhbvAZ-hEKGaEOLYHmXbUt3Cx/view"
-                          )
+                          window.open("https://drive.google.com/file/d/1citFyeEvhbvAZ-hEKGaEOLYHmXbUt3Cx/view")
                         }
                       >
                         FISPQ
@@ -314,11 +232,9 @@ export default function PowerTrio() {
               </Flex>
 
               <Text>
-                Estes 3 produtos têm suas vantagens porque eles podem ser
-                misturados no mesmo banho sem perder eficiência, pelo contrário,
-                um potencializa a ação do outro criando sinergia e garantindo um
-                resultado melhor, o que possibilita um trabalho de higienização
-                completa com o uso de apenas 3 produtos.
+                Estes 3 produtos têm suas vantagens porque eles podem ser misturados no mesmo banho sem perder
+                eficiência, pelo contrário, um potencializa a ação do outro criando sinergia e garantindo um resultado
+                melhor, o que possibilita um trabalho de higienização completa com o uso de apenas 3 produtos.
               </Text>
             </Flex>
             <Box
@@ -331,12 +247,7 @@ export default function PowerTrio() {
               rounded={"md"}
               boxShadow={"lg"}
             >
-              <Image
-                src="/embalagens-power.png"
-                alt="All in One"
-                width={700}
-                height={430}
-              />
+              <Image src="/embalagens-power.png" alt="All in One" width={700} height={430} />
             </Box>
           </Flex>
         </Reveal>
@@ -344,9 +255,7 @@ export default function PowerTrio() {
         <Box
           p={8}
           mb={2}
-          bg={
-            "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);"
-          }
+          bg={"radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);"}
           rounded={"md"}
         >
           <Text
@@ -367,11 +276,7 @@ export default function PowerTrio() {
             fontSize={"sm"}
             fontWeight={"semibold"}
           >
-            <Flex
-              width={{ base: "100%", md: "30%" }}
-              flexDirection={"column"}
-              gap={2}
-            >
+            <Flex width={{ base: "100%", md: "30%" }} flexDirection={"column"} gap={2}>
               <VideoFrame
                 embedID="LrYJJCz53ns"
                 title="Conhecendo Power Trio"
@@ -379,11 +284,7 @@ export default function PowerTrio() {
               />
               <Text>Conhecendo Power Trio</Text>
             </Flex>
-            <Flex
-              width={{ base: "100%", md: "30%" }}
-              flexDirection={"column"}
-              gap={2}
-            >
+            <Flex width={{ base: "100%", md: "30%" }} flexDirection={"column"} gap={2}>
               <VideoFrame
                 embedID="bmJ_rxhFJ0A"
                 title="Limpeza e Higienização em tecido Acquablock"
@@ -391,11 +292,7 @@ export default function PowerTrio() {
               />
               <Text>Limpeza e Higienização em tecido Acquablock</Text>
             </Flex>
-            <Flex
-              width={{ base: "100%", md: "30%" }}
-              flexDirection={"column"}
-              gap={2}
-            >
+            <Flex width={{ base: "100%", md: "30%" }} flexDirection={"column"} gap={2}>
               <VideoFrame
                 embedID="1F4N_zts5zI"
                 title="INFORMAÇÕES IMPORTANTES!"
@@ -408,9 +305,7 @@ export default function PowerTrio() {
 
         <Button
           my={4}
-          bg={
-            "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);"
-          }
+          bg={"radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);"}
           color={"white"}
           w={"full"}
           _hover={{
@@ -419,7 +314,7 @@ export default function PowerTrio() {
           textTransform={"uppercase"}
           onClick={() =>
             window.open(
-              "https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
+              "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
             )
           }
         >
@@ -427,5 +322,5 @@ export default function PowerTrio() {
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }

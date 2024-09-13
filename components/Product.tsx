@@ -1,39 +1,28 @@
-import Link from "next/link"
-import {
-  Box,
-  IconButton,
-  Text,
-  Link as ChakraLink,
-  Button,
-} from "@chakra-ui/react"
-import { motion } from "framer-motion"
-import { CloseIcon } from "@chakra-ui/icons"
-import { CustomImage } from "@/components/CustomImage"
-import { useRouter } from "next/router"
-import { Product } from "@/hooks/useProducts"
+import Link from "next/link";
+import { Box, IconButton, Text, Link as ChakraLink, Button } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import { CloseIcon } from "@chakra-ui/icons";
+import { CustomImage } from "@/components/CustomImage";
+import { useRouter } from "next/router";
+import { Product } from "@/hooks/useProducts";
 
 interface ProductProps {
-  type: string
-  param: string | null
-  productRef: React.RefObject<HTMLDivElement>
-  itemList: Product[]
+  type: string;
+  param: string | null;
+  productRef: React.RefObject<HTMLDivElement>;
+  itemList: Product[];
 }
 
-export default function Product({
-  type,
-  productRef,
-  itemList,
-  param,
-}: ProductProps) {
-  const router = useRouter()
+export default function Product({ type, productRef, itemList, param }: ProductProps) {
+  const router = useRouter();
   const removeParam = (param: string) => {
-    const { pathname, query } = router
-    const params = new URLSearchParams(query as unknown as string)
-    params.delete(param)
+    const { pathname, query } = router;
+    const params = new URLSearchParams(query as unknown as string);
+    params.delete(param);
     router.replace({ pathname, query: params.toString() }, undefined, {
       shallow: true,
-    })
-  }
+    });
+  };
 
   return (
     <Box ref={productRef} pb={4} id={`${type}-${Number(param)}`}>
@@ -54,11 +43,7 @@ export default function Product({
                 exit={{ opacity: 0, y: -100 }}
                 transition={{ duration: "1.5", ease: "easeIn" }}
               >
-                <Box
-                  display={"flex"}
-                  justifyContent={"space-between"}
-                  alignItems={"center"}
-                >
+                <Box display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
                   <Text fontSize={"2xl"} fontWeight={"bold"} as={"h2"}>
                     {selectedProduct.title}
                   </Text>
@@ -66,17 +51,11 @@ export default function Product({
                     aria-label="Fechar detalhes do produto"
                     icon={<CloseIcon />}
                     onClick={() => {
-                      removeParam(type)
+                      removeParam(type);
                     }}
                   />
                 </Box>
-                <Box
-                  w={"full"}
-                  mt={4}
-                  display={"flex"}
-                  flexDirection={{ base: "column", md: "row" }}
-                  gap={4}
-                >
+                <Box w={"full"} mt={4} display={"flex"} flexDirection={{ base: "column", md: "row" }} gap={4}>
                   <CustomImage
                     src={selectedProduct.large_image}
                     alt=""
@@ -84,11 +63,7 @@ export default function Product({
                     height={268}
                     mx={{ base: "auto", md: 0 }}
                   />
-                  <Box
-                    display={"flex"}
-                    flexDirection={"column"}
-                    justifyContent={"space-between"}
-                  >
+                  <Box display={"flex"} flexDirection={"column"} justifyContent={"space-between"}>
                     <Text
                       dangerouslySetInnerHTML={{
                         __html: selectedProduct.description,
@@ -101,9 +76,7 @@ export default function Product({
                     >
                       {selectedProduct.recomended && (
                         <Box>
-                          <Text fontWeight={"bold"}>
-                            Diluição recomendada: 1:{selectedProduct.recomended}
-                          </Text>
+                          <Text fontWeight={"bold"}>Diluição recomendada: 1:{selectedProduct.recomended}</Text>
                           <ChakraLink
                             color={`rgba(${selectedProduct.hover_color})`}
                             as={Link}
@@ -115,9 +88,7 @@ export default function Product({
                       )}
                       <Box display={"flex"} gap={4}>
                         <Button
-                          onClick={() =>
-                            window.open(selectedProduct.fiqasp, "_blank")
-                          }
+                          onClick={() => window.open(selectedProduct.fiqasp, "_blank")}
                           bgColor={`rgba(${selectedProduct.hover_color})`}
                           color={"white"}
                           _hover={{
@@ -128,9 +99,7 @@ export default function Product({
                           FISPQ
                         </Button>
                         <Button
-                          onClick={() =>
-                            window.open(selectedProduct.boletim, "_blank")
-                          }
+                          onClick={() => window.open(selectedProduct.boletim, "_blank")}
                           bgColor={`rgba(${selectedProduct.hover_color})`}
                           color={"white"}
                           _hover={{
@@ -150,7 +119,7 @@ export default function Product({
                           textTransform={"uppercase"}
                           onClick={() =>
                             window.open(
-                              "https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
+                              "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
                             )
                           }
                         >
@@ -164,5 +133,5 @@ export default function Product({
             ))
         : null}
     </Box>
-  )
+  );
 }

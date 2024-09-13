@@ -1,7 +1,7 @@
-import { BiPhone, BiLogoWhatsapp, BiLogoInstagram } from "react-icons/bi"
-import { HiOutlineMail } from "react-icons/hi"
-import { AiOutlineYoutube } from "react-icons/ai"
-import { FiMapPin } from "react-icons/fi"
+import { BiPhone, BiLogoWhatsapp, BiLogoInstagram } from "react-icons/bi";
+import { HiOutlineMail } from "react-icons/hi";
+import { AiOutlineYoutube } from "react-icons/ai";
+import { FiMapPin } from "react-icons/fi";
 import {
   Button,
   Drawer,
@@ -16,44 +16,26 @@ import {
   Link as ChakraLink,
   Icon,
   Box,
-} from "@chakra-ui/react"
-import Link from "next/link"
+} from "@chakra-ui/react";
+import Link from "next/link";
 
 interface DrawerRootProps {
-  isOpen: boolean
-  onClose: () => void
-  btnRef: React.RefObject<HTMLButtonElement>
+  isOpen: boolean;
+  onClose: () => void;
+  btnRef: React.RefObject<HTMLButtonElement>;
 }
 
-export default function DrawerRoot({
-  isOpen,
-  onClose,
-  btnRef,
-}: DrawerRootProps) {
+export default function DrawerRoot({ isOpen, onClose, btnRef }: DrawerRootProps) {
   return (
-    <Drawer
-      isOpen={isOpen}
-      placement="right"
-      onClose={onClose}
-      finalFocusRef={btnRef}
-    >
+    <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton color={"white"} />
-        <DrawerHeader
-          bgColor="#20274D"
-          display={"flex"}
-          justifyContent={"center"}
-        >
+        <DrawerHeader bgColor="#20274D" display={"flex"} justifyContent={"center"}>
           <Image src="/logo.png" alt="G&S Home Solutions" maxW={50} />
         </DrawerHeader>
 
-        <DrawerBody
-          display={"flex"}
-          flexDirection={"column"}
-          gap={2}
-          marginTop={2}
-        >
+        <DrawerBody display={"flex"} flexDirection={"column"} gap={2} marginTop={2}>
           <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
             <Icon as={FiMapPin} marginRight={2} />
             <Text as="h2" fontWeight={"bold"} fontSize={"md"}>
@@ -96,7 +78,7 @@ export default function DrawerRoot({
             as={Link}
             fontWeight={"light"}
             fontSize={"sm"}
-            href="https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
+            href="https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
             target="_blank"
           >
             +55 (11) 98452-0087
@@ -142,5 +124,5 @@ export default function DrawerRoot({
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
-  )
+  );
 }
