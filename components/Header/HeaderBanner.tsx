@@ -257,6 +257,10 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
         </Flex>
       )
     },
+    "/pine": () => {
+      return <Flex></Flex>
+    },
+
     "/fixflot": () => {
       return <Flex></Flex>
     },
@@ -264,6 +268,9 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
       return <Flex></Flex>
     },
     "/fireguard": () => {
+      return <Flex></Flex>
+    },
+    "/hidro": () => {
       return <Flex></Flex>
     },
   }

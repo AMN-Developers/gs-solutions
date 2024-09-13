@@ -1,27 +1,31 @@
-import { Box, Stack, useDisclosure } from "@chakra-ui/react";
-import { Header } from "./Header";
-import { Navbar } from "./Navbar";
-import DrawerRoot from "./Drawer/DrawerRoot";
-import React from "react";
-import { Footer } from "./Footer";
-import CookieBanner from "@/components/CookieBanner";
-import { AnimatePresence, motion } from "framer-motion";
-import { bg } from "@/components/Header/HeaderBG";
-import MobileItems from "./Navbar/MobileItems";
-import MobileItemsCollapse from "./Navbar/MobileItemsCollapse";
-import NavItem from "./Navbar/NavItem";
-import NavPopover from "./Navbar/NavPopover";
+import { Box, Stack, useDisclosure } from "@chakra-ui/react"
+import { Header } from "./Header"
+import { Navbar } from "./Navbar"
+import DrawerRoot from "./Drawer/DrawerRoot"
+import React from "react"
+import { Footer } from "./Footer"
+import CookieBanner from "@/components/CookieBanner"
+import { AnimatePresence, motion } from "framer-motion"
+import { bg } from "@/components/Header/HeaderBG"
+import MobileItems from "./Navbar/MobileItems"
+import MobileItemsCollapse from "./Navbar/MobileItemsCollapse"
+import NavItem from "./Navbar/NavItem"
+import NavPopover from "./Navbar/NavPopover"
 
 interface LayoutProps {
-  children: React.ReactNode;
-  route: string;
+  children: React.ReactNode
+  route: string
 }
 
 export default function Layout({ children, route }: LayoutProps) {
-  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false });
+  const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false })
 
-  const { isOpen: isOpenDrawer, onOpen: onOpenDrawer, onClose: onCloseDrawer } = useDisclosure();
-  const btnRef = React.useRef<HTMLButtonElement>(null);
+  const {
+    isOpen: isOpenDrawer,
+    onOpen: onOpenDrawer,
+    onClose: onCloseDrawer,
+  } = useDisclosure()
+  const btnRef = React.useRef<HTMLButtonElement>(null)
   const openPDF = () => {
     window.open("https://drive.google.com/file/d/1YxrvPivrUA4rsBp1OQDyy4gdvewZ3itS/view?usp=sharing", "_blank");
   };
@@ -60,19 +64,44 @@ export default function Layout({ children, route }: LayoutProps) {
                 <NavItem href="/powertrio" route={route} label="power trio" />
                 <NavItem href="/fixflot" route={route} label="fix flot" />
                 <NavItem href="/fireguard" route={route} label="fireguard" />
-                <NavItem href="/higienizacao" route={route} label="Linha de Higienização" />
-                <NavItem href="/impermeabilizantes" route={route} label="Linha de Impermeabilizantes" />
+                <NavItem
+                  href="/higienizacao"
+                  route={route}
+                  label="Linha de Higienização"
+                />
+                <NavItem
+                  href="/impermeabilizantes"
+                  route={route}
+                  label="Linha de Impermeabilizantes"
+                />
                 <NavItem href="/auto" route={route} label="Linha Auto" />
               </Navbar.Sub>
               <Navbar.Sub label="LIMPOO" href="/limpoo">
-                <NavItem href="/limpoo" route={route} label="Em breve" />
+                <NavItem href="/hidro" route={route} label="Hidro e óleo" />
+                <NavItem href="/pine" route={route} label="Pine" />
               </Navbar.Sub>
             </NavPopover>
-            <NavItem href="/calculadora" route={route} label="calculadora de diluição" />
+            <NavItem
+              href="/calculadora"
+              route={route}
+              label="calculadora de diluição"
+            />
             <NavPopover label="empresa">
-              <NavItem href="/certificado" route={route} label="Certificados e Homologações" />
-              <NavItem href="/fidelidade" route={route} label="Programa de Fidelidade" />
-              <NavItem href="/sustentabilidade" route={route} label="Sustentabilidade" />
+              <NavItem
+                href="/certificado"
+                route={route}
+                label="Certificados e Homologações"
+              />
+              <NavItem
+                href="/fidelidade"
+                route={route}
+                label="Programa de Fidelidade"
+              />
+              <NavItem
+                href="/sustentabilidade"
+                route={route}
+                label="Sustentabilidade"
+              />
               <Box
                 as="button"
                 ref={btnRef}
@@ -94,7 +123,11 @@ export default function Layout({ children, route }: LayoutProps) {
               </Box>
             </NavPopover>
             <NavItem href="/rastreio" route={route} label="Rastreio" />
-            <NavItem href="/distribuidores" route={route} label="Distribuidores G&S" />
+            <NavItem
+              href="/distribuidores"
+              route={route}
+              label="Distribuidores G&S"
+            />
             <Box
               as="button"
               ref={btnRef}
@@ -119,20 +152,56 @@ export default function Layout({ children, route }: LayoutProps) {
             <Stack spacing={4} w={"100%"}>
               <MobileItems label="Home" href="/" toggleMainDrawer={onToggle} />
               <MobileItemsCollapse label="Linha de Produtos">
+                <MobileItemsCollapse label="Limpoo">
+                  <MobileItems
+                    label="Pine"
+                    href="/pine"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Hidro e Óleo"
+                    href="/hidro"
+                    toggleMainDrawer={onToggle}
+                  />
+                </MobileItemsCollapse>
                 <MobileItemsCollapse label="Lótus">
-                  <MobileItems label="Power Trio" href="/powertrio" toggleMainDrawer={onToggle} />
-                  <MobileItems label="Fix Flot" href="/fixflot" toggleMainDrawer={onToggle} />
-                  <MobileItems label="Fireguard" href="/fireguard" toggleMainDrawer={onToggle} />
-                  <MobileItems label="Linha de Higienização" href="/higienizacao" toggleMainDrawer={onToggle} />
+                  <MobileItems
+                    label="Power Trio"
+                    href="/powertrio"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Fix Flot"
+                    href="/fixflot"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Fireguard"
+                    href="/fireguard"
+                    toggleMainDrawer={onToggle}
+                  />
+                  <MobileItems
+                    label="Linha de Higienização"
+                    href="/higienizacao"
+                    toggleMainDrawer={onToggle}
+                  />
                   <MobileItems
                     label="Linha de Impermeabilizantes"
                     href="/impermeabilizantes"
                     toggleMainDrawer={onToggle}
                   />
-                  <MobileItems label="Linha Auto" href="/auto" toggleMainDrawer={onToggle} />
+                  <MobileItems
+                    label="Linha Auto"
+                    href="/auto"
+                    toggleMainDrawer={onToggle}
+                  />
                 </MobileItemsCollapse>
               </MobileItemsCollapse>
-              <MobileItems label="Calculadora de Diluição" href="/calculadora" toggleMainDrawer={onToggle} />
+              <MobileItems
+                label="Calculadora de Diluição"
+                href="/calculadora"
+                toggleMainDrawer={onToggle}
+              />
               <MobileItemsCollapse label="Empresa">
                 <MobileItems label="Certificados e Homologações" href="/certificado" toggleMainDrawer={onToggle} />
                 <MobileItems label="Programa de Fidelidade" href="/fidelidade" toggleMainDrawer={onToggle} />
@@ -143,8 +212,16 @@ export default function Layout({ children, route }: LayoutProps) {
                   toggleMainDrawer={onToggle}
                 />
               </MobileItemsCollapse>
-              <MobileItems label="Rastreio" href="/rastreio" toggleMainDrawer={onToggle} />
-              <MobileItems label="Distribuidores G&S" href="/distribuidores" toggleMainDrawer={onToggle} />
+              <MobileItems
+                label="Rastreio"
+                href="/rastreio"
+                toggleMainDrawer={onToggle}
+              />
+              <MobileItems
+                label="Distribuidores G&S"
+                href="/distribuidores"
+                toggleMainDrawer={onToggle}
+              />
             </Stack>
             <Box
               as="button"
@@ -164,7 +241,11 @@ export default function Layout({ children, route }: LayoutProps) {
         </Navbar.Root>
         <Header.Banner route={route} />
       </Header.Root>
-      <DrawerRoot btnRef={btnRef} isOpen={isOpenDrawer} onClose={onCloseDrawer} />
+      <DrawerRoot
+        btnRef={btnRef}
+        isOpen={isOpenDrawer}
+        onClose={onCloseDrawer}
+      />
       <main>{children}</main>
       <Footer.Root>
         <Footer.FooterNav openDrawer={onOpenDrawer} />
@@ -172,5 +253,5 @@ export default function Layout({ children, route }: LayoutProps) {
       </Footer.Root>
       <CookieBanner />
     </>
-  );
+  )
 }
