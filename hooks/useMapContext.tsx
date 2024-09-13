@@ -1,6 +1,6 @@
-import { useContext } from "react";
-import { MapContext } from "../context/mapContext";
+import { useContext } from 'react'
+import { MapContext } from '../context/mapContext'
 
-const useMapContext = () => useContext(MapContext);
+const useMapContext = () => useContext(MapContext)
 
-export default useMapContext;
+export default useMapContext
