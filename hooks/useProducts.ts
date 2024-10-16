@@ -1,5 +1,18 @@
-import { useQuery } from "react-query"
-import { baseApi } from "@/libs/api"
+import { useQuery } from 'react-query'
+import { baseApi } from '@/libs/api'
+
+export interface Category {
+  term_id: number
+  name: string
+  slug: string
+  term_group: number
+  term_taxonomy_id: number
+  taxonomy: string
+  description: string
+  parent: number
+  count: number
+  filter: string
+}
 
 export interface Product {
   id: number
@@ -16,22 +29,9 @@ export interface Product {
   chamada: string
 }
 
-export interface Category {
-  term_id: number
-  name: string
-  slug: string
-  term_group: number
-  term_taxonomy_id: number
-  taxonomy: string
-  description: string
-  parent: number
-  count: number
-  filter: string
-}
-
 export default function useProducts() {
-  return useQuery<Product[]>("products", async () => {
-    const getProductsResponse = await baseApi.get<Product[]>("/produtos")
+  return useQuery<Product[]>('products', async () => {
+    const getProductsResponse = await baseApi.get<Product[]>('/produtos')
 
     const productsData = getProductsResponse.data
 

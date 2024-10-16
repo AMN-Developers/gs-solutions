@@ -1,16 +1,15 @@
-import { motion } from "framer-motion"
-import { NextSeo } from "next-seo"
-import Head from "next/head"
+import { motion } from "framer-motion";
+import { NextSeo } from "next-seo";
 
 const variants = {
   hidden: { opacity: 0, x: 0, y: 20 },
   enter: { opacity: 1, x: 0, y: 0 },
   exit: { opacity: 0, x: 0, y: 20 },
-}
+};
 
 interface MotionLayoutProps {
-  children: React.ReactNode
-  title?: string
+  children: React.ReactNode;
+  title?: string;
 }
 
 const MotionLayout = ({ children, title }: MotionLayoutProps) => (
@@ -38,6 +37,6 @@ const MotionLayout = ({ children, title }: MotionLayoutProps) => (
       {children}
     </>
   </motion.div>
-)
+);
 
-export default MotionLayout
+export default MotionLayout;
