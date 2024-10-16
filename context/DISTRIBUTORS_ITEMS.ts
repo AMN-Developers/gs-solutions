@@ -793,4 +793,17 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     website: "https://www.instagram.com/casadoimpermeabilizador/",
   },
+  {
+    id: 66,
+    name: "GT CAR CARE",
+    phone: "",
+    address:
+      "Av T7 Qd 43 Lote 01 Sala 01 número 1165 - Bairro Setor Bueno Goiânia - GO - ",
+    state: "GO",
+    latitude: -16.6911939,
+    longitude: -49.2820615,
+    zoom: 14,
+    country: "br",
+    website: "https://www.instagram.com/gtcarcare_/",
+  },
 ]
