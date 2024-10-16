@@ -906,7 +906,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     product_line: 'limpoo',
   },
   {
-    id: 66,
+    id: 70,
     name: "GT CAR CARE",
     phone: "",
     address:
