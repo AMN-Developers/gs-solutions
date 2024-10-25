@@ -403,7 +403,9 @@ export default function Auto() {
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1qD4v8xwKgEYwMl6TTccNjVTawKtnOyBj/view?usp=sharing"
+                          )
                         }
                       >
                         Boletim Tecnico
@@ -412,7 +414,9 @@ export default function Auto() {
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view?usp=sharing"
+                          )
                         }
                       >
                         FISPQ

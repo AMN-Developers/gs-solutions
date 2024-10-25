@@ -244,7 +244,9 @@ export default function FixFlot() {
                 _hover={{
                   bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
                 }}
-                onClick={() => window.open("https://drive.google.com/file/d/1nL97bZPDRa3zXDUmArhpyCpbRQN9mHDa/view")}
+                onClick={() =>
+                  window.open("https://drive.google.com/file/d/1qmdKcTiMWiei7XaU1MF9XdRE-1Wa_h3H/view?usp=sharing")
+                }
               >
                 FISPQ
               </Button>

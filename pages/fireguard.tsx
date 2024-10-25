@@ -242,7 +242,9 @@ solvente de percloroetileno para tecidos e tapetes)."
                 _hover={{
                   bg: "rgba(255,180,44,0.8)",
                 }}
-                onClick={() => window.open("https://drive.google.com/file/d/1KZBEykmdS2nvfxtI8Z9-iA9c3qB7FIjk/view")}
+                onClick={() =>
+                  window.open("https://drive.google.com/file/d/1elTQXW4pF7PTlnvIFx6Vj9MM3CxZC7k7/view?usp=sharing")
+                }
               >
                 Boletim Tecnico
               </Button>
