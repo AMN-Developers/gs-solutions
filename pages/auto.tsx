@@ -404,7 +404,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1qD4v8xwKgEYwMl6TTccNjVTawKtnOyBj/view?usp=sharing"
+                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view?usp=sharing"
                           )
                         }
                       >
@@ -415,7 +415,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view?usp=sharing"
+                            "https://drive.google.com/file/d/1qD4v8xwKgEYwMl6TTccNjVTawKtnOyBj/view?usp=sharing"
                           )
                         }
                       >
