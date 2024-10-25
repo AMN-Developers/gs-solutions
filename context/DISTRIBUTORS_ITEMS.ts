@@ -1,16 +1,16 @@
 export interface Distributor {
-  id: number
-  name: string
-  address: string
-  phone: string
-  website?: string
-  state: string
-  latitude: number
-  longitude: number
-  zoom: number
-  distance?: number
-  country: string
-  product_line: string
+  id: number;
+  name: string;
+  address: string;
+  phone: string;
+  website?: string;
+  state: string;
+  latitude: number;
+  longitude: number;
+  zoom: number;
+  distance?: number;
+  country: string;
+  product_line: string;
 }
 
 export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
@@ -43,8 +43,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
   {
     id: 3,
     name: "JATO SUPER",
-    address:
-      "Av. Feira De Santana, 71 – Jd. Vale do Sol - São José dos Campos / SP",
+    address: "Av. Feira De Santana, 71 – Jd. Vale do Sol - São José dos Campos / SP",
     phone: "(12) 3931-0594",
     website: "https://www.jatosuper.com.br/",
     state: "SP",
@@ -196,8 +195,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 15,
     name: "SB RIO",
     phone: "(21) 2424-5696",
-    address:
-      "Estr. do Gabinal, 1521 - Freguesia de Jacarepaguá, Rio de Janeiro / RJ",
+    address: "Estr. do Gabinal, 1521 - Freguesia de Jacarepaguá, Rio de Janeiro / RJ",
     state: "RJ",
     latitude: -22.95203,
     longitude: -43.35057,
@@ -223,8 +221,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 17,
     name: "LOJA HIDRORIO Unidade II",
     phone: "(21) 98346-5145",
-    address:
-      "Rua Professora Luiza Nogueira Gonçalves, 350 - Lj 109 - Recreio Dos Bandeirantes, Rio De Janeiro / RJ",
+    address: "Rua Professora Luiza Nogueira Gonçalves, 350 - Lj 109 - Recreio Dos Bandeirantes, Rio De Janeiro / RJ",
     state: "RJ",
     latitude: -23.00587,
     longitude: -43.44075,
@@ -237,8 +234,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 18,
     name: "POLIBOX",
     phone: "(21) 2580-7544 / (21) 99632-7544",
-    address:
-      "CADEG Mercado Municipal do, R. Cap. Félix, 110 - 7 e 9 - Benfica, Rio de Janeiro / RJ",
+    address: "CADEG Mercado Municipal do, R. Cap. Félix, 110 - 7 e 9 - Benfica, Rio de Janeiro / RJ",
     state: "RJ",
     latitude: -22.89459,
     longitude: -43.23656,
@@ -406,18 +402,18 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
   //   zoom: 14,
   //   country: "br",
   // },
-  {
-    id: 32,
-    name: "PRISMA ECO CLEAN",
-    phone: "(81) 98322-9301‬",
-    address: "Av. São Paulo, 797 - Jardim São Paulo, Recife / PE",
-    state: "PE",
-    latitude: -8.07895,
-    longitude: -34.9414,
-    zoom: 14,
-    country: "br",
-    product_line: "lotus",
-  },
+  // {
+  //   id: 32,
+  //   name: "PRISMA ECO CLEAN",
+  //   phone: "(81) 98322-9301‬",
+  //   address: "Av. São Paulo, 797 - Jardim São Paulo, Recife / PE",
+  //   state: "PE",
+  //   latitude: -8.07895,
+  //   longitude: -34.9414,
+  //   zoom: 14,
+  //   country: "br",
+  //   product_line: "lotus",
+  // },
   {
     id: 33,
     name: "JM IMPER",
@@ -572,8 +568,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 45,
     name: "ESPAÇO CLEAN",
     phone: "(96) 98131-4456",
-    address:
-      "D ao Lado do MPF - Av. Ernestino Borges, 525 - Julião Ramos, Macapá / AP",
+    address: "D ao Lado do MPF - Av. Ernestino Borges, 525 - Julião Ramos, Macapá / AP",
     state: "AP",
     latitude: 0.04382,
     longitude: -51.06833,
@@ -599,8 +594,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 47,
     name: "NEW CLEAN",
     phone: "(11) 94085-7408",
-    address:
-      "Rua Aparecida - R. Aparecido Eusébio De Souza, 6 - Parque Jandaia, Carapicuíba - SP",
+    address: "Rua Aparecida - R. Aparecido Eusébio De Souza, 6 - Parque Jandaia, Carapicuíba - SP",
     state: "SP",
     latitude: -23.55428,
     longitude: -46.82407,
@@ -613,8 +607,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 48,
     name: "SHOP RG CAR",
     phone: "(43) 3029-0300",
-    address:
-      "Av. Arcebispo Dom Geraldo Fernandes, 2777 - Loja 01 - Centro, Londrina - PR",
+    address: "Av. Arcebispo Dom Geraldo Fernandes, 2777 - Loja 01 - Centro, Londrina - PR",
     state: "PR",
     latitude: -23.30136,
     longitude: -51.16966,
@@ -627,8 +620,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 49,
     name: "CS DISTRIBUIDORA",
     phone: "(84) 98153-6899",
-    address:
-      "Rua Lídia Ferreira De Souza, 09CS-C - Nova Esperança - Parnamirim - RN",
+    address: "Rua Lídia Ferreira De Souza, 09CS-C - Nova Esperança - Parnamirim - RN",
     state: "RN",
     latitude: -5.93614,
     longitude: -35.27701,
@@ -730,8 +722,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 57,
     name: "DOUTOR TAPETE",
     phone: "(19) 99921-9324",
-    address:
-      "R. Gen. Góes Monteiro, 476 - Jardim Elite, Piracicaba - SP, 13417-381",
+    address: "R. Gen. Góes Monteiro, 476 - Jardim Elite, Piracicaba - SP, 13417-381",
     state: "SP",
     latitude: -22.73824,
     longitude: -47.6389,
@@ -744,8 +735,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 58,
     name: "LAVACAR CUIABÁ",
     phone: "(65) 99909-1824",
-    address:
-      "Rua Fernando Correa da Costa, 707 - Bairro Areão, Cuiabá - MT, 78010-400",
+    address: "Rua Fernando Correa da Costa, 707 - Bairro Areão, Cuiabá - MT, 78010-400",
     state: "MT",
     latitude: -15.61688,
     longitude: -56.05281,
@@ -758,8 +748,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 59,
     name: "LAVACAR RONDONÓPOLIS",
     phone: "(66) 99675-8040",
-    address:
-      "Rua Fernando Correa Da Costa, 870 - Centro - Rondonopolis - MT, 78700-100",
+    address: "Rua Fernando Correa Da Costa, 870 - Centro - Rondonopolis - MT, 78700-100",
     state: "MT",
     latitude: -16.46875,
     longitude: -54.63493,
@@ -772,8 +761,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 60,
     name: "JRCLEAN HIGIENIZAÇÕES",
     phone: "(47) 99104-7588",
-    address:
-      "Rua Angela Zampol N 234 - Bairro Suissa - Ribeirão Pires - SP, 09424-270",
+    address: "Rua Angela Zampol N 234 - Bairro Suissa - Ribeirão Pires - SP, 09424-270",
     state: "SP",
     latitude: -23.71467,
     longitude: -54.63493,
@@ -787,8 +775,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 61,
     name: "ESTÚDIO VIP",
     phone: "(83) 98894-2569",
-    address:
-      "Av. Barão de Mamanguape, 25. Loja 4 - Torre - João Pessoa, Brazil 58040-330",
+    address: "Av. Barão de Mamanguape, 25. Loja 4 - Torre - João Pessoa, Brazil 58040-330",
     state: "PB",
     latitude: -7.12013,
     longitude: -34.86175,
@@ -840,8 +827,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 65,
     name: "CASA DO IMPERMEABILIZADOR",
     phone: "",
-    address:
-      "Rua 22-E Qd 135 Lt 30 SL 01 - Garavelo Residencial Park - Aparecida De Goiania - GO - 74932-410",
+    address: "Rua 22-E Qd 135 Lt 30 SL 01 - Garavelo Residencial Park - Aparecida De Goiania - GO - 74932-410",
     state: "GO",
     latitude: -16.75795,
     longitude: -49.33754,
@@ -867,8 +853,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 67,
     name: "SHOP RG CAR",
     phone: "(43) 30290300",
-    address:
-      "Av. Arcebispo Dom Geraldo Fernandes, 2777 - 01 - Jardim Agari, Londrina - PR, 86010-190",
+    address: "Av. Arcebispo Dom Geraldo Fernandes, 2777 - 01 - Jardim Agari, Londrina - PR, 86010-190",
     state: "PR",
     latitude: -23.30731,
     longitude: -51.16283,
@@ -881,8 +866,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 68,
     name: "LOJA DO HIGIENIZADOR",
     phone: "(98) 985700926",
-    address:
-      "R. Inácio Xavier de Carvalho, 586 - São Francisco, São Luís - MA, 65076-360",
+    address: "R. Inácio Xavier de Carvalho, 586 - São Francisco, São Luís - MA, 65076-360",
     state: "MA",
     latitude: -2.53468,
     longitude: -44.26947,
@@ -895,8 +879,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 69,
     name: "STL / PRODUTOS DE LIMPEZA",
     phone: "(11) 26598026",
-    address:
-      "Av. Min. Laudo Ferreira de Camargo, 327 - Jardim Peri Peri, São Paulo - SP, 05537-001",
+    address: "Av. Min. Laudo Ferreira de Camargo, 327 - Jardim Peri Peri, São Paulo - SP, 05537-001",
     state: "SP",
     latitude: -23.58696,
     longitude: -46.73708,
@@ -909,8 +892,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     id: 70,
     name: "GT CAR CARE",
     phone: "(62) 41015992",
-    address:
-      "Av T7 Qd 43 Lote 01 Sala 01 número 1165 - Bairro Setor Bueno Goiânia - GO, 74215-030",
+    address: "Av T7 Qd 43 Lote 01 Sala 01 número 1165 - Bairro Setor Bueno Goiânia - GO, 74215-030",
     state: "GO",
     latitude: -16.691193,
     longitude: -49.282061,
@@ -919,4 +901,4 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     website: "https://www.instagram.com/gtcarcare_/",
     product_line: "lotus",
   },
-]
+];
