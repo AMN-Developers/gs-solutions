@@ -26,8 +26,8 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1nL97bZPDRa3zXDUmArhpyCpbRQN9mHDa/view",
-    boletim: "https://drive.google.com/file/d/1gRBY_TynwAY4VUFTGrK0Eu7MZ-OIAC75/view",
+    fiqasp: "https://drive.google.com/file/d/1qmdKcTiMWiei7XaU1MF9XdRE-1Wa_h3H/view?usp=sharing",
+    boletim: "https://drive.google.com/file/d/1JLBX2aSyFaroK05MXDzVh3tl5j09k9FM/view?usp=sharing",
   },
   {
     id: 68,
@@ -66,8 +66,8 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1y_NFl5YUt_cYAnOMsXRte9Lg-onMTJ8e/view",
-    boletim: "https://drive.google.com/file/d/1upuDxMxIr1ESXYTXf2xxqcTmTB-2ItwC/view",
+    fiqasp: "https://drive.google.com/file/d/13C0k04Nu5tBdi02CI766TwOFn8mwcpMO/view?usp=sharing",
+    boletim: "https://drive.google.com/file/d/1CrKGlGXBZJnj3SEAeY9toQljV8wDf-8G/view?usp=sharing",
   },
   {
     id: 70,
@@ -150,13 +150,12 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1VXJTbUUktlyEOEtzFTwzeteUWC0KUANW/view",
+    fiqasp: "https://drive.google.com/file/d/1EmG-KlmvNIAVRdv3tC1x3J_cuJQbQtrR/view?usp=sharing",
     boletim: "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
   },
   {
     id: 86,
-    recomended: "200",
-    title: "HIDRA LEDER",
+    title: "HYDRA LEDER",
     thumbnail: "/produtos/hidraleder.png",
     large_image: "/produtos/hidraleder.png",
     slogan: "hidratante impermeabilizante de couro que tem função 4x1.",
@@ -209,7 +208,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
+    fiqasp: "https://drive.google.com/file/d/1qD4v8xwKgEYwMl6TTccNjVTawKtnOyBj/view?usp=sharing",
     boletim: "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view",
   },
   {
@@ -463,7 +462,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/17ukZ9SvaZaRqO74-mhivF8aUVMpfSjAT/view",
+    fiqasp: "https://drive.google.com/file/d/1LlYhPVqniArW8S8yRWR031EHJ_3LWYG8/view?usp=drive_link",
     boletim: "https://drive.google.com/file/d/1cGDyHD5Y7qPOTRGI2kPd49oGlLZF4mJ9/view",
   },
   {
@@ -579,8 +578,8 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1rlVlBqG52C5Dl1k9jj3b_axo-uwxePCt/view",
-    boletim: "https://drive.google.com/file/d/1nF1xz7VYaYTi6iMectl9oK5HcKm-YE1Y/view",
+    fiqasp: "https://drive.google.com/file/d/1lRPfFAS8vemKmf177nGMqzlJtSgsNSUL/view?usp=sharing",
+    boletim: "https://drive.google.com/file/d/18oadaqBpsIh8696g3dVD3JoGUoXzPl6A/view?usp=drive_link",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
