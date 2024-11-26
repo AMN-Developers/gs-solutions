@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CloseIcon } from "@chakra-ui/icons";
 import { CustomImage } from "@/components/CustomImage";
 import { useRouter } from "next/router";
-import { Product } from "@/hooks/useProducts";
+import type { Product } from "@/hooks/useProducts";
 
 interface ProductProps {
   type: string;
