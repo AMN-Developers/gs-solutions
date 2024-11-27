@@ -111,44 +111,33 @@ const MapProvider = ({ children }: MapProviderProps) => {
       if (geocodingData.results && geocodingData.results.length > 0) {
         const location = geocodingData.results[0].geometry.location;
 
-        // is stores in the range of 300 km?
+        // Filter stores within 450km range and calculate distances
         const filtered = DISTRIBUTORS_ITEMS.filter((store) => {
           const distance = calculateDistance(location.lat, location.lng, store.latitude, store.longitude);
+          store.distance = distance; // Add distance to each store
           return distance <= 450;
         });
 
-        const closestStore = filtered.sort((a, b) => {
-          if (a.distance && b.distance) {
-            return a.distance - b.distance;
-          } else {
-            return 0;
-          }
-        });
-
-        closestStore.sort((a, b) => {
-          if (a.distance && b.distance) {
-            return a.distance - b.distance;
-          } else {
-            return 0;
-          }
-        });
-
-        if (!closestStore) {
+        if (filtered.length === 0) {
           setError("Não encontramos nenhum distribuidor próximo a sua localização.");
           return;
         }
-        filtered.forEach((store) => {
-          store.distance = calculateDistance(location.lat, location.lng, store.latitude, store.longitude);
-        });
-        setFilteredStores(filtered);
-        setCenterLocation(geocodingData.results[0].geometry.location);
-        setUserLocation(geocodingData.results[0].geometry.location);
-        setZoom(7);
+
+        // Sort by distance and get the closest store
+        const sortedStores = filtered.sort((a, b) => (a.distance || 0) - (b.distance || 0));
+        const closestStore = sortedStores[0];
+
+        setFilteredStores(sortedStores);
+        setCenterLocation({ lat: closestStore.latitude, lng: closestStore.longitude });
+        setUserLocation(location);
+        setZoom(10);
+        setSelectedStore(closestStore); // Select the closest store
       } else {
-        console.error("Geocoding API did not return valid results");
+        setError("Não foi possível encontrar o endereço informado.");
       }
     } catch (error) {
-      console.error("Error during geocoding:", error);
+      console.error("Error in handleSearch:", error);
+      setError("Ocorreu um erro ao buscar o endereço.");
     }
   };
 
@@ -183,11 +172,17 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const handleResetMap = () => {
     setUserAddress("");
     setFilteredStores([]);
-    setCenterLocation(initialCenterLocation.br);
+    setCenterLocation(initialCenterLocation[selectedCountry as "br" | "pt"]);
     setZoom(3.5);
     setSelectedStore(null);
     setUserLocation(null);
     setError("");
+    setSelectedState("");
+    setSelectedProductLine("");
+    // Reset the input field value
+    if (inputRef.current) {
+      inputRef.current.value = "";
+    }
   };
 
   const filteredDistributors = useMemo(() => {
@@ -195,7 +190,6 @@ const MapProvider = ({ children }: MapProviderProps) => {
       const matchesCountry = !selectedCountry || distributor.country === selectedCountry;
       const matchesState = !selectedState || distributor.state === selectedState;
       const matchesProductLine = !selectedProductLine || distributor.product_line === selectedProductLine;
-
       return matchesCountry && matchesState && matchesProductLine;
     });
   }, [selectedCountry, selectedState, selectedProductLine]);

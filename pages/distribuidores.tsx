@@ -1,128 +1,108 @@
 import dynamic from "next/dynamic";
 import MotionLayout from "@/components/MotionLayout";
-import { Container, Box, Flex, Text, Input, Button, Select } from "@chakra-ui/react";
+import {
+  Container,
+  Box,
+  Flex,
+  Text,
+  Input,
+  Button,
+  Select,
+  SimpleGrid,
+  Grid,
+  FormControl,
+  FormLabel,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+} from "@chakra-ui/react";
 import useMapContext from "@/hooks/useMapContext";
 import { AdvancedMarker, Pin, APIProvider } from "@vis.gl/react-google-maps";
 import { DistributorsMap } from "@/components/DistributorsMap";
-import { DISTRIBUTORS_ITEMS } from "@/context/DISTRIBUTORS_ITEMS";
-import { useEffect } from "react";
+import { Distributor, DISTRIBUTORS_ITEMS } from "@/context/DISTRIBUTORS_ITEMS";
+import { useEffect, useState } from "react";
+import { SearchIcon, RepeatIcon } from "@chakra-ui/icons";
+import { Stack } from "@chakra-ui/react";
+import { BsTelephoneFill, BsFillPinMapFill } from "react-icons/bs";
 
 const MapWithNoSSR = dynamic(() => import("@vis.gl/react-google-maps").then((mod) => mod.Map), { ssr: false });
 
-const MapContainer = () => {
+interface MapContainerProps {
+  selectedDistributor: Distributor | null;
+  onMarkerClick: (distributor: Distributor) => void;
+}
+
+const MapContainer = ({ selectedDistributor, onMarkerClick }: MapContainerProps) => {
   const { zoom, centerLocation, distributors, filteredStores, userLocation } = useMapContext();
 
   return (
-    <Box w={"100%"} h={"400px"} bg={"gray.100"} borderRadius={"md"} overflow={"hidden"}>
-      <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string} language="pt-BR">
-        <MapWithNoSSR
-          zoom={zoom}
-          center={centerLocation}
-          mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID}
-          fullscreenControl={false}
-          disableDefaultUI={true}
-          zoomControl={false}
-          mapTypeControl={false}
-          streetViewControl={false}
-        >
-          {filteredStores.length > 0 ? (
-            filteredStores.map((store) => {
-              if (store.latitude !== 0 && store.longitude !== 0) {
-                return (
-                  <AdvancedMarker
-                    position={{ lat: store.latitude, lng: store.longitude }}
-                    key={store.id}
-                    onClick={() => {
-                      console.log(store);
-                    }}
-                  >
-                    <Pin background={"blue"} glyphColor={"white"} borderColor={"white"} scale={0.7}>
-                      <Box position={"relative"}>
-                        <Box
-                          position={"absolute"}
-                          top={"-50px"}
-                          bg={"white"}
-                          color={"black"}
-                          p={2}
-                          w={"max-content"}
-                          borderRadius={"md"}
-                          boxShadow={"md"}
-                          zIndex={1000}
-                        >
-                          <Text fontWeight={"bold"}>{store.name}</Text>
-                        </Box>
-                      </Box>
-                    </Pin>
-                  </AdvancedMarker>
-                );
-              } else {
-                return null;
-              }
-            })
-          ) : (
-            <>
-              {distributors.map((store) => {
-                if (store.latitude !== 0 && store.longitude !== 0) {
-                  return (
-                    <AdvancedMarker position={{ lat: store.latitude, lng: store.longitude }} key={store.id}>
-                      <Pin background={"blue"} glyphColor={"white"} borderColor={"white"} scale={0.7} />
-                    </AdvancedMarker>
-                  );
-                } else {
-                  return null;
-                }
-              })}
-            </>
-          )}
-          {userLocation && (
-            <AdvancedMarker position={userLocation}>
-              <Pin background={"transparent"} glyphColor={"blue"} borderColor={"white"} scale={0.7} />
-            </AdvancedMarker>
-          )}
-        </MapWithNoSSR>
-      </APIProvider>
-    </Box>
-  );
-};
-
-const StoreLocator = () => {
-  const { userAddress, handleSearch, handleChangeAddress, inputRef, handleResetMap, error } = useMapContext();
-
-  return (
-    <>
-      <Box
-        as="form"
-        onSubmit={(e) => {
-          e.preventDefault();
-          handleSearch();
-        }}
+    <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string}>
+      <MapWithNoSSR
+        zoom={zoom}
+        center={centerLocation}
+        mapId={process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID}
+        disableDefaultUI={true}
+        zoomControl={true}
       >
-        <Text mb={4} fontWeight={"bold"} fontSize={"2xl"} as="label">
-          Encontre o distribuidor da G&S mais próximo de você!
-        </Text>
-        <Flex gap={4}>
-          <Input
-            placeholder="Digite seu endereço..."
-            value={userAddress}
-            onChange={handleChangeAddress}
-            ref={inputRef}
-            mb={4}
-          />
-          <Button mb={4} type="submit">
-            Buscar
-          </Button>
-          <Button mb={4} onClick={handleResetMap}>
-            Limpar
-          </Button>
-        </Flex>
-      </Box>
-      {error && (
-        <Text color={"red.500"} fontWeight={"bold"}>
-          {error}
-        </Text>
-      )}
-      <MapContainer />
-    </>
+        {(filteredStores.length > 0 ? filteredStores : distributors).map((store) => {
+          if (store.latitude === 0 && store.longitude === 0) return null;
+
+          const isSelected = selectedDistributor?.id === store.id;
+
+          return (
+            <AdvancedMarker
+              position={{ lat: store.latitude, lng: store.longitude }}
+              key={store.id}
+              onClick={() => onMarkerClick(store)}
+            >
+              <Box position="relative">
+                <Pin background="blue" glyphColor="white" borderColor="white" scale={isSelected ? 1.2 : 1} />
+
+                {isSelected && (
+                  <Box
+                    position="absolute"
+                    top="-130px"
+                    left="50%"
+                    transform="translateX(-50%)"
+                    bg="white"
+                    p={3}
+                    borderRadius="md"
+                    boxShadow="lg"
+                    minW="250px"
+                    zIndex={1000}
+                  >
+                    <Text fontWeight="bold" mb={1}>
+                      {store.name}
+                    </Text>
+                    <Text fontSize="sm" color="gray.600" mb={1}>
+                      {store.address}
+                    </Text>
+                    {store.phone && (
+                      <Flex align="center" fontSize="sm" color="gray.600" mb={1}>
+                        <BsTelephoneFill size={12} style={{ marginRight: "6px" }} />
+                        {store.phone}
+                      </Flex>
+                    )}
+                    {store.distance && (
+                      <Flex align="center" fontSize="sm" color="blue.500">
+                        <BsFillPinMapFill size={12} style={{ marginRight: "6px" }} />
+                        {store.distance.toFixed(2)} km
+                      </Flex>
+                    )}
+                  </Box>
+                )}
+              </Box>
+            </AdvancedMarker>
+          );
+        })}
+
+        {userLocation && (
+          <AdvancedMarker position={userLocation}>
+            <Pin background="green.500" glyphColor="white" borderColor="white" scale={1} />
+          </AdvancedMarker>
+        )}
+      </MapWithNoSSR>
+    </APIProvider>
   );
 };
 
@@ -135,64 +115,133 @@ export default function Distribuidores() {
     onCountryChange,
     selectedProductLine,
     onProductLineChange,
+    userAddress,
+    handleSearch,
+    handleChangeAddress,
+    handleResetMap,
+    error,
+    selectedStore,
+    inputRef,
   } = useMapContext();
 
-  // Get unique states only for the current country and product line
-  const filteredDistributors = DISTRIBUTORS_ITEMS.filter(
-    (distributor) =>
-      (!selectedCountry || distributor.country === selectedCountry) &&
-      (!selectedProductLine || distributor.product_line === selectedProductLine)
-  );
+  const [selectedDistributor, setSelectedDistributor] = useState<Distributor | null>(null);
 
-  const distributorsStates = filteredDistributors
-    .map((distributor) => distributor.state)
-    .filter((state) => state !== "LOJA VIRTUAL"); // Exclude virtual stores from state filter
-
-  const uniqueDistributorsStates = Array.from(new Set(distributorsStates)).sort();
-
-  // Reset state selection when country changes
   useEffect(() => {
-    setSelectedState("");
-  }, [selectedCountry, setSelectedState]);
+    if (selectedStore) {
+      setSelectedDistributor(selectedStore);
+    }
+  }, [selectedStore]);
 
   return (
     <MotionLayout title="Distribuidores">
-      <Container maxW="container.xl" py="8">
-        <Flex gap={4} flexDir={{ base: "column", md: "row" }}>
-          <Box w={{ base: "100%", md: "60%" }}>
-            <StoreLocator />
-          </Box>
-          <Flex flexDir={"column"} w={{ base: "100%", md: "40%" }}>
-            <Select
-              placeholder="Linha de produtos"
-              mb={4}
-              value={selectedProductLine}
-              onChange={(e) => onProductLineChange(e)}
+      <Container maxW="container.xl" py={8}>
+        <Box mb={8}>
+          <Text fontSize="3xl" fontWeight="bold" mb={6}>
+            Encontre um distribuidor
+          </Text>
+
+          <Stack spacing={6}>
+            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
+              <FormControl>
+                <FormLabel>Linha de produtos</FormLabel>
+                <Select value={selectedProductLine} onChange={onProductLineChange}>
+                  <option value="">Todas as linhas</option>
+                  <option value="limpoo">LIMPOO - Limpeza Pesada</option>
+                  <option value="lotus">LÓTUS - Higienização</option>
+                </Select>
+              </FormControl>
+
+              <FormControl>
+                <FormLabel>País</FormLabel>
+                <Select value={selectedCountry} onChange={onCountryChange}>
+                  <option value="">Selecione um país</option>
+                  <option value="br">Brasil</option>
+                  <option value="pt">Portugal</option>
+                </Select>
+              </FormControl>
+
+              {selectedCountry === "br" && (
+                <FormControl>
+                  <FormLabel>Estado</FormLabel>
+                  <Select value={selectedState} onChange={(e) => setSelectedState(e.target.value)}>
+                    <option value="">Todos os estados</option>
+                    {Array.from(new Set(DISTRIBUTORS_ITEMS.map((d) => d.state)))
+                      .filter((state) => state !== "LOJA VIRTUAL")
+                      .sort()
+                      .map((state) => (
+                        <option key={state} value={state}>
+                          {state}
+                        </option>
+                      ))}
+                  </Select>
+                </FormControl>
+              )}
+            </SimpleGrid>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                handleSearch();
+              }}
             >
-              <option value="limpoo">LIMPOO - Linha de Limpeza Pesada/Pós Obra</option>
-              <option value="lotus">LÓTUS - Linha de Higienização e Impermeabilização</option>
-            </Select>
-            <Select placeholder="Filtrar por país" mb={4} value={selectedCountry} onChange={(e) => onCountryChange(e)}>
-              <option value="br">Brasil</option>
-              <option value="pt">Portugal</option>
-            </Select>
-            {selectedCountry === "br" && uniqueDistributorsStates.length > 0 && (
-              <Select
-                placeholder="Filtrar por estado"
-                mb={4}
-                value={selectedState}
-                onChange={(e) => setSelectedState(e.target.value)}
-              >
-                {uniqueDistributorsStates.map((state) => (
-                  <option key={state} value={state}>
-                    {state}
-                  </option>
-                ))}
-              </Select>
+              <Flex gap={4} direction={{ base: "column", md: "row" }}>
+                <FormControl flex={1}>
+                  <FormLabel>Buscar por endereço</FormLabel>
+                  <Input
+                    ref={inputRef}
+                    placeholder="Digite um endereço para buscar distribuidores próximos..."
+                    value={userAddress}
+                    onChange={handleChangeAddress}
+                  />
+                </FormControl>
+                <Stack direction={{ base: "column", md: "row" }} spacing={4} alignSelf="flex-end">
+                  <Button type="submit" colorScheme="blue" leftIcon={<SearchIcon />} isDisabled={!userAddress}>
+                    Buscar
+                  </Button>
+                  <Button variant="outline" onClick={handleResetMap} leftIcon={<RepeatIcon />}>
+                    Limpar
+                  </Button>
+                </Stack>
+              </Flex>
+            </form>
+
+            {error && (
+              <Alert status="error">
+                <AlertIcon />
+                <AlertTitle>{error}</AlertTitle>
+              </Alert>
             )}
-            <DistributorsMap distributors={combinedDistributors} />
-          </Flex>
-        </Flex>
+          </Stack>
+        </Box>
+
+        <Grid templateColumns={{ base: "1fr", lg: "3fr 2fr" }} gap={8} height="700px">
+          <Box
+            position="relative"
+            borderRadius="xl"
+            overflow="hidden"
+            borderWidth="1px"
+            borderColor="gray.200"
+            height="100%"
+          >
+            <MapContainer selectedDistributor={selectedDistributor} onMarkerClick={setSelectedDistributor} />
+          </Box>
+
+          <Box
+            position="relative"
+            height="100%"
+            overflowY="auto"
+            borderRadius="xl"
+            borderWidth="1px"
+            borderColor="gray.200"
+            p={4}
+          >
+            <DistributorsMap
+              distributors={combinedDistributors}
+              selectedDistributor={selectedDistributor}
+              onSelect={setSelectedDistributor}
+            />
+          </Box>
+        </Grid>
       </Container>
     </MotionLayout>
   );
