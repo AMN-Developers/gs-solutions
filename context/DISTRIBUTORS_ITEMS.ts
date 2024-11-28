@@ -51,7 +51,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -45.91123,
     zoom: 14,
     country: "br",
-    product_line: ["lotus"],
+    product_line: ["lotus", "limpoo"],
   },
   {
     id: 4,
@@ -328,7 +328,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -48.26569,
     zoom: 14,
     country: "br",
-    product_line: ["lotus"],
+    product_line: ["lotus", "limpoo"],
   },
   {
     id: 26,
@@ -390,7 +390,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.instagram.com/higedprodutos/",
     country: "br",
-    product_line: ["lotus"],
+    product_line: ["lotus", "limpoo"],
   },
   // {
   //   id: 31,
@@ -640,7 +640,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.kuchar.com.br/",
-    product_line: ["lotus"],
+    product_line: ["lotus", "limpoo"],
   },
   // {
   //   id: 51,
