@@ -1,4 +1,4 @@
-import { ChangeEvent, createContext, useState, useRef, useMemo } from "react";
+import { ChangeEvent, createContext, useState, useRef, useMemo, useCallback, useEffect } from "react";
 import { Distributor, DISTRIBUTORS_ITEMS } from "./DISTRIBUTORS_ITEMS";
 import { useAutocomplete } from "@vis.gl/react-google-maps";
 interface MapContextData {
@@ -35,6 +35,8 @@ interface MapContextData {
   setSelectedProductLine: (productLine: string) => void;
   onCountryChange: (e: ChangeEvent<HTMLSelectElement>) => void;
   onProductLineChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+  storeType: string;
+  onStoreTypeChange: (e: ChangeEvent<HTMLSelectElement>) => void;
 }
 
 interface MapProviderProps {
@@ -67,6 +69,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const [selectedState, setSelectedState] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("br");
   const [selectedProductLine, setSelectedProductLine] = useState("");
+  const [storeType, setStoreType] = useState<string>("");
   const [centerLocation, setCenterLocation] = useState(
     initialCenterLocation[selectedCountry as unknown as "br" | "pt"]
   );
@@ -87,6 +90,10 @@ const MapProvider = ({ children }: MapProviderProps) => {
 
   const onProductLineChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectedProductLine(e.target.value);
+  };
+
+  const onStoreTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setStoreType(e.target.value);
   };
 
   useAutocomplete({
@@ -179,7 +186,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
     setError("");
     setSelectedState("");
     setSelectedProductLine("");
-    // Reset the input field value
+    setStoreType("");
     if (inputRef.current) {
       inputRef.current.value = "";
     }
@@ -200,6 +207,39 @@ const MapProvider = ({ children }: MapProviderProps) => {
     }
     return filteredDistributors;
   }, [filteredStores, filteredDistributors]);
+
+  const filterDistributors = useCallback(() => {
+    let filtered = [...DISTRIBUTORS_ITEMS];
+
+    // Filter by product line
+    if (selectedProductLine) {
+      filtered = filtered.filter((store) => store.product_line.includes(selectedProductLine));
+    }
+
+    // Filter by country
+    if (selectedCountry) {
+      filtered = filtered.filter((store) => store.country === selectedCountry);
+    }
+
+    // Filter by state
+    if (selectedState) {
+      filtered = filtered.filter((store) => store.state === selectedState);
+    }
+
+    // Filter by store type
+    if (storeType) {
+      filtered = filtered.filter((store) => {
+        const isVirtual = store.address === "LOJA VIRTUAL" || store.state === "LOJA VIRTUAL";
+        return storeType === "virtual" ? isVirtual : !isVirtual;
+      });
+    }
+
+    setFilteredStores(filtered);
+  }, [selectedProductLine, selectedCountry, selectedState, storeType]);
+
+  useEffect(() => {
+    filterDistributors();
+  }, [filterDistributors]);
 
   return (
     <MapContext.Provider
@@ -231,6 +271,8 @@ const MapProvider = ({ children }: MapProviderProps) => {
         selectedProductLine,
         setSelectedProductLine,
         onProductLineChange,
+        storeType,
+        onStoreTypeChange,
       }}
     >
       {children}

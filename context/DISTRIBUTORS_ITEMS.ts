@@ -967,4 +967,17 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     product_line: ["limpoo"],
   },
+  {
+    id: 76,
+    name: "LIMPEJA PRODUTOS",
+    phone: "(11) 992306966",
+    address: "LOJA VIRTUAL",
+    state: "SP",
+    latitude: 0,
+    longitude: 0,
+    zoom: 14,
+    website: "https://www.limpejaprodutos.com.br/",
+    country: "br",
+    product_line: ["limpoo"],
+  },
 ];
