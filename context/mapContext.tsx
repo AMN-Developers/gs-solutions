@@ -189,7 +189,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
     return DISTRIBUTORS_ITEMS.filter((distributor) => {
       const matchesCountry = !selectedCountry || distributor.country === selectedCountry;
       const matchesState = !selectedState || distributor.state === selectedState;
-      const matchesProductLine = !selectedProductLine || distributor.product_line === selectedProductLine;
+      const matchesProductLine = !selectedProductLine || distributor.product_line.includes(selectedProductLine);
       return matchesCountry && matchesState && matchesProductLine;
     });
   }, [selectedCountry, selectedState, selectedProductLine]);

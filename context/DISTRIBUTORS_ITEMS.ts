@@ -10,7 +10,7 @@ export interface Distributor {
   zoom: number;
   distance?: number;
   country: string;
-  product_line: string;
+  product_line: string[];
 }
 
 export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
@@ -25,7 +25,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -46.52364,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 2,
@@ -38,7 +38,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -46.68671,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 3,
@@ -51,7 +51,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -45.91123,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 4,
@@ -64,7 +64,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: 0,
     zoom: 7,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   // {
   //   id: 5,
@@ -100,7 +100,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://higienizasul.com.br/",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   // {
   //   id: 8,
@@ -125,7 +125,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://showcar.net.br/",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 10,
@@ -137,7 +137,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -49.33872,
     zoom: 14,
     website: "https://verdecar.com.br/",
-    product_line: "lotus",
+    product_line: ["lotus"],
     country: "br",
   },
   // {
@@ -162,12 +162,12 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -49.26613,
     zoom: 14,
     website: "https://www.instagram.com/smplimpo/",
-    product_line: "lotus",
+    product_line: ["lotus"],
     country: "br",
   },
   {
     id: 13,
-    name: "ASPIRADOR PROFISSIONAL",
+    name: "LOJA LIMPSHOP",
     phone: "(21) 98087-0131",
     address: "JACAREPAGUÁ/RJ",
     state: "RJ",
@@ -175,7 +175,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: 0,
     zoom: 14,
     website: "https://www.limpshop.com/",
-    product_line: "lotus",
+    product_line: ["lotus", "limpoo"],
     country: "br",
   },
   {
@@ -188,7 +188,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -43.0904,
     zoom: 14,
     website: "https://www.emporioclean.com.br/",
-    product_line: "lotus",
+    product_line: ["lotus"],
     country: "br",
   },
   {
@@ -201,7 +201,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -43.35057,
     zoom: 14,
     website: "https://www.sbrio.com/",
-    product_line: "lotus",
+    product_line: ["lotus"],
     country: "br",
   },
   {
@@ -215,7 +215,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "loja.hidrorio.com.br",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 17,
@@ -228,7 +228,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "loja.hidrorio.com.br",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 18,
@@ -241,7 +241,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.polibox.com.br/",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 19,
@@ -254,7 +254,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.centercleanbrasil.com.br/",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   // {
   //   id: 20,
@@ -279,7 +279,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://instagram.com/retoquetintas",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   // {
   //   id: 22,
@@ -304,7 +304,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.maqclean.com.br/",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 24,
@@ -316,7 +316,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -44.03852,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus", "limpoo"],
   },
   {
     id: 25,
@@ -328,7 +328,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -48.26569,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 26,
@@ -340,7 +340,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -42.63044,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   // {
   //   id: 27,
@@ -365,7 +365,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.instagram.com/evolucao_cleaning/",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 29,
@@ -377,7 +377,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -38.54356,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 30,
@@ -390,7 +390,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.instagram.com/higedprodutos/",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   // {
   //   id: 31,
@@ -426,7 +426,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.jmimper.com.br",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 34,
@@ -439,7 +439,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.lojaautocare.com.br",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 35,
@@ -451,7 +451,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -34.90713,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 36,
@@ -464,7 +464,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.cleanpremiere.com.br",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 37,
@@ -477,7 +477,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.lojadourado.com.br",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 38,
@@ -489,7 +489,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -42.784933,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus", "limpoo"],
   },
   {
     id: 39,
@@ -502,7 +502,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.authica.com.br",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   // {
   //   id: 40,
@@ -526,7 +526,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.lojadourado.com.br",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 42,
@@ -538,7 +538,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -44.26947,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 43,
@@ -550,7 +550,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -47.47378,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 44,
@@ -563,7 +563,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.nortfix.com.br",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 45,
@@ -576,7 +576,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://linktr.ee/espacocleanap",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 46,
@@ -589,7 +589,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://loja.borahigienizaromundo.com/",
     country: "pt",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 47,
@@ -602,7 +602,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://newclean.jareservei.com/",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 48,
@@ -615,7 +615,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.shoprgcar.com.br/",
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 49,
@@ -627,7 +627,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -35.27701,
     zoom: 14,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 50,
@@ -640,7 +640,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.kuchar.com.br/",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   // {
   //   id: 51,
@@ -665,7 +665,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.allanprodutos.com.br/contato/",
-    product_line: "lotus",
+    product_line: ["lotus", "limpoo"],
   },
   {
     id: 53,
@@ -678,7 +678,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://italianidistribuidora.com.br/",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 54,
@@ -691,7 +691,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://vmautoclean.com.br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 55,
@@ -704,7 +704,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.multisolucoesltda.com.br/",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 56,
@@ -717,7 +717,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.instagram.com/casa_do_lava_car/",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 57,
@@ -730,7 +730,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.lavanderiadoutortapete.com",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 58,
@@ -743,7 +743,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 59,
@@ -756,7 +756,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 60,
@@ -769,7 +769,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "www.jrcleanhigienizacoes.com",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
 
   {
@@ -783,7 +783,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.instagram.com/lojaestudiovip/",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 62,
@@ -796,7 +796,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://dartibaledecor.com.br/",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 63,
@@ -809,7 +809,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: 0,
     zoom: 7,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 64,
@@ -822,7 +822,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: 0,
     zoom: 7,
     country: "br",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 65,
@@ -835,7 +835,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.instagram.com/casadoimpermeabilizador/",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 66,
@@ -848,7 +848,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.instagram.com/smplimpo",
-    product_line: "limpoo",
+    product_line: ["limpoo"],
   },
   {
     id: 67,
@@ -861,7 +861,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.shoprgcar.com.br/",
-    product_line: "limpoo",
+    product_line: ["limpoo"],
   },
   {
     id: 68,
@@ -874,7 +874,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.instagram.com/lojadohigienizador/",
-    product_line: "limpoo",
+    product_line: ["limpoo"],
   },
   {
     id: 69,
@@ -887,7 +887,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://stldistribuidora.lojaintegrada.com.br/",
-    product_line: "limpoo",
+    product_line: ["limpoo"],
   },
   {
     id: 70,
@@ -900,7 +900,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     country: "br",
     website: "https://www.instagram.com/gtcarcare_/",
-    product_line: "lotus",
+    product_line: ["lotus"],
   },
   {
     id: 71,
@@ -913,7 +913,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.instagram.com/badranquimica/",
     country: "br",
-    product_line: "limpoo",
+    product_line: ["limpoo"],
   },
   {
     id: 72,
@@ -926,7 +926,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.instagram.com/legsolucoes/",
     country: "br",
-    product_line: "limpoo",
+    product_line: ["limpoo"],
   },
   {
     id: 73,
@@ -939,7 +939,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.instagram.com/legsolucoes/",
     country: "br",
-    product_line: "limpoo",
+    product_line: ["limpoo"],
   },
   {
     id: 74,
@@ -952,7 +952,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.instagram.com/mmimbprodutosdelimpeza/",
     country: "br",
-    product_line: "limpoo",
+    product_line: ["limpoo"],
   },
   {
     id: 75,
@@ -965,6 +965,6 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     zoom: 14,
     website: "https://www.instagram.com/imperio.dasutilidades/",
     country: "br",
-    product_line: "limpoo",
+    product_line: ["limpoo"],
   },
 ];
