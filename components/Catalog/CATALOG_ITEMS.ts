@@ -1,13 +1,14 @@
-import { Product } from "@/hooks/useProducts";
+import { Product } from "@/hooks/useProducts"
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
     id: 64,
     recomended: "100",
-    title: "FIX FLOT",
+    title: "FIX FLOT", //done
     thumbnail: "/produtos/fixflot.png",
     large_image: "/produtos/fixflot.png",
-    slogan: "Flotador concentrado com espumação controlada e com ativos anti-migrantes.",
+    slogan:
+      "Flotador concentrado com espumação controlada e com ativos anti-migrantes.",
     chamada: "Flotador concentrado para tapetes",
     hover_color: "168,1,64,1",
     description:
@@ -26,13 +27,15 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1qmdKcTiMWiei7XaU1MF9XdRE-1Wa_h3H/view?usp=sharing",
-    boletim: "https://drive.google.com/file/d/1JLBX2aSyFaroK05MXDzVh3tl5j09k9FM/view?usp=sharing",
+    fiqasp:
+      "https://drive.google.com/file/d/1EeBpjGzOQefh20mxGOohfiS-A903QGCM/viewg",
+    boletim:
+      "https://drive.google.com/file/d/1JLBX2aSyFaroK05MXDzVh3tl5j09k9FM/view?usp=sharing",
   },
   {
     id: 68,
     recomended: "30",
-    title: "MULTI-C",
+    title: "MULTI-C", //done
     thumbnail: "/produtos/multic.png",
     large_image: "/produtos/multic.png",
     slogan: "Detergente alcalino para sujidade pesada",
@@ -66,16 +69,19 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/13C0k04Nu5tBdi02CI766TwOFn8mwcpMO/view?usp=sharing",
-    boletim: "https://drive.google.com/file/d/1CrKGlGXBZJnj3SEAeY9toQljV8wDf-8G/view?usp=sharing",
+    fiqasp:
+      "https://drive.google.com/file/d/1Q039yFhWjEGl4Z56E8zeUV8MrMFJCihr/view",
+    boletim:
+      "https://drive.google.com/file/d/1CrKGlGXBZJnj3SEAeY9toQljV8wDf-8G/view?usp=sharing",
   },
   {
     id: 70,
     recomended: "200",
-    title: "DESINFEKT",
+    title: "DESINFEKT", //done
     thumbnail: "/produtos/desinfekt.png",
     large_image: "/produtos/desinfekt.png",
-    slogan: "Desinfetante com efeito bactericida, bacteriostático e virucida sem odor.",
+    slogan:
+      "Desinfetante com efeito bactericida, bacteriostático e virucida sem odor.",
     chamada: "Desinfetante concentrado",
     hover_color: "32,188,211,1",
     description:
@@ -94,16 +100,19 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/11VfcyqnoAo7ZjLZdoHz-wS219xF8lX3F/view",
-    boletim: "https://drive.google.com/file/d/13ZKpJGS4tkwMLM288MR6hxzvrjsYj-n5/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1RDC9XGNibM_DkWePTmQ_Rw-GfMxQNoDE/view",
+    boletim:
+      "https://drive.google.com/file/d/13ZKpJGS4tkwMLM288MR6hxzvrjsYj-n5/view",
   },
   {
     id: 84,
     recomended: "10",
-    title: "CITRUSOLV",
+    title: "CITRUSOLV", //done
     thumbnail: "/produtos/citrusolv.png",
     large_image: "/produtos/citrusolv.png",
-    slogan: "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno.",
+    slogan:
+      "Detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno.",
     chamada: "Solvente natural",
     hover_color: "0,124,54,1",
     description:
@@ -122,16 +131,19 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1R2qHUp369OVLQZeHRmHXp3qd_r17wj_v/view",
-    boletim: "https://drive.google.com/file/d/14Seqgv-bX6rHzFc4MWghuPvr6IfDvx7c/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1Hv6quwFuB-z3s6MJoNTdgV0q00f8E_EM/view",
+    boletim:
+      "https://drive.google.com/file/d/14Seqgv-bX6rHzFc4MWghuPvr6IfDvx7c/view",
   },
   {
     id: 85,
     recomended: "200",
-    title: "CLEAN PROTECT",
+    title: "CLEAN PROTECT", //done
     thumbnail: "/produtos/cleanprot.png",
     large_image: "/produtos/cleanprot.png",
-    slogan: "Limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização.",
+    slogan:
+      "Limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização.",
     chamada: "Limpezas de estofados e tecidos",
     hover_color: "160,211,204,1",
     description:
@@ -150,12 +162,14 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1EmG-KlmvNIAVRdv3tC1x3J_cuJQbQtrR/view?usp=sharing",
-    boletim: "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1BDz2OzRlCqe49KY-K7SgwRMnY2lDLSMU/view",
+    boletim:
+      "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
   },
   {
     id: 86,
-    title: "HYDRA LEDER",
+    title: "HYDRA LEDER", //done
     thumbnail: "/produtos/hidraleder.png",
     large_image: "/produtos/hidraleder.png",
     slogan: "hidratante impermeabilizante de couro que tem função 4x1.",
@@ -177,19 +191,22 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1mmoFimvYWyexs9ICjBRVzFnAw7otRh58/view",
-    boletim: "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1WrPN-k5ug_rndVqCHlM6ZdbL23TsdNaW/view",
+    boletim:
+      "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
   },
-];
+]
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
     id: 1,
     recomended: "40",
-    title: "ALL01",
+    title: "ALL01", //done
     thumbnail: "/produtos/allone.png",
     large_image: "/produtos/allone.png",
-    slogan: "ALL-01-S DETERGENTE UNIVERSAL DE USO GERAL com alto poder de remoção.",
+    slogan:
+      "ALL-01-S DETERGENTE UNIVERSAL DE USO GERAL com alto poder de remoção.",
     chamada: "Detergente vegano",
     hover_color: "245,92,33,1",
     description:
@@ -208,13 +225,15 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1qD4v8xwKgEYwMl6TTccNjVTawKtnOyBj/view?usp=sharing",
-    boletim: "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1OXg1_0hyv5TncGFfK_RzAGYcPJbMl1qy/view",
+    boletim:
+      "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view",
   },
   {
     id: 2,
     recomended: "20",
-    title: "Pré-Imper",
+    title: "Pré-Imper", //done
     thumbnail: "/produtos/preimper.png",
     large_image: "/produtos/preimper.png",
     slogan: "Ideal para aplicação pré impermeabilização.",
@@ -236,13 +255,15 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1yDgShU7fhVugq-A84FBJ1orPbdtN7IOr/view",
-    boletim: "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1m5HLgs5uuSnTXIQOGr0hLMJf7YbQUJjV/view",
+    boletim:
+      "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view",
   },
   {
     id: 3,
     recomended: "200",
-    title: "Tira Manchas",
+    title: "Tira Manchas", //done
     thumbnail: "/produtos/tiramancha.png",
     large_image: "/produtos/tiramancha.png",
     slogan: "Poderoso removedor e limpador de manchas e sujeiras.",
@@ -264,16 +285,19 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1citFyeEvhbvAZ-hEKGaEOLYHmXbUt3Cx/view",
-    boletim: "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1q8VeBwvmOj1Fi6UVKxoj0yGV2QP0w7Pg/view",
+    boletim:
+      "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view",
   },
   {
     id: 4,
     recomended: "5",
-    title: "Max Fresh",
+    title: "Max Fresh", //done
     thumbnail: "/produtos/maxfresh.png",
     large_image: "/produtos/maxfresh.png",
-    slogan: "Neutralizador de odores bacteriostático e finalizador com odor de bambu.",
+    slogan:
+      "Neutralizador de odores bacteriostático e finalizador com odor de bambu.",
     chamada: "Eliminador de odores vegano",
     hover_color: "236,236,236,1",
     description:
@@ -292,16 +316,18 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/12RIHXVAmUinJXoW0pTWBFtYPoV49Cgth/view",
-    boletim: "https://drive.google.com/file/d/1Ls29Xw5IDVKNJJsLBB6kipwgJ68jOf8_/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1jDmqKDmQmIbghTclP_giHtdDWIHqgT3C/view",
+    boletim:
+      "https://drive.google.com/file/d/1Ls29Xw5IDVKNJJsLBB6kipwgJ68jOf8_/view",
   },
-];
+]
 
 export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 9,
-    title: "LÓTUS SAFE TECH",
+    title: "LÓTUS SAFE TECH", //done
     thumbnail: "/produtos/safetech.png",
     large_image: "/produtos/safetech.png",
     slogan: "A Evolução dos Impermeabilizantes",
@@ -323,13 +349,15 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1A6zJU0MkkKIEvYVg3XLvvyWWWLVVx_kB/view",
-    boletim: "https://drive.google.com/file/d/1hURwpDlXyaw3XRQ6Z1HHZi_WqY8kJ-mg/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1-aSW2iWyI0h8owM0Z04VW2sMWvLYU0Ok/view",
+    boletim:
+      "https://drive.google.com/file/d/1hURwpDlXyaw3XRQ6Z1HHZi_WqY8kJ-mg/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 3,
-    title: "LÓTUS FAST PRO",
+    title: "LÓTUS FAST PRO", //done
     thumbnail: "/produtos/fastpro.png",
     large_image: "/produtos/fastpro.png",
     slogan: "Protetor de tecidos a base de solvente não inflamável",
@@ -351,12 +379,14 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1urj_Pu7Vfft1mfXVj4HcoAtpYm6QE6os/view",
-    boletim: "https://drive.google.com/file/d/19zMMMfMVPJgj2v4sKiLjCyo4j70jexpJ/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1eooIdq9nZBVADalnipUopJHd3XN7alXq/view",
+    boletim:
+      "https://drive.google.com/file/d/19zMMMfMVPJgj2v4sKiLjCyo4j70jexpJ/view",
   },
   {
     id: 1,
-    title: "LÓTUS IMPERTUDO",
+    title: "LÓTUS IMPERTUDO", //done
     thumbnail: "/produtos/hipertudo.png",
     large_image: "/produtos/hipertudo.png",
     slogan: "Impermeabilizante solvente inflamável de secagem rápida.",
@@ -378,13 +408,15 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1PRiL0eEI9EUSNNLtNxIVbfoSs2jARvw0/view",
-    boletim: "https://drive.google.com/file/d/1oY5Ey_ozsct2P_cfKDwouaKpv_xLVtJ2/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1krBRlH4VP7TmU-tJZJAf550iYYUThxN8/view",
+    boletim:
+      "https://drive.google.com/file/d/1oY5Ey_ozsct2P_cfKDwouaKpv_xLVtJ2/view",
   },
   {
     // TODO: Update the image url, hover_color and fiqasp
     id: 2,
-    title: "LÓTUS SAFE",
+    title: "LÓTUS SAFE", //done
     thumbnail: "/produtos/safe.png",
     large_image: "/produtos/safe.png",
     slogan: "Impermeabilizante solvente não inflamável de secagem rápida.",
@@ -406,16 +438,19 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1q4Dyhb4jClfdXgnyxaH5MpLuFv-2B2-E/view",
-    boletim: "https://drive.google.com/file/d/19H_15rc1IYTAG2c6MX3hDMgtW5pKJ1Rv/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1BOlhSvfPHs8X96MFIh2SixLAxdiQmgFc/view",
+    boletim:
+      "https://drive.google.com/file/d/19H_15rc1IYTAG2c6MX3hDMgtW5pKJ1Rv/view",
   },
   {
     // TODO: Update the image url, hover_color and fiqasp
     id: 4,
-    title: "LÓTUS ECO",
+    title: "LÓTUS ECO", //done
     thumbnail: "/produtos/eco.png",
     large_image: "/produtos/eco.png",
-    slogan: "Impermeabilizantes de tecido base água de fácil aplicação com alta repelência para água e óleo.",
+    slogan:
+      "Impermeabilizantes de tecido base água de fácil aplicação com alta repelência para água e óleo.",
     chamada: "Alto poder de repelência",
     hover_color: "0,174,46,1",
     description:
@@ -434,16 +469,19 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1gv1TW8F_dO0a4Zo3sfiGzwVLutJP58t8/view",
-    boletim: "https://drive.google.com/file/d/10fkhVOL41wf8Qby--5QwwKS-aTNJdMiM/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1pzd2Lg4QtBSFkTUTLNYz0OOjmjWFsYSp/view",
+    boletim:
+      "https://drive.google.com/file/d/10fkhVOL41wf8Qby--5QwwKS-aTNJdMiM/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 5,
-    title: "TECH BLOCK",
+    title: "TECH BLOCK", //done
     thumbnail: "/produtos/teckblock.png",
     large_image: "/produtos/teckblock.png",
-    slogan: "Impermeabilizante de tecidos a base de água que possui efeito antiviral e antibacteriano.",
+    slogan:
+      "Impermeabilizante de tecidos a base de água que possui efeito antiviral e antibacteriano.",
     chamada: "Impermeabilizante antiviral e antibacteriano",
     hover_color: "162,192,233,1",
     description:
@@ -462,16 +500,19 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1LlYhPVqniArW8S8yRWR031EHJ_3LWYG8/view?usp=drive_link",
-    boletim: "https://drive.google.com/file/d/1cGDyHD5Y7qPOTRGI2kPd49oGlLZF4mJ9/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1u6ADyISVky6y2rFgSFFrICJLjRvVCCWq/view",
+    boletim:
+      "https://drive.google.com/file/d/1cGDyHD5Y7qPOTRGI2kPd49oGlLZF4mJ9/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 6,
-    title: "ACQUA-PRO",
+    title: "ACQUA-PRO", //done
     thumbnail: "/produtos/acquapro.png",
     large_image: "/produtos/acquapro.png",
-    slogan: "Protetor de tecidos a base de água, que oferece um efeito hidrofugante ao tecido.",
+    slogan:
+      "Protetor de tecidos a base de água, que oferece um efeito hidrofugante ao tecido.",
     chamada: "Protetor de tecidos a base de água",
     hover_color: "178,132,106,1",
     description:
@@ -490,16 +531,19 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1kYTLyFW906pT0Jn2PRui2w7nTF8H7CKV/view",
-    boletim: "https://drive.google.com/file/d/1AaLOWpjb9HMPP_h4Ye3Uk4EGNgUYFQAu/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1z6Hs8z_XEtzq9TsMI4FFPkGyhuewQ4VO/view",
+    boletim:
+      "https://drive.google.com/file/d/1AaLOWpjb9HMPP_h4Ye3Uk4EGNgUYFQAu/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 7,
-    title: "CLEAN PROTECT",
+    title: "CLEAN PROTECT", //done
     thumbnail: "/produtos/cleanprot.png",
     large_image: "/produtos/cleanprot.png",
-    slogan: "Desenvolvido para limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização.",
+    slogan:
+      "Desenvolvido para limpezas de estofados e tecidos que já passaram pelo processo de impermeabilização.",
     chamada: "Limpezas de estofados e tecidos",
     hover_color: "139,198,184,1",
     description:
@@ -518,17 +562,20 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1VXJTbUUktlyEOEtzFTwzeteUWC0KUANW/view",
-    boletim: "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1BDz2OzRlCqe49KY-K7SgwRMnY2lDLSMU/view",
+    boletim:
+      "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
   },
 
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 8,
-    title: "HYDRA LEDER",
+    title: "HYDRA LEDER", //done
     thumbnail: "/produtos/hidraleder.png",
     large_image: "/produtos/hidraleder.png",
-    slogan: "Desenvolvido para aplicações em couro, courvin, laminados sintéticos e outras superfícies plásticas.",
+    slogan:
+      "Desenvolvido para aplicações em couro, courvin, laminados sintéticos e outras superfícies plásticas.",
     chamada: "Limpeza com efeito hidrorrepelente",
     hover_color: "41,48,49,1",
     description:
@@ -547,19 +594,22 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1mmoFimvYWyexs9ICjBRVzFnAw7otRh58/view",
-    boletim: "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1WrPN-k5ug_rndVqCHlM6ZdbL23TsdNaW/view",
+    boletim:
+      "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
   },
-];
+]
 
 export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 1,
-    title: "IMPERTUDO MAX",
+    title: "IMPERTUDO MAX", //done
     thumbnail: "/produtos/impertudomax.png",
     large_image: "/produtos/impertudomax.png",
-    slogan: "Impermeabilizante de secagem rápida para tecidos de uso profissional.",
+    slogan:
+      "Impermeabilizante de secagem rápida para tecidos de uso profissional.",
     chamada: "Impermeabilizante a base de solvente INFLAMÁVEL",
     hover_color: "21,26,64,1",
     description:
@@ -578,16 +628,19 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1lRPfFAS8vemKmf177nGMqzlJtSgsNSUL/view?usp=sharing",
-    boletim: "https://drive.google.com/file/d/18oadaqBpsIh8696g3dVD3JoGUoXzPl6A/view?usp=drive_link",
+    fiqasp:
+      "https://drive.google.com/file/d/1EB3yuDJZZ5zhxi4AIXj6mijaXZeRpUVM/view",
+    boletim:
+      "https://drive.google.com/file/d/18oadaqBpsIh8696g3dVD3JoGUoXzPl6A/view?usp=drive_link",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 2,
-    title: "SAFE MAX",
+    title: "SAFE MAX", //done
     thumbnail: "/produtos/safemax.png",
     large_image: "/produtos/safemax.png",
-    slogan: "impermeabilizante de secagem rápida para tecidos de uso profissional.",
+    slogan:
+      "impermeabilizante de secagem rápida para tecidos de uso profissional.",
     chamada: "Impermeabilizante de tecidos",
     hover_color: "239,196,73,1",
     description:
@@ -606,16 +659,19 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/1bdmAgRke-bzYziLZzg0ZpdKuQ9tgrM0s/view",
-    boletim: "https://drive.google.com/file/d/1fDGNOSDpm0EOMt9mndwobQvKR2IAU5ZC/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1Z4JUSQHgL4v02WrhiIaSCbCLJ9emIQp9/view",
+    boletim:
+      "https://drive.google.com/file/d/1fDGNOSDpm0EOMt9mndwobQvKR2IAU5ZC/view",
   },
   {
     // TODO: Update the image url, hover_color, slogan and fiqasp
     id: 3,
-    title: "ECO MAX",
+    title: "ECO MAX", //done
     thumbnail: "/produtos/ecomax.png",
     large_image: "/produtos/ecomax.png",
-    slogan: "Impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo.",
+    slogan:
+      "Impermeabilizante extremamente fácil de aplicar, apresenta alto poder de repelência a água e ao óleo.",
     chamada: "Alto poder de repelência a água e ao óleo",
     hover_color: "0,174,46,1",
     description:
@@ -634,7 +690,9 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
         filter: "raw",
       },
     ],
-    fiqasp: "https://drive.google.com/file/d/19pW5tUTP2MBihDbRboG8X7NOx7mvvQR_/view",
-    boletim: "https://drive.google.com/file/d/1_Xl-vvTKoVOFTfWyw_t67uTeM4WmKYR7/view",
+    fiqasp:
+      "https://drive.google.com/file/d/1DWibUgt7BzFj25z7tEQX9svOl_jmHmm9/view",
+    boletim:
+      "https://drive.google.com/file/d/1_Xl-vvTKoVOFTfWyw_t67uTeM4WmKYR7/view",
   },
-];
+]
