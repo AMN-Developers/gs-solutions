@@ -28,7 +28,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
       },
     ],
     fiqasp:
-      "https://drive.google.com/file/d/1EeBpjGzOQefh20mxGOohfiS-A903QGCM/viewg",
+      "https://drive.google.com/file/d/1EeBpjGzOQefh20mxGOohfiS-A903QGCM/view",
     boletim:
       "https://drive.google.com/file/d/1JLBX2aSyFaroK05MXDzVh3tl5j09k9FM/view?usp=sharing",
   },
