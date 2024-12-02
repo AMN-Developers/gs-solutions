@@ -1,4 +1,4 @@
-import MotionLayout from "@/components/MotionLayout";
+import MotionLayout from "@/components/MotionLayout"
 import {
   Container,
   Box,
@@ -11,25 +11,25 @@ import {
   AccordionPanel,
   AccordionIcon,
   Button,
-} from "@chakra-ui/react";
-import { motion, AnimatePresence } from "framer-motion";
-import HiddenText from "@/components/HiddenText";
-import VideoFrame from "@/components/iFrame";
+} from "@chakra-ui/react"
+import { motion, AnimatePresence } from "framer-motion"
+import HiddenText from "@/components/HiddenText"
+import VideoFrame from "@/components/iFrame"
 
-import { useState } from "react";
-import Link from "next/link";
-import Reveal from "@/components/Reveal";
+import { useState } from "react"
+import Link from "next/link"
+import Reveal from "@/components/Reveal"
 const variants = {
   hidden: { opacity: 0, scale: 0 },
   enter: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 0 },
-};
-
+}
+//done
 export default function Fireguard() {
-  const [image, setImage] = useState(2);
+  const [image, setImage] = useState(2)
   const handleChangeImage = (src: number) => {
-    setImage(src);
-  };
+    setImage(src)
+  }
   const images = [
     {
       src: "/produtos/fireguard/fireguard1.png",
@@ -47,7 +47,7 @@ export default function Fireguard() {
       src: "/produtos/fireguard/fireguard4.png",
       alt: "bombona diagonal baixo",
     },
-  ];
+  ]
 
   return (
     <MotionLayout title="Fireguard">
@@ -96,11 +96,19 @@ export default function Fireguard() {
         </Flex>
       </Box>
       <Container maxW={"container.xl"}>
-        <Flex flexDirection={{ base: "column", lg: "row" }} gap={4} id="saibamais">
+        <Flex
+          flexDirection={{ base: "column", lg: "row" }}
+          gap={4}
+          id="saibamais"
+        >
           <Flex w={{ base: "full", lg: "50%" }}>
             <Flex flexDirection={"column"} gap={4}>
               <Reveal delay={0.3}>
-                <Flex p={4} flexDirection={{ base: "column", md: "row" }} gap={4}>
+                <Flex
+                  p={4}
+                  flexDirection={{ base: "column", md: "row" }}
+                  gap={4}
+                >
                   <AnimatePresence mode="wait">
                     {images[image] && (
                       <Box w={"full"} h={"md"} rounded={"md"} boxShadow={"md"}>
@@ -113,7 +121,12 @@ export default function Fireguard() {
                           key={image}
                           boxSize={"full"}
                         >
-                          <Image alt="Imagem fixflot" src={images[image].src} boxSize={"full"} fit={"contain"} />
+                          <Image
+                            alt="Imagem fixflot"
+                            src={images[image].src}
+                            boxSize={"full"}
+                            fit={"contain"}
+                          />
                         </Box>
                       </Box>
                     )}
@@ -135,30 +148,58 @@ export default function Fireguard() {
                         cursor={"pointer"}
                         key={index}
                       >
-                        <Image alt={Thumb.alt} src={Thumb.src} boxSize={"64px"} objectFit={"contain"} />
+                        <Image
+                          alt={Thumb.alt}
+                          src={Thumb.src}
+                          boxSize={"64px"}
+                          objectFit={"contain"}
+                        />
                       </Box>
                     ))}
                   </Flex>
                 </Flex>
               </Reveal>
 
-              <Text as={"p"} fontWeight={"semibold"} fontSize={"md"} color={"#F19E34"}>
+              <Text
+                as={"p"}
+                fontWeight={"semibold"}
+                fontSize={"md"}
+                color={"#F19E34"}
+              >
                 O que é Fireguard?
               </Text>
               <Text as={"p"} textAlign={"justify"} fontSize={"md"}>
-                LÓTUS FIREGUARD é uma solução para aplicação têxtil e outros substratos com o objetivo de retardar as
-                chamas, incolor, inodoro, recomendado para materiais onde há a necessidade de se evitar ou inibir a
-                propagação de chamas. É um produto extremamente versátil e fácil de ser utilizado onde há a necessidade
-                de se evitar a propagação de chamas em ambientes. A sua ação consiste em inibir ou retardar as chamas,
-                evitando que o fogo se alastre a outros ambientes e materiais combustíveis. Materiais aplicados com
-                LÓTUS FIREGUARD não sofrem alterações significantes em relação a sua aparência, textura, cor e odor
-                original. Para uso em ambientes externos expostos às intempéries, recomenda-se a aplicação de
-                impermeabilizante para tecidos da linha LÓTUS HS 1000.
+                LÓTUS FIREGUARD é uma solução para aplicação têxtil e outros
+                substratos com o objetivo de retardar as chamas, incolor,
+                inodoro, recomendado para materiais onde há a necessidade de se
+                evitar ou inibir a propagação de chamas. É um produto
+                extremamente versátil e fácil de ser utilizado onde há a
+                necessidade de se evitar a propagação de chamas em ambientes. A
+                sua ação consiste em inibir ou retardar as chamas, evitando que
+                o fogo se alastre a outros ambientes e materiais combustíveis.
+                Materiais aplicados com LÓTUS FIREGUARD não sofrem alterações
+                significantes em relação a sua aparência, textura, cor e odor
+                original. Para uso em ambientes externos expostos às
+                intempéries, recomenda-se a aplicação de impermeabilizante para
+                tecidos da linha LÓTUS HS 1000.
               </Text>
             </Flex>
           </Flex>
-          <Flex w={{ base: "full", lg: "50%" }} flexDirection={"column"} gap={4} rounded={"md"} px={4} my={4}>
-            <Text as={"h2"} fontWeight={"semibold"} fontSize={"md"} textTransform={"uppercase"} color={"#F19E34"}>
+          <Flex
+            w={{ base: "full", lg: "50%" }}
+            flexDirection={"column"}
+            gap={4}
+            rounded={"md"}
+            px={4}
+            my={4}
+          >
+            <Text
+              as={"h2"}
+              fontWeight={"semibold"}
+              fontSize={"md"}
+              textTransform={"uppercase"}
+              color={"#F19E34"}
+            >
               Como usar?
             </Text>
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
@@ -208,31 +249,51 @@ solvente de percloroetileno para tecidos e tapetes)."
             </Flex>
 
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
-              <Text as={"h2"} textTransform={"uppercase"} fontWeight={"semibold"} color={"#F19E34"}>
+              <Text
+                as={"h2"}
+                textTransform={"uppercase"}
+                fontWeight={"semibold"}
+                color={"#F19E34"}
+              >
                 Precauções para manuseio seguro:
               </Text>
               <Text>
-                Assegurar uma boa ventilação / exaustão no local de trabalho. Evitar o contacto com a pele e os olhos.
-                Modo de ação: Quando em contato com o fogo, a solução de LÓTUS FIREGUARD que penetrou no material
-                protegido se carboniza, evitando a propagação das chamas em 100% do tempo. Também se aumenta o controle,
-                e diminui o tempo de combate ao fogo, em um eventual caso de incêndio.
+                Assegurar uma boa ventilação / exaustão no local de trabalho.
+                Evitar o contacto com a pele e os olhos. Modo de ação: Quando em
+                contato com o fogo, a solução de LÓTUS FIREGUARD que penetrou no
+                material protegido se carboniza, evitando a propagação das
+                chamas em 100% do tempo. Também se aumenta o controle, e diminui
+                o tempo de combate ao fogo, em um eventual caso de incêndio.
               </Text>
-              <Text as={"h2"} textTransform={"uppercase"} fontWeight={"semibold"} color={"#F19E34"}>
+              <Text
+                as={"h2"}
+                textTransform={"uppercase"}
+                fontWeight={"semibold"}
+                color={"#F19E34"}
+              >
                 Segurança:
               </Text>
               <Text>
-                Caso o tecido fique em contato com a pele, recomenda-se a realização de testes dermatológicos antes da
-                aplicação. Utilize os equipamentos de proteção exigidos abaixo e mantenha este produto fora do alcance
-                de crianças.
+                Caso o tecido fique em contato com a pele, recomenda-se a
+                realização de testes dermatológicos antes da aplicação. Utilize
+                os equipamentos de proteção exigidos abaixo e mantenha este
+                produto fora do alcance de crianças.
               </Text>
-              <Text as={"h2"} textTransform={"uppercase"} fontWeight={"semibold"} color={"#F19E34"}>
+              <Text
+                as={"h2"}
+                textTransform={"uppercase"}
+                fontWeight={"semibold"}
+                color={"#F19E34"}
+              >
                 Rendimento:
               </Text>
               <Text>
-                Absorção com todas as demãos requeridas por face (independentemente do método de aplicação utilizado):
-                200 - 250 mL/m2 (variando de acordo com a espessura, tipo de substrato e porosidade de cada superfície).
-                A reaplicação se faz necessária sempre que houver a lavagem em água ou longos períodos de exposição as
-                intempéries.
+                Absorção com todas as demãos requeridas por face
+                (independentemente do método de aplicação utilizado): 200 - 250
+                mL/m2 (variando de acordo com a espessura, tipo de substrato e
+                porosidade de cada superfície). A reaplicação se faz necessária
+                sempre que houver a lavagem em água ou longos períodos de
+                exposição as intempéries.
               </Text>
             </Flex>
             <Flex gap={2} w={"full"}>
@@ -243,7 +304,9 @@ solvente de percloroetileno para tecidos e tapetes)."
                   bg: "rgba(255,180,44,0.8)",
                 }}
                 onClick={() =>
-                  window.open("https://drive.google.com/file/d/1elTQXW4pF7PTlnvIFx6Vj9MM3CxZC7k7/view?usp=sharing")
+                  window.open(
+                    "https://drive.google.com/file/d/1elTQXW4pF7PTlnvIFx6Vj9MM3CxZC7k7/view?usp=sharing"
+                  )
                 }
               >
                 Boletim Tecnico
@@ -254,7 +317,11 @@ solvente de percloroetileno para tecidos e tapetes)."
                 _hover={{
                   bg: "rgba(255,180,44,0.8)",
                 }}
-                onClick={() => window.open("https://drive.google.com/file/d/13M6kAG2RKxtCAIPFNd2Qj49vFkTEbu1L/view")}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/15J65mLGgMWLrL2A1mz6eZ2wUtG3nP1J5/view"
+                  )
+                }
               >
                 FISPQ
               </Button>
@@ -265,7 +332,9 @@ solvente de percloroetileno para tecidos e tapetes)."
                   bg: "rgba(255,180,44,0.8)",
                 }}
                 onClick={() =>
-                  window.open("https://drive.google.com/file/d/1gwMLAQM1Zxusjf8Dm4dn7Zsgq_ODl9T1/view?pli=1")
+                  window.open(
+                    "https://drive.google.com/file/d/1gwMLAQM1Zxusjf8Dm4dn7Zsgq_ODl9T1/view?pli=1"
+                  )
                 }
               >
                 Relatorio Tec.
@@ -276,7 +345,13 @@ solvente de percloroetileno para tecidos e tapetes)."
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"} color={"#F19E34"}>
+                      <Box
+                        as="span"
+                        flex="1"
+                        textAlign="left"
+                        fontWeight={"semibold"}
+                        color={"#F19E34"}
+                      >
                         Propriedades
                       </Box>
                       <AccordionIcon />
@@ -389,5 +464,5 @@ solvente de percloroetileno para tecidos e tapetes)."
         </Button>
       </Container>
     </MotionLayout>
-  );
+  )
 }

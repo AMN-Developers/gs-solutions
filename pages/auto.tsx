@@ -17,7 +17,7 @@ import MotionLayout from "@/components/MotionLayout";
 import { forwardRef, useState } from "react";
 import { Reveal as AutoReveal } from "@/components/Auto/Reveal";
 import Reveal from "@/components/Reveal";
-
+//done
 const images = [
   {
     src: "/auto/car.jpg",
@@ -235,7 +235,9 @@ export default function Auto() {
           >
             {images[currentImage] && (
               <AnimatePresence>
-                <AutoReveal key={images[currentImage].text as unknown as string}>
+                <AutoReveal
+                  key={images[currentImage].text as unknown as string}
+                >
                   <Text
                     fontSize={"6xl"}
                     fontWeight={"bold"}
@@ -271,8 +273,18 @@ export default function Auto() {
                           w={"500px"}
                           zIndex={20}
                         >
-                          <Image src={product.image} alt={product.product} width={product.size} height={product.size} />
-                          <Box ml={4} display={"flex"} flexDir={"column"} justifyContent={"space-between"}>
+                          <Image
+                            src={product.image}
+                            alt={product.product}
+                            width={product.size}
+                            height={product.size}
+                          />
+                          <Box
+                            ml={4}
+                            display={"flex"}
+                            flexDir={"column"}
+                            justifyContent={"space-between"}
+                          >
                             <Text fontSize={"lg"} fontWeight={"bold"}>
                               {product.type}
                             </Text>
@@ -288,7 +300,10 @@ export default function Auto() {
               </Box>
               {images[currentImage].type && (
                 <AnimatePresence>
-                  <Reveal delay={0.3} key={images[currentImage].type as unknown as string}>
+                  <Reveal
+                    delay={0.3}
+                    key={images[currentImage].type as unknown as string}
+                  >
                     <Text
                       fontSize={"6xl"}
                       fontWeight={"bold"}
@@ -319,21 +334,51 @@ export default function Auto() {
         >
           CONHEÇA OS PRODUTOS QUE VÃO REVOLUCIONAR A HIGIENIZAÇÃO AUTOMOTIVA
         </Text>
-        <Flex justifyContent={"space-between"} flexDirection={{ base: "column", md: "row" }} gap={4}>
+        <Flex
+          justifyContent={"space-between"}
+          flexDirection={{ base: "column", md: "row" }}
+          gap={4}
+        >
           <Reveal delay={0.1}>
-            <Flex p={{ base: "0", md: "4" }} flexDirection={"column"} rounded={"md"} boxShadow={"lg"} height={"100%"}>
+            <Flex
+              p={{ base: "0", md: "4" }}
+              flexDirection={"column"}
+              rounded={"md"}
+              boxShadow={"lg"}
+              height={"100%"}
+            >
               <Box alignSelf={"center"} p={4}>
-                <Image src="/produtos/allone.png" alt="All in One" width={100} height={100} />
+                <Image
+                  src="/produtos/allone.png"
+                  alt="All in One"
+                  width={100}
+                  height={100}
+                />
               </Box>
-              <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }} m={"auto"}>
+              <Text
+                textAlign={"center"}
+                fontSize={{ base: "md", sm: "sm" }}
+                m={"auto"}
+              >
                 Detergente com alto poder de remoção
               </Text>
             </Flex>
           </Reveal>
           <Reveal delay={0.2}>
-            <Flex p={{ base: "0", md: "4" }} flexDirection={"column"} rounded={"md"} boxShadow={"lg"} height={"100%"}>
+            <Flex
+              p={{ base: "0", md: "4" }}
+              flexDirection={"column"}
+              rounded={"md"}
+              boxShadow={"lg"}
+              height={"100%"}
+            >
               <Box alignSelf={"center"} p={4}>
-                <Image src="/produtos/preimper.png" alt="All in One" width={100} height={100} />
+                <Image
+                  src="/produtos/preimper.png"
+                  alt="All in One"
+                  width={100}
+                  height={100}
+                />
               </Box>
               <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }}>
                 Limpador de sujidade inorgânica
@@ -341,9 +386,20 @@ export default function Auto() {
             </Flex>
           </Reveal>
           <Reveal delay={0.3}>
-            <Flex p={{ base: "0", md: "4" }} flexDirection={"column"} rounded={"md"} boxShadow={"lg"} height={"100%"}>
+            <Flex
+              p={{ base: "0", md: "4" }}
+              flexDirection={"column"}
+              rounded={"md"}
+              boxShadow={"lg"}
+              height={"100%"}
+            >
               <Box alignSelf={"center"} p={4}>
-                <Image src="/produtos/tiramancha.png" alt="All in One" width={100} height={100} />
+                <Image
+                  src="/produtos/tiramancha.png"
+                  alt="All in One"
+                  width={100}
+                  height={100}
+                />
               </Box>
               <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }}>
                 Poderoso tira de manchas
@@ -351,9 +407,20 @@ export default function Auto() {
             </Flex>
           </Reveal>
           <Reveal delay={0.3}>
-            <Flex p={{ base: "0", md: "4" }} flexDirection={"column"} rounded={"md"} boxShadow={"lg"} height={"100%"}>
+            <Flex
+              p={{ base: "0", md: "4" }}
+              flexDirection={"column"}
+              rounded={"md"}
+              boxShadow={"lg"}
+              height={"100%"}
+            >
               <Box alignSelf={"center"} p={4}>
-                <Image src="/produtos/multic.png" alt="All in One" width={100} height={100} />
+                <Image
+                  src="/produtos/multic.png"
+                  alt="All in One"
+                  width={100}
+                  height={100}
+                />
               </Box>
               <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }}>
                 Poderoso APC Alcalino
@@ -361,9 +428,20 @@ export default function Auto() {
             </Flex>
           </Reveal>
           <Reveal delay={0.4}>
-            <Flex p={{ base: "0", md: "4" }} flexDirection={"column"} rounded={"md"} boxShadow={"lg"} height={"100%"}>
+            <Flex
+              p={{ base: "0", md: "4" }}
+              flexDirection={"column"}
+              rounded={"md"}
+              boxShadow={"lg"}
+              height={"100%"}
+            >
               <Box alignSelf={"center"} p={4}>
-                <Image src="/produtos/hidraleder.png" alt="All in One" width={100} height={100} />
+                <Image
+                  src="/produtos/hidraleder.png"
+                  alt="All in One"
+                  width={100}
+                  height={100}
+                />
               </Box>
               <Text textAlign={"center"} fontSize={{ base: "md", sm: "sm" }}>
                 Hidratante de couro 4x1
@@ -381,13 +459,23 @@ export default function Auto() {
           QUER SABER MAIS SOBRE OS PRODUTOS?
         </Text>
         <Reveal delay={0.5}>
-          <Flex flexDirection={{ base: "column", md: "row" }} justifyContent={"space-between"} mb={4} gap={4}>
+          <Flex
+            flexDirection={{ base: "column", md: "row" }}
+            justifyContent={"space-between"}
+            mb={4}
+            gap={4}
+          >
             <Flex flexDirection={"column"} w={"100%"} gap={4}>
               <Flex as={Accordion} flexDirection={"column"} allowToggle gap={4}>
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
+                      <Box
+                        as="span"
+                        flex="1"
+                        textAlign="left"
+                        fontWeight={"semibold"}
+                      >
                         All01
                       </Box>
                       <AccordionIcon />
@@ -395,8 +483,9 @@ export default function Auto() {
                   </h2>
                   <AccordionPanel fontSize={"md"}>
                     <Text mb={4}>
-                      É um detergente de PH Neutro especifico para higienização têxtil para todo tipo de tecido e que é
-                      de acordo com as exigências da ANVISA.
+                      É um detergente de PH Neutro especifico para higienização
+                      têxtil para todo tipo de tecido e que é de acordo com as
+                      exigências da ANVISA.
                     </Text>
                     <Flex gap={2}>
                       <Button
@@ -415,7 +504,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1qD4v8xwKgEYwMl6TTccNjVTawKtnOyBj/view?usp=sharing"
+                            "https://drive.google.com/file/d/1OXg1_0hyv5TncGFfK_RzAGYcPJbMl1qy/view"
                           )
                         }
                       >
@@ -427,7 +516,12 @@ export default function Auto() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
+                      <Box
+                        as="span"
+                        flex="1"
+                        textAlign="left"
+                        fontWeight={"semibold"}
+                      >
                         Pré-Imper
                       </Box>
                       <AccordionIcon />
@@ -435,16 +529,20 @@ export default function Auto() {
                   </h2>
                   <AccordionPanel fontSize={"md"}>
                     <Text mb={4}>
-                      Tem função de potencializar ação do Detergente All 01 quando são misturados no momento da
-                      higienização, uma segunda função é neutralizar o residual tensoativo que é proveniente da
-                      higienização, garantindo uma eficiência maior dos impermeabilizantes.
+                      Tem função de potencializar ação do Detergente All 01
+                      quando são misturados no momento da higienização, uma
+                      segunda função é neutralizar o residual tensoativo que é
+                      proveniente da higienização, garantindo uma eficiência
+                      maior dos impermeabilizantes.
                     </Text>
                     <Flex gap={2}>
                       <Button
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view"
+                          )
                         }
                       >
                         Boletim Tecnico
@@ -453,7 +551,9 @@ export default function Auto() {
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1yDgShU7fhVugq-A84FBJ1orPbdtN7IOr/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1m5HLgs5uuSnTXIQOGr0hLMJf7YbQUJjV/view"
+                          )
                         }
                       >
                         FISPQ
@@ -464,7 +564,12 @@ export default function Auto() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
+                      <Box
+                        as="span"
+                        flex="1"
+                        textAlign="left"
+                        fontWeight={"semibold"}
+                      >
                         Tira Manchas
                       </Box>
                       <AccordionIcon />
@@ -472,15 +577,19 @@ export default function Auto() {
                   </h2>
                   <AccordionPanel fontSize={"md"}>
                     <Text mb={4}>
-                      O tira manchas é um percabonato de sódio, ele tem um poder muito bom em alvejamento e alto
-                      rendimento e performance de limpeza, tanto para tecidos brancos como tecidos coloridos.
+                      O tira manchas é um percabonato de sódio, ele tem um poder
+                      muito bom em alvejamento e alto rendimento e performance
+                      de limpeza, tanto para tecidos brancos como tecidos
+                      coloridos.
                     </Text>
                     <Flex gap={2}>
                       <Button
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view"
+                          )
                         }
                       >
                         Boletim Tecnico
@@ -489,7 +598,9 @@ export default function Auto() {
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1citFyeEvhbvAZ-hEKGaEOLYHmXbUt3Cx/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1q8VeBwvmOj1Fi6UVKxoj0yGV2QP0w7Pg/view"
+                          )
                         }
                       >
                         FISPQ
@@ -500,7 +611,12 @@ export default function Auto() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
+                      <Box
+                        as="span"
+                        flex="1"
+                        textAlign="left"
+                        fontWeight={"semibold"}
+                      >
                         MULTI-C
                       </Box>
                       <AccordionIcon />
@@ -508,17 +624,21 @@ export default function Auto() {
                   </h2>
                   <AccordionPanel fontSize={"md"}>
                     <Text mb={4}>
-                      Limpador multifuncional especialmente desenvolvido para aplicações têxteis, indicado também para
-                      limpeza pesada de superfícies em geral. Com alta capacidade de remoção de gorduras, óleos, graxas
-                      e outras sujeiras de difícil remoção Devido ao seu pH alcalino o produto não é indicado para
-                      limpeza de superfícies que serão impermeabilizadas.
+                      Limpador multifuncional especialmente desenvolvido para
+                      aplicações têxteis, indicado também para limpeza pesada de
+                      superfícies em geral. Com alta capacidade de remoção de
+                      gorduras, óleos, graxas e outras sujeiras de difícil
+                      remoção Devido ao seu pH alcalino o produto não é indicado
+                      para limpeza de superfícies que serão impermeabilizadas.
                     </Text>
                     <Flex gap={2}>
                       <Button
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1upuDxMxIr1ESXYTXf2xxqcTmTB-2ItwC/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1upuDxMxIr1ESXYTXf2xxqcTmTB-2ItwC/view"
+                          )
                         }
                       >
                         Boletim Tecnico
@@ -527,7 +647,9 @@ export default function Auto() {
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1y_NFl5YUt_cYAnOMsXRte9Lg-onMTJ8e/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1Q039yFhWjEGl4Z56E8zeUV8MrMFJCihr/view"
+                          )
                         }
                       >
                         FISPQ
@@ -538,7 +660,12 @@ export default function Auto() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
+                      <Box
+                        as="span"
+                        flex="1"
+                        textAlign="left"
+                        fontWeight={"semibold"}
+                      >
                         Hydra Leder
                       </Box>
                       <AccordionIcon />
@@ -546,16 +673,21 @@ export default function Auto() {
                   </h2>
                   <AccordionPanel fontSize={"md"}>
                     <Text mb={4}>
-                      LÓTUS HYDRA LEDER é um hidratante impermeabilizante de couro que tem função 4x1, hidrata,
-                      revitaliza, limpa e realiza a proteção com efeito hidrorrepelente (repelem líquidos), além de
-                      causar sensível melhora ao toque e elasticidade dos materiais que possuem essa característica.
+                      LÓTUS HYDRA LEDER é um hidratante impermeabilizante de
+                      couro que tem função 4x1, hidrata, revitaliza, limpa e
+                      realiza a proteção com efeito hidrorrepelente (repelem
+                      líquidos), além de causar sensível melhora ao toque e
+                      elasticidade dos materiais que possuem essa
+                      característica.
                     </Text>
                     <Flex gap={2}>
                       <Button
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view"
+                          )
                         }
                       >
                         Boletim Tecnico
@@ -564,7 +696,9 @@ export default function Auto() {
                         colorScheme="facebook"
                         size={"sm"}
                         onClick={() =>
-                          window.open("https://drive.google.com/file/d/1mmoFimvYWyexs9ICjBRVzFnAw7otRh58/view")
+                          window.open(
+                            "https://drive.google.com/file/d/1WrPN-k5ug_rndVqCHlM6ZdbL23TsdNaW/view"
+                          )
                         }
                       >
                         FISPQ
@@ -578,7 +712,9 @@ export default function Auto() {
         </Reveal>
         <Button
           my={4}
-          bg={"radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);"}
+          bg={
+            "radial-gradient(circle, rgba(55,88,147,1) 0%, rgba(24,24,59,1) 93%, rgba(24,26,61,1) 100%);"
+          }
           color={"white"}
           w={"full"}
           _hover={{
@@ -595,5 +731,5 @@ export default function Auto() {
         </Button>
       </Container>
     </MotionLayout>
-  );
+  )
 }

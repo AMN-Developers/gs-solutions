@@ -35,7 +35,7 @@ export default function Hidro() {
       alt: "bombona diagonal baixo",
     },
   ]
-
+//done
   return (
     <MotionLayout title="Hidro e Óleo">
       <Box
@@ -222,7 +222,7 @@ export default function Hidro() {
                 _hover={{
                   bg: "#e1e1e1",
                 }}
-                onClick={() => window.open()}
+                onClick={() => window.open("https://drive.google.com/file/d/1xUyxHJtp1W-dL2knqkuAWbPzigeIZUGT/view")}
               >
                 FISPQ
               </Button>
