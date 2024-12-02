@@ -25,7 +25,7 @@ const variants = {
   enter: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 0 },
 };
-
+//done
 export default function FixFlot() {
   const [image, setImage] = useState(2);
   const handleChangeImage = (src: number) => {
@@ -92,7 +92,11 @@ export default function FixFlot() {
           <Flex w={{ base: "full", lg: "50%" }}>
             <Flex flexDirection={"column"} gap={4}>
               <Reveal delay={0.3}>
-                <Flex p={4} flexDirection={{ base: "column", md: "row" }} gap={4}>
+                <Flex
+                  p={4}
+                  flexDirection={{ base: "column", md: "row" }}
+                  gap={4}
+                >
                   <AnimatePresence mode="wait">
                     {images[image] && (
                       <Box w={"full"} h={"md"} rounded={"md"} boxShadow={"md"}>
@@ -105,7 +109,12 @@ export default function FixFlot() {
                           key={image}
                           boxSize={"full"}
                         >
-                          <Image alt="Imagem fixflot" src={images[image].src} boxSize={"full"} fit={"contain"} />
+                          <Image
+                            alt="Imagem fixflot"
+                            src={images[image].src}
+                            boxSize={"full"}
+                            fit={"contain"}
+                          />
                         </Box>
                       </Box>
                     )}
@@ -127,28 +136,50 @@ export default function FixFlot() {
                         cursor={"pointer"}
                         key={index}
                       >
-                        <Image alt={Thumb.alt} src={Thumb.src} boxSize={"64px"} objectFit={"contain"} />
+                        <Image
+                          alt={Thumb.alt}
+                          src={Thumb.src}
+                          boxSize={"64px"}
+                          objectFit={"contain"}
+                        />
                       </Box>
                     ))}
                   </Flex>
                 </Flex>
               </Reveal>
 
-              <Text as={"p"} fontWeight={"semibold"} fontSize={"md"} color={"#A22C37"}>
+              <Text
+                as={"p"}
+                fontWeight={"semibold"}
+                fontSize={"md"}
+                color={"#A22C37"}
+              >
                 O que é FixFlot?
               </Text>
               <Text as={"p"} textAlign={"justify"} fontSize={"md"}>
-                LÓTUS FIX-FLOT é um flotador extremamente concentrado com excelente espumação e alto poder de fixação de
-                cor através da tecnologia “Lótus Omni FIX”, especialmente desenvolvido para limpeza de todos os tipos de
-                tapetes e carpetes. Com alta capacidade na remoção das mais variadas sujidades, além de revitalizar a
-                coloração e o toque natural da fibra. Devido ao seu efeito de fixação de cor da tecnologia “Lótus Omni
-                FIX” é extremamente seguro para realizar a higienização de tapetes persas, orientais, kilim, fibras
-                naturais, fibras sintéticas e carpetes, com redução de até 99% das chances de ocorrer migração de cores,
-                quando tomado os devidos cuidados com o processo indicado*.
+                LÓTUS FIX-FLOT é um flotador extremamente concentrado com
+                excelente espumação e alto poder de fixação de cor através da
+                tecnologia “Lótus Omni FIX”, especialmente desenvolvido para
+                limpeza de todos os tipos de tapetes e carpetes. Com alta
+                capacidade na remoção das mais variadas sujidades, além de
+                revitalizar a coloração e o toque natural da fibra. Devido ao
+                seu efeito de fixação de cor da tecnologia “Lótus Omni FIX” é
+                extremamente seguro para realizar a higienização de tapetes
+                persas, orientais, kilim, fibras naturais, fibras sintéticas e
+                carpetes, com redução de até 99% das chances de ocorrer migração
+                de cores, quando tomado os devidos cuidados com o processo
+                indicado*.
               </Text>
             </Flex>
           </Flex>
-          <Flex w={{ base: "full", lg: "50%" }} flexDirection={"column"} gap={4} rounded={"md"} px={4} my={4}>
+          <Flex
+            w={{ base: "full", lg: "50%" }}
+            flexDirection={"column"}
+            gap={4}
+            rounded={"md"}
+            px={4}
+            my={4}
+          >
             <Text
               as={"h2"}
               fontWeight={"semibold"}
@@ -199,65 +230,101 @@ export default function FixFlot() {
             </Flex>
 
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
-              <Text as={"h2"} textTransform={"uppercase"} fontWeight={"semibold"} color={"#A22C37"}>
-                Sugestão para Tapetes de Fibra sintética / Sisal / Algodão Claro:
+              <Text
+                as={"h2"}
+                textTransform={"uppercase"}
+                fontWeight={"semibold"}
+                color={"#A22C37"}
+              >
+                Sugestão para Tapetes de Fibra sintética / Sisal / Algodão
+                Claro:
               </Text>
               <Text>
-                Após a definição da diluição escolhida, aplicar 1 Litro de solução para cada m² de tapete com um regador
-                sobre o tapete ou carpete a ser limpo, aguardar por pelo menos 10 minutos para que o produto inicie o
-                processo de limpeza química. Após este período realizar a esfregação do tapete com enceradeira rotativa
+                Após a definição da diluição escolhida, aplicar 1 Litro de
+                solução para cada m² de tapete com um regador sobre o tapete ou
+                carpete a ser limpo, aguardar por pelo menos 10 minutos para que
+                o produto inicie o processo de limpeza química. Após este
+                período realizar a esfregação do tapete com enceradeira rotativa
                 e enxaguar com água em abundância
               </Text>
-              <Text as={"h2"} textTransform={"uppercase"} fontWeight={"semibold"} color={"#A22C37"}>
+              <Text
+                as={"h2"}
+                textTransform={"uppercase"}
+                fontWeight={"semibold"}
+                color={"#A22C37"}
+              >
                 Sugestão para Carpetes:
               </Text>
               <Text>
-                Após a definição da diluição escolhida, pulverizar o produto sobre a superfície do carpete com um
-                pulverizador, aguardar por pelo menos 10 minutos para que o produto inicie o processo de limpeza
-                química. Após este período realizar a esfregação do carpete com enceradeira rotativa e realizar quantas
-                extrações forem necessárias.
+                Após a definição da diluição escolhida, pulverizar o produto
+                sobre a superfície do carpete com um pulverizador, aguardar por
+                pelo menos 10 minutos para que o produto inicie o processo de
+                limpeza química. Após este período realizar a esfregação do
+                carpete com enceradeira rotativa e realizar quantas extrações
+                forem necessárias.
               </Text>
-              <Text as={"h2"} textTransform={"uppercase"} fontWeight={"semibold"} color={"#A22C37"}>
+              <Text
+                as={"h2"}
+                textTransform={"uppercase"}
+                fontWeight={"semibold"}
+                color={"#A22C37"}
+              >
                 Sugestão para Tapetes de Fibras naturais coloridos:
               </Text>
               <Text>
-                Realizar um teste de migração, utilizando um papel absorvente, para se definir o processo a ser
-                utilizado para higienização. No caso de não migração no papel, seguir com o processo úmido; No caso de
-                migração no papel, seguir com o processo semi-seco. Informações detalhadas para o processo de limpeza de
-                tapetes de fibras naturais, acessar botão abaixo.
+                Realizar um teste de migração, utilizando um papel absorvente,
+                para se definir o processo a ser utilizado para higienização. No
+                caso de não migração no papel, seguir com o processo úmido; No
+                caso de migração no papel, seguir com o processo semi-seco.
+                Informações detalhadas para o processo de limpeza de tapetes de
+                fibras naturais, acessar botão abaixo.
               </Text>
             </Flex>
             <Flex gap={2} w={"full"} flexDir={{ base: "column", sm: "row" }}>
               <Button
-                bg={"radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"}
-                color={"white"}
-                _hover={{
-                  bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
-                }}
-                onClick={() => window.open("https://drive.google.com/file/d/1pkPh5ROm8CEyBJ3d9CegI5ukalshy4J7/view")}
-              >
-                Boletim Tecnico
-              </Button>
-              <Button
-                bg={"radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"}
+                bg={
+                  "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+                }
                 color={"white"}
                 _hover={{
                   bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
                 }}
                 onClick={() =>
-                  window.open("https://drive.google.com/file/d/1qmdKcTiMWiei7XaU1MF9XdRE-1Wa_h3H/view?usp=sharing")
+                  window.open(
+                    "https://drive.google.com/file/d/1pkPh5ROm8CEyBJ3d9CegI5ukalshy4J7/view"
+                  )
+                }
+              >
+                Boletim Tecnico
+              </Button>
+              <Button
+                bg={
+                  "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+                }
+                color={"white"}
+                _hover={{
+                  bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://drive.google.com/file/d/1EeBpjGzOQefh20mxGOohfiS-A903QGCM/view"
+                  )
                 }
               >
                 FISPQ
               </Button>
               <Button
-                bg={"radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"}
+                bg={
+                  "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+                }
                 color={"white"}
                 _hover={{
                   bg: "radial-gradient(circle, rgba(154,42,42,0.9) 0%, rgba(71,1,1,0.9) 93%, rgba(71,1,1,0.9) 100%);",
                 }}
                 onClick={() =>
-                  window.open("https://drive.google.com/file/d/10Aw6Pg0HAoahpo_AJ72wtUs4Bl5j3HVv/view?usp=sharing")
+                  window.open(
+                    "https://drive.google.com/file/d/10Aw6Pg0HAoahpo_AJ72wtUs4Bl5j3HVv/view?usp=sharing"
+                  )
                 }
               >
                 Ebook de higienização
@@ -268,7 +335,13 @@ export default function FixFlot() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"} color={"#A22C37"}>
+                      <Box
+                        as="span"
+                        flex="1"
+                        textAlign="left"
+                        fontWeight={"semibold"}
+                        color={"#A22C37"}
+                      >
                         Propriedades
                       </Box>
                       <AccordionIcon />
@@ -291,7 +364,8 @@ export default function FixFlot() {
                       <strong>Densidade</strong>: aproximadamente 0,985 g/cm3.
                     </Text>
                     <Text>
-                      <strong>Solubilidade</strong> em água: Solúvel em qualquer proporção.
+                      <strong>Solubilidade</strong> em água: Solúvel em qualquer
+                      proporção.
                     </Text>
                   </AccordionPanel>
                 </AccordionItem>
@@ -302,7 +376,9 @@ export default function FixFlot() {
 
         <Button
           my={4}
-          bg={"radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"}
+          bg={
+            "radial-gradient(circle, rgba(154,42,42,1) 0%, rgba(71,1,1,1) 93%, rgba(71,1,1,1) 100%);"
+          }
           color={"white"}
           w={"full"}
           _hover={{
@@ -319,5 +395,5 @@ export default function FixFlot() {
         </Button>
       </Container>
     </MotionLayout>
-  );
+  )
 }
