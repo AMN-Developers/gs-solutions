@@ -27,7 +27,12 @@ export default function CertificatedBar() {
             height={46}
           />
         </Box>
-        <Box maxW={200} as={Link} href="/powertrio">
+        <Box
+          maxW={200}
+          as={Link}
+          href="https://drive.google.com/file/d/12BYEiNIhQLI4kY1rtawGQuVcX3vhMxNs/view?usp=drive_link"
+          target="_blank"
+        >
           <Image
             src="/certificados/SVB.svg"
             alt="logo svb"
@@ -43,8 +48,17 @@ export default function CertificatedBar() {
             height={79}
           />
         </Box>
-        <Box as={Link} href="/certificado">
-          <Image src="iso-logo.svg" alt="logo aatcc" width={76} height={76} />
+        <Box
+          as={Link}
+          href="https://drive.google.com/file/d/1MLUPUMzHhbTjKcrbs4ixqX8WWX_xSp5f/view?usp=drive_link"
+          target="_blank"
+        >
+          <Image
+            src="iso-logo.svg"
+            alt="logo iso 9001"
+            width={76}
+            height={76}
+          />
         </Box>
       </Flex>
     </Container>
