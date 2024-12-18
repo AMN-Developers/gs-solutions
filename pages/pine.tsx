@@ -50,7 +50,7 @@ export default function Pine() {
       alt: "bombona diagonal baixo",
     },
   ];
-//done
+  //done
   return (
     <MotionLayout title="Limpoo Pine">
       <Box
@@ -97,11 +97,7 @@ export default function Pine() {
           <Flex w={{ base: "full", lg: "50%" }}>
             <Flex flexDirection={"column"} gap={4}>
               <Reveal delay={0.3}>
-                <Flex
-                  p={4}
-                  flexDirection={{ base: "column", md: "row" }}
-                  gap={4}
-                >
+                <Flex p={4} flexDirection={{ base: "column", md: "row" }} gap={4}>
                   <AnimatePresence mode="wait">
                     {images[image] && (
                       <Box w={"full"} h={"md"} rounded={"md"} boxShadow={"md"}>
@@ -114,12 +110,7 @@ export default function Pine() {
                           key={image}
                           boxSize={"full"}
                         >
-                          <Image
-                            alt="Imagem fixflot"
-                            src={images[image].src}
-                            boxSize={"full"}
-                            fit={"contain"}
-                          />
+                          <Image alt="Imagem fixflot" src={images[image].src} boxSize={"full"} fit={"contain"} />
                         </Box>
                       </Box>
                     )}
@@ -141,48 +132,25 @@ export default function Pine() {
                         cursor={"pointer"}
                         key={index}
                       >
-                        <Image
-                          alt={Thumb.alt}
-                          src={Thumb.src}
-                          boxSize={"64px"}
-                          objectFit={"contain"}
-                        />
+                        <Image alt={Thumb.alt} src={Thumb.src} boxSize={"64px"} objectFit={"contain"} />
                       </Box>
                     ))}
                   </Flex>
                 </Flex>
               </Reveal>
               <Text as={"p"} textAlign={"justify"} fontSize={"md"}>
-                Detergente desengraxantes concentrado de uso geral, com uma
-                combinação a base de óleo de pinho e tensoativos biodegradáveis
-                de alta performance e poderosa ação de limpeza. Podendo ser
-                utilizado em todas os tipos de superfície lavável, removendo os
-                mais diversos tipos de sujidades tais como, óleos, gorduras,
-                graxas, poeira, encardido, sujidades orgânicas em geral, sem
-                agredir a superfície aplicada. Produto de pH neutro com
-                tensoativos biodegradáveis que não agridem o meio ambiente e de
-                fácil remoção por enxágue. Agradável odor floral. Produto
-                concentrado de excelente custo beneficio , permitindo diluições
-                conforme a situação a ser aplicado.
+                Detergente desengraxantes concentrado de uso geral, com uma combinação a base de óleo de pinho e
+                tensoativos biodegradáveis de alta performance e poderosa ação de limpeza. Podendo ser utilizado em
+                todas os tipos de superfície lavável, removendo os mais diversos tipos de sujidades tais como, óleos,
+                gorduras, graxas, poeira, encardido, sujidades orgânicas em geral, sem agredir a superfície aplicada.
+                Produto de pH neutro com tensoativos biodegradáveis que não agridem o meio ambiente e de fácil remoção
+                por enxágue. Agradável odor floral. Produto concentrado de excelente custo beneficio , permitindo
+                diluições conforme a situação a ser aplicado.
               </Text>
             </Flex>
           </Flex>
-          <Flex
-            w={{ base: "full", lg: "50%" }}
-            flexDirection={"column"}
-            gap={4}
-            rounded={"md"}
-            px={4}
-            my={4}
-          >
-            <Text
-              as={"h2"}
-              fontWeight={"bold"}
-              fontSize={"md"}
-              textTransform={"uppercase"}
-              py={4}
-              textAlign={"center"}
-            >
+          <Flex w={{ base: "full", lg: "50%" }} flexDirection={"column"} gap={4} rounded={"md"} px={4} my={4}>
+            <Text as={"h2"} fontWeight={"bold"} fontSize={"md"} textTransform={"uppercase"} py={4} textAlign={"center"}>
               Diluição recomendada
             </Text>
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
@@ -217,14 +185,11 @@ export default function Pine() {
                 Utilização:
               </Text>
               <Text>
-                Após a definição da diluição escolhida e preparação da solução:
-                Aplique a solução do produto na superfície a ser limpa. A
-                aplicação pode ser por spray, pulverizador, regador ou a melhor
-                maneira de aplicação para a superfície. Deixar o produto agir
-                por aproximadamente 5 minutos. Realizar uma esfregação (ação
-                mecânica) com o auxílio de uma esponja, escova, pano de
-                microfibra, mop ou conforme a necessidade da aplicação, para a
-                remoção da sujidade. Realizar enxágue com água limpa.
+                Após a definição da diluição escolhida e preparação da solução: Aplique a solução do produto na
+                superfície a ser limpa. A aplicação pode ser por spray, pulverizador, regador ou a melhor maneira de
+                aplicação para a superfície. Deixar o produto agir por aproximadamente 5 minutos. Realizar uma
+                esfregação (ação mecânica) com o auxílio de uma esponja, escova, pano de microfibra, mop ou conforme a
+                necessidade da aplicação, para a remoção da sujidade. Realizar enxágue com água limpa.
               </Text>
             </Flex>
             <Flex gap={2} w={"full"} flexDir={{ base: "column", sm: "row" }}>
@@ -234,9 +199,7 @@ export default function Pine() {
                   bg: "#CDDA70",
                 }}
                 onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/1pkPh5ROm8CEyBJ3d9CegI5ukalshy4J7/view"
-                  )
+                  window.open("https://drive.google.com/file/d/1sBZCeu1-voQ2b6vcq4enHmGqutLNFNQl/view?usp=sharing")
                 }
               >
                 Boletim Tecnico
@@ -247,25 +210,10 @@ export default function Pine() {
                   bg: "#CDDA70",
                 }}
                 onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/1gPO1hd_VmaUTqhPfahCn4csr20t5XRAQ/view"
-                  )
+                  window.open("https://drive.google.com/file/d/1YXPvfKNPCLUybg046n6C61xYxdfKdPjB/view?usp=sharing")
                 }
               >
                 FISPQ
-              </Button>
-              <Button
-                bg={"#CDDA33"}
-                _hover={{
-                  bg: "#CDDA70",
-                }}
-                onClick={() =>
-                  window.open(
-                    "https://drive.google.com/file/d/10Aw6Pg0HAoahpo_AJ72wtUs4Bl5j3HVv/view?usp=sharing"
-                  )
-                }
-              >
-                Ebook de higienização
               </Button>
             </Flex>
             <Flex flexDirection={"column"} gap={4} pb={4}>
@@ -273,12 +221,7 @@ export default function Pine() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box
-                        as="span"
-                        flex="1"
-                        textAlign="left"
-                        fontWeight={"semibold"}
-                      >
+                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
                         Propriedades
                       </Box>
                       <AccordionIcon />
@@ -312,15 +255,11 @@ export default function Pine() {
           }}
           w={"full"}
           textTransform={"uppercase"}
-          onClick={() =>
-            window.open(
-              "https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
-            )
-          }
+          onClick={() => window.open("https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0")}
         >
           Compre conosco
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }
