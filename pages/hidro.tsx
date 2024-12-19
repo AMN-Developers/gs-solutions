@@ -1,22 +1,22 @@
-import MotionLayout from "@/components/MotionLayout"
-import { Container, Box, Text, Flex, Image, Button } from "@chakra-ui/react"
-import { motion, AnimatePresence } from "framer-motion"
-import HiddenText from "@/components/HiddenText"
+import MotionLayout from "@/components/MotionLayout";
+import { Container, Box, Text, Flex, Image, Button } from "@chakra-ui/react";
+import { motion, AnimatePresence } from "framer-motion";
+import HiddenText from "@/components/HiddenText";
 
-import { useState } from "react"
-import Link from "next/link"
-import Reveal from "@/components/Reveal"
+import { useState } from "react";
+import Link from "next/link";
+import Reveal from "@/components/Reveal";
 const variants = {
   hidden: { opacity: 0, scale: 0 },
   enter: { opacity: 1, scale: 1 },
   exit: { opacity: 0, scale: 0 },
-}
+};
 
 export default function Hidro() {
-  const [image, setImage] = useState(2)
+  const [image, setImage] = useState(2);
   const handleChangeImage = (src: number) => {
-    setImage(src)
-  }
+    setImage(src);
+  };
   const images = [
     {
       src: "/produtos/hidroeoleo/HidroeOleo01.png",
@@ -34,8 +34,8 @@ export default function Hidro() {
       src: "/produtos/hidroeoleo/HidroeOleo04.png",
       alt: "bombona diagonal baixo",
     },
-  ]
-//done
+  ];
+  //done
   return (
     <MotionLayout title="Hidro e Óleo">
       <Box
@@ -77,11 +77,7 @@ export default function Hidro() {
           <Flex w={{ base: "full", lg: "50%" }}>
             <Flex flexDirection={"column"} gap={4}>
               <Reveal delay={0.3}>
-                <Flex
-                  p={4}
-                  flexDirection={{ base: "column", md: "row" }}
-                  gap={4}
-                >
+                <Flex p={4} flexDirection={{ base: "column", md: "row" }} gap={4}>
                   <AnimatePresence mode="wait">
                     {images[image] && (
                       <Box w={"full"} h={"md"} rounded={"md"} boxShadow={"md"}>
@@ -94,12 +90,7 @@ export default function Hidro() {
                           key={image}
                           boxSize={"full"}
                         >
-                          <Image
-                            alt="Imagem fixflot"
-                            src={images[image].src}
-                            boxSize={"full"}
-                            fit={"contain"}
-                          />
+                          <Image alt="Imagem fixflot" src={images[image].src} boxSize={"full"} fit={"contain"} />
                         </Box>
                       </Box>
                     )}
@@ -121,53 +112,26 @@ export default function Hidro() {
                         cursor={"pointer"}
                         key={index}
                       >
-                        <Image
-                          alt={Thumb.alt}
-                          src={Thumb.src}
-                          boxSize={"64px"}
-                          objectFit={"contain"}
-                        />
+                        <Image alt={Thumb.alt} src={Thumb.src} boxSize={"64px"} objectFit={"contain"} />
                       </Box>
                     ))}
                   </Flex>
                 </Flex>
               </Reveal>
 
-              <Text
-                as={"p"}
-                fontWeight={"semibold"}
-                fontSize={"md"}
-                color={"black"}
-              >
+              <Text as={"p"} fontWeight={"semibold"} fontSize={"md"} color={"black"}>
                 O que é Hidro & Óleo?
               </Text>
               <Text as={"p"} textAlign={"justify"} fontSize={"md"}>
-                Confere a superfície tratada uma impermeabilização Hidro&Óleo
-                fugante, com repelência contra líquidos a base de água e óleo, e
-                evita manchas provenientes destes. O produto age nos capilares
-                do substrato, criando o efeito impermeabilizante na superfície,
-                não obstruindo os poros, com efeito de reativação de cor e
-                revitalização da superfície. De fácil aplicação e alto
-                rendimento.
+                Confere a superfície tratada uma impermeabilização Hidro&Óleo fugante, com repelência contra líquidos a
+                base de água e óleo, e evita manchas provenientes destes. O produto age nos capilares do substrato,
+                criando o efeito impermeabilizante na superfície, não obstruindo os poros, com efeito de reativação de
+                cor e revitalização da superfície. De fácil aplicação e alto rendimento.
               </Text>
             </Flex>
           </Flex>
-          <Flex
-            w={{ base: "full", lg: "50%" }}
-            flexDirection={"column"}
-            gap={4}
-            rounded={"md"}
-            px={4}
-            my={4}
-          >
-            <Text
-              as={"h2"}
-              fontWeight={"semibold"}
-              fontSize={"md"}
-              textTransform={"uppercase"}
-              py={4}
-              color={"black"}
-            >
+          <Flex w={{ base: "full", lg: "50%" }} flexDirection={"column"} gap={4} rounded={"md"} px={4} my={4}>
+            <Text as={"h2"} fontWeight={"semibold"} fontSize={"md"} textTransform={"uppercase"} py={4} color={"black"}>
               De fácil aplicação e alto rendimento.
             </Text>
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
@@ -212,7 +176,9 @@ export default function Hidro() {
                 _hover={{
                   bg: "#e1e1e1",
                 }}
-                onClick={() => window.open()}
+                onClick={() =>
+                  window.open("https://drive.google.com/file/d/1YdpKerAQkM57IYUELe990OJyzXjFmu87/view?usp=sharing")
+                }
               >
                 Boletim Tecnico
               </Button>
@@ -222,19 +188,11 @@ export default function Hidro() {
                 _hover={{
                   bg: "#e1e1e1",
                 }}
-                onClick={() => window.open("https://drive.google.com/file/d/1xUyxHJtp1W-dL2knqkuAWbPzigeIZUGT/view")}
+                onClick={() =>
+                  window.open("https://drive.google.com/file/d/1yOC_2ME3QFMsIBi9fnwTRX-UtFrzjcuE/view?usp=sharing")
+                }
               >
                 FISPQ
-              </Button>
-              <Button
-                bg={"#a4a4a5;"}
-                color={"white"}
-                _hover={{
-                  bg: "#e1e1e1",
-                }}
-                onClick={() => window.open()}
-              >
-                Ebook de higienização
               </Button>
             </Flex>
           </Flex>
@@ -249,15 +207,11 @@ export default function Hidro() {
             bg: "#e1e1e1",
           }}
           textTransform={"uppercase"}
-          onClick={() =>
-            window.open(
-              "https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0"
-            )
-          }
+          onClick={() => window.open("https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0")}
         >
           Compre conosco
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }

@@ -33,25 +33,25 @@ export default function Desincrustante() {
   };
   const images = [
     {
-      src: "/produtos/pine/Limpoo Pine 03.png",
+      src: "/produtos/desincrustante/Limpoo Desincrustante 05.png",
       alt: "bombona diagonal",
     },
     {
-      src: "/produtos/pine/Limpoo Pine 02.png",
+      src: "/produtos/desincrustante/Limpoo Desincrustante 01.png",
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/pine/Limpoo Pine 04.png",
+      src: "/produtos/desincrustante/Limpoo Desincrustante 03.png",
       alt: "bombona cima",
     },
     {
-      src: "/produtos/pine/Limpoo Pine 06.png",
+      src: "/produtos/desincrustante/Limpoo Desincrustante 04.png",
       alt: "bombona diagonal baixo",
     },
   ];
   //done
   return (
-    <MotionLayout title="Limpoo Pine">
+    <MotionLayout title="Limpoo Desincrustante">
       <Box
         bgImage={""}
         bgRepeat={"no-repeat"}
