@@ -1,8 +1,8 @@
-import { Container } from "@chakra-ui/react"
-import { ReactNode } from "react"
+import { Container } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 interface CardRootProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function CardRoot({ children }: CardRootProps) {
@@ -16,5 +16,5 @@ export default function CardRoot({ children }: CardRootProps) {
     >
       {children}
     </Container>
-  )
+  );
 }

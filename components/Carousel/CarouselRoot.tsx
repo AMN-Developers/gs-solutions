@@ -1,8 +1,8 @@
-import { Container } from "@chakra-ui/react"
-import { ReactNode } from "react"
+import { Container } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 interface CarouselRootProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function CarouselRoot({ children }: CarouselRootProps) {
@@ -14,5 +14,5 @@ export default function CarouselRoot({ children }: CarouselRootProps) {
     >
       {children}
     </Container>
-  )
+  );
 }

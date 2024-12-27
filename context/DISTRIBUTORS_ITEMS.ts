@@ -1014,4 +1014,4 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     product_line: ["lotus"],
   },
-]
+];

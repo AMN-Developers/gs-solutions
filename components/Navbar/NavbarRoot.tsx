@@ -1,8 +1,8 @@
-import { Container } from "@chakra-ui/react"
-import { ReactNode } from "react"
+import { Container } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 interface NavbarRootProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function NavbarRoot({ children }: NavbarRootProps) {
@@ -21,5 +21,5 @@ export default function NavbarRoot({ children }: NavbarRootProps) {
     >
       {children}
     </Container>
-  )
+  );
 }

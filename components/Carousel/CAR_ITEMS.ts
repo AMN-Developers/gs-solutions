@@ -1,7 +1,7 @@
 export interface CarouselItem {
-  image: string
-  alt: string
-  label: string
+  image: string;
+  alt: string;
+  label: string;
 }
 
 export const CAR_ITEMS: Array<CarouselItem> = [
@@ -65,4 +65,4 @@ export const CAR_ITEMS: Array<CarouselItem> = [
     alt: "Distribuidor12",
     label: "(11)2413-1480",
   },
-]
+];

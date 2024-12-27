@@ -6,16 +6,16 @@ import {
   useDisclosure,
   Text,
   Card,
-} from "@chakra-ui/react"
+} from "@chakra-ui/react";
 
 interface ProdItemProps {
-  bgImage: string
-  alt: string
-  title: string
-  description: string
-  slogan: string
-  hoverColor: string
-  chamada: string
+  bgImage: string;
+  alt: string;
+  title: string;
+  description: string;
+  slogan: string;
+  hoverColor: string;
+  chamada: string;
 }
 
 export default function ProdItem({
@@ -23,9 +23,9 @@ export default function ProdItem({
   bgImage,
   slogan,
   hoverColor,
-  chamada
+  chamada,
 }: ProdItemProps) {
-  const { isOpen, onToggle } = useDisclosure()
+  const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Flex flexDirection={"column"} mb={2}>
@@ -71,5 +71,5 @@ export default function ProdItem({
         </Flex>
       </Card>
     </Flex>
-  )
+  );
 }

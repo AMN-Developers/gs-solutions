@@ -50,7 +50,8 @@ const images = [
         image: "/auto/all01hydra.png",
         type: "BANCO DE COURO",
         product: "ALL-01 LIMPEZA & HYDRA LEDER HIDRATAÇÃO",
-        description: "Borrifar ALL-01 + limpar com pano de microfibra + aplicar Hidra Leder na espuma",
+        description:
+          "Borrifar ALL-01 + limpar com pano de microfibra + aplicar Hidra Leder na espuma",
         delay: 0.75,
         size: 200,
       },
@@ -125,10 +126,12 @@ type ImageProps = {
   objectFit?: "cover" | "contain";
 };
 
-const ExoticImage = forwardRef<HTMLImageElement, ImageProps>(function ExoticImageWrapper(props, ref) {
-  // eslint-disable-next-line jsx-a11y/alt-text
-  return <Image {...props} ref={ref} />;
-});
+const ExoticImage = forwardRef<HTMLImageElement, ImageProps>(
+  function ExoticImageWrapper(props, ref) {
+    // eslint-disable-next-line jsx-a11y/alt-text
+    return <Image {...props} ref={ref} />;
+  },
+);
 
 const MotionComponent = motion(ExoticImage);
 
@@ -141,7 +144,9 @@ export default function Auto() {
   };
 
   const handlePrev = () => {
-    setCurrentImage((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setCurrentImage(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length,
+    );
   };
 
   const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
@@ -493,7 +498,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view?usp=sharing"
+                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view?usp=sharing",
                           )
                         }
                       >
@@ -504,7 +509,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1OXg1_0hyv5TncGFfK_RzAGYcPJbMl1qy/view"
+                            "https://drive.google.com/file/d/1OXg1_0hyv5TncGFfK_RzAGYcPJbMl1qy/view",
                           )
                         }
                       >
@@ -541,7 +546,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view"
+                            "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view",
                           )
                         }
                       >
@@ -552,7 +557,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1m5HLgs5uuSnTXIQOGr0hLMJf7YbQUJjV/view"
+                            "https://drive.google.com/file/d/1m5HLgs5uuSnTXIQOGr0hLMJf7YbQUJjV/view",
                           )
                         }
                       >
@@ -588,7 +593,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view"
+                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view",
                           )
                         }
                       >
@@ -599,7 +604,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1q8VeBwvmOj1Fi6UVKxoj0yGV2QP0w7Pg/view"
+                            "https://drive.google.com/file/d/1q8VeBwvmOj1Fi6UVKxoj0yGV2QP0w7Pg/view",
                           )
                         }
                       >
@@ -637,7 +642,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1upuDxMxIr1ESXYTXf2xxqcTmTB-2ItwC/view"
+                            "https://drive.google.com/file/d/1upuDxMxIr1ESXYTXf2xxqcTmTB-2ItwC/view",
                           )
                         }
                       >
@@ -648,7 +653,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1Q039yFhWjEGl4Z56E8zeUV8MrMFJCihr/view"
+                            "https://drive.google.com/file/d/1Q039yFhWjEGl4Z56E8zeUV8MrMFJCihr/view",
                           )
                         }
                       >
@@ -686,7 +691,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view"
+                            "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
                           )
                         }
                       >
@@ -697,7 +702,7 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1WrPN-k5ug_rndVqCHlM6ZdbL23TsdNaW/view"
+                            "https://drive.google.com/file/d/1WrPN-k5ug_rndVqCHlM6ZdbL23TsdNaW/view",
                           )
                         }
                       >
@@ -723,7 +728,7 @@ export default function Auto() {
           textTransform={"uppercase"}
           onClick={() =>
             window.open(
-              "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
+              "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20",
             )
           }
         >
@@ -731,5 +736,5 @@ export default function Auto() {
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }

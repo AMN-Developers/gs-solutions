@@ -1,13 +1,13 @@
-import { Flex, Card, Text, Icon } from "@chakra-ui/react"
-import Link from "next/link"
-import { Product } from "@/hooks/useProducts"
-import { RefObject } from "react"
-import { BiExpandAlt } from "react-icons/bi"
+import { Flex, Card, Text, Icon } from "@chakra-ui/react";
+import Link from "next/link";
+import { Product } from "@/hooks/useProducts";
+import { RefObject } from "react";
+import { BiExpandAlt } from "react-icons/bi";
 
 interface CatalogItemProps extends Partial<Product> {
-  lastProductRef: RefObject<HTMLDivElement> | null
-  type: "higi" | "veg" | "imper" | "max"
-  href: string
+  lastProductRef: RefObject<HTMLDivElement> | null;
+  type: "higi" | "veg" | "imper" | "max";
+  href: string;
 }
 
 export default function CatalogItem({
@@ -86,5 +86,5 @@ export default function CatalogItem({
         </Flex>
       </Card>
     </Flex>
-  )
+  );
 }

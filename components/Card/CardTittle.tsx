@@ -1,7 +1,7 @@
-import { Box } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react";
 
 interface CardSectionTitleProps {
-  title: string
+  title: string;
 }
 
 export default function CardSectionTitle({ title }: CardSectionTitleProps) {
@@ -17,5 +17,5 @@ export default function CardSectionTitle({ title }: CardSectionTitleProps) {
     >
       {title}
     </Box>
-  )
+  );
 }

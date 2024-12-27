@@ -9,7 +9,11 @@ interface IDistributorMapProps {
   onSelect: (distributor: Distributor) => void;
 }
 
-export const DistributorsMap = ({ distributors, selectedDistributor, onSelect }: IDistributorMapProps) => {
+export const DistributorsMap = ({
+  distributors,
+  selectedDistributor,
+  onSelect,
+}: IDistributorMapProps) => {
   const selectedCardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,7 +30,9 @@ export const DistributorsMap = ({ distributors, selectedDistributor, onSelect }:
       {distributors.map((store) => (
         <DistributorCard
           key={store.id}
-          ref={selectedDistributor?.id === store.id ? selectedCardRef : undefined}
+          ref={
+            selectedDistributor?.id === store.id ? selectedCardRef : undefined
+          }
           distributor={store}
           isSelected={selectedDistributor?.id === store.id}
           onSelect={onSelect}

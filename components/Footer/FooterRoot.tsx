@@ -1,8 +1,8 @@
-import { Box } from "@chakra-ui/react"
-import { ReactNode } from "react"
+import { Box } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 interface FooterRootProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function FooterRoot({ children }: FooterRootProps) {
@@ -15,5 +15,5 @@ export default function FooterRoot({ children }: FooterRootProps) {
     >
       {children}
     </Box>
-  )
+  );
 }

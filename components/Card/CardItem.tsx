@@ -1,4 +1,11 @@
-import { Card, CardBody, CardHeader, Text, Image, Flex } from "@chakra-ui/react";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Text,
+  Image,
+  Flex,
+} from "@chakra-ui/react";
 import Link from "next/link";
 
 interface CardItemProps {
@@ -10,9 +17,23 @@ interface CardItemProps {
   bgPos?: string;
 }
 
-export default function CardItem({ href, logo, alt, title, bgImage, bgPos }: CardItemProps) {
+export default function CardItem({
+  href,
+  logo,
+  alt,
+  title,
+  bgImage,
+  bgPos,
+}: CardItemProps) {
   return (
-    <Flex h={"sm"} my={{ base: 0, md: 0 }} gap={4} w={"full"} align="center" flexDirection={"column"}>
+    <Flex
+      h={"sm"}
+      my={{ base: 0, md: 0 }}
+      gap={4}
+      w={"full"}
+      align="center"
+      flexDirection={"column"}
+    >
       <Card
         w={"100%"}
         h={"100%"}
@@ -31,7 +52,9 @@ export default function CardItem({ href, logo, alt, title, bgImage, bgPos }: Car
           transition: "all 0.6s ease-in-out",
         }}
       >
-        <CardHeader>{logo && <Image width={445} height={100} src={logo} alt={alt} />}</CardHeader>
+        <CardHeader>
+          {logo && <Image width={445} height={100} src={logo} alt={alt} />}
+        </CardHeader>
       </Card>
       <Text fontWeight={"bold"} fontSize={{ base: "md", md: "md" }}>
         {title}

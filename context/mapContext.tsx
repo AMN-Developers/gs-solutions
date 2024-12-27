@@ -1,4 +1,12 @@
-import { ChangeEvent, createContext, useState, useRef, useMemo, useCallback, useEffect } from "react";
+import {
+  ChangeEvent,
+  createContext,
+  useState,
+  useRef,
+  useMemo,
+  useCallback,
+  useEffect,
+} from "react";
 import { Distributor, DISTRIBUTORS_ITEMS } from "./DISTRIBUTORS_ITEMS";
 import { useAutocomplete } from "@vis.gl/react-google-maps";
 interface MapContextData {
@@ -71,7 +79,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const [selectedProductLine, setSelectedProductLine] = useState("");
   const [storeType, setStoreType] = useState<string>("");
   const [centerLocation, setCenterLocation] = useState(
-    initialCenterLocation[selectedCountry as unknown as "br" | "pt"]
+    initialCenterLocation[selectedCountry as unknown as "br" | "pt"],
   );
   const distributors = useMemo(() => DISTRIBUTORS_ITEMS, []);
   const onPlaceChanged = (place: any) => {
@@ -85,7 +93,9 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const onCountryChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectedState("");
     setSelectedCountry(e.target.value);
-    setCenterLocation(initialCenterLocation[e.target.value as unknown as "br" | "pt"]);
+    setCenterLocation(
+      initialCenterLocation[e.target.value as unknown as "br" | "pt"],
+    );
   };
 
   const onProductLineChange = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -110,7 +120,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
       const geocodingResponse = await fetch(
         `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(userAddress)}&key=${
           process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as unknown as string
-        }`
+        }`,
       );
 
       const geocodingData = await geocodingResponse.json();
@@ -120,22 +130,34 @@ const MapProvider = ({ children }: MapProviderProps) => {
 
         // Filter stores within 450km range and calculate distances
         const filtered = DISTRIBUTORS_ITEMS.filter((store) => {
-          const distance = calculateDistance(location.lat, location.lng, store.latitude, store.longitude);
+          const distance = calculateDistance(
+            location.lat,
+            location.lng,
+            store.latitude,
+            store.longitude,
+          );
           store.distance = distance; // Add distance to each store
           return distance <= 450;
         });
 
         if (filtered.length === 0) {
-          setError("Não encontramos nenhum distribuidor próximo a sua localização.");
+          setError(
+            "Não encontramos nenhum distribuidor próximo a sua localização.",
+          );
           return;
         }
 
         // Sort by distance and get the closest store
-        const sortedStores = filtered.sort((a, b) => (a.distance || 0) - (b.distance || 0));
+        const sortedStores = filtered.sort(
+          (a, b) => (a.distance || 0) - (b.distance || 0),
+        );
         const closestStore = sortedStores[0];
 
         setFilteredStores(sortedStores);
-        setCenterLocation({ lat: closestStore.latitude, lng: closestStore.longitude });
+        setCenterLocation({
+          lat: closestStore.latitude,
+          lng: closestStore.longitude,
+        });
         setUserLocation(location);
         setZoom(10);
         setSelectedStore(closestStore); // Select the closest store
@@ -148,13 +170,21 @@ const MapProvider = ({ children }: MapProviderProps) => {
     }
   };
 
-  const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number) => {
+  const calculateDistance = (
+    lat1: number,
+    lon1: number,
+    lat2: number,
+    lon2: number,
+  ) => {
     const R = 6371; // Radius of the Earth in kilometers
     const dLat = deg2rad(lat2 - lat1);
     const dLon = deg2rad(lon2 - lon1);
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      Math.cos(deg2rad(lat1)) *
+        Math.cos(deg2rad(lat2)) *
+        Math.sin(dLon / 2) *
+        Math.sin(dLon / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     const distance = R * c; // Distance in kilometers
     return distance;
@@ -194,9 +224,13 @@ const MapProvider = ({ children }: MapProviderProps) => {
 
   const filteredDistributors = useMemo(() => {
     return DISTRIBUTORS_ITEMS.filter((distributor) => {
-      const matchesCountry = !selectedCountry || distributor.country === selectedCountry;
-      const matchesState = !selectedState || distributor.state === selectedState;
-      const matchesProductLine = !selectedProductLine || distributor.product_line.includes(selectedProductLine);
+      const matchesCountry =
+        !selectedCountry || distributor.country === selectedCountry;
+      const matchesState =
+        !selectedState || distributor.state === selectedState;
+      const matchesProductLine =
+        !selectedProductLine ||
+        distributor.product_line.includes(selectedProductLine);
       return matchesCountry && matchesState && matchesProductLine;
     });
   }, [selectedCountry, selectedState, selectedProductLine]);
@@ -213,7 +247,9 @@ const MapProvider = ({ children }: MapProviderProps) => {
 
     // Filter by product line
     if (selectedProductLine) {
-      filtered = filtered.filter((store) => store.product_line.includes(selectedProductLine));
+      filtered = filtered.filter((store) =>
+        store.product_line.includes(selectedProductLine),
+      );
     }
 
     // Filter by country
@@ -229,7 +265,8 @@ const MapProvider = ({ children }: MapProviderProps) => {
     // Filter by store type
     if (storeType) {
       filtered = filtered.filter((store) => {
-        const isVirtual = store.address === "LOJA VIRTUAL" || store.state === "LOJA VIRTUAL";
+        const isVirtual =
+          store.address === "LOJA VIRTUAL" || store.state === "LOJA VIRTUAL";
         return storeType === "virtual" ? isVirtual : !isVirtual;
       });
     }

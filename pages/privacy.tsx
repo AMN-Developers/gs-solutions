@@ -12,10 +12,10 @@ import {
   OrderedList,
   Text,
   UnorderedList,
-} from "@chakra-ui/react"
-import { BsCheckLg } from "react-icons/bs"
-import Image from "next/image"
-import MotionLayout from "@/components/MotionLayout"
+} from "@chakra-ui/react";
+import { BsCheckLg } from "react-icons/bs";
+import Image from "next/image";
+import MotionLayout from "@/components/MotionLayout";
 
 export default function Privacy() {
   return (
@@ -118,7 +118,7 @@ export default function Privacy() {
           mb={4}
           textAlign={"justify"}
         >
-          <Accordion  allowMultiple>
+          <Accordion allowMultiple>
             <AccordionItem>
               <h2>
                 <AccordionButton>
@@ -583,5 +583,5 @@ export default function Privacy() {
         </Flex>
       </Container>
     </MotionLayout>
-  )
+  );
 }

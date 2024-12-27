@@ -9,47 +9,47 @@ import {
   Text,
   useDisclosure,
   Link as ChakraLink,
-} from "@chakra-ui/react"
-import { useEffect, useState } from "react"
-import { getLocalStorage, setLocalStorage } from "@/libs/storageHelper"
-import Link from "next/link"
+} from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { getLocalStorage, setLocalStorage } from "@/libs/storageHelper";
+import Link from "next/link";
 
 export default function CookieBanner() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [isAccepted, setIsAccepted] = useState(false)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isAccepted, setIsAccepted] = useState(false);
 
   useEffect(() => {
-    const isAccepted = getLocalStorage("cookie_consent", null)
+    const isAccepted = getLocalStorage("cookie_consent", null);
 
     if (isAccepted === null) {
-      onOpen()
+      onOpen();
     }
-  }, [onOpen])
+  }, [onOpen]);
 
   useEffect(() => {
-    const newValue = isAccepted ? "granted" : "denied"
+    const newValue = isAccepted ? "granted" : "denied";
 
     if (typeof window.gtag !== "undefined") {
       window.gtag("consent", "update", {
         analytics_storage: newValue,
-      })
+      });
     }
-  }, [isAccepted])
+  }, [isAccepted]);
 
   const handleAccept = () => {
-    setLocalStorage("cookie_consent", true)
-    setIsAccepted(true)
-    onClose()
-  }
+    setLocalStorage("cookie_consent", true);
+    setIsAccepted(true);
+    onClose();
+  };
 
   const handleReject = () => {
-    setLocalStorage("cookie_consent", false)
-    setIsAccepted(false)
-    onClose()
-  }
+    setLocalStorage("cookie_consent", false);
+    setIsAccepted(false);
+    onClose();
+  };
 
   if (isAccepted) {
-    return null
+    return null;
   }
 
   return (
@@ -100,5 +100,5 @@ export default function CookieBanner() {
         </DrawerContent>
       </Drawer>
     </>
-  )
+  );
 }

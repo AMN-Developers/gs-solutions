@@ -1,4 +1,4 @@
-import { Product } from "@/hooks/useProducts"
+import { Product } from "@/hooks/useProducts";
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
@@ -196,7 +196,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
   },
-]
+];
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
@@ -321,7 +321,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1Ls29Xw5IDVKNJJsLBB6kipwgJ68jOf8_/view",
   },
-]
+];
 
 export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
@@ -599,7 +599,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1Is7vwtyHfiocnTIY3OXhZqFv75MHf7UF/view",
   },
-]
+];
 
 export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
   {
@@ -695,4 +695,4 @@ export const CATALOG_ITEMS_IMPER_MAX: Array<Product> = [
     boletim:
       "https://drive.google.com/file/d/1_Xl-vvTKoVOFTfWyw_t67uTeM4WmKYR7/view",
   },
-]
+];

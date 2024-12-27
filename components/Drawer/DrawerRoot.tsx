@@ -25,17 +25,35 @@ interface DrawerRootProps {
   btnRef: React.RefObject<HTMLButtonElement>;
 }
 
-export default function DrawerRoot({ isOpen, onClose, btnRef }: DrawerRootProps) {
+export default function DrawerRoot({
+  isOpen,
+  onClose,
+  btnRef,
+}: DrawerRootProps) {
   return (
-    <Drawer isOpen={isOpen} placement="right" onClose={onClose} finalFocusRef={btnRef}>
+    <Drawer
+      isOpen={isOpen}
+      placement="right"
+      onClose={onClose}
+      finalFocusRef={btnRef}
+    >
       <DrawerOverlay />
       <DrawerContent>
         <DrawerCloseButton color={"white"} />
-        <DrawerHeader bgColor="#20274D" display={"flex"} justifyContent={"center"}>
+        <DrawerHeader
+          bgColor="#20274D"
+          display={"flex"}
+          justifyContent={"center"}
+        >
           <Image src="/logo.png" alt="G&S Home Solutions" maxW={50} />
         </DrawerHeader>
 
-        <DrawerBody display={"flex"} flexDirection={"column"} gap={2} marginTop={2}>
+        <DrawerBody
+          display={"flex"}
+          flexDirection={"column"}
+          gap={2}
+          marginTop={2}
+        >
           <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
             <Icon as={FiMapPin} marginRight={2} />
             <Text as="h2" fontWeight={"bold"} fontSize={"md"}>

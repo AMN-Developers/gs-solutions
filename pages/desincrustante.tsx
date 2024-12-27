@@ -96,7 +96,11 @@ export default function Desincrustante() {
           <Flex w={{ base: "full", lg: "50%" }}>
             <Flex flexDirection={"column"} gap={4}>
               <Reveal delay={0.3}>
-                <Flex p={4} flexDirection={{ base: "column", md: "row" }} gap={4}>
+                <Flex
+                  p={4}
+                  flexDirection={{ base: "column", md: "row" }}
+                  gap={4}
+                >
                   <AnimatePresence mode="wait">
                     {images[image] && (
                       <Box w={"full"} h={"md"} rounded={"md"} boxShadow={"md"}>
@@ -109,7 +113,12 @@ export default function Desincrustante() {
                           key={image}
                           boxSize={"full"}
                         >
-                          <Image alt="Imagem fixflot" src={images[image].src} boxSize={"full"} fit={"contain"} />
+                          <Image
+                            alt="Imagem fixflot"
+                            src={images[image].src}
+                            boxSize={"full"}
+                            fit={"contain"}
+                          />
                         </Box>
                       </Box>
                     )}
@@ -131,24 +140,46 @@ export default function Desincrustante() {
                         cursor={"pointer"}
                         key={index}
                       >
-                        <Image alt={Thumb.alt} src={Thumb.src} boxSize={"64px"} objectFit={"contain"} />
+                        <Image
+                          alt={Thumb.alt}
+                          src={Thumb.src}
+                          boxSize={"64px"}
+                          objectFit={"contain"}
+                        />
                       </Box>
                     ))}
                   </Flex>
                 </Flex>
               </Reveal>
               <Text as={"p"} textAlign={"justify"} fontSize={"md"}>
-                Limpador Desincrustante concentrado ácido, de alta performance e ação rápida, desenvolvido para remoção
-                de incrustação de cimento, remoção de ferrugem, remoção de eflorescência calcária, óxidos, terra,
-                fuligem e sujidades inorgânicas em geral. Possui agentes umectantes que facilitam a penetração do
-                produto na sujidade incrustada, agindo de dentro para fora na sujidade e facilitando a remoção da
-                incrustação, sem causar danos a superfície. Produto concentrado de excelente custo benefício, permitindo
-                diluições conforme a situação a ser aplicado.
+                Limpador Desincrustante concentrado ácido, de alta performance e
+                ação rápida, desenvolvido para remoção de incrustação de
+                cimento, remoção de ferrugem, remoção de eflorescência calcária,
+                óxidos, terra, fuligem e sujidades inorgânicas em geral. Possui
+                agentes umectantes que facilitam a penetração do produto na
+                sujidade incrustada, agindo de dentro para fora na sujidade e
+                facilitando a remoção da incrustação, sem causar danos a
+                superfície. Produto concentrado de excelente custo benefício,
+                permitindo diluições conforme a situação a ser aplicado.
               </Text>
             </Flex>
           </Flex>
-          <Flex w={{ base: "full", lg: "50%" }} flexDirection={"column"} gap={4} rounded={"md"} px={4} my={4}>
-            <Text as={"h2"} fontWeight={"bold"} fontSize={"md"} textTransform={"uppercase"} py={4} textAlign={"center"}>
+          <Flex
+            w={{ base: "full", lg: "50%" }}
+            flexDirection={"column"}
+            gap={4}
+            rounded={"md"}
+            px={4}
+            my={4}
+          >
+            <Text
+              as={"h2"}
+              fontWeight={"bold"}
+              fontSize={"md"}
+              textTransform={"uppercase"}
+              py={4}
+              textAlign={"center"}
+            >
               Diluição recomendada
             </Text>
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
@@ -186,13 +217,17 @@ export default function Desincrustante() {
                 Utilização:
               </Text>
               <Text>
-                Após a definição da diluição escolhida e preparação da solução: Realizar uma limpeza previa da
-                superfície, removendo a sujidade pesada como entulho, terra, areia, etc; remover, com o auxílio de uma
-                espátula, as incrustações maiores que possam existir sobre o substrato/piso. Aplicar o produto na
-                superfície a ser limpa. Deixar o produto agir por aproximadamente 5 minutos; realizar a ação mecânica
-                para remoção da sujidade, com o auxílio de um escovão, espátula, escova ou lavadora de baixa rotação
-                associada a disco de limpeza; finalizada a remoção, realizar enxágues na superfície com água limpa em
-                abundância, até remover por completo o residual de produto.
+                Após a definição da diluição escolhida e preparação da solução:
+                Realizar uma limpeza previa da superfície, removendo a sujidade
+                pesada como entulho, terra, areia, etc; remover, com o auxílio
+                de uma espátula, as incrustações maiores que possam existir
+                sobre o substrato/piso. Aplicar o produto na superfície a ser
+                limpa. Deixar o produto agir por aproximadamente 5 minutos;
+                realizar a ação mecânica para remoção da sujidade, com o auxílio
+                de um escovão, espátula, escova ou lavadora de baixa rotação
+                associada a disco de limpeza; finalizada a remoção, realizar
+                enxágues na superfície com água limpa em abundância, até remover
+                por completo o residual de produto.
               </Text>
             </Flex>
             <Flex gap={2} w={"full"} flexDir={{ base: "column", sm: "row" }}>
@@ -202,7 +237,9 @@ export default function Desincrustante() {
                   bg: "#6F5E40",
                 }}
                 onClick={() =>
-                  window.open("https://drive.google.com/file/d/1iopUY86XSD34bnSw9R9Z1ciHT3f4ycyv/view?usp=sharing")
+                  window.open(
+                    "https://drive.google.com/file/d/1iopUY86XSD34bnSw9R9Z1ciHT3f4ycyv/view?usp=sharing",
+                  )
                 }
               >
                 Boletim Tecnico
@@ -213,7 +250,9 @@ export default function Desincrustante() {
                   bg: "#6F5E40",
                 }}
                 onClick={() =>
-                  window.open("https://drive.google.com/file/d/1E782v29on736J2N2-lK8FReaBexL6Jxo/view?usp=sharing")
+                  window.open(
+                    "https://drive.google.com/file/d/1E782v29on736J2N2-lK8FReaBexL6Jxo/view?usp=sharing",
+                  )
                 }
               >
                 FISPQ
@@ -224,7 +263,12 @@ export default function Desincrustante() {
                 <AccordionItem>
                   <h2>
                     <AccordionButton>
-                      <Box as="span" flex="1" textAlign="left" fontWeight={"semibold"}>
+                      <Box
+                        as="span"
+                        flex="1"
+                        textAlign="left"
+                        fontWeight={"semibold"}
+                      >
                         Propriedades
                       </Box>
                       <AccordionIcon />
@@ -249,7 +293,11 @@ export default function Desincrustante() {
           }}
           w={"full"}
           textTransform={"uppercase"}
-          onClick={() => window.open("https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0")}
+          onClick={() =>
+            window.open(
+              "https://api.whatsapp.com/message/EA6EJOB3Q3KLM1?autoload=1&app_absent=0",
+            )
+          }
         >
           Compre conosco
         </Button>

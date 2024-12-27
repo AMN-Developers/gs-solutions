@@ -11,8 +11,8 @@ import {
   Tr,
   Box,
   Flex,
-} from "@chakra-ui/react"
-import Image from "next/image"
+} from "@chakra-ui/react";
+import Image from "next/image";
 
 export default function TableRoot() {
   return (
@@ -184,5 +184,5 @@ export default function TableRoot() {
         </Table>
       </TableContainer>
     </Container>
-  )
+  );
 }

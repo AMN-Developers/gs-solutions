@@ -1,8 +1,8 @@
-import { Box } from "@chakra-ui/react"
-import { ReactNode } from "react"
+import { Box } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 interface HeaderRootProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function HeaderRoot({ children }: HeaderRootProps) {
@@ -10,5 +10,5 @@ export default function HeaderRoot({ children }: HeaderRootProps) {
     <Box as="header" position={"relative"}>
       {children}
     </Box>
-  )
+  );
 }

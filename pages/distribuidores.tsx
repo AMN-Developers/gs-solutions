@@ -20,7 +20,12 @@ import {
   IconButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import { SearchIcon, RepeatIcon, ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
+import {
+  SearchIcon,
+  RepeatIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@chakra-ui/icons";
 import useMapContext from "@/hooks/useMapContext";
 import { AdvancedMarker, Pin, APIProvider } from "@vis.gl/react-google-maps";
 import { DistributorsMap } from "@/components/DistributorsMap";
@@ -28,15 +33,22 @@ import { Distributor, DISTRIBUTORS_ITEMS } from "@/context/DISTRIBUTORS_ITEMS";
 import { useEffect, useState } from "react";
 import { BsTelephoneFill, BsFillPinMapFill } from "react-icons/bs";
 
-const MapWithNoSSR = dynamic(() => import("@vis.gl/react-google-maps").then((mod) => mod.Map), { ssr: false });
+const MapWithNoSSR = dynamic(
+  () => import("@vis.gl/react-google-maps").then((mod) => mod.Map),
+  { ssr: false },
+);
 
 interface MapContainerProps {
   selectedDistributor: Distributor | null;
   onMarkerClick: (distributor: Distributor) => void;
 }
 
-const MapContainer = ({ selectedDistributor, onMarkerClick }: MapContainerProps) => {
-  const { zoom, centerLocation, distributors, filteredStores, userLocation } = useMapContext();
+const MapContainer = ({
+  selectedDistributor,
+  onMarkerClick,
+}: MapContainerProps) => {
+  const { zoom, centerLocation, distributors, filteredStores, userLocation } =
+    useMapContext();
 
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string}>
@@ -47,61 +59,84 @@ const MapContainer = ({ selectedDistributor, onMarkerClick }: MapContainerProps)
         disableDefaultUI={true}
         zoomControl={true}
       >
-        {(filteredStores.length > 0 ? filteredStores : distributors).map((store) => {
-          if (store.latitude === 0 && store.longitude === 0) return null;
+        {(filteredStores.length > 0 ? filteredStores : distributors).map(
+          (store) => {
+            if (store.latitude === 0 && store.longitude === 0) return null;
 
-          const isSelected = selectedDistributor?.id === store.id;
+            const isSelected = selectedDistributor?.id === store.id;
 
-          return (
-            <AdvancedMarker
-              position={{ lat: store.latitude, lng: store.longitude }}
-              key={store.id}
-              onClick={() => onMarkerClick(store)}
-            >
-              <Box position="relative">
-                <Pin background="blue" glyphColor="white" borderColor="white" scale={isSelected ? 1.2 : 1} />
+            return (
+              <AdvancedMarker
+                position={{ lat: store.latitude, lng: store.longitude }}
+                key={store.id}
+                onClick={() => onMarkerClick(store)}
+              >
+                <Box position="relative">
+                  <Pin
+                    background="blue"
+                    glyphColor="white"
+                    borderColor="white"
+                    scale={isSelected ? 1.2 : 1}
+                  />
 
-                {isSelected && (
-                  <Box
-                    position="absolute"
-                    top="-130px"
-                    left="50%"
-                    transform="translateX(-50%)"
-                    bg="white"
-                    p={3}
-                    borderRadius="md"
-                    boxShadow="lg"
-                    minW="250px"
-                    zIndex={1000}
-                  >
-                    <Text fontWeight="bold" mb={1}>
-                      {store.name}
-                    </Text>
-                    <Text fontSize="sm" color="gray.600" mb={1}>
-                      {store.address}
-                    </Text>
-                    {store.phone && (
-                      <Flex align="center" fontSize="sm" color="gray.600" mb={1}>
-                        <BsTelephoneFill size={12} style={{ marginRight: "6px" }} />
-                        {store.phone}
-                      </Flex>
-                    )}
-                    {store.distance && (
-                      <Flex align="center" fontSize="sm" color="blue.500">
-                        <BsFillPinMapFill size={12} style={{ marginRight: "6px" }} />
-                        {store.distance.toFixed(2)} km
-                      </Flex>
-                    )}
-                  </Box>
-                )}
-              </Box>
-            </AdvancedMarker>
-          );
-        })}
+                  {isSelected && (
+                    <Box
+                      position="absolute"
+                      top="-130px"
+                      left="50%"
+                      transform="translateX(-50%)"
+                      bg="white"
+                      p={3}
+                      borderRadius="md"
+                      boxShadow="lg"
+                      minW="250px"
+                      zIndex={1000}
+                    >
+                      <Text fontWeight="bold" mb={1}>
+                        {store.name}
+                      </Text>
+                      <Text fontSize="sm" color="gray.600" mb={1}>
+                        {store.address}
+                      </Text>
+                      {store.phone && (
+                        <Flex
+                          align="center"
+                          fontSize="sm"
+                          color="gray.600"
+                          mb={1}
+                        >
+                          <BsTelephoneFill
+                            size={12}
+                            style={{ marginRight: "6px" }}
+                          />
+                          {store.phone}
+                        </Flex>
+                      )}
+                      {store.distance && (
+                        <Flex align="center" fontSize="sm" color="blue.500">
+                          <BsFillPinMapFill
+                            size={12}
+                            style={{ marginRight: "6px" }}
+                          />
+                          {store.distance.toFixed(2)} km
+                        </Flex>
+                      )}
+                    </Box>
+                  )}
+                </Box>
+              </AdvancedMarker>
+            );
+          },
+        )}
 
         {userLocation && (
           <AdvancedMarker position={userLocation}>
-            <Pin background="green.500" glyphColor="white" borderColor="white" scale={1} />
+            <Pin
+              background="green.500"
+              glyphColor="white"
+              borderColor="white"
+              scale={1}
+            />
           </AdvancedMarker>
         )}
       </MapWithNoSSR>
@@ -129,7 +164,8 @@ export default function Distribuidores() {
     onStoreTypeChange,
   } = useMapContext();
 
-  const [selectedDistributor, setSelectedDistributor] = useState<Distributor | null>(null);
+  const [selectedDistributor, setSelectedDistributor] =
+    useState<Distributor | null>(null);
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: true });
 
   useEffect(() => {
@@ -177,7 +213,11 @@ export default function Distribuidores() {
                       onChange={handleChangeAddress}
                     />
                   </FormControl>
-                  <Stack direction={{ base: "row" }} spacing={2} alignSelf="flex-end">
+                  <Stack
+                    direction={{ base: "row" }}
+                    spacing={2}
+                    alignSelf="flex-end"
+                  >
                     <Button
                       type="submit"
                       colorScheme="blue"
@@ -213,9 +253,14 @@ export default function Distribuidores() {
                 {selectedCountry === "br" && (
                   <FormControl>
                     <FormLabel>Estado</FormLabel>
-                    <Select value={selectedState} onChange={(e) => setSelectedState(e.target.value)}>
+                    <Select
+                      value={selectedState}
+                      onChange={(e) => setSelectedState(e.target.value)}
+                    >
                       <option value="">Todos os estados</option>
-                      {Array.from(new Set(DISTRIBUTORS_ITEMS.map((d) => d.state)))
+                      {Array.from(
+                        new Set(DISTRIBUTORS_ITEMS.map((d) => d.state)),
+                      )
                         .filter((state) => state !== "LOJA VIRTUAL")
                         .sort()
                         .map((state) => (
@@ -229,7 +274,10 @@ export default function Distribuidores() {
 
                 <FormControl>
                   <FormLabel>Linha de produtos</FormLabel>
-                  <Select value={selectedProductLine} onChange={onProductLineChange}>
+                  <Select
+                    value={selectedProductLine}
+                    onChange={onProductLineChange}
+                  >
                     <option value="">Todas as linhas</option>
                     <option value="limpoo">LIMPOO - Limpeza Pesada</option>
                     <option value="lotus">LÓTUS - Higienização</option>
@@ -256,7 +304,11 @@ export default function Distribuidores() {
           )}
         </Box>
 
-        <Grid templateColumns={{ base: "1fr", lg: "3fr 2fr" }} gap={4} height={{ base: "auto", md: "700px" }}>
+        <Grid
+          templateColumns={{ base: "1fr", lg: "3fr 2fr" }}
+          gap={4}
+          height={{ base: "auto", md: "700px" }}
+        >
           <Box
             position="relative"
             borderRadius="xl"
@@ -265,7 +317,10 @@ export default function Distribuidores() {
             borderColor="gray.200"
             height={{ base: "400px", md: "100%" }}
           >
-            <MapContainer selectedDistributor={selectedDistributor} onMarkerClick={setSelectedDistributor} />
+            <MapContainer
+              selectedDistributor={selectedDistributor}
+              onMarkerClick={setSelectedDistributor}
+            />
           </Box>
 
           <Box

@@ -1,24 +1,24 @@
-import { useEffect, useRef, useState } from "react"
-import { Box, Button, Container, Divider, Text } from "@chakra-ui/react"
-import { AnimatePresence } from "framer-motion"
+import { useEffect, useRef, useState } from "react";
+import { Box, Button, Container, Divider, Text } from "@chakra-ui/react";
+import { AnimatePresence } from "framer-motion";
 
-import { Catalog } from "@/components/Catalog"
-import MotionLayout from "@/components/MotionLayout"
-import Product from "@/components/Product"
-import { CATALOG_ITEMS_VEG } from "@/components/Catalog/CATALOG_ITEMS"
-import { useSearchParams } from "next/navigation"
+import { Catalog } from "@/components/Catalog";
+import MotionLayout from "@/components/MotionLayout";
+import Product from "@/components/Product";
+import { CATALOG_ITEMS_VEG } from "@/components/Catalog/CATALOG_ITEMS";
+import { useSearchParams } from "next/navigation";
 
 export default function Higienização() {
-  const searchParams = useSearchParams()
-  const veg = searchParams.get("veg")
-  const productRef = useRef<HTMLDivElement>(null)
-  const lastProductRef = useRef<HTMLDivElement>(null)
+  const searchParams = useSearchParams();
+  const veg = searchParams.get("veg");
+  const productRef = useRef<HTMLDivElement>(null);
+  const lastProductRef = useRef<HTMLDivElement>(null);
 
-  const [isClient, setIsClient] = useState(false)
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
 
   return (
     <MotionLayout title="Higienização">
@@ -81,5 +81,5 @@ export default function Higienização() {
         </Box>
       </Container>
     </MotionLayout>
-  )
+  );
 }

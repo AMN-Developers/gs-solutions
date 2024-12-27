@@ -1,6 +1,6 @@
-import { Box, Text } from "@chakra-ui/react"
-import { CarouselItem } from "./CAR_ITEMS"
-import Image from "next/image"
+import { Box, Text } from "@chakra-ui/react";
+import { CarouselItem } from "./CAR_ITEMS";
+import Image from "next/image";
 
 export default function CarouselItem({ image, alt, label }: CarouselItem) {
   return (
@@ -16,5 +16,5 @@ export default function CarouselItem({ image, alt, label }: CarouselItem) {
       </Box>
       <Text fontSize={"sm"}>{label}</Text>
     </Box>
-  )
+  );
 }

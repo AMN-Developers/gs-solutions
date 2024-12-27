@@ -10,7 +10,7 @@ import Layout from "@/components/Layout";
 import Head from "next/head";
 import MapProvider from "@/context/mapContext";
 import { APIProvider } from "@vis.gl/react-google-maps";
-import { GoogleTagManager } from "@next/third-parties/google"
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const queryClient = new QueryClient();
 
@@ -63,5 +63,5 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </Layout>
       </ChakraProvider>
     </>
-  )
+  );
 }

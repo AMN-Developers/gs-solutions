@@ -1,7 +1,7 @@
-import CarouselRoot from "./CarouselRoot"
-import CarouselItem from "./CarouselItem"
+import CarouselRoot from "./CarouselRoot";
+import CarouselItem from "./CarouselItem";
 
 export const Carousel = {
   Root: CarouselRoot,
-  Item: CarouselItem
-}
+  Item: CarouselItem,
+};

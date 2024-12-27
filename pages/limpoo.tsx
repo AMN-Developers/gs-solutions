@@ -1,8 +1,8 @@
-import MotionLayout from "@/components/MotionLayout"
-import { ArrowForwardIcon } from "@chakra-ui/icons"
-import { Box, Button, Container, Flex, Text } from "@chakra-ui/react"
-import Image from "next/image"
-import Link from "next/link"
+import MotionLayout from "@/components/MotionLayout";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Limpoo() {
   return (
@@ -82,5 +82,5 @@ export default function Limpoo() {
         </Flex>
       </Container>
     </MotionLayout>
-  )
+  );
 }

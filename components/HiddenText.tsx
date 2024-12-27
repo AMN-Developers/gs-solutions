@@ -9,7 +9,13 @@ interface HiddenText {
   buttonTextColor?: string;
 }
 
-export default function HiddenText({ text, title, color, hover, buttonTextColor }: HiddenText) {
+export default function HiddenText({
+  text,
+  title,
+  color,
+  hover,
+  buttonTextColor,
+}: HiddenText) {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -32,7 +38,13 @@ export default function HiddenText({ text, title, color, hover, buttonTextColor 
         {title} {isOpen ? <AiOutlineUp /> : <AiOutlineDown />}
       </Button>
       <Collapse in={isOpen} animateOpacity>
-        <Box p={4} rounded="md" color={"black"} boxShadow={"xl"} fontWeight={"semibold"}>
+        <Box
+          p={4}
+          rounded="md"
+          color={"black"}
+          boxShadow={"xl"}
+          fontWeight={"semibold"}
+        >
           {text}
         </Box>
       </Collapse>

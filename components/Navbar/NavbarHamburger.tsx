@@ -1,9 +1,9 @@
-import { Flex, IconButton } from "@chakra-ui/react"
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons"
+import { Flex, IconButton } from "@chakra-ui/react";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 interface NavbarHamburgerProps {
-  isOpen: boolean
-  onToggle: () => void
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
 export default function NavbarHamburger({
@@ -25,5 +25,5 @@ export default function NavbarHamburger({
         aria-label={"Toggle Navigation"}
       />
     </Flex>
-  )
+  );
 }

@@ -291,7 +291,7 @@ export default function FixFlot() {
                 }}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1pkPh5ROm8CEyBJ3d9CegI5ukalshy4J7/view"
+                    "https://drive.google.com/file/d/1pkPh5ROm8CEyBJ3d9CegI5ukalshy4J7/view",
                   )
                 }
               >
@@ -307,7 +307,7 @@ export default function FixFlot() {
                 }}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1EeBpjGzOQefh20mxGOohfiS-A903QGCM/view"
+                    "https://drive.google.com/file/d/1EeBpjGzOQefh20mxGOohfiS-A903QGCM/view",
                   )
                 }
               >
@@ -323,7 +323,7 @@ export default function FixFlot() {
                 }}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/10Aw6Pg0HAoahpo_AJ72wtUs4Bl5j3HVv/view?usp=sharing"
+                    "https://drive.google.com/file/d/10Aw6Pg0HAoahpo_AJ72wtUs4Bl5j3HVv/view?usp=sharing",
                   )
                 }
               >
@@ -387,7 +387,7 @@ export default function FixFlot() {
           textTransform={"uppercase"}
           onClick={() =>
             window.open(
-              "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
+              "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20",
             )
           }
         >
@@ -395,5 +395,5 @@ export default function FixFlot() {
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }

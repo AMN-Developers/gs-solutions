@@ -1,5 +1,5 @@
-import CertificatedBar from "./CertificatedBar"
+import CertificatedBar from "./CertificatedBar";
 
 export const Certificated = {
   Bar: CertificatedBar,
-}
+};

@@ -1,7 +1,7 @@
-import { Flex, Stack } from "@chakra-ui/react"
+import { Flex, Stack } from "@chakra-ui/react";
 
 interface NavbarDesktopProps {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 export default function NavbarDesktop({ children }: NavbarDesktopProps) {
@@ -11,5 +11,5 @@ export default function NavbarDesktop({ children }: NavbarDesktopProps) {
         {children}
       </Stack>
     </Flex>
-  )
+  );
 }

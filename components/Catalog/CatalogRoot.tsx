@@ -1,8 +1,8 @@
-import { Container, SimpleGrid } from "@chakra-ui/react"
-import { ReactNode } from "react"
+import { Container, SimpleGrid } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 interface CatalogRootProps {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export default function CatalogRoot({ children }: CatalogRootProps) {
@@ -10,5 +10,5 @@ export default function CatalogRoot({ children }: CatalogRootProps) {
     <SimpleGrid minChildWidth="220px" spacing="40px">
       {children}
     </SimpleGrid>
-  )
+  );
 }

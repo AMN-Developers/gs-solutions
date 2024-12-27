@@ -40,7 +40,9 @@ export default function Calculadora() {
   const searchParams = useSearchParams();
   const proportionParam = searchParams.get("proportion");
 
-  const [proportion, setProportion] = useState<number>(Number(proportionParam) || 0);
+  const [proportion, setProportion] = useState<number>(
+    Number(proportionParam) || 0,
+  );
   const isProportionInvalid = proportion <= 0;
 
   const [water, setWater] = useState<string>("");
@@ -48,13 +50,20 @@ export default function Calculadora() {
   const [measuaramentUnit, setMeasuaramentUnit] = useState<string>("");
   const isMeasuaramentUnitInvalid = measuaramentUnit.length <= 0;
   const [result, setResult] = useState<number>(0);
-  const isButtonDisabled = isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid;
-  const [beforeInstallPrompt, setBeforeInstallPrompt] = useState<BeforeInstallPromptEvent>();
+  const isButtonDisabled =
+    isProportionInvalid || isWaterInvalid || isMeasuaramentUnitInvalid;
+  const [beforeInstallPrompt, setBeforeInstallPrompt] =
+    useState<BeforeInstallPromptEvent>();
   const [supportsPWA, setSupportsPWA] = useState<boolean>(false);
   const [isInstalled, setIsInstalled] = useState<boolean>();
-  const [showIphoneInstallMessage, setShowIphoneInstallMessage] = useState<boolean>(false);
+  const [showIphoneInstallMessage, setShowIphoneInstallMessage] =
+    useState<boolean>(false);
 
-  const proportionCalc = (proportion: number, water: string, measuramentUnit: string) => {
+  const proportionCalc = (
+    proportion: number,
+    water: string,
+    measuramentUnit: string,
+  ) => {
     if (!proportion || !water || measuaramentUnit.length < 0) return 0;
     const waterFloat = parseFloat(water.replace(",", "."));
 
@@ -135,7 +144,9 @@ export default function Calculadora() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      const isAppInstalled = window.matchMedia("(display-mode: standalone)").matches;
+      const isAppInstalled = window.matchMedia(
+        "(display-mode: standalone)",
+      ).matches;
       setIsInstalled(isAppInstalled);
     }
 
@@ -144,7 +155,8 @@ export default function Calculadora() {
       return /iphone|ipad|ipod/.test(userAgent);
     };
     // Detects if device is in standalone mode
-    const isInStandaloneMode = () => "standalone" in window.navigator && window.navigator.standalone;
+    const isInStandaloneMode = () =>
+      "standalone" in window.navigator && window.navigator.standalone;
     // Verifica se deve exibir notificação popup de instalação:
     if (isIos() && !isInStandaloneMode()) {
       setShowIphoneInstallMessage(true);
@@ -164,20 +176,43 @@ export default function Calculadora() {
 
   return (
     <MotionLayout title="Calculadora de Diluição">
-      <Container as="section" maxW={"container.xl"} py={4} position={"relative"}>
-        <Text as="h1" fontSize={"2xl"} fontWeight={"bold"} textAlign={"center"} mb={4}>
+      <Container
+        as="section"
+        maxW={"container.xl"}
+        py={4}
+        position={"relative"}
+      >
+        <Text
+          as="h1"
+          fontSize={"2xl"}
+          fontWeight={"bold"}
+          textAlign={"center"}
+          mb={4}
+        >
           Calculadora de diluição da G&S Home Solutions
         </Text>
         <Text as="p" mb={4}>
-          Ao utilizar produtos de limpeza, ou qualquer outro produto químico, é importante saber as instruções de uso e
-          principalmente de diluição de cada produto. Ao fazer a diluição de forma correta, você obterá o resultado
-          esperado, conforme a qualidade do produto, e economizará, pois, se você diluir o produto em bastante água, ele
-          não terá o efeito esperado.
+          Ao utilizar produtos de limpeza, ou qualquer outro produto químico, é
+          importante saber as instruções de uso e principalmente de diluição de
+          cada produto. Ao fazer a diluição de forma correta, você obterá o
+          resultado esperado, conforme a qualidade do produto, e economizará,
+          pois, se você diluir o produto em bastante água, ele não terá o efeito
+          esperado.
         </Text>
         <Flex gap={4} flexDirection={{ base: "column" }}>
-          <Box as="form" onSubmit={handleCalc} m={"auto"} w={{ base: "100%", md: "50%" }}>
+          <Box
+            as="form"
+            onSubmit={handleCalc}
+            m={"auto"}
+            w={{ base: "100%", md: "50%" }}
+          >
             <FormControl isInvalid={isProportionInvalid}>
-              <FormLabel htmlFor="proportion" fontSize={"lg"} fontWeight={"bold"} mb={2}>
+              <FormLabel
+                htmlFor="proportion"
+                fontSize={"lg"}
+                fontWeight={"bold"}
+                mb={2}
+              >
                 Selecione a proporção:
               </FormLabel>
               <Select
@@ -234,7 +269,10 @@ export default function Calculadora() {
                 >
                   UNID:
                 </Text> */}
-                <Select placeholder="Selecione..." onChange={(event) => setMeasuaramentUnit(event.target.value)}>
+                <Select
+                  placeholder="Selecione..."
+                  onChange={(event) => setMeasuaramentUnit(event.target.value)}
+                >
                   <option value="ml">ml</option>
                   <option value="l">L</option>
                 </Select>
@@ -256,10 +294,23 @@ export default function Calculadora() {
             </Button>
             {result > 0 && (
               <>
-                <Text as="label" fontSize={"lg"} fontWeight={"bold"} mb={2} id="result" display={"block"}>
+                <Text
+                  as="label"
+                  fontSize={"lg"}
+                  fontWeight={"bold"}
+                  mb={2}
+                  id="result"
+                  display={"block"}
+                >
                   Resultado:
                 </Text>
-                <Input id="result" mb={4} value={`${result.toFixed(2)} ml de produto.`} readOnly fontWeight={"bold"} />
+                <Input
+                  id="result"
+                  mb={4}
+                  value={`${result.toFixed(2)} ml de produto.`}
+                  readOnly
+                  fontWeight={"bold"}
+                />
               </>
             )}
           </Box>
@@ -310,7 +361,9 @@ export default function Calculadora() {
               </Text>
               <Box>
                 <Text display={"inline"}>
-                  clicando abaixo em <Icon as={IoShareOutline} size={24} color={"#51A0D5"} /> e depois
+                  clicando abaixo em{" "}
+                  <Icon as={IoShareOutline} size={24} color={"#51A0D5"} /> e
+                  depois
                   <Text as="span" fontWeight={"bold"}>
                     {" "}
                     &quot;Adicionar a tela de Inicio&quot;
@@ -318,7 +371,12 @@ export default function Calculadora() {
                 </Text>
               </Box>
             </Box>
-            <Box w={"full"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
+            <Box
+              w={"full"}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
               <AiOutlineArrowDown size={24} />
             </Box>
           </Box>

@@ -196,7 +196,7 @@ export default function PowerTrio() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view"
+                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view",
                           )
                         }
                       >
@@ -207,7 +207,7 @@ export default function PowerTrio() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1OXg1_0hyv5TncGFfK_RzAGYcPJbMl1qy/view"
+                            "https://drive.google.com/file/d/1OXg1_0hyv5TncGFfK_RzAGYcPJbMl1qy/view",
                           )
                         }
                       >
@@ -244,7 +244,7 @@ export default function PowerTrio() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view"
+                            "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view",
                           )
                         }
                       >
@@ -255,7 +255,7 @@ export default function PowerTrio() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1m5HLgs5uuSnTXIQOGr0hLMJf7YbQUJjV/view"
+                            "https://drive.google.com/file/d/1m5HLgs5uuSnTXIQOGr0hLMJf7YbQUJjV/view",
                           )
                         }
                       >
@@ -291,7 +291,7 @@ export default function PowerTrio() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view"
+                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view",
                           )
                         }
                       >
@@ -302,7 +302,7 @@ export default function PowerTrio() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1q8VeBwvmOj1Fi6UVKxoj0yGV2QP0w7Pg/view"
+                            "https://drive.google.com/file/d/1q8VeBwvmOj1Fi6UVKxoj0yGV2QP0w7Pg/view",
                           )
                         }
                       >
@@ -419,7 +419,7 @@ export default function PowerTrio() {
           textTransform={"uppercase"}
           onClick={() =>
             window.open(
-              "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
+              "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20",
             )
           }
         >
@@ -427,5 +427,5 @@ export default function PowerTrio() {
         </Button>
       </Container>
     </MotionLayout>
-  )
+  );
 }

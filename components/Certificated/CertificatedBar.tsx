@@ -1,5 +1,5 @@
-import { Box, Container, Flex, Image, Text } from "@chakra-ui/react"
-import Link from "next/link"
+import { Box, Container, Flex, Image, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 export default function CertificatedBar() {
   return (
@@ -62,5 +62,5 @@ export default function CertificatedBar() {
         </Box>
       </Flex>
     </Container>
-  )
+  );
 }

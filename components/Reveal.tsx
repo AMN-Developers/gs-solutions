@@ -1,10 +1,10 @@
-import { Box } from "@chakra-ui/react"
-import { motion } from "framer-motion"
-import React from "react"
+import { Box } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import React from "react";
 
 interface RevealProps {
-  children: React.ReactNode
-  delay: number
+  children: React.ReactNode;
+  delay: number;
 }
 
 export default function Reveal({ children, delay }: RevealProps) {
@@ -22,5 +22,5 @@ export default function Reveal({ children, delay }: RevealProps) {
     >
       {children}
     </Box>
-  )
+  );
 }

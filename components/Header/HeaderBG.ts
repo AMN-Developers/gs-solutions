@@ -15,5 +15,4 @@ export const bg: background = {
   "/fireguard":
     "radial-gradient(circle, rgba(255,180,44,1) 0%, rgba(255,180,44,1) 93%, rgba(255,180,44,1) 100%);",
   "/hidro": "/marmore.jpg",
-}
-
+};

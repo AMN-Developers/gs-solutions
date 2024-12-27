@@ -1,4 +1,4 @@
-import MotionLayout from "@/components/MotionLayout"
+import MotionLayout from "@/components/MotionLayout";
 import {
   Container,
   Flex,
@@ -7,9 +7,9 @@ import {
   Divider,
   Icon,
   Tooltip,
-} from "@chakra-ui/react"
-import Image from "next/image"
-import { HiOutlineArchiveBoxArrowDown } from "react-icons/hi2"
+} from "@chakra-ui/react";
+import Image from "next/image";
+import { HiOutlineArchiveBoxArrowDown } from "react-icons/hi2";
 
 export default function Sustentabilidade() {
   return (
@@ -214,5 +214,5 @@ export default function Sustentabilidade() {
         </Flex>
       </Container>
     </MotionLayout>
-  )
+  );
 }

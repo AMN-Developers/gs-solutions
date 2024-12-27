@@ -1,22 +1,22 @@
-import Script from "next/script"
-import { useEffect } from "react"
-import * as gtag from "@/libs/gtagHelper"
-import { useRouter } from "next/router"
+import Script from "next/script";
+import { useEffect } from "react";
+import * as gtag from "@/libs/gtagHelper";
+import { useRouter } from "next/router";
 
 export default function GoogleAnalytics() {
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     const handleRouteChange = (url: URL) => {
-      gtag.pageview(url)
-    }
+      gtag.pageview(url);
+    };
 
-    router.events.on("routeChangeComplete", handleRouteChange)
+    router.events.on("routeChangeComplete", handleRouteChange);
 
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange)
-    }
-  }, [router.events])
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
@@ -44,5 +44,5 @@ export default function GoogleAnalytics() {
         }}
       />
     </>
-  )
+  );
 }
