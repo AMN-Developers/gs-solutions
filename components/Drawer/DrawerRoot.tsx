@@ -99,7 +99,7 @@ export default function DrawerRoot({
             href="https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20"
             target="_blank"
           >
-            +55 (11) 98452-0087
+            +55 (11) 91359-1344
           </ChakraLink>
           <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
             <Icon as={BiLogoInstagram} marginRight={2} />
