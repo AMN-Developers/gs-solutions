@@ -7,7 +7,11 @@ import {
   useCallback,
   useEffect,
 } from "react";
-import { Distributor, DISTRIBUTORS_ITEMS } from "./DISTRIBUTORS_ITEMS";
+import {
+  Distributor,
+  DistributorProductLine,
+  DISTRIBUTORS_ITEMS,
+} from "./DISTRIBUTORS_ITEMS";
 import { useAutocomplete } from "@vis.gl/react-google-maps";
 interface MapContextData {
   zoom: number;
@@ -39,8 +43,8 @@ interface MapContextData {
   setSelectedState: (state: string) => void;
   selectedCountry: string;
   setSelectedCountry: (country: string) => void;
-  selectedProductLine: string;
-  setSelectedProductLine: (productLine: string) => void;
+  selectedProductLine: DistributorProductLine | "";
+  setSelectedProductLine: (productLine: DistributorProductLine | "") => void;
   onCountryChange: (e: ChangeEvent<HTMLSelectElement>) => void;
   onProductLineChange: (e: ChangeEvent<HTMLSelectElement>) => void;
   storeType: string;
@@ -76,7 +80,9 @@ const MapProvider = ({ children }: MapProviderProps) => {
   const [error, setError] = useState("");
   const [selectedState, setSelectedState] = useState("");
   const [selectedCountry, setSelectedCountry] = useState("br");
-  const [selectedProductLine, setSelectedProductLine] = useState("");
+  const [selectedProductLine, setSelectedProductLine] = useState<
+    DistributorProductLine | ""
+  >("");
   const [storeType, setStoreType] = useState<string>("");
   const [centerLocation, setCenterLocation] = useState(
     initialCenterLocation[selectedCountry as unknown as "br" | "pt"],
@@ -99,7 +105,7 @@ const MapProvider = ({ children }: MapProviderProps) => {
   };
 
   const onProductLineChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setSelectedProductLine(e.target.value);
+    setSelectedProductLine(e.target.value as DistributorProductLine | "");
   };
 
   const onStoreTypeChange = (e: ChangeEvent<HTMLSelectElement>) => {

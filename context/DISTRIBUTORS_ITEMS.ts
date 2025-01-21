@@ -1,4 +1,4 @@
-enum DistributorProductLine {
+export enum DistributorProductLine {
   LOTUS = "lotus",
   LIMPOO = "limpoo",
 }
