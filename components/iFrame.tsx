@@ -49,6 +49,8 @@ export default function VideoFrame({
           title={title}
           src={`https://www.youtube.com/embed/${embedID}?controls=1&modestbranding=1&rel=0&showinfo=1&color=white&iv_load_policy=3&fs=1&disablekb=1&autoplay=1`}
           loading="lazy"
+          // eslint-disable-next-line jsx-a11y/aria-props
+          aria-description={ariaDescription}
           rounded={"md"}
           allowFullScreen
         />
