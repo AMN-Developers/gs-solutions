@@ -11,6 +11,16 @@ jobs:
       - name: 🚚 Get latest code
         uses: actions/checkout@v4
 
+      - name: 📦 Setup caching for NextJS builds
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+
       - name: Use Node.js 20.10.0
         uses: actions/setup-node@v4.1.0
         with:
@@ -22,7 +32,7 @@ jobs:
           NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID }}
           NEXT_SHARP_PATH: ${{ secrets.NEXT_SHARP_PATH }}
         run: |
-          npm install
+          npm ci
           npm run build
 
       - name: 📂 Sync files
