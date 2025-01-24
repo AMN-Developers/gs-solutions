@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Use Node.js 20.10.0
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: 20.10.0
 
@@ -22,7 +22,7 @@ jobs:
           NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID }}
           NEXT_SHARP_PATH: ${{ secrets.NEXT_SHARP_PATH }}
         run: |
-          npm install
+          npm ci
           npm run build
 
       - name: 📂 Sync files
