@@ -36,7 +36,7 @@ export default function VideoFrame({
           />
           <Box position={"absolute"}>
             <Image
-              src="http://addplaybuttontoimage.way4info.net/Images/Icons/7.png"
+              src={"/yt-playbutton.svg"}
               alt="play button"
               width={50}
               height={50}

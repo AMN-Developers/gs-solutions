@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function Limpoo() {
   return (
-    <MotionLayout title="NOVA LINHA">
+    <MotionLayout title="Limpoo">
       <Container
         as="section"
         maxW={"container.xl"}

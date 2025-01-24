@@ -29,9 +29,10 @@ export default function Home() {
           />
           <Card.Item
             alt="Limpoo logo"
-            href="/impermeabilizantes"
-            bgImage="/Prancheta_1.png"
-            title="Nova Linha de Impermeabilizantes"
+            href="/limpoo"
+            bgImage="/card-limpoo.webp"
+            title="Limpeza pós-obra"
+            logo="logo-limpoo.svg"
           />
         </Flex>
       </Card.Root>
