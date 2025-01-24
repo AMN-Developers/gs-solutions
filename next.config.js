@@ -17,10 +17,6 @@ module.exports = withPWA({
         protocol: "https",
         hostname: "img.youtube.com",
       },
-      {
-        protocol: "http",
-        hostname: "addplaybuttontoimage.way4info.net",
-      },
     ],
   },
 });

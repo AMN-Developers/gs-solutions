@@ -22,7 +22,7 @@ jobs:
           NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID: ${{ secrets.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID }}
           NEXT_SHARP_PATH: ${{ secrets.NEXT_SHARP_PATH }}
         run: |
-          npm ci
+          npm install
           npm run build
 
       - name: 📂 Sync files
@@ -39,11 +39,11 @@ jobs:
             **/node_modules/**
             .env
             .env.example
-            **/components/**
-            **/context/**
-            **/hooks/**
-            **/libs/**
-            **/pages/**
+            components/**
+            context/**
+            hooks/**
+            libs/**
+            pages/**
             .editorconfig
             .eslintrc.json
             .gitignore
