@@ -58,9 +58,10 @@ const HeaderTopBar = () => {
         border="none"
         position="relative"
         _hover={{
-          bg: "#006B1E",
+          bg: "#06EC99",
           textDecoration: "none",
           color: "#fff",
+          transition: "background-color 0.8s ease-in-out",
         }}
         _before={{
           content: '""',

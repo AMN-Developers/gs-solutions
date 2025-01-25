@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <MotionLayout title="Home">
       <Card.Root>
-        <Card.Tittle title="Conheça nossa linha" />
+        <Card.Tittle title="Conheça nossas linhas" />
         <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
           <Card.Item
             alt="Lotus logo"

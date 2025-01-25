@@ -118,12 +118,23 @@ export default function Layout({ children, route }: LayoutProps) {
                 px={2}
                 bgColor={"none"}
                 textTransform={"uppercase"}
-                fontSize={"sm"}
+                position={"relative"}
                 _hover={{
-                  textDecoration: "none",
-                  color: "#232c54",
-                  fontWeight: "semibold",
-                  transition: "all 0.3s ease-in-out",
+                  _before: {
+                    transform: "scaleX(1)",
+                  },
+                }}
+                _before={{
+                  content: '""',
+                  position: "absolute",
+                  display: "block",
+                  width: "100%",
+                  height: "2px",
+                  bottom: 0,
+                  left: 0,
+                  bg: "black",
+                  transform: "scaleX(0)",
+                  transition: "transform 0.5s ease",
                 }}
                 textAlign={"left"}
               >
@@ -145,11 +156,23 @@ export default function Layout({ children, route }: LayoutProps) {
               bgColor={"none"}
               textTransform={"uppercase"}
               fontSize={"sm"}
+              position={"relative"}
               _hover={{
-                textDecoration: "none",
-                color: "#232c54",
-                fontWeight: "semibold",
-                transition: "all 0.3s ease-in-out",
+                _before: {
+                  transform: "scaleX(1)",
+                },
+              }}
+              _before={{
+                content: '""',
+                position: "absolute",
+                display: "block",
+                width: "100%",
+                height: "2px",
+                bottom: 0,
+                left: 0,
+                bg: "black",
+                transform: "scaleX(0)",
+                transition: "transform 0.5s ease",
               }}
             >
               Contato

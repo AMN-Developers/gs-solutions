@@ -19,7 +19,7 @@ type Props = {
 
 function NavPopover({ href, label, children, placement }: Props) {
   return (
-    <Popover trigger={"hover"} placement={placement}>
+    <Popover trigger={"hover"} placement={placement} offset={[0, 16]}>
       <PopoverTrigger>
         <Box
           as={Link}
@@ -30,8 +30,23 @@ function NavPopover({ href, label, children, placement }: Props) {
           __css={{
             textTransform: "uppercase",
           }}
+          position={"relative"}
           _hover={{
-            fontWeight: "semibold",
+            _before: {
+              transform: "scaleX(1)",
+            },
+          }}
+          _before={{
+            content: '""',
+            position: "absolute",
+            display: "block",
+            width: "100%",
+            height: "2px",
+            bottom: 0,
+            left: 0,
+            bg: "black",
+            transform: "scaleX(0)",
+            transition: "transform 0.5s ease",
           }}
           display={"flex"}
           justifyContent={"space-between"}
@@ -46,7 +61,7 @@ function NavPopover({ href, label, children, placement }: Props) {
         boxShadow={"xl"}
         bg="white"
         p={4}
-        rounded={"xl"}
+        rounded={"md"}
         minW={"sm"}
       >
         <Stack>{children}</Stack>
