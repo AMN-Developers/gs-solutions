@@ -53,6 +53,7 @@ jobs:
             hooks/**
             libs/**
             pages/**
+            .eslintignore
             .editorconfig
             .eslintrc.json
             .gitignore
