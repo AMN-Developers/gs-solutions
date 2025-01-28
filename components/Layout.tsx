@@ -115,7 +115,8 @@ export default function Layout({ children, route }: LayoutProps) {
                 ref={btnRef}
                 aria-label="Open menu"
                 onClick={openPDF}
-                px={2}
+                p={2}
+                fontSize={"sm"}
                 bgColor={"none"}
                 textTransform={"uppercase"}
                 position={"relative"}
@@ -152,7 +153,7 @@ export default function Layout({ children, route }: LayoutProps) {
               ref={btnRef}
               aria-label="Open menu"
               onClick={onOpenDrawer}
-              padding={0}
+              padding={2}
               bgColor={"none"}
               textTransform={"uppercase"}
               fontSize={"sm"}
