@@ -35,7 +35,10 @@ const HeaderTopBar = () => {
     <Container
       maxW="container.xl"
       py={4}
-      px={0}
+      px={{
+        lg: 0,
+        base: 2,
+      }}
       display="flex"
       justifyContent="space-between"
       alignItems="center"

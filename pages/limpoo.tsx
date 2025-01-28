@@ -1,8 +1,7 @@
+import { Card } from "@/components/Card";
 import MotionLayout from "@/components/MotionLayout";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { Box, Button, Container, Flex, Text } from "@chakra-ui/react";
-import Image from "next/image";
-import Link from "next/link";
+import Reveal from "@/components/Reveal";
+import { Container, Flex, Text } from "@chakra-ui/react";
 
 export default function Limpoo() {
   return (
@@ -13,72 +12,57 @@ export default function Limpoo() {
         py={4}
         position={"relative"}
       >
-        <Flex
-          flexDir={"column"}
-          justifyContent={"center"}
-          alignItems={"center"}
-          p={10}
-          gap={4}
+        <Text
+          as="h2"
           textAlign={"center"}
+          py={8}
+          fontSize={{ base: "md", md: "2xl" }}
+          fontWeight={"bold"}
+          textTransform={"uppercase"}
         >
-          <Image
-            alt="Em breve imagem"
-            src={"/embreve.svg"}
-            width={500}
-            height={250}
-          />
-          <Text as={"p"} fontSize={"2xl"} fontWeight={"bold"}>
-            Em breve uma nova linha cheia de novidades
-          </Text>
-          <Button
-            size={{ base: "sm", sm: "md" }}
-            as={Link}
-            mx={"auto"}
-            href={"/"}
-            colorScheme="facebook"
-            _hover={{ color: "facebook.100" }}
-          >
-            Retornar para pagina inicial
-          </Button>
-          <Flex gap={4} py={4} flexDir={{ base: "column", md: "row" }}>
-            <Box>
-              <Text
-                as={Link}
-                href={"/calculadora"}
-                color={"facebook.900"}
-                _hover={{ textDecoration: "underline" }}
-              >
-                Calculadora de diluição <ArrowForwardIcon />
-              </Text>
-              <Text color={"gray.300"}>
-                Acesse nossa calculadora de diluição
-              </Text>
-            </Box>
-            <Box>
-              <Text
-                as={Link}
-                href={"/rastreio"}
-                color={"facebook.900"}
-                _hover={{ textDecoration: "underline" }}
-              >
-                Rastreios <ArrowForwardIcon />
-              </Text>
-              <Text color={"gray.300"}>Rastreie seu pedido!</Text>
-            </Box>
-            <Box>
-              <Text
-                as={Link}
-                href={"/distribuidores"}
-                color={"facebook.900"}
-                _hover={{ textDecoration: "underline" }}
-              >
-                Distribuidores G&S <ArrowForwardIcon />
-              </Text>
-              <Text color={"gray.300"}>
-                Está procurando algum distribuidor?
-              </Text>
-            </Box>
-          </Flex>
+          TUDO PARA LIMPEZA PÓS OBRA
+        </Text>
+        <Flex flexDirection={"column"} gap={4} mb={2}>
+          <Reveal delay={0.2}>
+            <Card.Item
+              alt="Hidrooleo banner"
+              href="/hidro"
+              bgImage="/hidro-benner.webp"
+              title="A tríplice para sua limpeza"
+              logo="powertrio-logo.svg"
+              bgPos="center"
+            />
+          </Reveal>
+          <Reveal delay={0.2}>
+            <Card.Item
+              alt="Fixflot logo"
+              href="/fixflot"
+              bgImage="/fixflot-banner.webp"
+              title="FixFlot - O melhor flotador do mercado"
+              logo="logo-fixflot.svg"
+              bgPos="center"
+            />
+          </Reveal>
+          <Reveal delay={0.2}>
+            <Card.Item
+              alt="Fireguard Logo"
+              href="/fireguard"
+              bgImage="/fireguard-bg.png"
+              title="Fireguard - Poderoso hidrofugante"
+              logo="logo-fireguard.png"
+              bgPos="center"
+            />
+          </Reveal>
+          <Reveal delay={0.2}>
+            <Card.Item
+              alt="Linha auto Logo"
+              href="/auto"
+              bgImage="/auto/car.jpg"
+              title="Linha automotiva - Uma higienização completa para o carro"
+              logo="logo-auto.png"
+              bgPos="center"
+            />
+          </Reveal>
         </Flex>
       </Container>
     </MotionLayout>
