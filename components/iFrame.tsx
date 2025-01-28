@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { AspectRatio } from "@chakra-ui/react";
+import { AspectRatio, Box } from "@chakra-ui/react";
 const ReactPlayerNoSSR = dynamic(() => import("react-player"), { ssr: false });
 
 interface VideoFrameProps {
@@ -19,6 +19,8 @@ export default function VideoFrame({
         url={`https://www.youtube.com/watch?v=${embedID}`}
         title={title}
         ariaDescription={ariaDescription}
+        width={"100%"}
+        height={"100%"}
       />
     </AspectRatio>
   );
