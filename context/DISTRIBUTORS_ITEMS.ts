@@ -22,7 +22,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
   {
     id: 1,
     name: "QUICK CLEAN",
-    address: "AV SUPLICY, 238 - JD SANTA MENA - GUARULHOS - SP",
+    address: "Av. Suplicy, 238 - Jd. Santa Mena - Guarulhos - SP",
     phone: "(11) 2414-4145",
     website: "https://www.quickclean.com.br/",
     state: "SP",
@@ -692,7 +692,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     longitude: -46.4981,
     zoom: 14,
     country: "br",
-    website: "https://vmautoclean.com.br",
+    website: "https://www.vmautoclean.com.br",
     product_line: [DistributorProductLine.LOTUS],
   },
   {
