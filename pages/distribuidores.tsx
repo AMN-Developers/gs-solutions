@@ -261,7 +261,9 @@ export default function Distribuidores() {
                       {Array.from(
                         new Set(DISTRIBUTORS_ITEMS.map((d) => d.state)),
                       )
-                        .filter((state) => state !== "LOJA VIRTUAL")
+                        .filter(
+                          (state) => state !== "LOJA VIRTUAL" && state !== "LX",
+                        )
                         .sort()
                         .map((state) => (
                           <option key={state} value={state}>
