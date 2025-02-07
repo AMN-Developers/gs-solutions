@@ -27,39 +27,29 @@ export default function Limpoo() {
             <Card.Item
               alt="Hidrooleo banner"
               href="/hidro"
-              bgImage="/hidro-benner.webp"
-              title="A tríplice para sua limpeza"
-              logo="powertrio-logo.svg"
+              bgImage="/marmore.jpg"
+              title="HIDRO E ÓLEO: FUGANTE PARA MÁRMORES"
+              logo="hidrologo.svg"
               bgPos="center"
             />
           </Reveal>
           <Reveal delay={0.2}>
             <Card.Item
-              alt="Fixflot logo"
-              href="/fixflot"
-              bgImage="/fixflot-banner.webp"
-              title="FixFlot - O melhor flotador do mercado"
-              logo="logo-fixflot.svg"
+              alt="Pine banner"
+              href="/pine"
+              bgImage="/card-limpoo.webp"
+              title="PINE: A SUA SOLUÇÃO PARA TODAS AS SITUAÇÕES"
+              logo="pine-logo.svg"
               bgPos="center"
             />
           </Reveal>
           <Reveal delay={0.2}>
             <Card.Item
-              alt="Fireguard Logo"
-              href="/fireguard"
-              bgImage="/fireguard-bg.png"
-              title="Fireguard - Poderoso hidrofugante"
-              logo="logo-fireguard.png"
-              bgPos="center"
-            />
-          </Reveal>
-          <Reveal delay={0.2}>
-            <Card.Item
-              alt="Linha auto Logo"
-              href="/auto"
-              bgImage="/auto/car.jpg"
-              title="Linha automotiva - Uma higienização completa para o carro"
-              logo="logo-auto.png"
+              alt="Desinscrustante banner"
+              href="/desincrustante"
+              bgImage="des-banner.webp"
+              title="DESINCRUSTANTE: O ESSENCIAL DO PÓS OBRA"
+              logo="des-logo.svg"
               bgPos="center"
             />
           </Reveal>
