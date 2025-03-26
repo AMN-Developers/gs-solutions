@@ -1168,7 +1168,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     product_line: [DistributorProductLine.LOTUS, DistributorProductLine.LIMPOO],
   },
   {
-    id: 90,
+    id: 91,
     name: "Casa do Lavador UN. Porto Alegre III",
     phone: "(51)99763-5649",
     address: "Av. Edgar Píres de Castro, 503 - Hípica, Porto Alegre - RS",
@@ -1181,7 +1181,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     product_line: [DistributorProductLine.LOTUS, DistributorProductLine.LIMPOO],
   },
   {
-    id: 91,
+    id: 92,
     name: "Casa do Lavador UN. Osório",
     phone: "(51)99887-1744",
     address: " R. Costa Gama, 915 - Centro, Osório - RS",
