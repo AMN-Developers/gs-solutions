@@ -1193,4 +1193,17 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     product_line: [DistributorProductLine.LOTUS, DistributorProductLine.LIMPOO],
   },
+  {
+    id: 93,
+    name: "Loja Super Brilho",
+    phone: "(79)99681-6592",
+    address: " Rua Acre, 819 - Siqueira CamposAracaju - SE",
+    state: "SE",
+    latitude: -10.9113614,
+    longitude: -37.073372,
+    zoom: 14,
+    website: "",
+    country: "br",
+    product_line: [DistributorProductLine.LOTUS],
+  },
 ];
