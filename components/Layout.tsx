@@ -148,6 +148,11 @@ export default function Layout({ children, route }: LayoutProps) {
               route={route}
               label="Distribuidores G&S"
             />
+            <NavItem
+              href="https://certificados.gshomesolutions.com.br"
+              route={route}
+              label="Certificados Digitais"
+            />
             <Box
               as="button"
               ref={btnRef}
