@@ -24,7 +24,7 @@
     "client-only": "^0.0.1",
     "date-fns": "^2.30.0",
     "framer-motion": "^10.16.4",
-    "next": "14.2.23",
+    "next": "^14.2.26",
     "next-pwa": "^5.6.0",
     "next-secure-headers": "^2.2.0",
     "next-seo": "^6.1.0",
