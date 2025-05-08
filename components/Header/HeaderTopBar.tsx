@@ -1,4 +1,5 @@
-import { Container, Box, Button, keyframes } from "@chakra-ui/react";
+import { Container, Box, Button } from "@chakra-ui/react";
+import { keyframes } from "@emotion/react";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";

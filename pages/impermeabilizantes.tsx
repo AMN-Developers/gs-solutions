@@ -93,7 +93,7 @@ export default function Impermeabilizantes() {
             ))}
           </Catalog.Root>
         </Box>
-        <Box
+        {/* <Box
           w="full"
           backgroundColor={"#f8f8f8"}
           p={8}
@@ -137,7 +137,7 @@ export default function Impermeabilizantes() {
               />
             ))}
           </Catalog.Root>
-        </Box>
+        </Box> */}
         <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mt={16}>
           <Text
             as="h2"
