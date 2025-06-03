@@ -44,9 +44,9 @@ const HeaderTopBar = () => {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Box as={Link} maxW={100} maxH="auto" href="/">
+      <Box as={Link} maxW={200} maxH="auto" href="/">
         <Image
-          src="/logo.png"
+          src="/logonova.svg"
           alt="G&S Home Solutions"
           width={245}
           height={319}

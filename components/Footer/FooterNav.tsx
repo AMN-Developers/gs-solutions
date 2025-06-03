@@ -16,9 +16,9 @@ export default function FooterNav({ openDrawer }: FooterNavProps) {
       py={2}
       fontWeight={"thin"}
     >
-      <Box maxW={70} maxH={"auto"}>
+      <Box maxW={100} maxH={"auto"}>
         <Image
-          src="/logo.png"
+          src="/logonova.svg"
           alt="G&S Home Solutions"
           width={245}
           height={319}
