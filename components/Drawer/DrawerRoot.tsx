@@ -45,7 +45,7 @@ export default function DrawerRoot({
           display={"flex"}
           justifyContent={"center"}
         >
-          <Image src="/logo.png" alt="G&S Home Solutions" maxW={50} />
+          <Image src="/logonova.svg" alt="G&S Home Solutions" maxW={100} />
         </DrawerHeader>
 
         <DrawerBody
