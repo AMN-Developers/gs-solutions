@@ -149,7 +149,7 @@ export default function Home() {
                 </Text>
               </Flex>
             </Flex>
-            <Button w={"full"} mt={4} colorScheme="messenger" onClick={openPDF}>
+            <Button w={"full"} mt={4} colorScheme="blue" onClick={openPDF}>
               Faça download do manual
             </Button>
           </Flex>

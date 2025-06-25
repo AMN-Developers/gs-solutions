@@ -30,7 +30,7 @@ export default function CertificatedBar() {
         <Box
           maxW={200}
           as={Link}
-          href="https://drive.google.com/file/d/12BYEiNIhQLI4kY1rtawGQuVcX3vhMxNs/view?usp=drive_link"
+          href="https://drive.google.com/file/d/1WzQ3i0_99gQostt5TV5fnqab5buzXGLp/view"
           target="_blank"
         >
           <Image
