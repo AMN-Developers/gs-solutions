@@ -271,6 +271,11 @@ export default function Layout({ children, route }: LayoutProps) {
                 href="/distribuidores"
                 toggleMainDrawer={onToggle}
               />
+              <MobileItems
+                label="Certificados Digitais"
+                href="https://certificados.gshomesolutions.com.br"
+                toggleMainDrawer={onToggle}
+              />
             </Stack>
             <Box
               as="button"
@@ -283,6 +288,7 @@ export default function Layout({ children, route }: LayoutProps) {
               fontWeight={600}
               color={"gray.600"}
               py={2}
+              mt={2}
             >
               Contato
             </Box>
