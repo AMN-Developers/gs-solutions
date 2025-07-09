@@ -1245,4 +1245,17 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     product_line: [DistributorProductLine.LOTUS],
   },
+  {
+    id: 97,
+    name: "AUTO CORES",
+    phone: "(31)98707-1002",
+    address: "Av. Presidente Carlos Luz, 45 - Caiçaras, Belo Horizonte - MG, 31230-010",
+    state: "MG",
+    latitude: -19.9080226,
+    longitude: -43.9629912,
+    zoom: 14,
+    website: "https://www.lojaautocores.com/loja/busca.php?loja=706429&palavra_busca=L%D3TUS",
+    country: "br",
+    product_line: [DistributorProductLine.LOTUS],
+  },
 ];
