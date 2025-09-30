@@ -1257,5 +1257,17 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     website: "https://www.lojaautocores.com/loja/busca.php?loja=706429&palavra_busca=L%D3TUS",
     country: "br",
     product_line: [DistributorProductLine.LOTUS],
+  },{
+    id: 98,
+    name: "SHARK AUTOS",
+    phone: "(81)99671-5526",
+    address: "Rua Filomena de Sena Carneiro, 145 - Rendeiras, Caruaru - PE, 55022-510",
+    state: "PE",
+    latitude: -8.2775608,
+    longitude: -35.9325527,
+    zoom: 14,
+    website: "",
+    country: "br",
+    product_line: [DistributorProductLine.LOTUS],
   },
 ];
