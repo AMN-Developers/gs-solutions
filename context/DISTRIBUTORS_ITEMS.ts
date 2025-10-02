@@ -1276,7 +1276,7 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     name: "DETAIL PRO SHOP",
     phone: "(22)99914-3109",
     address: "R. Ten-Cel. Cardoso, 832 - loja 1 - Centro, Campos dos Goytacazes - RJ, 28035-044",
-    state: "PE",
+    state: "RJ",
     latitude: -21.7561245,
     longitude: -41.3340901,
     zoom: 14,
