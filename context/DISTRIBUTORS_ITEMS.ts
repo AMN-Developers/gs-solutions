@@ -1284,4 +1284,17 @@ export const DISTRIBUTORS_ITEMS: Array<Distributor> = [
     country: "br",
     product_line: [DistributorProductLine.LOTUS],
   },
+  {
+    id: 100,
+    name: "BurnoutCA Produtos Automotivos",
+    phone: "(11)94233-3524",
+    address: "Alameda São Caetano, 960, Bairro Jardim, Santo André, SP, 09070210",
+    state: "SP",
+    latitude: -23.6471259,
+    longitude: -46.5497113,
+    zoom: 14,
+    website: "",
+    country: "br",
+    product_line: [DistributorProductLine.LOTUS],
+  },
 ];
