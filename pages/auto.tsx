@@ -494,18 +494,22 @@ export default function Auto() {
                     </Text>
                     <Flex gap={2}>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view?usp=sharing",
+                            "https://drive.google.com/file/d/1xVGjbNlEF_o50gbs0oNZn3WStKOPjIet/view",
                           )
                         }
                       >
                         Boletim Tecnico
                       </Button>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(
@@ -542,18 +546,22 @@ export default function Auto() {
                     </Text>
                     <Flex gap={2}>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view",
+                            "https://drive.google.com/file/d/1NYc-V3y0QMJ1k5rPFsmrHrr_sB3n_1uZ/view",
                           )
                         }
                       >
                         Boletim Tecnico
                       </Button>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(
@@ -589,18 +597,22 @@ export default function Auto() {
                     </Text>
                     <Flex gap={2}>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view",
+                            "https://drive.google.com/file/d/1ygYtBWjLxFyCyJfI4WGK4ftB4U-pNzZe/view",
                           )
                         }
                       >
                         Boletim Tecnico
                       </Button>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(
@@ -638,7 +650,9 @@ export default function Auto() {
                     </Text>
                     <Flex gap={2}>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(
@@ -649,7 +663,9 @@ export default function Auto() {
                         Boletim Tecnico
                       </Button>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(
@@ -687,7 +703,9 @@ export default function Auto() {
                     </Text>
                     <Flex gap={2}>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(
@@ -698,7 +716,9 @@ export default function Auto() {
                         Boletim Tecnico
                       </Button>
                       <Button
-                        colorScheme="facebook"
+                        bgColor={"#385898"}
+                        _hover={{ bgColor: "#2d4373" }}
+                        color={"white"}
                         size={"sm"}
                         onClick={() =>
                           window.open(

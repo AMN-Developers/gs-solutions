@@ -228,7 +228,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     fiqasp:
       "https://drive.google.com/file/d/1OXg1_0hyv5TncGFfK_RzAGYcPJbMl1qy/view",
     boletim:
-      "https://drive.google.com/file/d/1jrikRa7UEETal5M2yAztYIHzW7zcr8-Q/view",
+      "https://drive.google.com/file/d/1NYc-V3y0QMJ1k5rPFsmrHrr_sB3n_1uZ/view",
   },
   {
     id: 2,
@@ -258,7 +258,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     fiqasp:
       "https://drive.google.com/file/d/1m5HLgs5uuSnTXIQOGr0hLMJf7YbQUJjV/view",
     boletim:
-      "https://drive.google.com/file/d/1-WciTqxQzaPGhPvwemkbQVJv7T6KnL50/view",
+      "https://drive.google.com/file/d/1NYc-V3y0QMJ1k5rPFsmrHrr_sB3n_1uZ/view",
   },
   {
     id: 3,
@@ -288,7 +288,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     fiqasp:
       "https://drive.google.com/file/d/1q8VeBwvmOj1Fi6UVKxoj0yGV2QP0w7Pg/view",
     boletim:
-      "https://drive.google.com/file/d/1lkQ0A8UtFRimNkZxzSaOrJVlSKDliqx6/view",
+      "https://drive.google.com/file/d/1ygYtBWjLxFyCyJfI4WGK4ftB4U-pNzZe/view",
   },
   {
     id: 4,
