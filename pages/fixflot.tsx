@@ -40,7 +40,7 @@ export default function FixFlot() {
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/fixflot/FixFlot3.webp",
+      src: "/produtos/fixflot/FixFlot03.webp",
       alt: "bombona cima",
     },
     {

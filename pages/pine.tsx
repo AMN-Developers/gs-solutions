@@ -42,7 +42,7 @@ export default function Pine() {
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/pine/LimpooPine3.webp",
+      src: "/produtos/pine/LimpooPine3.png",
       alt: "bombona cima",
     },
     {
