@@ -354,7 +354,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/all.png"
+                  src="/produtos/novas/allone.png"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -379,8 +379,8 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/preimper.webp"
-                  alt="All in One"
+                  src="/produtos/novas/PreImper.webp"
+                  alt="PreImper"
                   width={100}
                   height={100}
                 />
@@ -400,8 +400,8 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/tiramancha.webp"
-                  alt="All in One"
+                  src="/produtos/novas/TiraMancha.webp"
+                  alt="Tira Manchas"
                   width={100}
                   height={100}
                 />
@@ -421,8 +421,8 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/multic.webp"
-                  alt="All in One"
+                  src="/produtos/novas/MultiC.webp"
+                  alt="MultiC"
                   width={100}
                   height={100}
                 />
@@ -442,8 +442,8 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/hydraleder.webp"
-                  alt="All in One"
+                  src="/produtos/novas/HydraLeder.webp"
+                  alt="HydraLeder"
                   width={100}
                   height={100}
                 />

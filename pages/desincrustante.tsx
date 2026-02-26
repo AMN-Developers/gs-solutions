@@ -185,6 +185,7 @@ export default function Desincrustante() {
             <Flex gap={4} flexDirection={"column"} fontSize={"md"}>
               <Reveal delay={0.1}>
                 <HiddenText
+                  buttonTextColor="white"
                   color="#6F5E56"
                   hover="#6F5E40"
                   title="Sujidade Leve"
@@ -194,6 +195,7 @@ export default function Desincrustante() {
               </Reveal>
               <Reveal delay={0.15}>
                 <HiddenText
+                  buttonTextColor="white"
                   color="#6F5E56"
                   hover="#6F5E40"
                   title="Sujidade média"
@@ -203,6 +205,7 @@ export default function Desincrustante() {
               </Reveal>
               <Reveal delay={0.2}>
                 <HiddenText
+                  buttonTextColor="white"
                   color="#6F5E56"
                   hover="#6F5E40"
                   title="Sujidade alta"
@@ -232,6 +235,7 @@ export default function Desincrustante() {
             </Flex>
             <Flex gap={2} w={"full"} flexDir={{ base: "column", sm: "row" }}>
               <Button
+                textColor={"white"}
                 bg={"#6F5E56"}
                 _hover={{
                   bg: "#6F5E40",
@@ -245,6 +249,7 @@ export default function Desincrustante() {
                 Boletim Tecnico
               </Button>
               <Button
+                textColor={"white"}
                 bg={"#6F5E56"}
                 _hover={{
                   bg: "#6F5E40",
@@ -286,6 +291,7 @@ export default function Desincrustante() {
         </Flex>
 
         <Button
+          textColor={"white"}
           my={4}
           bg={"#6F5E56"}
           _hover={{

@@ -36,8 +36,8 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     id: 68,
     recomended: "30",
     title: "MULTI-C", //done
-    thumbnail: "/produtos/novas/MULTIC.webp",
-    large_image: "/produtos/novas/MULTIC.webp",
+    thumbnail: "/produtos/novas/MultiC.webp",
+    large_image: "/produtos/novas/MultiC.webp",
     slogan: "Detergente alcalino para sujidade pesada",
     chamada: "Limpador APC",
     hover_color: "0,92,142,1",
@@ -511,8 +511,8 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     // TODO: Update the image url, hover_color, slogan and fds
     id: 6,
     title: "ACQUA-PRO", //done
-    thumbnail: "/produtos/novas/AcquaPro.webp",
-    large_image: "/produtos/novas/AcquaPro.webp",
+    thumbnail: "/produtos/novas/Acquapro.webp",
+    large_image: "/produtos/novas/Acquapro.webp",
     slogan:
       "Protetor de tecidos a base de água, que oferece um efeito hidrofugante ao tecido.",
     chamada: "Protetor de tecidos a base de água",

@@ -32,19 +32,19 @@ export default function Fireguard() {
   };
   const images = [
     {
-      src: "/produtos/fireguard/fireguard1.webp",
+      src: "/produtos/fireguard/Fireguard1.webp",
       alt: "bombona diagonal",
     },
     {
-      src: "/produtos/fireguard/fireguard2.webp",
+      src: "/produtos/fireguard/Fireguard2.webp",
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/fireguard/fireguard3.webp",
+      src: "/produtos/fireguard/Fireguard3.webp",
       alt: "bombona cima",
     },
     {
-      src: "/produtos/fireguard/fireguard4.webp",
+      src: "/produtos/fireguard/Fireguard4.webp",
       alt: "bombona diagonal baixo",
     },
   ];

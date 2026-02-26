@@ -90,7 +90,7 @@ export default function PowerTrio() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/all.png"
+                  src="/produtos/novas/allone.png"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -136,7 +136,7 @@ export default function PowerTrio() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/tiramancha.webp"
+                  src="/produtos/novas/TiraMancha.webp"
                   alt="Tira Manchas"
                   width={100}
                   height={100}
