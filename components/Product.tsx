@@ -114,19 +114,50 @@ export default function Product({
                         </Box>
                       )}
                       <Box display={"flex"} gap={4}>
-                        <Button
-                          onClick={() =>
-                            window.open(selectedProduct.fiqasp, "_blank")
-                          }
-                          bgColor={`rgba(${selectedProduct.hover_color})`}
-                          color={"white"}
-                          _hover={{
-                            bgColor: `rgba(${selectedProduct.hover_color})`,
-                          }}
-                          fontSize={{ base: "xx-small", md: "md" }}
-                        >
-                          FISPQ
-                        </Button>
+                        {selectedProduct.title === "Max Fresh" ? (
+                          <>
+                            <Button
+                              onClick={() =>
+                                window.open(selectedProduct.zen, "_blank")
+                              }
+                              bgColor={`rgba(${selectedProduct.hover_color})`}
+                              color={"white"}
+                              _hover={{
+                                bgColor: `rgba(${selectedProduct.hover_color})`,
+                              }}
+                              fontSize={{ base: "xx-small", md: "md" }}
+                            >
+                              FDS ZEN
+                            </Button>
+                            <Button
+                              onClick={() =>
+                                window.open(selectedProduct.aura, "_blank")
+                              }
+                              bgColor={`rgba(${selectedProduct.hover_color})`}
+                              color={"white"}
+                              _hover={{
+                                bgColor: `rgba(${selectedProduct.hover_color})`,
+                              }}
+                              fontSize={{ base: "xx-small", md: "md" }}
+                            >
+                              FDS AURA
+                            </Button>
+                          </>
+                        ) : (
+                          <Button
+                            onClick={() =>
+                              window.open(selectedProduct.fds, "_blank")
+                            }
+                            bgColor={`rgba(${selectedProduct.hover_color})`}
+                            color={"white"}
+                            _hover={{
+                              bgColor: `rgba(${selectedProduct.hover_color})`,
+                            }}
+                            fontSize={{ base: "xx-small", md: "md" }}
+                          >
+                            FDS
+                          </Button>
+                        )}
                         <Button
                           onClick={() =>
                             window.open(selectedProduct.boletim, "_blank")

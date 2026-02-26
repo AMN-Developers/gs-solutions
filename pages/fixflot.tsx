@@ -15,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import HiddenText from "@/components/HiddenText";
-import VideoFrame from "@/components/iFrame";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -33,19 +32,19 @@ export default function FixFlot() {
   };
   const images = [
     {
-      src: "/produtos/fixflot/fixflot1.png",
+      src: "/produtos/fixflot/fixflota.webp",
       alt: "bombona diagonal",
     },
     {
-      src: "/produtos/fixflot/fixflot2.png",
+      src: "/produtos/fixflot/fixflotb.webp",
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/fixflot.png",
+      src: "/produtos/fixflot/fixflot3.webp",
       alt: "bombona cima",
     },
     {
-      src: "/produtos/fixflot/fixflot4.png",
+      src: "/produtos/fixflot/fixflotc.webp",
       alt: "bombona diagonal baixo",
     },
   ];
@@ -198,6 +197,7 @@ export default function FixFlot() {
                   title="Sujidade Leve"
                   text="Realizar diluição de 1:130
                 (7,5mL de FIX-FLOT para 992,5ml de água);"
+                  buttonTextColor="white"
                 />
               </Reveal>
               <Reveal delay={0.15}>
@@ -207,6 +207,7 @@ export default function FixFlot() {
                   title="Sujidade média"
                   text="Realizar diluição de 1:100
                 (10mL de FIX-FLOT para 990mL de água);"
+                  buttonTextColor="white"
                 />
               </Reveal>
               <Reveal delay={0.2}>
@@ -216,6 +217,7 @@ export default function FixFlot() {
                   title="Sujidade alto"
                   text=" Realizar diluição de 1:70 (15mL
                 de FIX-FLOT para 985mL de água)."
+                  buttonTextColor="white"
                 />
               </Reveal>
               <Reveal delay={0.25}>
@@ -225,6 +227,7 @@ export default function FixFlot() {
                   title="Sujidade muito alta"
                   text="Realizar diluição de 1:50
                 (20mL de FIX-FLOT para 980mL de água)."
+                  buttonTextColor="white"
                 />
               </Reveal>
             </Flex>
@@ -307,11 +310,11 @@ export default function FixFlot() {
                 }}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1EeBpjGzOQefh20mxGOohfiS-A903QGCM/view",
+                    "https://drive.google.com/file/d/1SqGkSOVaz7sIiK5MiqbP57EcXfsrry9x/view?usp=drive_link",
                   )
                 }
               >
-                FISPQ
+                FDS
               </Button>
               <Button
                 bg={

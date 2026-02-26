@@ -33,19 +33,19 @@ export default function Desincrustante() {
   };
   const images = [
     {
-      src: "/produtos/desincrustante/Limpoo Desincrustante 05.png",
+      src: "/produtos/desincrustante/Desin1.webp",
       alt: "bombona diagonal",
     },
     {
-      src: "/produtos/desincrustante/Limpoo Desincrustante 01.png",
+      src: "/produtos/desincrustante/Desin2.webp",
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/desincrustante/Limpoo Desincrustante 03.png",
+      src: "/produtos/desincrustante/Desin3.webp",
       alt: "bombona cima",
     },
     {
-      src: "/produtos/desincrustante/Limpoo Desincrustante 04.png",
+      src: "/produtos/desincrustante/Desin4.webp",
       alt: "bombona diagonal baixo",
     },
   ];
@@ -251,11 +251,11 @@ export default function Desincrustante() {
                 }}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1XTQlTe4GXouK80wTYibzZ1mFrGItbzMU/view?usp=sharing",
+                    "https://drive.google.com/file/d/1yoOgmuT6P1ZWqOOQwG1PtZ_-P2UbATHD/view?usp=drive_link",
                   )
                 }
               >
-                FISPQ
+                FDS
               </Button>
             </Flex>
             <Flex flexDirection={"column"} gap={4} pb={4}>

@@ -34,19 +34,19 @@ export default function Pine() {
   };
   const images = [
     {
-      src: "/produtos/pine/Limpoo Pine 03.png",
+      src: "/produtos/pine/LimpooPine1.webp",
       alt: "bombona diagonal",
     },
     {
-      src: "/produtos/pine/Limpoo Pine 02.png",
+      src: "/produtos/pine/LimpooPine2.webp",
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/pine/Limpoo Pine 04.png",
+      src: "/produtos/pine/LimpooPine3.webp",
       alt: "bombona cima",
     },
     {
-      src: "/produtos/pine/Limpoo Pine 06.png",
+      src: "/produtos/pine/LimpooPine4.webp",
       alt: "bombona diagonal baixo",
     },
   ];
@@ -248,11 +248,11 @@ export default function Pine() {
                 }}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1YXPvfKNPCLUybg046n6C61xYxdfKdPjB/view?usp=sharing",
+                    "https://drive.google.com/file/d/1sDW6Pnp_HnlpL8Ak-WZM8TzKNU8-VxIe/view?usp=drive_link",
                   )
                 }
               >
-                FISPQ
+                FDS
               </Button>
             </Flex>
             <Flex flexDirection={"column"} gap={4} pb={4}>

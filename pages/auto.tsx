@@ -354,7 +354,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/allone.png"
+                  src="/produtos/novas/all.png"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -379,7 +379,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/preimper.png"
+                  src="/produtos/novas/preimper.webp"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -400,7 +400,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/tiramancha.png"
+                  src="/produtos/novas/tiramancha.webp"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -421,7 +421,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/multic.png"
+                  src="/produtos/novas/multic.webp"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -442,7 +442,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/hidraleder.png"
+                  src="/produtos/novas/hydraleder.webp"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -513,11 +513,11 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1OXg1_0hyv5TncGFfK_RzAGYcPJbMl1qy/view",
+                            "https://drive.google.com/file/d/16Xs6j3xNJNIFpJcxRvQXlDrHqEV7fx2C/view?usp=sharing",
                           )
                         }
                       >
-                        FISPQ
+                        FDS
                       </Button>
                     </Flex>
                   </AccordionPanel>
@@ -565,11 +565,11 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1m5HLgs5uuSnTXIQOGr0hLMJf7YbQUJjV/view",
+                            "https://drive.google.com/file/d/19bfsy-3eQSKeTobJi7Af19AdR222aKAS/view?usp=drive_link",
                           )
                         }
                       >
-                        FISPQ
+                        FDS
                       </Button>
                     </Flex>
                   </AccordionPanel>
@@ -616,11 +616,11 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1q8VeBwvmOj1Fi6UVKxoj0yGV2QP0w7Pg/view",
+                            "https://drive.google.com/file/d/1rOvw5qUBlnb6KmL94cpzCOMBjuhSKx9k/view?usp=drive_link",
                           )
                         }
                       >
-                        FISPQ
+                        FDS
                       </Button>
                     </Flex>
                   </AccordionPanel>
@@ -669,11 +669,11 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1Q039yFhWjEGl4Z56E8zeUV8MrMFJCihr/view",
+                            "https://drive.google.com/file/d/1d-wKy6N7zKtBzRiTWwcJMGBgF3lF0pi4/view?usp=drive_link",
                           )
                         }
                       >
-                        FISPQ
+                        FDS
                       </Button>
                     </Flex>
                   </AccordionPanel>
@@ -722,11 +722,11 @@ export default function Auto() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1WrPN-k5ug_rndVqCHlM6ZdbL23TsdNaW/view",
+                            "https://drive.google.com/file/d/1812UT23wqS8lAUoYCRilI42BdLqvg4be/view?usp=drive_link",
                           )
                         }
                       >
-                        FISPQ
+                        FDS
                       </Button>
                     </Flex>
                   </AccordionPanel>

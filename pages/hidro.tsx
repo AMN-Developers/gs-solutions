@@ -228,11 +228,11 @@ export default function Hidro() {
                 }}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/1yOC_2ME3QFMsIBi9fnwTRX-UtFrzjcuE/view?usp=sharing",
+                    "https://drive.google.com/file/d/1UDNNJxx8OPEeaoSnBhWSfkUN3-5Lfpg4/view?usp=drive_link",
                   )
                 }
               >
-                FISPQ
+                FDS
               </Button>
             </Flex>
           </Flex>

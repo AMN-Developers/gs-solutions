@@ -22,7 +22,9 @@ export interface Product {
   slogan: string;
   hover_color: string;
   description: string;
-  fiqasp: string;
+  fds?: string;
+  zen?: string;
+  aura?: string;
   boletim: string;
   category: Category[];
   recomended?: string;

@@ -90,7 +90,7 @@ export default function PowerTrio() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/allone.png"
+                  src="/produtos/novas/all.png"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -115,7 +115,7 @@ export default function PowerTrio() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/preimper.png"
+                  src="/produtos/novas/PreImper.webp"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -136,7 +136,7 @@ export default function PowerTrio() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/tiramancha.png"
+                  src="/produtos/novas/tiramancha.webp"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -211,11 +211,11 @@ export default function PowerTrio() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1OXg1_0hyv5TncGFfK_RzAGYcPJbMl1qy/view",
+                            "https://drive.google.com/file/d/16Xs6j3xNJNIFpJcxRvQXlDrHqEV7fx2C/view?usp=sharing",
                           )
                         }
                       >
-                        FISPQ
+                        FDS
                       </Button>
                     </Flex>
                   </AccordionPanel>
@@ -263,11 +263,11 @@ export default function PowerTrio() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1m5HLgs5uuSnTXIQOGr0hLMJf7YbQUJjV/view",
+                            "https://drive.google.com/file/d/19bfsy-3eQSKeTobJi7Af19AdR222aKAS/view?usp=drive_link",
                           )
                         }
                       >
-                        FISPQ
+                        FDS
                       </Button>
                     </Flex>
                   </AccordionPanel>
@@ -314,11 +314,11 @@ export default function PowerTrio() {
                         size={"sm"}
                         onClick={() =>
                           window.open(
-                            "https://drive.google.com/file/d/1q8VeBwvmOj1Fi6UVKxoj0yGV2QP0w7Pg/view",
+                            "https://drive.google.com/file/d/1rOvw5qUBlnb6KmL94cpzCOMBjuhSKx9k/view?usp=drive_link",
                           )
                         }
                       >
-                        FISPQ
+                        FDS
                       </Button>
                     </Flex>
                   </AccordionPanel>
@@ -344,7 +344,7 @@ export default function PowerTrio() {
               boxShadow={"lg"}
             >
               <Image
-                src="/embalagens-power.png"
+                src="/embalagenspt.webp"
                 alt="All in One"
                 width={700}
                 height={430}

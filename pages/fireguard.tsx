@@ -32,19 +32,19 @@ export default function Fireguard() {
   };
   const images = [
     {
-      src: "/produtos/fireguard/fireguard1.png",
+      src: "/produtos/fireguard/fireguard1.webp",
       alt: "bombona diagonal",
     },
     {
-      src: "/produtos/fireguard/fireguard2.png",
+      src: "/produtos/fireguard/fireguard2.webp",
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/fireguard/fireguard1.png",
+      src: "/produtos/fireguard/fireguard3.webp",
       alt: "bombona cima",
     },
     {
-      src: "/produtos/fireguard/fireguard4.png",
+      src: "/produtos/fireguard/fireguard4.webp",
       alt: "bombona diagonal baixo",
     },
   ];
@@ -319,11 +319,11 @@ solvente de percloroetileno para tecidos e tapetes)."
                 }}
                 onClick={() =>
                   window.open(
-                    "https://drive.google.com/file/d/15J65mLGgMWLrL2A1mz6eZ2wUtG3nP1J5/view",
+                    "https://drive.google.com/file/d/18f72axPyvJiJURgEPyh1NyzfXRtAO3Ba/view?usp=drive_link",
                   )
                 }
               >
-                FISPQ
+                FDS
               </Button>
               <Button
                 bg={"rgba(255,180,44,1)"}
