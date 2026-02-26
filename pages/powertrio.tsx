@@ -116,7 +116,7 @@ export default function PowerTrio() {
               <Box alignSelf={"center"} p={4}>
                 <Image
                   src="/produtos/novas/PreImper.webp"
-                  alt="All in One"
+                  alt="Pré Imper bombona"
                   width={100}
                   height={100}
                 />
@@ -137,7 +137,7 @@ export default function PowerTrio() {
               <Box alignSelf={"center"} p={4}>
                 <Image
                   src="/produtos/novas/tiramancha.webp"
-                  alt="All in One"
+                  alt="Tira Manchas"
                   width={100}
                   height={100}
                 />
