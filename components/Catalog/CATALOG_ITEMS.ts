@@ -203,8 +203,8 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     id: 1,
     recomended: "40",
     title: "ALL01", //done
-    thumbnail: "/produtos/novas/allone.png",
-    large_image: "/produtos/novas/allone.png",
+    thumbnail: "/produtos/novas/all.png",
+    large_image: "/produtos/novas/all.png",
     slogan:
       "ALL-01-S DETERGENTE UNIVERSAL DE USO GERAL com alto poder de remoção.",
     chamada: "Detergente vegano",
