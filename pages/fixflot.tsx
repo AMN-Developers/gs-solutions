@@ -32,19 +32,19 @@ export default function FixFlot() {
   };
   const images = [
     {
-      src: "/produtos/fixflot/fixflota.webp",
+      src: "/produtos/fixflot/FixFlot1.webp",
       alt: "bombona diagonal",
     },
     {
-      src: "/produtos/fixflot/fixflotb.webp",
+      src: "/produtos/fixflot/FixFlot2.webp",
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/fixflot/fixflot3.webp",
+      src: "/produtos/fixflot/FixFlot3.webp",
       alt: "bombona cima",
     },
     {
-      src: "/produtos/fixflot/fixflotc.webp",
+      src: "/produtos/fixflot/FixFlot4.webp",
       alt: "bombona diagonal baixo",
     },
   ];
