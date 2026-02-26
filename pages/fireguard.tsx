@@ -40,7 +40,7 @@ export default function Fireguard() {
       alt: "bombona diagonal cima",
     },
     {
-      src: "/produtos/fireguard/Fireguard3.webp",
+      src: "/produtos/fireguard/Fireguard30.webp",
       alt: "bombona cima",
     },
     {
