@@ -15,6 +15,10 @@ export interface Category {
 }
 
 export interface Product {
+  sizes?: Array<{
+    size: string;
+    image: string;
+  }>;
   id: number;
   title: string;
   thumbnail: string;
@@ -29,6 +33,7 @@ export interface Product {
   category: Category[];
   recomended?: string;
   chamada: string;
+  alt: string;
 }
 
 export default function useProducts() {

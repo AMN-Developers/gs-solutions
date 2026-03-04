@@ -125,6 +125,7 @@ export default function Higienização() {
                 id={product.id}
                 type={"higi"}
                 href={`?higi=${product.id}#higi-${product.id}`}
+                alt={product.alt}
               />
             ))}
           </Catalog.Root>
@@ -165,6 +166,7 @@ export default function Higienização() {
                     id={product.id}
                     type={"imper"}
                     href={`?imper=${product.id}#imper-${product.id}`}
+                    alt={product.alt}
                   />
                 ))
               : null}

@@ -90,7 +90,7 @@ export default function PowerTrio() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/allone.png"
+                  src="/produtos/novas/allone/AllOne5.webp"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -115,7 +115,7 @@ export default function PowerTrio() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/PreImper.webp"
+                  src="/produtos/novas/preimper/PreImper5.webp"
                   alt="Pré Imper bombona"
                   width={100}
                   height={100}
@@ -136,7 +136,7 @@ export default function PowerTrio() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/TiraMancha.webp"
+                  src="/produtos/novas/tiramancha/TiraMancha5.webp"
                   alt="Tira Manchas"
                   width={100}
                   height={100}
@@ -344,8 +344,8 @@ export default function PowerTrio() {
               boxShadow={"lg"}
             >
               <Image
-                src="/embalagenspt.webp"
-                alt="All in One"
+                src="/produtos/novas/PowerTrio.webp"
+                alt="Todos os produtos do Power Trio juntos em um banho de higienização"
                 width={700}
                 height={430}
               />

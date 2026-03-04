@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { CloseIcon } from "@chakra-ui/icons";
 import { CustomImage } from "@/components/CustomImage";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import type { Product } from "@/hooks/useProducts";
 
 interface ProductProps {
@@ -26,6 +27,8 @@ export default function Product({
   param,
 }: ProductProps) {
   const router = useRouter();
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
   const removeParam = (param: string) => {
     const { pathname, query } = router;
     const params = new URLSearchParams(query as unknown as string);
@@ -78,8 +81,14 @@ export default function Product({
                   gap={4}
                 >
                   <CustomImage
-                    src={selectedProduct.large_image}
-                    alt=""
+                    src={
+                      selectedSize && Array.isArray(selectedProduct.sizes)
+                        ? selectedProduct.sizes.find(
+                            (s) => s.size === selectedSize,
+                          )?.image || selectedProduct.large_image
+                        : selectedProduct.large_image
+                    }
+                    alt={selectedProduct.alt}
                     width={183}
                     height={268}
                     mx={{ base: "auto", md: 0 }}
@@ -88,65 +97,79 @@ export default function Product({
                     display={"flex"}
                     flexDirection={"column"}
                     justifyContent={"space-between"}
+                    gap={4}
                   >
                     <Text
                       dangerouslySetInnerHTML={{
                         __html: selectedProduct.description,
                       }}
                     />
+
+                    {selectedProduct.recomended && (
+                      <Box>
+                        <Text fontWeight={"bold"}>
+                          Diluição recomendada: 1:{selectedProduct.recomended}
+                        </Text>
+                        <ChakraLink
+                          color={`rgba(${selectedProduct.hover_color})`}
+                          as={Link}
+                          href={`/calculadora?proportion=${selectedProduct.recomended}`}
+                        >
+                          calculadora de diluição
+                        </ChakraLink>
+                      </Box>
+                    )}
+
+                    {Array.isArray(selectedProduct.sizes) &&
+                      selectedProduct.sizes.length > 0 && (
+                        <Box
+                          display={"flex"}
+                          gap={2}
+                          flexWrap={"wrap"}
+                          justifyContent={{ base: "center", md: "left" }}
+                        >
+                          {selectedProduct.sizes.map((size) => (
+                            <Button
+                              key={size.size}
+                              onClick={() => setSelectedSize(size.size)}
+                              bgColor={
+                                selectedSize === size.size
+                                  ? `rgba(${selectedProduct.hover_color})`
+                                  : "transparent"
+                              }
+                              border={
+                                selectedSize === size.size
+                                  ? "none"
+                                  : `2px solid rgba(${selectedProduct.hover_color})`
+                              }
+                              color={
+                                selectedSize === size.size
+                                  ? "white"
+                                  : `rgba(${selectedProduct.hover_color})`
+                              }
+                              _hover={{
+                                bgColor: `rgba(${selectedProduct.hover_color})`,
+                                color: "white",
+                              }}
+                              fontSize={{ base: "sm", md: "md" }}
+                            >
+                              {size.size}
+                            </Button>
+                          ))}
+                        </Box>
+                      )}
+
                     <Box
                       display={"flex"}
                       flexDirection={{ base: "column", md: "row" }}
-                      justifyContent={"space-between"}
+                      gap={2}
+                      flexWrap={"wrap"}
                     >
-                      {selectedProduct.recomended && (
-                        <Box>
-                          <Text fontWeight={"bold"}>
-                            Diluição recomendada: 1:{selectedProduct.recomended}
-                          </Text>
-                          <ChakraLink
-                            color={`rgba(${selectedProduct.hover_color})`}
-                            as={Link}
-                            href={`/calculadora?proportion=${selectedProduct.recomended}`}
-                          >
-                            calculadora de diluição
-                          </ChakraLink>
-                        </Box>
-                      )}
-                      <Box display={"flex"} gap={4}>
-                        {selectedProduct.title === "Max Fresh" ? (
-                          <>
-                            <Button
-                              onClick={() =>
-                                window.open(selectedProduct.zen, "_blank")
-                              }
-                              bgColor={`rgba(${selectedProduct.hover_color})`}
-                              color={"white"}
-                              _hover={{
-                                bgColor: `rgba(${selectedProduct.hover_color})`,
-                              }}
-                              fontSize={{ base: "xx-small", md: "md" }}
-                            >
-                              FDS ZEN
-                            </Button>
-                            <Button
-                              onClick={() =>
-                                window.open(selectedProduct.aura, "_blank")
-                              }
-                              bgColor={`rgba(${selectedProduct.hover_color})`}
-                              color={"white"}
-                              _hover={{
-                                bgColor: `rgba(${selectedProduct.hover_color})`,
-                              }}
-                              fontSize={{ base: "xx-small", md: "md" }}
-                            >
-                              FDS AURA
-                            </Button>
-                          </>
-                        ) : (
+                      {selectedProduct.title === "Max Fresh" ? (
+                        <>
                           <Button
                             onClick={() =>
-                              window.open(selectedProduct.fds, "_blank")
+                              window.open(selectedProduct.zen, "_blank")
                             }
                             bgColor={`rgba(${selectedProduct.hover_color})`}
                             color={"white"}
@@ -155,12 +178,26 @@ export default function Product({
                             }}
                             fontSize={{ base: "xx-small", md: "md" }}
                           >
-                            FDS
+                            FDS ZEN
                           </Button>
-                        )}
+                          <Button
+                            onClick={() =>
+                              window.open(selectedProduct.aura, "_blank")
+                            }
+                            bgColor={`rgba(${selectedProduct.hover_color})`}
+                            color={"white"}
+                            _hover={{
+                              bgColor: `rgba(${selectedProduct.hover_color})`,
+                            }}
+                            fontSize={{ base: "xx-small", md: "md" }}
+                          >
+                            FDS AURA
+                          </Button>
+                        </>
+                      ) : (
                         <Button
                           onClick={() =>
-                            window.open(selectedProduct.boletim, "_blank")
+                            window.open(selectedProduct.fds, "_blank")
                           }
                           bgColor={`rgba(${selectedProduct.hover_color})`}
                           color={"white"}
@@ -169,25 +206,38 @@ export default function Product({
                           }}
                           fontSize={{ base: "xx-small", md: "md" }}
                         >
-                          BOLETIM TÉCNICO
+                          FDS
                         </Button>
-                        <Button
-                          bgColor={`rgba(${selectedProduct.hover_color})`}
-                          color={"white"}
-                          _hover={{
-                            bgColor: `rgba(${selectedProduct.hover_color})`,
-                          }}
-                          fontSize={{ base: "xx-small", md: "md" }}
-                          textTransform={"uppercase"}
-                          onClick={() =>
-                            window.open(
-                              "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20",
-                            )
-                          }
-                        >
-                          Compre Agora!
-                        </Button>
-                      </Box>
+                      )}
+                      <Button
+                        onClick={() =>
+                          window.open(selectedProduct.boletim, "_blank")
+                        }
+                        bgColor={`rgba(${selectedProduct.hover_color})`}
+                        color={"white"}
+                        _hover={{
+                          bgColor: `rgba(${selectedProduct.hover_color})`,
+                        }}
+                        fontSize={{ base: "xx-small", md: "md" }}
+                      >
+                        BOLETIM TÉCNICO
+                      </Button>
+                      <Button
+                        bgColor={`rgba(${selectedProduct.hover_color})`}
+                        color={"white"}
+                        _hover={{
+                          bgColor: `rgba(${selectedProduct.hover_color})`,
+                        }}
+                        fontSize={{ base: "xx-small", md: "md" }}
+                        textTransform={"uppercase"}
+                        onClick={() =>
+                          window.open(
+                            "https://api.whatsapp.com/send?phone=5511913591344&text=Ol%C3%A1,%20vim%20pelo%20Site%20Institucional.%20",
+                          )
+                        }
+                      >
+                        Compre Agora!
+                      </Button>
                     </Box>
                   </Box>
                 </Box>
