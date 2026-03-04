@@ -2,7 +2,7 @@ import { Product } from "@/hooks/useProducts";
 
 export const CATALOG_ITEMS_HIGI: Array<Product> = [
   {
-    id: 64,
+    id: 1,
     recomended: "100",
     title: "FIX FLOT", //done
     thumbnail: "/produtos/novas/fixflot/FixFlot5.webp",
@@ -44,7 +44,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     alt: "Produto Fix Flot da Lótus Solutions, um flotador concentrado para limpeza de tapetes e carpetes",
   },
   {
-    id: 68,
+    id: 2,
     recomended: "30",
     title: "MULTI-C", //done
     thumbnail: "/produtos/novas/multic/MultiC5.webp",
@@ -94,7 +94,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     alt: "Produto Multi-C da Lótus Solutions, um detergente alcalino para sujidade pesada",
   },
   {
-    id: 70,
+    id: 3,
     recomended: "200",
     title: "DESINFEKT", //done
     thumbnail: "/produtos/novas/desinfekt/Desinfekt5.webp",
@@ -132,7 +132,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     alt: "Produto Desinfekt da Lótus Solutions, um desinfetante com efeito bactericida, bacteriostático e virucida sem odor."
   },
   {
-    id: 84,
+    id: 4,
     recomended: "10",
     title: "CITRUSOLV", //done
     thumbnail: "/produtos/novas/citrusolv/Citrusolv5.webp",
@@ -171,7 +171,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     alt: "Produto Citrusolv da Lótus Solutions, um detergente solvente natural e ecologicamente correto extremamente concentrado a base de D’limoneno."
   },
   {
-    id: 85,
+    id: 5,
     recomended: "200",
     title: "CLEAN PROTECT", //done
     thumbnail: "/produtos/novas/cleanprotect/CleanProtect5.webp",
@@ -209,7 +209,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
     alt: "Produto Clean Protect da Lótus Solutions, um produto para limpeza de estofados e tecidos que já passaram pelo processo de impermeabilização."
   },
   {
-    id: 86,
+    id: 6,
     title: "HYDRA LEDER", //done
     thumbnail: "/produtos/novas/hydraleder/HydraLeder5.webp",
     sizes: [
@@ -253,7 +253,7 @@ export const CATALOG_ITEMS_HIGI: Array<Product> = [
 
 export const CATALOG_ITEMS_VEG: Array<Product> = [
   {
-    id: 1,
+    id: 7,
     recomended: "40",
     title: "ALL01", //done
     thumbnail: "/produtos/novas/allone/AllOne5.webp",
@@ -291,7 +291,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     alt: "Produto ALL01 da Lótus Solutions, um detergente universal de uso geral com alto poder de remoção."
   },
   {
-    id: 2,
+    id: 8,
     recomended: "20",
     title: "Pré-Imper", //done
     thumbnail: "/produtos/novas/preimper/PreImper5.webp",
@@ -329,18 +329,18 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     alt: "Produto Pré-Imper da Lótus Solutions, um neutralizador de agentes tensoativos."
   },
   {
-    id: 3,
+    id: 9,
     recomended: "200",
     title: "Tira Manchas", //done
-    thumbnail: "/produtos/novas/tiraMancha/TiraMancha5.webp",
+    thumbnail: "/produtos/novas/tiramancha/TiraMancha5.webp",
     sizes: [
       {
         size: "1L",
-        image: "/produtos/novas/tiraMancha/TiraMancha1.webp",
+        image: "/produtos/novas/tiramancha/TiraMancha1.webp",
       },
       {
         size: "5L",
-        image: "/produtos/novas/tiraMancha/TiraMancha5.webp",
+        image: "/produtos/novas/tiramancha/TiraMancha5.webp",
       }
           ],
     large_image: "/produtos/novas/tiraMancha/TiraMancha5.webp",
@@ -367,7 +367,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     alt: "Produto Tira Manchas da Lótus Solutions, um removedor de manchas e sujeiras extremamente poderoso."
   },
   {
-    id: 4,
+    id: 10,
     recomended: "5",
     title: "Max Fresh Aura", //done
     thumbnail: "/produtos/novas/maxfresh/MaxFreshAura5.webp",
@@ -406,7 +406,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
     alt: "Produto Max Fresh da Lótus Solutions, um neutralizador de odores bacteriostático e finalizador com odor de bambu."
   },
   {
-    id: 99,
+    id: 11,
     recomended: "5",
     title: "Max Fresh Zen", //done
     thumbnail: "/produtos/novas/maxfresh/MaxFreshZen5.webp",
@@ -449,7 +449,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
 export const CATALOG_ITEMS_IMPER: Array<Product> = [
   {
     // TODO: Update the image url, hover_color, slogan and fds
-    id: 9,
+    id: 12,
     title: "LÓTUS SAFE TECH", //done
     thumbnail: "/produtos/novas/safetech/SafeTech20.webp",
     sizes: [
@@ -487,7 +487,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color, slogan and fds
-    id: 3,
+    id: 13,
     title: "LÓTUS FAST PRO", //done
     thumbnail: "/produtos/novas/fastpro/FastPro.webp",
     sizes: [
@@ -520,7 +520,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     alt: "Produto LÓTUS FAST PRO da Lótus Solutions, um protetor de tecidos a base de solvente não inflamável com secagem rápida."
   },
   {
-    id: 1,
+    id: 14,
     title: "LÓTUS IMPERTUDO", //done
     thumbnail: "/produtos/novas/impertudo/Impertudo50.webp",
     sizes: [
@@ -566,7 +566,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color and fds
-    id: 2,
+    id: 15,
     title: "LÓTUS SAFE", //done
     thumbnail: "/produtos/novas/safe/Safe20.webp",
     sizes: [
@@ -604,7 +604,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color and fds
-    id: 4,
+    id: 16,
     title: "LÓTUS ECO", //done
     thumbnail: "/produtos/novas/eco/Eco5.webp",
     sizes: [
@@ -642,7 +642,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color, slogan and fds
-    id: 5,
+    id: 17,
     title: "TECH BLOCK", //done
     thumbnail: "/produtos/novas/techblock/TechBlock5.webp",
     sizes: [
@@ -680,7 +680,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color, slogan and fds
-    id: 6,
+    id: 18,
     title: "ACQUA-PRO", //done
     thumbnail: "/produtos/novas/acquapro/AcquaPro5.webp",
     sizes: [
@@ -714,7 +714,7 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
   },
   {
     // TODO: Update the image url, hover_color, slogan and fds
-    id: 7,
+    id: 19,
     title: "CLEAN PROTECT", //done
     thumbnail: "/produtos/novas/cleanprotect/CleanProtect5.webp",
     sizes: [
@@ -750,10 +750,9 @@ export const CATALOG_ITEMS_IMPER: Array<Product> = [
     boletim: "https://drive.google.com/file/d/1blYkW5QahtORyQs3Tfg3tDIjDq7tGR7M/view",
     alt: "Produto LÓTUS CLEAN PROTECT da Lótus Solutions, um produto para limpeza de estofados e tecidos que já passaram pelo processo de impermeabilização."
   },
-
   {
     // TODO: Update the image url, hover_color, slogan and fds
-    id: 8,
+    id: 20,
     title: "HYDRA LEDER", //done
     thumbnail: "/produtos/novas/hydraleder/HydraLeder5.webp",
     sizes: [
