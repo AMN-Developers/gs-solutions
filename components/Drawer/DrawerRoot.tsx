@@ -61,7 +61,7 @@ export default function DrawerRoot({
             </Text>
           </Box>
           <Text as="p" fontWeight={"light"} fontSize={"sm"}>
-            Rua José do Patrocínio, 67 - Calmon Viana - CEP 08560-100 - SP
+            R. Edna Pereira Galafassi, 32 - Suzano, SP, 08655-239
           </Text>
 
           <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
