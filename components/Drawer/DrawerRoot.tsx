@@ -72,7 +72,7 @@ export default function DrawerRoot({
           </Box>
 
           <Text as="p" fontWeight={"light"} fontSize={"sm"}>
-            gshomesolutions@hotmail.com
+            contato@gshomesolutions.com.br
           </Text>
           <Box display={"flex"} flexDirection={"row"} alignItems={"center"}>
             <Icon as={BiPhone} marginRight={2} />
