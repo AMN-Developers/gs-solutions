@@ -13,6 +13,8 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import type { Product } from "@/hooks/useProducts";
 
+const MotionBox = motion(Box);
+
 interface ProductProps {
   type: string;
   param: string | null;
@@ -44,8 +46,7 @@ export default function Product({
         ? itemList
             .filter((item) => item.id === Number(param))
             .map((selectedProduct) => (
-              <Box
-                as={motion.article}
+              <MotionBox
                 backgroundColor={"#fff"}
                 bgImage={`linear-gradient(0deg, rgba(${selectedProduct.hover_color}) 5%, rgba(255,255,255,1) 5%, rgba(255,255,255,1) 51%, rgba(255,255,255,1) 95%, rgba(${selectedProduct.hover_color}) 90%)`}
                 rounded={"md"}
@@ -55,7 +56,7 @@ export default function Product({
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -100 }}
-                transition={{ duration: "1.5", ease: "easeIn" }}
+                transition={{ duration: 1.5, ease: "easeIn" }}
               >
                 <Box
                   display={"flex"}
@@ -241,7 +242,7 @@ export default function Product({
                     </Box>
                   </Box>
                 </Box>
-              </Box>
+              </MotionBox>
             ))
         : null}
     </Box>

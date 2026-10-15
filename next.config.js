@@ -17,6 +17,10 @@ module.exports = withPWA({
         protocol: "https",
         hostname: "img.youtube.com",
       },
+      {
+        protocol: "https",
+        hostname: "cms.gshomesolutions.com.br",
+      },
     ],
   },
 });

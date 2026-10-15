@@ -10,28 +10,36 @@ const variants = {
 interface MotionLayoutProps {
   children: React.ReactNode;
   title?: string;
+  description?: string;
+  canonical?: string;
 }
 
-const MotionLayout = ({ children, title }: MotionLayoutProps) => (
+const MotionLayout = ({
+  children,
+  title,
+  description = "G&S Home Solutions",
+  canonical,
+}: MotionLayoutProps) => (
   <motion.div
+    style={{ position: "relative" }}
     initial="hidden"
     animate="enter"
     exit="exit"
     variants={variants}
-    transition={{ duration: 0.4, type: "easeInOut" }}
-    style={{ position: "relative" }}
+    transition={{ duration: 0.4, ease: "easeInOut" }}
   >
     <>
       <NextSeo
-        title={title + " | G&S Home Solutions"}
-        description={"G&S Home Solutions"}
+        title={title ? `${title} | G&S Home Solutions` : "G&S Home Solutions"}
+        description={description}
+        canonical={canonical}
         openGraph={{
-          title: "G&S Home Solutions",
-          description: "G&S Home Solutions",
+          title: title ? `${title} | G&S Home Solutions` : "G&S Home Solutions",
+          description,
           locale: "pt_BR",
           site_name: "G&S Home Solutions",
           type: "website",
-          url: "https://gshomesolutions.com.br",
+          url: canonical || "https://gshomesolutions.com.br",
         }}
       />
       {children}

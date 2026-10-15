@@ -343,7 +343,7 @@ export const CATALOG_ITEMS_VEG: Array<Product> = [
         image: "/produtos/novas/tiramancha/TiraMancha5.webp",
       }
           ],
-    large_image: "/produtos/novas/tiraMancha/TiraMancha5.webp",
+    large_image: "/produtos/novas/tiramancha/TiraMancha5.webp",
     slogan: "Poderoso removedor e limpador de manchas e sujeiras.",
     chamada: "Alvejante removedor de manchas",
     hover_color: "255,102,160,1",

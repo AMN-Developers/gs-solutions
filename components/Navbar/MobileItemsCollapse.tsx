@@ -50,12 +50,7 @@ export default function MobileItemsCollapse({
         )}
       </Box>
 
-      <Collapse
-        in={isOpen}
-        animateOpacity
-        style={{ marginTop: "0!important" }}
-        unmountOnExit
-      >
+      <Collapse in={isOpen} animateOpacity unmountOnExit>
         <Stack
           mt={"-3"}
           pl={4}

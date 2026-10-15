@@ -1,7 +1,9 @@
-import { Box, Container, Flex, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
-import { Typewriter } from "react-simple-typewriter";
+
+const MotionBox = motion(Box);
+const MotionFlex = motion(Flex);
 
 interface HeaderBannerProps {
   route: string;
@@ -13,52 +15,63 @@ type banner = {
 
 export default function HeaderBanner({ route }: HeaderBannerProps) {
   const banner: banner = {
-    "/": () => {
+    "/blog": () => {
       return (
-        <Box
+        <MotionBox
           key={route}
-          maxW={"container.md"}
-          mx={"auto"}
-          as={motion.div}
+          maxW="container.xl"
+          mx="auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: "0.5", ease: "easeInOut" }}
-          px={{ base: 4, lg: 0 }}
-          minH={40}
-          alignItems={"center"}
-          textAlign={"center"}
-          display={"flex"}
-          justifyContent={"center"}
-          flexDirection={"column"}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          px={{ base: 5, lg: 0 }}
+          py={{ base: 10, md: 16 }}
         >
-          <Text as="h1" fontWeight={"bold"} fontSize={"2xl"}>
-            G&S HOME SOLUTIONS
+          <Text
+            color="#06EC46"
+            fontWeight="bold"
+            textTransform="uppercase"
+            letterSpacing="widest"
+            fontSize="sm"
+            mb={3}
+          >
+            Conteúdos G&S
           </Text>
-          <Text color={"#06EC46"} fontWeight={"bold"} fontSize={"2xl"}>
-            <Typewriter
-              words={["Os melhores produtos para os melhores profissionais"]}
-              typeSpeed={50}
-            />
+          <Heading
+            as="h1"
+            fontSize={{ base: "3xl", md: "5xl" }}
+            maxW="3xl"
+            lineHeight="shorter"
+          >
+            Conhecimento para cuidar melhor de cada superfície.
+          </Heading>
+          <Text
+            mt={5}
+            maxW="2xl"
+            fontSize={{ base: "md", md: "lg" }}
+            color="whiteAlpha.900"
+          >
+            Dicas, orientações e informações para profissionais e clientes que
+            buscam resultados mais seguros e duradouros.
           </Text>
-        </Box>
+        </MotionBox>
       );
     },
 
     "/higienizacao": () => {
       return (
-        <Flex
+        <MotionFlex
           justifyContent={"space-between"}
           alignItems={"center"}
           flexDirection={{ base: "column", md: "row" }}
           px={{ base: 4, lg: 0 }}
           gap={{ base: 4, md: 0 }}
           key={route}
-          as={motion.div}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: "0.5", ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           minH={40}
         >
           <Box minH={100}>
@@ -82,23 +95,22 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
               estofados
             </Text>
           </Box>
-        </Flex>
+        </MotionFlex>
       );
     },
     "/impermeabilizantes": () => {
       return (
-        <Flex
+        <MotionFlex
           justifyContent={"space-between"}
           alignItems={"center"}
           flexDirection={{ base: "column", md: "row" }}
           px={{ base: 4, lg: 0 }}
           gap={{ base: 4, md: 0 }}
           key={route}
-          as={motion.div}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: "0.5", ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           minH={40}
         >
           <Box minH={100}>
@@ -122,23 +134,22 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
               estofados
             </Text>
           </Box>
-        </Flex>
+        </MotionFlex>
       );
     },
     "/lotus": () => {
       return (
-        <Flex
+        <MotionFlex
           justifyContent={"space-between"}
           alignItems={"center"}
           flexDirection={{ base: "column", md: "row" }}
           px={{ base: 4, lg: 0 }}
           gap={{ base: 4, md: 0 }}
           key={route}
-          as={motion.div}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: "0.5", ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           minH={40}
         >
           <Box minH={100}>
@@ -162,22 +173,21 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
               estofados
             </Text>
           </Box>
-        </Flex>
+        </MotionFlex>
       );
     },
     "/limpoo": () => {
       return (
-        <Flex
+        <MotionFlex
           justifyContent={"space-between"}
           flexDirection={{ base: "column", md: "row" }}
           px={{ base: 4, lg: 0 }}
           gap={{ base: 4, md: 0 }}
           key={route}
-          as={motion.div}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: "0.5", ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           minH={40}
         >
           <Box
@@ -208,22 +218,21 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
               NOVIDADES EM BREVE
             </Text>
           </Box>
-        </Flex>
+        </MotionFlex>
       );
     },
     "/produtoslimpoo": () => {
       return (
-        <Flex
+        <MotionFlex
           justifyContent={"space-between"}
           flexDirection={{ base: "column", md: "row" }}
           px={{ base: 4, lg: 0 }}
           gap={{ base: 4, md: 0 }}
           key={route}
-          as={motion.div}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: "0.5", ease: "easeInOut" }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
           minH={40}
         >
           <Box
@@ -254,29 +263,42 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
               SUJOU? LIMPOO!
             </Text>
           </Box>
-        </Flex>
+        </MotionFlex>
       );
     },
     "/pine": () => {
-      return <Flex></Flex>;
+      return <MotionFlex></MotionFlex>;
     },
     "/desincrustante": () => {
-      return <Flex></Flex>;
+      return <MotionFlex></MotionFlex>;
     },
 
     "/fixflot": () => {
-      return <Flex></Flex>;
+      return <MotionFlex></MotionFlex>;
     },
     "/powertrio": () => {
-      return <Flex></Flex>;
+      return <MotionFlex></MotionFlex>;
     },
     "/fireguard": () => {
-      return <Flex></Flex>;
+      return <MotionFlex></MotionFlex>;
     },
     "/hidro": () => {
-      return <Flex></Flex>;
+      return <MotionFlex></MotionFlex>;
     },
   };
+
+  if (
+    !(route in banner) ||
+    [
+      "/pine",
+      "/desincrustante",
+      "/fixflot",
+      "/powertrio",
+      "/fireguard",
+      "/hidro",
+    ].includes(route)
+  )
+    return null;
 
   return (
     <Container
@@ -284,11 +306,9 @@ export default function HeaderBanner({ route }: HeaderBannerProps) {
       color={"white"}
       py={8}
       px={0}
-      display={{ base: "none", md: "block" }}
+      display={route === "/blog" ? "block" : { base: "none", md: "block" }}
     >
-      <AnimatePresence mode="wait">
-        {route in banner ? banner[route]() : banner["/"]()}
-      </AnimatePresence>
+      <AnimatePresence mode="wait">{banner[route]()}</AnimatePresence>
     </Container>
   );
 }

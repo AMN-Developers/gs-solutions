@@ -28,7 +28,7 @@ export default function NavbarMobileItems({
 }: MobileNavItemProps) {
   const { isOpen, onToggle } = useDisclosure();
   const handleToggle = (e: { preventDefault: () => any }) => {
-    return e.preventDefault(), onToggle();
+    return (e.preventDefault(), onToggle());
   };
 
   return (
@@ -59,12 +59,7 @@ export default function NavbarMobileItems({
         )}
       </Box>
 
-      <Collapse
-        in={isOpen}
-        animateOpacity
-        style={{ marginTop: "0!important" }}
-        unmountOnExit
-      >
+      <Collapse in={isOpen} animateOpacity unmountOnExit>
         <Stack
           mt={"-3"}
           pl={4}

@@ -63,7 +63,7 @@ const images = [
     type: "HIGIENIZAÇÃO DE PAINEL PLÁSTICO",
     products: [
       {
-        image: "/produtos/allone.png",
+        image: "/produtos/novas/allone/AllOne5.webp",
         type: "PAINEL PLÁSTICO",
         product: "ALL-01",
         description: "Borrifar + pano de microfibra ou pincel",
@@ -354,7 +354,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/allone.png"
+                  src="/produtos/novas/allone/AllOne5.webp"
                   alt="All in One"
                   width={100}
                   height={100}
@@ -379,7 +379,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/PreImper.webp"
+                  src="/produtos/novas/preimper/PreImper5.webp"
                   alt="PreImper"
                   width={100}
                   height={100}
@@ -400,7 +400,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/TiraMancha.webp"
+                  src="/produtos/novas/tiramancha/TiraMancha5.webp"
                   alt="Tira Manchas"
                   width={100}
                   height={100}
@@ -421,7 +421,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/MultiC.webp"
+                  src="/produtos/novas/multic/MultiC5.webp"
                   alt="MultiC"
                   width={100}
                   height={100}
@@ -442,7 +442,7 @@ export default function Auto() {
             >
               <Box alignSelf={"center"} p={4}>
                 <Image
-                  src="/produtos/novas/HydraLeder.webp"
+                  src="/produtos/novas/hydraleder/HydraLeder5.webp"
                   alt="HydraLeder"
                   width={100}
                   height={100}

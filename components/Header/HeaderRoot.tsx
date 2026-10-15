@@ -7,7 +7,7 @@ interface HeaderRootProps {
 
 export default function HeaderRoot({ children }: HeaderRootProps) {
   return (
-    <Box as="header" position={"relative"}>
+    <Box as="header" position={"relative"} pb={{ base: 6, md: 8 }}>
       {children}
     </Box>
   );

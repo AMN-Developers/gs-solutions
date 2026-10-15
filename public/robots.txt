@@ -8,3 +8,4 @@ Host: https://www.gshomesolutions.com.br/
 
 # Sitemaps
 Sitemap: https://www.gshomesolutions.com.br/sitemap.xml
+Sitemap: https://www.gshomesolutions.com.br/server-sitemap.xml

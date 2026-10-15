@@ -1,28 +1,22 @@
-import React, { useEffect, useRef } from "react";
-import { motion, useAnimation, useInView } from "framer-motion";
-import { Box } from "@chakra-ui/react";
+import React from "react";
+import { motion } from "framer-motion";
 
 interface RevealProps {
   children: React.ReactNode;
   width?: "fit-content" | "100%";
-  key: string;
   delay?: number;
 }
 
 export const Reveal = ({
   children,
   width = "fit-content",
-  key,
   delay = 0.25,
 }: RevealProps) => {
   return (
-    <motion.div
-      style={{
-        position: "relative",
-        width,
-        overflow: "hidden",
-      }}
-      key={key}
+    <div
+      className={
+        width === "100%" ? "auto-reveal auto-reveal--full" : "auto-reveal"
+      }
     >
       <motion.div
         variants={{
@@ -38,38 +32,51 @@ export const Reveal = ({
         initial="hidden"
         animate="visible"
         transition={{
-          duration: "0.5",
+          duration: 0.5,
           delay: delay,
         }}
       >
         {children}
       </motion.div>
       <motion.div
+        className="auto-reveal__cover"
         variants={{
           hidden: {
-            left: 0,
+            x: "0%",
           },
           visible: {
-            left: "100%",
+            x: "100%",
           },
         }}
         initial="hidden"
         animate="visible"
         transition={{
-          duration: "0.5",
+          duration: 0.5,
           ease: "easeIn",
           delay: delay,
         }}
-        style={{
-          position: "absolute",
-          top: 4,
-          bottom: 4,
-          left: 0,
-          right: 0,
-          backgroundColor: "white",
-          zIndex: 20,
-        }}
       />
-    </motion.div>
+      <style jsx>{`
+        .auto-reveal {
+          position: relative;
+          width: fit-content;
+          overflow: hidden;
+        }
+
+        .auto-reveal--full {
+          width: 100%;
+        }
+
+        .auto-reveal :global(.auto-reveal__cover) {
+          position: absolute;
+          top: 4px;
+          right: 0;
+          bottom: 4px;
+          left: 0;
+          z-index: 20;
+          background: white;
+        }
+      `}</style>
+    </div>
   );
 };

@@ -231,6 +231,50 @@ export default function Cartificado() {
                 </Flex>
               </AccordionPanel>
             </AccordionItem>
+            <AccordionItem>
+              <h2>
+                <AccordionButton>
+                  <Box
+                    as="span"
+                    flex="1"
+                    textAlign="left"
+                    fontWeight={"semibold"}
+                  >
+                    AATCC
+                  </Box>
+                  <AccordionIcon />
+                </AccordionButton>
+              </h2>
+              <AccordionPanel pb={4}>
+                <Flex flexDirection={{ base: "column", md: "row" }} gap={4}>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"center"}
+                    w={"20%"}
+                    alignSelf={"center"}
+                  >
+                    <Image
+                      src="/aatcc-logo.svg"
+                      alt="Logo AATCC"
+                      width={114}
+                      height={114}
+                    />
+                  </Box>
+                  <Box
+                    w={{ base: "100%", md: "80%" }}
+                    display={"flex"}
+                    alignItems={"center"}
+                  >
+                    <Text>
+                      AATCC Proficiency Testing Programs (PTP): Programas anuais
+                      onde os laboratórios testam amostras padronizadas e
+                      comparam os resultados de forma anônima para receberem
+                      certificados de participação e proficiência.
+                    </Text>
+                  </Box>
+                </Flex>
+              </AccordionPanel>
+            </AccordionItem>
           </Accordion>
         </Flex>
       </Container>

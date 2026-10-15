@@ -28,14 +28,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="pwa-gs" />
-        <meta name="description" content="pwa-gs" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="msapplication-TileColor" content="#263869" />
         <meta name="msapplication-tap-highlight" content="no" />
         <meta name="theme-color" content="#263869" />
 
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/icons/icon-192x192.png" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="shortcut icon" href="/favicon.ico" />
       </Head>
@@ -57,7 +56,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                   <Component {...pageProps} key={router.route} />
                 </MapProvider>
               </APIProvider>
-              <ReactQueryDevtools initialIsOpen={false} />
+              {process.env.NODE_ENV === "development" ? (
+                <ReactQueryDevtools initialIsOpen={false} />
+              ) : null}
             </QueryClientProvider>
           </AnimatePresence>
         </Layout>

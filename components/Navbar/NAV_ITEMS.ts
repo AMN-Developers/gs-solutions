@@ -82,11 +82,16 @@ export const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: "Rastreio",
-    href: "/rastreio",
-  },
-  {
-    label: "Distribuidores G&S",
-    href: "/distribuidores",
+    label: "Serviços GS",
+    children: [
+      {
+        label: "Rastreio",
+        href: "/rastreio",
+      },
+      {
+        label: "Distribuidores G&S",
+        href: "/distribuidores",
+      },
+    ],
   },
 ];

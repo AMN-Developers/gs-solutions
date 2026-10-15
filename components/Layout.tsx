@@ -17,7 +17,10 @@ interface LayoutProps {
   route: string;
 }
 
+const MotionBox = motion(Box);
+
 export default function Layout({ children, route }: LayoutProps) {
+  const isBlogPostRoute = route === "/blog/[slug]";
   const { isOpen, onToggle } = useDisclosure({ defaultIsOpen: false });
 
   const {
@@ -37,12 +40,11 @@ export default function Layout({ children, route }: LayoutProps) {
     <>
       <Header.Root>
         <AnimatePresence>
-          <Box
-            as={motion.div}
+          <MotionBox
             key={route}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: "0.5", ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             exit={{ opacity: 0 }}
             bgImage={route in bg ? bg[route] : bg["/"]}
             bgPosition={{ base: "right", md: "center" }}
@@ -62,21 +64,23 @@ export default function Layout({ children, route }: LayoutProps) {
           <Navbar.Hamburger isOpen={isOpen} onToggle={onToggle} />
           <Navbar.Desktop>
             <NavItem href="/" route={route} label="home" />
+            <NavItem href="/blog" route={route} label="blog" />
             <NavPopover label="linha de produtos">
               <Navbar.Sub label="LÓTUS" href="/lotus">
-                <NavItem href="/powertrio" route={route} label="power trio" />
-                <NavItem href="/fixflot" route={route} label="fix flot" />
-                <NavItem href="/fireguard" route={route} label="fireguard" />
-                <NavItem
-                  href="/higienizacao"
-                  route={route}
-                  label="Linha de Higienização"
-                />
                 <NavItem
                   href="/impermeabilizantes"
                   route={route}
                   label="Linha de Impermeabilizantes"
                 />
+                <NavItem
+                  href="/higienizacao"
+                  route={route}
+                  label="Linha de Higienização"
+                />
+                <NavItem href="/powertrio" route={route} label="power trio" />
+                <NavItem href="/fixflot" route={route} label="fix flot" />
+                <NavItem href="/fireguard" route={route} label="fireguard" />
+
                 <NavItem href="/auto" route={route} label="Linha Auto" />
               </Navbar.Sub>
               <Navbar.Sub label="LIMPOO" href="/limpoo">
@@ -142,12 +146,14 @@ export default function Layout({ children, route }: LayoutProps) {
                 Manual de Uso
               </Box>
             </NavPopover>
-            <NavItem href="/rastreio" route={route} label="Rastreio" />
-            <NavItem
-              href="/distribuidores"
-              route={route}
-              label="Distribuidores G&S"
-            />
+            <NavPopover label="Serviços G&S">
+              <NavItem href="/rastreio" route={route} label="Rastreio" />
+              <NavItem
+                href="/distribuidores"
+                route={route}
+                label="Distribuidores G&S"
+              />
+            </NavPopover>
             <NavItem
               href="https://certificados.gshomesolutions.com.br"
               route={route}
@@ -188,6 +194,11 @@ export default function Layout({ children, route }: LayoutProps) {
           <Navbar.Mobile isOpen={isOpen}>
             <Stack spacing={4} w={"100%"}>
               <MobileItems label="Home" href="/" toggleMainDrawer={onToggle} />
+              <MobileItems
+                label="Blog"
+                href="/blog"
+                toggleMainDrawer={onToggle}
+              />
               <MobileItemsCollapse label="Linha de Produtos">
                 <MobileItemsCollapse label="Limpoo">
                   <MobileItems
@@ -261,16 +272,18 @@ export default function Layout({ children, route }: LayoutProps) {
                   toggleMainDrawer={onToggle}
                 />
               </MobileItemsCollapse>
-              <MobileItems
-                label="Rastreio"
-                href="/rastreio"
-                toggleMainDrawer={onToggle}
-              />
-              <MobileItems
-                label="Distribuidores G&S"
-                href="/distribuidores"
-                toggleMainDrawer={onToggle}
-              />
+              <MobileItemsCollapse label="Serviços GS">
+                <MobileItems
+                  label="Rastreio"
+                  href="/rastreio"
+                  toggleMainDrawer={onToggle}
+                />
+                <MobileItems
+                  label="Distribuidores G&S"
+                  href="/distribuidores"
+                  toggleMainDrawer={onToggle}
+                />
+              </MobileItemsCollapse>
               <MobileItems
                 label="Certificados Digitais"
                 href="https://certificados.gshomesolutions.com.br"
@@ -294,7 +307,7 @@ export default function Layout({ children, route }: LayoutProps) {
             </Box>
           </Navbar.Mobile>
         </Navbar.Root>
-        <Header.Banner route={route} />
+        {!isBlogPostRoute ? <Header.Banner route={route} /> : null}
       </Header.Root>
       <DrawerRoot
         btnRef={btnRef}

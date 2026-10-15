@@ -340,46 +340,6 @@ solvente de percloroetileno para tecidos e tapetes)."
                 Relatorio Tec.
               </Button>
             </Flex>
-            <Flex flexDirection={"column"} gap={4} pb={4}>
-              <Accordion allowToggle>
-                <AccordionItem>
-                  <h2>
-                    <AccordionButton>
-                      <Box
-                        as="span"
-                        flex="1"
-                        textAlign="left"
-                        fontWeight={"semibold"}
-                        color={"#F19E34"}
-                      >
-                        Propriedades
-                      </Box>
-                      <AccordionIcon />
-                    </AccordionButton>
-                  </h2>
-                  <AccordionPanel pb={4} fontSize={"md"}>
-                    <Image
-                      src="/pH.svg"
-                      alt="ph tabela"
-                      width={"md"}
-                      mx={"auto"}
-                      bgColor={"whiteAlpha.300"}
-                      rounded={"md"}
-                      p={4}
-                    />
-                    <Text>
-                      <strong>PH</strong>: 2,5 - 4,0
-                    </Text>
-                    <Text>
-                      <strong>Densidade</strong>: 1,000 g/cm3
-                    </Text>
-                    <Text>
-                      <strong>Solubilidade</strong>: Totalmente solúvel.
-                    </Text>
-                  </AccordionPanel>
-                </AccordionItem>
-              </Accordion>
-            </Flex>
           </Flex>
         </Flex>
 

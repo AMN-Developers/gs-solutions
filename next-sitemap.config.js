@@ -11,6 +11,9 @@ module.exports = {
         disallow: "/admin",
       },
     ],
+    additionalSitemaps: [
+      "https://www.gshomesolutions.com.br/server-sitemap.xml",
+    ],
   },
   priority: 0.7,
   sitemapSize: 5000,
