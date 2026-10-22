@@ -17,7 +17,7 @@ function InlineText({ text }: { text: string }) {
 export default function ImpermeabilizantesFaq() {
   return (
     <Box as="section" aria-labelledby="impermeabilizantes-faq-title"
-      mt={{ base: 10, md: 16 }} mb={8} p={{ base: 4, md: 8 }}
+      mt={{ base: 10, md: 16 }} mb={{ base: 16, md: 24 }} p={{ base: 4, md: 8 }}
       bg="#f8f8f8" borderRadius="md">
       <Heading as="h2" id="impermeabilizantes-faq-title"
         fontSize={{ base: "xl", md: "2xl" }} color="#183665" mb={6}>
