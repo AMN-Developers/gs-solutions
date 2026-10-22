@@ -1,3 +1,4 @@
+import ImpermeabilizantesFaq from "@/components/ImpermeabilizantesFaq";
 import { useRef, useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "next/navigation";
 import { Container, Text, Box, Button } from "@chakra-ui/react";
@@ -93,6 +94,7 @@ export default function Impermeabilizantes() {
             ))}
           </Catalog.Root>
         </Box>
+        <ImpermeabilizantesFaq />
         <Box w="full" backgroundColor={"#f8f8f8"} p={8} rounded={"md"} mt={16}>
           <Text
             as="h2"

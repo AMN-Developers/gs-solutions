@@ -184,6 +184,7 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                   h={{ base: "280px", md: "auto" }}
                 >
                   <Image
+                    unoptimized
                     src={image.source_url}
                     alt={image.alt_text || title}
                     fill
@@ -286,6 +287,7 @@ export default function BlogPost({ post, relatedPosts }: BlogPostProps) {
                             {relatedImage ? (
                               <Box position="relative" h="120px">
                                 <Image
+                                  unoptimized
                                   src={
                                     relatedImage.media_details?.sizes?.medium
                                       ?.source_url || relatedImage.source_url

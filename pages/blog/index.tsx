@@ -190,6 +190,7 @@ export default function BlogIndex({ posts, categories }: BlogIndexProps) {
                           <Box position="relative" h="220px" bg="gray.100">
                             {image ? (
                               <Image
+                                unoptimized
                                 src={
                                   image.media_details?.sizes?.large
                                     ?.source_url || image.source_url
